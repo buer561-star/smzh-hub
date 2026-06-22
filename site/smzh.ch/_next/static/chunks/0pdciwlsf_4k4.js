@@ -1,0 +1,3 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,563491,e=>{"use strict";var i=e.i(843476),n=e.i(662537),r=e.i(271645);e.s(["default",0,function({error:e,reset:t}){return(0,r.useEffect)(()=>{n.captureException(e)},[e]),(0,i.jsx)("html",{children:(0,i.jsx)("body",{children:(0,i.jsxs)("div",{className:"error-container",children:[(0,i.jsx)("h1",{children:"Something went wrong!"}),(0,i.jsx)("p",{children:e.message}),(0,i.jsx)("button",{onClick:()=>t(),children:"Try Again"})]})})})}])}]);
+
+//# sourceMappingURL=0hpui71sb.q~-.js.map

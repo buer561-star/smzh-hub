@@ -1,0 +1,2 @@
+.transition-opacity{opacity:0;transition:opacity .5s ease-in-out}.slide-enter{transition:transform .3s ease-in-out;transform:translate(100%)}.slide-enter-active{transform:translate(0)}.slide-exit{transition:transform .3s ease-in-out;transform:translate(0)}.slide-exit-active{transform:translate(-100%)}.opacity-visible{opacity:1;transition:opacity .3s ease-in-out}.opacity-hidden{opacity:0;transition:opacity .3s ease-in-out}.scrollbar-hide{scrollbar-width:none;-ms-overflow-style:none}
+/*# sourceMappingURL=0r6hb23.gv~td.css.map*/
