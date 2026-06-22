@@ -1,0 +1,111 @@
+{
+ "Privatkunden": {
+  "links": [
+   {
+    "text": "Privatkunden Übersicht",
+    "href": "/de/privatkunden/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "drills": [
+   "Privatkunden",
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken",
+   "Immobilien",
+   "Recht",
+   "Steuern",
+   "Versicherungen",
+   "Vorsorge",
+   "DE"
+  ]
+ },
+ "Firmenkunden": {
+  "links": [
+   {
+    "text": "Firmenkunden Übersicht",
+    "href": "/de/firmenkunden/"
+   },
+   {
+    "text": "Real Estate Advisory",
+    "href": "/de/real-estate-advisory/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "drills": [
+   "Firmenkunden",
+   "Finanzierung",
+   "Vorsorge",
+   "Versicherungen",
+   "Steuern",
+   "DE"
+  ]
+ },
+ "smzh Welt": {
+  "links": [
+   {
+    "text": "smzh Impact Storys",
+    "href": "/de/impact-storys/"
+   },
+   {
+    "text": "smzh Finanzfritiig",
+    "href": "/de/finanzfriitig/"
+   },
+   {
+    "text": "smzh Ambassadors",
+    "href": "/de/ambassadors/"
+   },
+   {
+    "text": "Unsere GewinnerInnen",
+    "href": "/de/gewinnerinnen/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "drills": [
+   "smzh Welt",
+   "smzh Partnerschaften",
+   "DE"
+  ]
+ },
+ "Über smzh": {
+  "links": [
+   {
+    "text": "Über uns",
+    "href": "/de/uber-uns/"
+   },
+   {
+    "text": "Vision & Mission",
+    "href": "/de/vision-und-mission/"
+   },
+   {
+    "text": "Geschäftspartner",
+    "href": "/de/geschaftspartner/"
+   },
+   {
+    "text": "Mitgliedschaften",
+    "href": "/de/mitgliedschaften/"
+   },
+   {
+    "text": "Kontakt",
+    "href": "/de/kontakt/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "drills": [
+   "Über smzh",
+   "DE"
+  ]
+ }
+}

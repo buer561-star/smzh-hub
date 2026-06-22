@@ -1,0 +1,607 @@
+[
+ {
+  "label": "Privatkunden",
+  "promo": [
+   {
+    "text": "360° Check-Up",
+    "href": "/de/360checkup/"
+   },
+   {
+    "text": "Gesamtvermögensanalyse",
+    "href": "/de/gesamtvermoegensanalyse/"
+   },
+   {
+    "text": "Vorsorgeanalyse",
+    "href": "/de/vorsorgeanalyse/"
+   },
+   {
+    "text": "Steuererklärung ausfüllen lassen",
+    "href": "/de/steuererklaerung/"
+   },
+   {
+    "text": "Immobilienbewertung",
+    "href": "/de/immobilienbewertung/"
+   },
+   {
+    "text": "smzh Athlete",
+    "href": "/de/smzh-athlete/"
+   },
+   {
+    "text": "smzh Ärzte",
+    "href": "/de/smzh-aerzte/"
+   },
+   {
+    "text": "Relocation in die Schweiz",
+    "href": "/de/relocation-schweiz/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "cats": [
+   {
+    "name": "Privatkunden Übersicht",
+    "links": []
+   },
+   {
+    "name": "Anlagen",
+    "links": [
+     {
+      "text": "Übersicht Anlagen",
+      "href": "/de/anlagen/"
+     },
+     {
+      "text": "smzh Invest",
+      "href": "/de/smzh-invest/"
+     },
+     {
+      "text": "Grundlagen der Anlageberatung",
+      "href": "/de/leitfaden-zur-anlageberatung-in-der-schweiz/"
+     },
+     {
+      "text": "Risikoprofil erstellen",
+      "href": "/de/risikoprofil-erstellen/"
+     },
+     {
+      "text": "Anlagestrategie",
+      "href": "/de/anlagestrategie/"
+     },
+     {
+      "text": "Umsetzung",
+      "href": "/de/umsetzung/"
+     },
+     {
+      "text": "Überwachung",
+      "href": "/de/ueberwachung/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Finanzen",
+    "links": [
+     {
+      "text": "Übersicht Finanzen",
+      "href": "/de/finanzen/"
+     },
+     {
+      "text": "360° Check-Up",
+      "href": "/de/360checkup/"
+     },
+     {
+      "text": "Gesamtvermögensanalyse",
+      "href": "/de/gesamtvermoegensanalyse/"
+     },
+     {
+      "text": "Budgetplanung",
+      "href": "/de/budgetplanung/"
+     },
+     {
+      "text": "Finanzplanung",
+      "href": "/de/finanzplanung/"
+     },
+     {
+      "text": "Pensionsplanung",
+      "href": "/de/pensionsplanung/"
+     },
+     {
+      "text": "Nachlassplanung",
+      "href": "/de/nachlassplanung/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     },
+     {
+      "text": "Finanzen 2026",
+      "href": "/de/finanzen-2026-ihr-professioneller-wegweiser-fuer-ein-erfolgreiches-jahr/"
+     },
+     {
+      "text": "Frauen & Finanzen",
+      "href": "/de/frauen-finanzen-wissen-chancen/"
+     }
+    ]
+   },
+   {
+    "name": "Hypotheken",
+    "links": [
+     {
+      "text": "Übersicht Hypotheken",
+      "href": "/de/hypotheken/"
+     },
+     {
+      "text": "Einsatz von Vorsorgegeldern",
+      "href": "/de/wohneigentumsfoerderung/"
+     },
+     {
+      "text": "Hypothekenanbieter",
+      "href": "/de/hypothekenanbieter/"
+     },
+     {
+      "text": "Hypothekenarten",
+      "href": "/de/hypothekenarten-im-vergleich/"
+     },
+     {
+      "text": "Hypotheken erhöhen",
+      "href": "/de/hypotheken-erhoehen/"
+     },
+     {
+      "text": "Hypotheken zurückzahlen",
+      "href": "/de/hypotheken-zurueckzahlen/"
+     },
+     {
+      "text": "Hypotheken ablösen",
+      "href": "/de/hypotheken-abloesen/"
+     },
+     {
+      "text": "Hypotheken verlängern",
+      "href": "/de/hypotheken-verlaengern/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Immobilien",
+    "links": [
+     {
+      "text": "Übersicht Immobilien",
+      "href": "/de/immobilien/"
+     },
+     {
+      "text": "Immobilienbewertung",
+      "href": "/de/immobilienbewertung/"
+     },
+     {
+      "text": "Immobilien suchen",
+      "href": "/de/immobilien-suchen/"
+     },
+     {
+      "text": "Immobilien kaufen",
+      "href": "/de/immobilien-kaufen/"
+     },
+     {
+      "text": "Immobilien bauen",
+      "href": "/de/immobilien-bauen/"
+     },
+     {
+      "text": "Immobilien renovieren",
+      "href": "/de/immobilien-renovieren/"
+     },
+     {
+      "text": "Immobilien finanzieren",
+      "href": "/de/immobilien-finanzieren/"
+     },
+     {
+      "text": "Immobilien verkaufen",
+      "href": "/de/immobilien-verkaufen/"
+     },
+     {
+      "text": "Immobilien vererben",
+      "href": "/de/immobilien-vererben/"
+     },
+     {
+      "text": "Real Estate Advisory",
+      "href": "/de/real-estate-advisory/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Recht",
+    "links": [
+     {
+      "text": "Übersicht Recht",
+      "href": "/de/recht/"
+     },
+     {
+      "text": "Ehekompass",
+      "href": "/de/ehekompass/"
+     },
+     {
+      "text": "Güter- und Erbrecht: Nachlass planen",
+      "href": "/de/gueter-und-erbrecht-nachlass-planen/"
+     },
+     {
+      "text": "Erwachsenenschutzrecht",
+      "href": "/de/erwachsenenschutzrecht-vorsorgeauftrag-und-patientenverfuegung/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Steuern",
+    "links": [
+     {
+      "text": "Übersicht Steuern",
+      "href": "/de/steuern/"
+     },
+     {
+      "text": "Steuererklärung ausfüllen",
+      "href": "/de/steuererklaerung/"
+     },
+     {
+      "text": "Einkommens- und Vermögenssteuern",
+      "href": "/de/einkommens-und-vermoegenssteuern/"
+     },
+     {
+      "text": "Steuern beim Bezug von Vorsorgekapital",
+      "href": "/de/steuern-bezug-vorsorgekapital/"
+     },
+     {
+      "text": "Steuern bei Wohneigentum",
+      "href": "/de/steuern-wohneigentum/"
+     },
+     {
+      "text": "Erbschaft- und Schenkungssteuern",
+      "href": "/de/erbschafts-schenkungssteuern/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Versicherungen",
+    "links": [
+     {
+      "text": "Übersicht Versicherungen",
+      "href": "/de/versicherungen/"
+     },
+     {
+      "text": "Versicherungsvergleich",
+      "href": "/de/versicherungsvergleich/"
+     },
+     {
+      "text": "Freiwillige Versicherungen",
+      "href": "/de/freiwillige-versicherungen/"
+     },
+     {
+      "text": "Obligatorische Versicherungen",
+      "href": "/de/obligatorische-versicherungen/"
+     },
+     {
+      "text": "Versicherungen für Immobilien",
+      "href": "/de/versicherungen-fuer-immobilien/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   },
+   {
+    "name": "Vorsorge",
+    "links": [
+     {
+      "text": "Übersicht Vorsorge",
+      "href": "/de/vorsorge/"
+     },
+     {
+      "text": "Das 3-Säulen-System in der Schweiz",
+      "href": "/de/das-3-saeulensystem-der-schweiz/"
+     },
+     {
+      "text": "1. Säule: Staatliche Vorsorge",
+      "href": "/de/1-saeule-staatliche-vorsorge/"
+     },
+     {
+      "text": "2. Säule: Berufliche Vorsorge (Pensionskasse)",
+      "href": "/de/2-saeule-berufliche-vorsorge-pensionskasse/"
+     },
+     {
+      "text": "3. Säule: Private Vorsorge (Säule 3a)",
+      "href": "/de/3-saeule-private-vorsorge-saeule-3a/"
+     },
+     {
+      "text": "3. Säule: Private Vorsorge (Säule 3b)",
+      "href": "/de/3-saeule-private-vorsorge-saeule-3b/"
+     },
+     {
+      "text": "Leistungen im Alter",
+      "href": "/de/leistungen-im-alter/"
+     },
+     {
+      "text": "Leistungen im IV-Fall",
+      "href": "/de/leistungen-im-iv-fall/"
+     },
+     {
+      "text": "Leistungen im Todesfall",
+      "href": "/de/leistungen-im-todesfall/"
+     },
+     {
+      "text": "Relocation in die Schweiz",
+      "href": "/de/relocation-schweiz/"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "label": "Firmenkunden",
+  "promo": [
+   {
+    "text": "KMU-Check-Up",
+    "href": "/de/kmu-check-up/"
+   },
+   {
+    "text": "Steuerberatung",
+    "href": "/de/steuerberatungsdienstleistungen/"
+   },
+   {
+    "text": "Unternehmensfinanzierung",
+    "href": "/de/unternehmensfinanzierung/"
+   },
+   {
+    "text": "Vorsorgecheck (BVG Analyse)",
+    "href": "/de/analyse-der-bestehenden-beruflichen-vorsorge/"
+   },
+   {
+    "text": "KMU-Versicherungs-Check-Up",
+    "href": "/de/versicherungs-check-up/"
+   },
+   {
+    "text": "Termin vereinbaren",
+    "href": "/de/terminvereinbaren/"
+   }
+  ],
+  "cats": [
+   {
+    "name": "Firmenkunden Übersicht",
+    "links": []
+   },
+   {
+    "name": "Finanzierung",
+    "links": [
+     {
+      "text": "Unternehmensfinanzierung",
+      "href": "/de/unternehmensfinanzierung/"
+     },
+     {
+      "text": "Investitionskredite",
+      "href": "/de/investitionsfinanzierung/"
+     },
+     {
+      "text": "Akquisitionsfinanzierung",
+      "href": "/de/akquisitionsfinanzierung/"
+     },
+     {
+      "text": "Betriebsmittelfinanzierung",
+      "href": "/de/betriebsmittelfinanzierung/"
+     },
+     {
+      "text": "Kundenorientierte Konditionsverhandlung",
+      "href": "/de/kundenorientierte-konditionenverhandlung-finanzierung/"
+     },
+     {
+      "text": "Club Deals",
+      "href": "/de/club-deals/"
+     },
+     {
+      "text": "Private Debt",
+      "href": "/de/private-debt/"
+     },
+     {
+      "text": "Finanzierungslösungen",
+      "href": "/de/finanzierungsloesungen/"
+     }
+    ]
+   },
+   {
+    "name": "Vorsorge",
+    "links": [
+     {
+      "text": "Analyse der bestehenden beruflichen Vorsorge (BVG)",
+      "href": "/de/analyse-der-bestehenden-beruflichen-vorsorge/"
+     },
+     {
+      "text": "Pensionskassenlösungen für Unternehmen",
+      "href": "/de/pensionskasse-fuer-ihr-unternehmen/"
+     },
+     {
+      "text": "Pensionierungsberatung für Unternehmer",
+      "href": "/de/pensionierungsberatung-fuer-unternehmer/"
+     },
+     {
+      "text": "Unternehmensnachfolgeplanung",
+      "href": "/de/unternehmensnachfolgeplanung/"
+     }
+    ]
+   },
+   {
+    "name": "Versicherungen",
+    "links": [
+     {
+      "text": "Versicherungs Check Up",
+      "href": "/de/versicherungs-check-up/"
+     },
+     {
+      "text": "Massgeschneiderte Versicherungslösungen für Ihr Unternehmen",
+      "href": "/de/massgeschneiderte-versicherungsloesungen-fuer-ihr-unternehmen/"
+     },
+     {
+      "text": "Cyberversicherung: Finanzielle Absicherung für KMU",
+      "href": "/de/cyberversicherung-fuer-kmu/"
+     },
+     {
+      "text": "Kundenorientierte Konditionenverhandlung",
+      "href": "/de/kundenorientierte-konditionenverhandlung/"
+     }
+    ]
+   },
+   {
+    "name": "Steuern",
+    "links": [
+     {
+      "text": "Optimierung Lohn- und Dividendenbezug",
+      "href": "/de/lohn-und-dividendenbezug/"
+     },
+     {
+      "text": "Dividendenbezugsstrategie",
+      "href": "/de/dividendenbezugsstrategie/"
+     },
+     {
+      "text": "Steuerberatungsdienstleistungen",
+      "href": "/de/steuerberatungsdienstleistungen/"
+     }
+    ]
+   },
+   {
+    "name": "Real Estate Advisory",
+    "links": []
+   }
+  ]
+ },
+ {
+  "label": "smzh Welt",
+  "promo": [
+   {
+    "text": "Unsere Partnerschaften",
+    "href": "/de/partnerschaften/"
+   },
+   {
+    "text": "Unsere «Sportlerfamilie»",
+    "href": "/de/ambassadors/"
+   },
+   {
+    "text": "Standorte & Kontakt",
+    "href": "/de/kontakt/"
+   }
+  ],
+  "cats": [
+   {
+    "name": "smzh Impact Storys",
+    "links": []
+   },
+   {
+    "name": "smzh Partnerschaften",
+    "links": [
+     {
+      "text": "Übersicht smzh Partnerschaften",
+      "href": "/de/partnerschaften/"
+     },
+     {
+      "text": "Berner Stadtfest",
+      "href": "/de/berner-stadtfest/"
+     },
+     {
+      "text": "Churer Fest",
+      "href": "/de/churer-fest/"
+     },
+     {
+      "text": "Circus Knie",
+      "href": "/de/circus-knie-x-smzh/"
+     },
+     {
+      "text": "Energy Air",
+      "href": "/de/energy-air/"
+     },
+     {
+      "text": "Forbes & FACES",
+      "href": "/de/forbes-faces/"
+     },
+     {
+      "text": "Greenfield Festival",
+      "href": "/de/greenfield-festival/"
+     },
+     {
+      "text": "SBN | Das Schweizer Netzwerk für Sport und Business",
+      "href": "/de/sbn/"
+     },
+     {
+      "text": "Schweizer Bauernverband",
+      "href": "/de/schweizer-bauernverband/"
+     },
+     {
+      "text": "Swiss Classic World",
+      "href": "/de/swiss-classic-world/"
+     },
+     {
+      "text": "The Beach Tour",
+      "href": "/de/the-beach-tour/"
+     }
+    ]
+   },
+   {
+    "name": "smzh Finanzfritiig",
+    "links": []
+   },
+   {
+    "name": "smzh Ambassadors",
+    "links": []
+   },
+   {
+    "name": "Unsere GewinnerInnen",
+    "links": []
+   }
+  ]
+ },
+ {
+  "label": "Über smzh",
+  "promo": [
+   {
+    "text": "Unser Team",
+    "href": "/de/uber-uns/"
+   },
+   {
+    "text": "Standorte & Kontakt",
+    "href": "/de/kontakt/"
+   }
+  ],
+  "cats": [
+   {
+    "name": "Über uns",
+    "links": []
+   },
+   {
+    "name": "Vision & Mission",
+    "links": []
+   },
+   {
+    "name": "Geschäftspartner",
+    "links": []
+   },
+   {
+    "name": "Mitgliedschaften",
+    "links": []
+   },
+   {
+    "name": "Kontakt",
+    "links": []
+   }
+  ]
+ }
+]
