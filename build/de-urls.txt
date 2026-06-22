@@ -23,6 +23,7 @@
 /de/art-on-ice-tickets-2026/
 /de/art-on-ice-xmas/
 /de/art-on-ice/
+/de/artikel/
 /de/artikel/Akquisitionsfinanzierung-2025-01-15/
 /de/artikel/CIO-weekly-2024-51/
 /de/artikel/Deutschlands-Schuldenbremse-Lockerung-Folgen-fuer-Finanz-und-Hypomaerkte/
@@ -490,6 +491,7 @@
 /de/nebenkosten-beim-immobilienkauf/
 /de/neubauportal/
 /de/neubauprojekte/
+/de/news/
 /de/news/bekim-laski-neuer-cio/
 /de/news/burak-er-head-research-advisory-smzh/
 /de/news/das-neue-magazin-sport-and-business-ist-da/
