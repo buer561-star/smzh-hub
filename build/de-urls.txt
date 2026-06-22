@@ -182,6 +182,7 @@
 /de/artikel/snb-news-leitzins-maerz-2025/
 /de/artikel/snb-nullzins-dezember-2025/
 /de/artikel/snb-senkt-Leitzins-erstmals-auf-null-prozent/
+/de/artikel/snb-senkt-leitzins-erstmals-auf-null-prozent/
 /de/artikel/snb-zinsentscheid-juni/
 /de/artikel/sphere-interview/
 /de/artikel/supreme-court-zoelle/
