@@ -230,9 +230,9 @@
   "path": "/de/artikel/abstimmung-keine-10-millionen-schweiz/",
   "localUrl": "smzh.ch/de/artikel/abstimmung-keine-10-millionen-schweiz/index.html",
   "originalType": "artikel",
-  "contentType": "publication",
-  "series": "immobilien-outlook",
-  "cadence": "quarterly",
+  "contentType": "blog",
+  "series": null,
+  "cadence": "adhoc",
   "topics": [
    "Immobilien"
   ],
@@ -537,9 +537,9 @@
   "path": "/de/artikel/politische-risiken-schweizer-immobilienmarkt/",
   "localUrl": "smzh.ch/de/artikel/politische-risiken-schweizer-immobilienmarkt/index.html",
   "originalType": "artikel",
-  "contentType": "publication",
-  "series": "immobilien-outlook",
-  "cadence": "quarterly",
+  "contentType": "blog",
+  "series": null,
+  "cadence": "adhoc",
   "topics": [
    "Immobilien",
    "Hypotheken"
@@ -1429,9 +1429,9 @@
   "path": "/de/artikel/eigenmietwert-sanierung/",
   "localUrl": "smzh.ch/de/artikel/eigenmietwert-sanierung/index.html",
   "originalType": "artikel",
-  "contentType": "publication",
-  "series": "hypothekenradar",
-  "cadence": "monthly",
+  "contentType": "blog",
+  "series": null,
+  "cadence": "adhoc",
   "topics": [
    "Immobilien",
    "Anlagen",
@@ -1699,9 +1699,9 @@
   "path": "/de/artikel/einschaetzung-geldpolitik-oktober-2025/",
   "localUrl": "smzh.ch/de/artikel/einschaetzung-geldpolitik-oktober-2025/index.html",
   "originalType": "artikel",
-  "contentType": "publication",
-  "series": "immobilien-outlook",
-  "cadence": "quarterly",
+  "contentType": "blog",
+  "series": null,
+  "cadence": "adhoc",
   "topics": [
    "Finanzen"
   ],

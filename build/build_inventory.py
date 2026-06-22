@@ -22,13 +22,15 @@ GENERIC_PDF=('smzh_datenschutz','smzh_impressum','smzh_e_mail','e_mail_korrespon
 
 # ---- Erkennungs-Heuristiken -------------------------------------------------
 def detect_series(title, slug, pdfs):
-    s=(slug or '').lower(); t=(title or '').lower(); pj=' '.join(pdfs).lower()
-    if 'hypotheken-radar' in s or 'hypotheken_radar' in pj or 'hypotheken-radar' in t or 'hypothekenradar' in t:
+    """Titelbasiert (robust gegen Blogs, die eine Publikation nur verlinken)."""
+    s=(slug or '').lower(); t=(title or '').lower()
+    if re.search(r'hypotheken[\s-]?radar', t) or 'hypotheken-radar' in s:
         return 'hypothekenradar'
-    if 'investment-guide' in s or 'investment_guide' in pj or 'investment guide' in t:
+    if re.search(r'investment[\s-]?guide', t) or 'investment-guide' in s:
         return 'investment-guide'
-    if ('immobilien' in (s+t) and ('outlook' in (s+t) or 'beurteilung' in (s+t) or 'markt' in (s+t))) \
-       or 'outlook' in pj or 'real_estate' in pj:
+    if re.search(r'(aktuelle beurteilung des immobilienmarkt|beurteilung des immobilienmarkt|'
+                 r'ausblick immobilienmarkt|immobilien[\s-]?outlook|einsch[äa]tzung immobilienmarkt|'
+                 r'q\d[\s/]*\d{4}.*immobilienmarkt)', t):
         return 'immobilien-outlook'
     return None
 
