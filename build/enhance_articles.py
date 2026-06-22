@@ -57,6 +57,15 @@ CSS='''<style id="smzh-art-css">
 .smzh-hubchip{display:inline-flex;align-items:center;gap:.5rem;margin:.2rem 0 .4rem;padding:.32rem .8rem;border:1px solid #e7ebef;border-radius:999px;background:#f4f7fa;color:#07314C;text-decoration:none;font-size:.78rem;font-weight:600}
 .smzh-hubchip b{color:#0050ff;font-weight:800}
 .smzh-hubchip:hover{border-color:#0050ff}
+.smzh-toc{margin:1.4rem 0 1.8rem;border:1px solid #e7ebef;border-left:3px solid #0050ff;border-radius:12px;background:#f9fbfc;padding:1.1rem 1.4rem}
+.smzh-toc-k{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#0050ff;font-weight:800;margin-bottom:.6rem}
+.smzh-toc ol{margin:0;padding:0;list-style:none;counter-reset:toc}
+.smzh-toc li{counter-increment:toc;margin:.25rem 0}
+.smzh-toc li.lvl3{margin-left:1.2rem}
+.smzh-toc a{color:#07314C;text-decoration:none;font-weight:600;font-size:.95rem}
+.smzh-toc li.lvl3 a{font-weight:500;font-size:.9rem;color:#3a5a72}
+.smzh-toc a:hover{color:#0050ff;text-decoration:underline}
+.smzh-toc li.lvl2 a:before{content:counter(toc) ". ";color:#9aa7b2;font-weight:700}
 #smzh-art-enh{margin:3.5rem 0 0;border-top:1px solid #e7ebef;background:#fff}
 #smzh-art-enh .sae-wrap{max-width:1120px;margin:0 auto;padding:2.6rem 1.5rem 1rem;display:flex;flex-direction:column;gap:2rem}
 #smzh-art-enh .sae-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem;background:#07314C;border-radius:16px;padding:1.8rem 2rem}
@@ -120,6 +129,52 @@ def end_block(item):
     back_html=f'<a class="sae-back" href="{back}">← Zurück zum smzhHub</a>'
     return (f'<section id="smzh-art-enh"><div class="sae-wrap">{cta}{flag}{related_html}{back_html}</div></section>')
 
+def slugify(t):
+    t=(t or '').lower()
+    t=t.replace('ä','ae').replace('ö','oe').replace('ü','ue').replace('ß','ss')
+    t=re.sub(r'[^a-z0-9]+','-',t).strip('-')
+    return t[:50] or 'abschnitt'
+
+def build_toc(h):
+    """Vergibt fehlende ids an h2/h3 im Artikelkörper und liefert (neues_h, toc_html)."""
+    mh=re.search(r'</h1>', h)
+    if not mh: return h,''
+    start=mh.end()
+    foot=h.find('<footer', start); end=foot if foot>0 else len(h)
+    region=h[start:end]
+    entries=[]; used=set()
+    def repl(m):
+        tag=m.group(1); attrs=m.group(2); inner=m.group(3)
+        text=re.sub(r'<[^>]+>','',inner).strip()
+        if not text or len(text)>90: return m.group(0)
+        idm=re.search(r'\sid="([^"]*)"',attrs)
+        if idm and idm.group(1).strip():
+            sid=idm.group(1)
+        else:
+            sid='sec-'+slugify(text); base=sid; i=2
+            while sid in used: sid=f'{base}-{i}'; i+=1
+            if idm: attrs=attrs[:idm.start()]+f' id="{sid}"'+attrs[idm.end():]
+            else: attrs=attrs+f' id="{sid}"'
+        used.add(sid); entries.append((tag,sid,text))
+        return f'<{tag}{attrs}>{inner}</{tag}>'
+    newregion=re.sub(r'<(h[23])\b([^>]*)>(.*?)</\1>', repl, region, flags=re.S)
+    h=h[:start]+newregion+h[end:]
+    # Boilerplate-Überschriften des Artikel-Templates abschneiden
+    STOP={'die smzh für sie','kontaktieren sie uns','verwandte inhalte',
+          'das könnte sie auch interessieren','newsletter','häufige fragen',
+          'termin vereinbaren','das könnte dich auch interessieren'}
+    cut=len(entries)
+    for idx,(tag,sid,text) in enumerate(entries):
+        if text.lower().strip() in STOP: cut=idx; break
+    entries=[e for e in entries[:cut] if e[2].lower().strip() not in STOP][:9]
+    if len(entries)<3: return h,''
+    lis=''
+    for tag,sid,text in entries:
+        cls='lvl2' if tag=='h2' else 'lvl3'
+        lis+=f'<li class="{cls}"><a href="#{sid}">{esc(text)}</a></li>'
+    toc=f'<nav class="smzh-toc" aria-label="Inhalt"><span class="smzh-toc-k">Auf einen Blick</span><ol>{lis}</ol></nav>'
+    return h,toc
+
 def enhance(path, item):
     f=os.path.join(SMZH, path.strip('/'), 'index.html')
     if not os.path.exists(f): return False
@@ -127,11 +182,14 @@ def enhance(path, item):
     # idempotent: alte Injektionen entfernen
     h=re.sub(r'<style id="smzh-art-css">.*?</style>','',h,flags=re.S)
     h=re.sub(r'<a class="smzh-hubchip".*?</a>','',h,flags=re.S,count=1)
+    h=re.sub(r'<nav class="smzh-toc".*?</nav>','',h,flags=re.S,count=1)
     h=re.sub(r'<section id="smzh-art-enh">.*?</section>','',h,flags=re.S)
     # CSS in head
     if '</head>' in h: h=h.replace('</head>', CSS+'</head>',1)
-    # Chip nach erster </h1>
-    if '</h1>' in h: h=h.replace('</h1>', '</h1>'+chip(item),1)
+    # Inhaltsverzeichnis aus den Artikel-Headings (Navigation, kein neuer Text)
+    h, toc = build_toc(h)
+    # Chip + TOC nach erster </h1>
+    if '</h1>' in h: h=h.replace('</h1>', '</h1>'+chip(item)+toc,1)
     # End-Block vor Footer
     blk=end_block(item)
     if '<footer' in h: h=h.replace('<footer', blk+'<footer',1)

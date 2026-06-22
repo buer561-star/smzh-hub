@@ -102,6 +102,30 @@ SERIES=[
 ]
 SERIES_BY={k:(name,cad,slug,theme,desc) for k,name,cad,slug,theme,desc in SERIES}
 SERIES_FOR={'immobilien':['hypothekenradar','immobilien-outlook'],'kapitalmaerkte':['investment-guide'],'vorsorge':[],'steuern':[]}
+ITEM_BY_PATH={r['path']:r for r in rows}
+# Kuratierte Dossiers (Storyline aus bestehenden, realen Seiten)
+DOSSIERS={
+ 'eigenheim':{'tab':'eigenheim','title':'Eigenheim finanzieren','kicker':'Dossier · Immobilien',
+   'intro':'Von der ersten Idee bis zur Bankzusage: Dieser Leitfaden bündelt die wichtigsten Schritte zu Kauf, Tragbarkeit, Eigenkapital und Hypothek – in der richtigen Reihenfolge.',
+   'flagship':'hypothekenradar','rubric':'immobilien',
+   'steps':[
+     ('Einstieg','de/wie-kaufe-ich-eine-immobilie/','Wie kaufe ich eine Immobilie?','Der Ablauf vom Suchen bis zum Notariat – worauf es Schritt für Schritt ankommt.'),
+     ('Tragbarkeit','de/optimierung-der-tragbarkeit/','Tragbarkeit optimieren','Wie die Bank Ihr Einkommen rechnet – und was Sie beeinflussen können.'),
+     ('Finanzierung','de/hypothekenarten-im-vergleich/','Hypothekenarten im Vergleich','SARON oder Festhypothek: Laufzeit, Zins und Risiko abwägen.'),
+     ('Eigenkapital','de/wohneigentumsfoerderung/','Wohneigentumsförderung','Säule 3a und Pensionskasse fürs Eigenheim einsetzen.'),
+   ]},
+ 'pensionierung':{'tab':'zukunft','title':'Pensionierung planen','kicker':'Dossier · Vorsorge',
+   'intro':'AHV, Pensionskasse und Säule 3a greifen ineinander. Dieser rote Faden führt von den Grundlagen bis zur grossen Entscheidung: Rente oder Kapital.',
+   'flagship':None,'rubric':'vorsorge',
+   'steps':[
+     ('Grundlagen','de/das-3-saeulensystem-der-schweiz/','Das 3-Säulen-System','Wie die Schweizer Vorsorge aufgebaut ist und ineinandergreift.'),
+     ('Säule 3a','de/altersvorsorge-optimierung-saeule-3a/','Säule 3a optimal nutzen','Steuern sparen und Vorsorgelücken frühzeitig schliessen.'),
+     ('Planung','de/pensionsplanung/','Pensionsplanung','Rechtzeitig die Weichen für den Ruhestand stellen.'),
+     ('Leistungen','de/leistungen-im-alter/','Leistungen im Alter','Was Sie aus AHV und Pensionskasse konkret erwarten können.'),
+   ]},
+}
+DOSSIER_SLUG={'eigenheim':'smzhub-dossier-eigenheim','pensionierung':'smzhub-dossier-pensionierung'}
+
 CTA_PATH={'vorsorgeanalyse':'de/vorsorgeanalyse/','immobilienbewertung':'de/immobilienbewertung/',
           'steuererklaerung':'de/steuererklaerung/','terminvereinbaren':'de/terminvereinbaren/'}
 
@@ -182,9 +206,14 @@ def side_item(r, tag=None):
             f'<span class="es-p">{esc(teaser(r,80))}</span></span></a>')
 
 def ph_item(ph):
-    cta=CTA_PATH.get(ph.get('ctaType'),'de/terminvereinbaren/')
-    return (f'<a class="es-item es-ph" href="{link(cta)}"><span class="es-thumb es-thumb-ph">→</span>'
-            f'<span class="es-it-txt"><span class="es-tag es-tag-ph">In Vorbereitung · {esc(ph["contentType"])}</span>'
+    if ph.get('status')=='real' and ph.get('url'):
+        href=link(ph['url']); tag=f'{esc(ph["contentType"])}'; tagcls='es-tag'; thumb='⤳'
+    else:
+        href=link(CTA_PATH.get(ph.get('ctaType'),'de/terminvereinbaren/'))
+        tag=f'In Vorbereitung · {esc(ph["contentType"])}'; tagcls='es-tag es-tag-ph'; thumb='→'
+    cls='es-item'+('' if ph.get('status')=='real' else ' es-ph')
+    return (f'<a class="{cls}" href="{href}"><span class="es-thumb es-thumb-ph">{thumb}</span>'
+            f'<span class="es-it-txt"><span class="{tagcls}">{tag}</span>'
             f'<span class="es-h4">{esc(ph["title"])}</span>'
             f'<span class="es-p">{esc(teaser(ph,80))}</span></span></a>')
 
@@ -208,8 +237,12 @@ def rubric_footer(cta, ph_id=None):
     extra=''
     if ph_id and ph_id in PH_BY:
         ph=PH_BY[ph_id]
-        extra=(f'<a class="rub-dossier" href="{link(CTA_PATH.get(ph.get("ctaType"),"de/terminvereinbaren/"))}">'
-               f'<span class="rub-dossier-tag">In Vorbereitung</span>{esc(ph["title"])} →</a>')
+        if ph.get('status')=='real' and ph.get('url'):
+            extra=(f'<a class="rub-dossier" href="{link(ph["url"])}">'
+                   f'<span class="rub-dossier-tag rub-dossier-real">Dossier</span>{esc(ph["title"])} →</a>')
+        else:
+            extra=(f'<a class="rub-dossier" href="{link(CTA_PATH.get(ph.get("ctaType"),"de/terminvereinbaren/"))}">'
+                   f'<span class="rub-dossier-tag">In Vorbereitung</span>{esc(ph["title"])} →</a>')
     return (f'<div class="rub-foot"><span class="rub-foot-l"><span class="rub-foot-k">Nächster Schritt</span>'
             f'<a class="rub-cta" href="{link(cp)}">{esc(cl)} →</a></span>{extra}</div>')
 
@@ -330,13 +363,51 @@ def theme_inner(tab):
     morehtml=(section(sec_head('Weitere Beiträge')+'<div class="es-grid">'+''.join(side_item(r) for r in rest)+'</div>')
               if rest else '')
     guides=guides_band(rkey)
-    # passende Platzhalter dieser Rubrik
-    phs=[p for p in PH if p.get('primaryRubric')==rkey]
+    # echte Dossiers dieser Rubrik
+    dos=[p for p in PH if p.get('primaryRubric')==rkey and p.get('status')=='real']
+    doshtml=''
+    if dos:
+        doshtml=section('<div class="ed-sec-head"><div class="ed-sh-l"><span class="ed-kicker">Dossier</span>'
+                        '<h2>Roter Faden zum Thema</h2></div></div><div class="es-grid">'+''.join(ph_item(p) for p in dos)+'</div>')
+    # Platzhalter dieser Rubrik
+    phs=[p for p in PH if p.get('primaryRubric')==rkey and p.get('status')!='real']
     phhtml=''
     if phs:
         phhtml=section('<div class="ed-sec-head"><div class="ed-sh-l"><span class="ed-kicker">Demnächst</span>'
                        '<h2>In Vorbereitung</h2></div></div><div class="es-grid">'+''.join(ph_item(p) for p in phs)+'</div>')
-    return themebar(tab)+crumb+hero+decmod+mod+band+morehtml+guides+phhtml+cta(cta_pair[0],cta_pair[1])
+    return themebar(tab)+crumb+hero+decmod+mod+doshtml+band+morehtml+guides+phhtml+cta(cta_pair[0],cta_pair[1])
+
+def dossier_inner(dkey):
+    d=DOSSIERS[dkey]; tab=d['tab']; rkey=d['rubric']
+    lbl=THEME_BY[tab][1]
+    cta_pair=TAB_META[tab][2]
+    crumb=(f'<nav class="ed-crumb"><a href="{link("de/smzhub/")}">smzHub</a><span>/</span>'
+           f'<a href="{link(THEME_BY[tab][1])}">{esc(THEME_BY[tab][0])}</a><span>/</span>Dossier</nav>')
+    hero=(f'<section class="ed-hero ed-hero-theme"><div class="hero-intro">'
+          f'<span class="ed-kicker">{esc(d["kicker"])}</span><h1>{esc(d["title"])}</h1><p>{esc(d["intro"])}</p>'
+          f'<div class="hero-cta"><a class="hero-btn" href="{link(cta_pair[1])}">{esc(cta_pair[0])}</a></div></div></section>')
+    # Storyline-Schritte (kuratierte reale Seiten)
+    steps=list(d['steps'])
+    # dynamischer Abschluss-Schritt: aktuellster Kommentar der Rubrik
+    lr=lead_rubric(rkey)
+    if lr:
+        cur=lr[0]
+        steps=steps+[('Aktuell', cur['path'].strip('/'), cur['title'], teaser(cur,110))]
+    items=''
+    n=0
+    for kicker,path,fallback_title,fallback_teaser in steps:
+        if not exists(path): continue
+        n+=1
+        it=ITEM_BY_PATH.get('/'+path.strip('/')+'/')
+        title=it['title'] if it else fallback_title
+        tz=teaser(it,120) if it else fallback_teaser
+        items+=(f'<a class="dos-step" href="{link(path)}"><span class="dos-num">{n}</span>'
+                f'<span class="dos-txt"><span class="dos-kicker">{esc(kicker)}</span>'
+                f'<span class="dos-h">{esc(title)}</span><span class="dos-p">{esc(tz)}</span></span>'
+                f'<span class="dos-go">→</span></a>')
+    story=section(sec_head('Der rote Faden',kicker='Storyline')+f'<div class="dos-steps">{items}</div>')
+    band=research_band([d['flagship']], heading='Vertiefendes Research', more_path='de/smzhub-research/') if d.get('flagship') else ''
+    return themebar(tab)+crumb+hero+story+band+cta(cta_pair[0],cta_pair[1])
 
 def research_inner():
     crumb=f'<nav class="ed-crumb"><a href="{link("de/smzhub/")}">smzHub</a><span>/</span>Research</nav>'
@@ -475,6 +546,19 @@ ED_CSS = '''<style id="smzh-ed-css">
 #ed-root .rub-dossier{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem}
 #ed-root .rub-dossier:hover{color:var(--brand)}
 #ed-root .rub-dossier-tag{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#6b7785;background:#e7edf2;padding:.13rem .45rem;border-radius:4px}
+#ed-root .rub-dossier-real{color:var(--gold);background:#f6ead2}
+/* Dossier-Storyline */
+#ed-root .dos-steps{display:flex;flex-direction:column;position:relative}
+#ed-root .dos-steps:before{content:"";position:absolute;left:21px;top:28px;bottom:28px;width:2px;background:var(--line)}
+#ed-root .dos-step{display:flex;gap:1.2rem;align-items:flex-start;padding:1rem 1.1rem;text-decoration:none;position:relative;z-index:1;border:1px solid transparent;border-radius:12px;transition:.15s}
+#ed-root .dos-step:hover{border-color:var(--line);background:#fff;box-shadow:0 8px 20px rgba(7,49,76,.05)}
+#ed-root .dos-num{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+#ed-root .dos-txt{flex:1;display:flex;flex-direction:column;gap:.2rem;padding-top:.15rem}
+#ed-root .dos-kicker{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+#ed-root .dos-h{font-weight:700;color:var(--brand);font-size:1.1rem;line-height:1.25}
+#ed-root .dos-step:hover .dos-h{color:var(--accent)}
+#ed-root .dos-p{color:var(--muted);font-size:.88rem;line-height:1.45}
+#ed-root .dos-go{color:var(--accent);font-weight:800;font-size:1.2rem;align-self:center}
 /* Kompakt-Guides (Steuern) */
 #ed-root .cg-main{display:flex;flex-direction:column;gap:1rem}
 #ed-root .cg-pills{display:flex;flex-wrap:wrap;gap:.6rem}
@@ -579,6 +663,8 @@ def main():
     write('de/smzhub-zukunft/', theme_inner('zukunft'), 'Zukunft – smzHub')
     write('de/smzhub-steuern/', theme_inner('steuern'), 'Steuern – smzHub')
     write('de/smzhub-research/', research_inner(), 'Research & Publikationen – smzHub')
+    for dkey,slug in DOSSIER_SLUG.items():
+        write('de/'+slug+'/', dossier_inner(dkey), f'{DOSSIERS[dkey]["title"]} – smzHub Dossier')
     for k,name,cad,slug,theme,desc in SERIES:
         write('de/'+slug+'/', series_inner(k), f'{name} – smzHub')
     write('de/smzhub-archiv/', archiv_inner(orig_inner), 'Alle Inhalte – smzHub')
