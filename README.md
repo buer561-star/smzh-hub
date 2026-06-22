@@ -61,20 +61,35 @@ site/
 
 ## Mirror aktualisieren
 
+Der Mirror entsteht in zwei Stufen:
+
 ```bash
-./mirror.sh
+./mirror.sh                       # 1) Grundgeruest + alle Assets (wget)
+node build/snapshot-all.cjs       # 2) Seiten im Headless-Browser rendern
+python3 build/postprocess.py      #    dynamischen Inhalt einfrieren + Assets lokal verlinken
 ```
 
-Das Skript lädt alle Seiten aus `build/urls.txt` neu. Das Build-Log liegt unter
-`build/wget.log`.
+**Warum zwei Stufen?** smzh.ch ist eine Next.js-App; der eigentliche
+smzHub-Inhalt (Artikel, News, Flash Talks, Edu Talks, Podcasts) wird erst im
+Browser per API nachgeladen. `mirror.sh` allein liefert daher nur das Geruest
+mit einem „Loading…"-Platzhalter. Stufe 2 lädt jede Seite in Chromium
+(Playwright), wartet bis der Inhalt vollständig da ist, friert das gerenderte
+HTML ein, entfernt die Skripte (sonst würde die Re-Hydration den Inhalt wieder
+leeren) und schreibt alle Asset- und Navigations-Links auf die lokalen
+Mirror-Pfade um (fehlende Bildvarianten werden nachgeladen).
+
+Build-Artefakte liegen unter `build/` (`wget.log`, gerenderte Rohseiten in
+`build/rendered/`).
 
 ## Bekannte Einschränkungen
 
-- **Dynamische Inhalte:** smzh.ch ist eine Next.js-Anwendung. Der Wissens-Content
-  des smzHub (Blogartikel, News, Flash Talks, Podcasts) sowie Live-Marktdaten
-  werden zur Laufzeit per API/JavaScript nachgeladen und sind in einem statischen
-  Mirror nicht vollständig reproduzierbar. Das vorgerenderte Layout, Texte und
-  Bilder sind originalgetreu vorhanden.
+- **Dynamische Inhalte (eingefroren):** Der smzHub-Wissens-Content (Artikel,
+  News, Flash Talks, Edu Talks, Podcasts) wird im Original per API nachgeladen.
+  Über den Headless-Render (siehe „Mirror aktualisieren") ist dieser Inhalt als
+  **statischer Snapshot eingefroren** und sichtbar – er entspricht dem Stand zum
+  Render-Zeitpunkt und aktualisiert sich nicht von selbst. Echtzeit-Funktionen
+  (z. B. Live-Marktdaten in smzh Markets, Filter-Interaktionen) sind als
+  Momentaufnahme enthalten, aber nicht interaktiv.
 - **Formulare** (Termin, Newsletter, Datei-Upload) senden im Original an
   Backend-APIs und funktionieren im Mirror nicht.
 - **Schriftschnitt `CircularXXWeb-RegularItalic.woff2`** liefert auf dem
