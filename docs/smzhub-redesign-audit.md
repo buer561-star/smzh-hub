@@ -141,3 +141,17 @@ bewusst ruhig gehalten (institutionell statt verspielt).
 Artikel-Detailtemplate aufwerten (Hero, Lesedauer, Key-Takeaways, „Was bedeutet
 das für mich?", Related-Serie/Dossier, kontextbezogener CTA) – grösster offener
 Lead- und Thought-Leadership-Hebel.
+
+### Iteration 6 – Phase 7: Artikel-Detailtemplate
+- **Agenten:** Conversion Strategist, Editorial Director, Frontend.
+- **Schwäche:** Blogartikel waren Sackgassen ohne Lead-/Weiterführungslogik.
+- **Umsetzung (`build/enhance_articles.py`, 241 Seiten, Fliesstext unverändert):**
+  - smzhHub-Rubrik-Chip + Lesedauer direkt unter der H1 (Einordnung + Aufstieg
+    in die Hub-Navigation).
+  - End-Block vor dem Footer: „Was bedeutet das für Sie?" (kontextbezogener
+    Beratungs-CTA je Rubrik) → Flagship-Serie-Verknüpfung → 3 Related-Beiträge
+    der gleichen Rubrik → „Zurück zum smzhHub".
+- **Geändert:** `build/enhance_articles.py` (neu), 241 Artikelseiten.
+- **Score:** Blogartikel-Lead-Logik 4 → 8; Lead Generation 8 → 9.
+- **Offen:** Key-Takeaways/„Darum geht es"-Box bewusst weggelassen (Gefahr der
+  Textdopplung); Inhaltsverzeichnis für Langtexte noch offen.
