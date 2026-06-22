@@ -25,6 +25,7 @@
 /de/art-on-ice/
 /de/artikel/
 /de/artikel/Akquisitionsfinanzierung-2025-01-15/
+/de/artikel/Aktienmarktbewertungen-noch-gerechtfertigt/
 /de/artikel/CIO-weekly-2024-51/
 /de/artikel/Deutschlands-Schuldenbremse-Lockerung-Folgen-fuer-Finanz-und-Hypomaerkte/
 /de/artikel/US-Zollhammer-trifft-Schweiz/
@@ -102,6 +103,7 @@
 /de/artikel/gender-pension-gap/
 /de/artikel/gold-historische-rally-2026/
 /de/artikel/gold-schwaeche-trotz-krise/
+/de/artikel/handelsdeal-schweiz-usa/
 /de/artikel/holistischer-ansatz-als-schluessel-zur-vermoegensverwaltung-der-zukunft/
 /de/artikel/hypotheken-radar-april-2026/
 /de/artikel/hypotheken-radar-dezember-2025/
@@ -223,6 +225,8 @@
 /de/artikel/weniger-ahv-aufgrund-von-fehlenden-beitragsjahren/
 /de/artikel/wer-sich-sorgsam-um-sein-geld-kuemmert-lebt-unbeschwert/
 /de/artikel/wir-heissen-werner-schlegel-herzlich-willkommen-in-unserer-sportfamilie/
+/de/artikel/zehn-anlageideen-2026/
+/de/artikel/zolldrohung-groenland-konflikt/
 /de/artikel/zuercher-wohnungsinitiativen/
 /de/autogrammkarten-art-on-ice-ambassadors/
 /de/autozuerich/
@@ -267,6 +271,7 @@
 /de/edu-talk/erwachsenenschutzrecht/
 /de/edu-talk/gesundheitsvorsorge-grund-und-zusatzversicherung-versicherungswechsel/
 /de/edu-talk/gesundheitsvorsorge-zusatzversicherung/
+/de/edu-talk/immobilien-kauf/
 /de/edu-talk/immobilien-und-erbschaft/
 /de/edu-talk/immobilien-versicherungen/
 /de/edu-talk/immobilienkaufvertrag/
