@@ -14,6 +14,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -41,6 +48,14 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -66,6 +81,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -91,6 +112,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -114,6 +141,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2026-06-03T22:00:00.000Z",
   "excerpt": "In einem Umfeld steigender Korrelationen, der Transformation des Private Bankings und der wachsenden Bedeutung von künstlicher Intelligenz analysiert der CIO von smzh, Bekim Laski, die neuen Logiken der Diversifikation, die Weiterentwicklung der Vermögensberatung sowie die Bewertungsunterschiede zwischen industrieller Exzellenz und technologischem Wachstumspotenzial.",
@@ -138,6 +169,12 @@
    "Immobilien",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -165,6 +202,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -193,6 +237,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -221,6 +272,13 @@
    "Finanzen",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -246,6 +304,12 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -275,6 +339,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -301,6 +372,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -331,6 +409,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -357,6 +443,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -383,6 +475,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -411,6 +510,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -436,6 +542,12 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -462,6 +574,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -488,6 +607,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -518,6 +644,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -542,6 +676,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2026-03-25T13:07:00.000Z",
   "excerpt": "Die smzh ag, einer der führenden unabhängigen Finanzdienstleister der Schweiz, stärkt ihre Geschäftsleitung gezielt und stellt die Weichen für die nächste Wachstumsphase. Dr. iur. Aurelia Frick wird zur Deputy CEO ernannt und übernimmt zusätzlich die Funktion als Chief Business Development Officer. Gleichzeitig überneh",
@@ -566,6 +704,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -593,6 +738,14 @@
    "Hypotheken",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Hypotheken",
+   "Finanzen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -619,6 +772,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -646,6 +806,14 @@
    "Steuern",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Vorsorge",
+   "Steuern",
+   "Finanzen"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -672,6 +840,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -701,6 +876,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -727,6 +909,12 @@
    "Steuern",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2026-03-02T07:00:00.000Z",
   "excerpt": "Die Steuererklärung gehört für viele zu den ungeliebten Pflichten des Jahres – und gleichzeitig versteckt sich darin unterschätztes Optimierungspotenzial. Mit unseren Steuerspartipps sind Sie bestens vorbereitet, dieses Potenzial zu nutzen.",
@@ -751,6 +939,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -777,6 +972,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -803,6 +1005,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -828,6 +1037,12 @@
   "topics": [
    "Steuern"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2026-02-20T11:14:50.770Z",
   "excerpt": "Am 8. März 2026 stimmt die Schweiz über das Bundesgesetz zur Einführung der Individualbesteuerung ab. Wird das Gesetz angenommen, müssten in Zukunft alle Personen unabhängig von ihrem Zivilstand eine eigene Steuererklärung einreichen und würden damit individuell besteuert werden. Der Zivilstand würde damit seine steuerliche Relevanz verlieren.",
@@ -852,6 +1067,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -877,6 +1099,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2026-02-10T14:30:00.000Z",
   "excerpt": "Das Forbes Under 30 Meetup am 6. Februar 2026 im Mandarin Oriental Savoy in Zürich war weit mehr als eine Reihe inspirierender Vorträge.",
@@ -901,6 +1129,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -930,6 +1165,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -957,6 +1199,14 @@
    "Anlagen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -984,6 +1234,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1010,6 +1267,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1038,6 +1302,14 @@
    "Versicherungen",
    "KMU"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Versicherungen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Unternehmer"
@@ -1067,6 +1339,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1093,6 +1372,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1120,6 +1406,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Finanzen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1148,6 +1441,13 @@
    "Finanzen",
    "Recht"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1174,6 +1474,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -1203,6 +1510,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -1230,6 +1544,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1257,6 +1579,13 @@
    "Vorsorge",
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Vorsorge",
+   "Versicherungen"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -1284,6 +1613,14 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1310,6 +1647,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-12-02T08:12:44.891Z",
   "excerpt": "Steigende Zinsen, der Wegfall der Credit Suisse und die Einführung von Basel III Anfang 2025 führten im Bereich Renditeimmobilien und Bauprojekte zu einer ausgeprägt vorsichtigen Risikopolitik. Der Hypothekarmarkt hat sich inzwischen stabilisiert. Mehrere strukturelle Faktoren sprechen dafür, dass Bankfinanzierungen im nächsten Jahr wieder breiter zugänglich werden . Lesen Sie mehr dazu im aktuellen Hypotheken-Radar.",
@@ -1337,6 +1681,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1360,6 +1711,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-12-02T05:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -1385,6 +1740,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1415,6 +1778,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1441,6 +1811,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1467,6 +1844,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1494,6 +1878,13 @@
    "Anlagen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1526,6 +1917,14 @@
    "Immobilien",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer",
@@ -1557,6 +1956,13 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -1586,6 +1992,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1612,6 +2025,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1635,6 +2055,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-10-16T08:59:38.113Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -1656,6 +2080,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-10-16T08:59:18.794Z",
   "excerpt": "Junge Talente auf ihrem Weg zu unterstützen ist ein wichtiger Bestandteil unserer Firmenphilosophie. Umso mehr freut es uns, dass wir nun von Swiss Olympic das Label «Leistungssportfreundlicher Lehrbetrieb» bekommen haben. Als Lehrbetrieb ermöglichen wir es jungen Sportlerinnen und Sportler, in der Berufswelt Fuss zu f",
@@ -1677,6 +2105,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-10-16T08:59:10.204Z",
   "excerpt": "Unsere Sportlerfamilie wächst weiter: Wir sind stolz, die talentierte Skicross-Fahrerin Talina Gantenbein im Olympia-Winter als Hauptsponsor unterstützen zu dürfen.",
@@ -1700,6 +2132,10 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -1723,6 +2159,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-10-16T08:58:27.876Z",
   "excerpt": "Der traditionsreiche Fussballclub steht nicht nur für Profifussball, sondern auch für Nachwuchsförderung, Breiten- und Kinderfussball. Eine perfekte Mischung, welche optimal zu uns passt. Wir sind stolz, mit unserer Premium-Partnerschaft den Fussballclub und damit auch die Förderung junger Talente unterstützen zu könne",
@@ -1747,6 +2187,13 @@
    "Immobilien",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1773,6 +2220,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-09-30T00:00:00.000Z",
   "excerpt": "Während SNB und EZB pausieren, leitet die Fed nach einer längeren Pause erneut eine Zinssenkung ein.",
@@ -1800,6 +2253,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1825,6 +2285,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-09-30T00:00:00.000Z",
   "excerpt": "Die SNB hat in ihrer geldpolitischen Lagebeurteilung im September den Leitzins unverändert belassen, und wir erwarten vorerst keine neuen Senkungen. Für private Haushalte bedeutet das: Die Hypothekarzinsen bleiben auf tiefem Niveau und eröffnen attraktive Möglichkeiten für den Wechsel in eine Festhypothek. Dabei geht es oft nicht nur um Zahlen, sondern auch um das Bedürfnis nach finanzieller Sicherheit.",
@@ -1846,6 +2312,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-09-29T00:00:00.000Z",
   "excerpt": "Failed to load chunk ../../../_next/static/chunks/0f5qxl.l.2~vu.js from module 964893",
@@ -1871,6 +2341,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -1895,6 +2373,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-09-29T00:00:00.000Z",
   "excerpt": "Ich bin Head of Client Portal. Mein Aufgabenbereich geht jedoch über die Verantwortung des Kundenportals hinaus und umfasst die Weiterentwicklung unserer digitalen Plattformen. Immer mit dem Ziel, Business und IT langfristig noch enger zu verzahnen und unsere Kundenerlebnisse zukunftsorientiert zu gestalten.",
@@ -1919,6 +2401,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1946,6 +2435,14 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -1973,6 +2470,13 @@
    "Finanzen",
    "Recht"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2000,6 +2504,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2027,6 +2539,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2057,6 +2576,15 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2081,6 +2609,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-08-29T00:00:00.000Z",
   "excerpt": "Ich habe als Marketing Assistant gestartet und beginne im September meine Ausbildung zur Dipl. Event- und Sponsoringplanerin.",
@@ -2106,6 +2638,13 @@
    "Finanzen",
    "Recht"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2132,6 +2671,13 @@
    "Immobilien",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2159,6 +2705,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2185,6 +2738,13 @@
    "Immobilien",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2213,6 +2773,14 @@
    "Finanzen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Immobilien"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2240,6 +2808,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2269,6 +2844,13 @@
    "Finanzen",
    "KMU"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Unternehmer"
@@ -2296,6 +2878,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2324,6 +2913,15 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2348,6 +2946,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-07-29T00:00:00.000Z",
   "excerpt": "Was bedeutet Verantwortung im Jahr 2025 – für Unternehmen, für KundInnen, für Führungskräfte? In der Sonderausgabe «20 CEOs. 20 Opinions.» des Wirtschaftsmagazins OPINOMIC geben zwanzig SpitzenvertreterInnen der Schweizer Wirtschaft Einblicke in ihre Haltung. Mit dabei: unser CEO Gzim Hasani.",
@@ -2373,6 +2975,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -2396,6 +3004,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-07-28T00:00:00.000Z",
   "excerpt": "Was ist deine aktuelle Funktion bei der smzh? Hat sich diese mit der Zeit verändert?",
@@ -2419,6 +3031,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-07-17T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -2443,6 +3061,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2469,6 +3094,13 @@
    "Immobilien",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2498,6 +3130,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2523,6 +3162,10 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2546,6 +3189,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-07-01T00:00:00.000Z",
   "excerpt": "Ich bin aktuell als SEO Specialist tätig. Im Laufe der Zeit hat sich meine Rolle erweitert, und ich bin nun für alles rund um die Website verantwortlich. Zudem bin ich Teil des Digitalisierungsteams.",
@@ -2570,6 +3217,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-07-01T00:00:00.000Z",
   "excerpt": "Zinsmarkt: Mit der jüngsten Leitzinssenkung hat sich die Zinsstrukturkurve nahezu vollständig normalisiert. Im Zuge der geopolitischen Spannungen im Nahen Osten sind die Zinsen zuletzt leicht angestiegen. In den kommenden Wochen dürfte sich die Kurve jedoch wieder etwas nach unten bewegen.",
@@ -2595,6 +3249,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -2621,6 +3281,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2648,6 +3315,14 @@
    "Hypotheken",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2679,6 +3354,14 @@
    "Hypotheken",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2706,6 +3389,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -2732,6 +3421,13 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2758,6 +3454,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -2785,6 +3488,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -2814,6 +3524,12 @@
    "Immobilien",
    "Recht"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -2839,6 +3555,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-12T08:16:44.362Z",
   "excerpt": "Budgetrechner – Financial Hangover – Finanzen im Griff behalten Ein finanzieller «Hangover» ist ein Zustand, in dem man nach einer Phase von übermässigen Ausgaben oder schlechten finanziellen Entscheidungen mit den Folgen kämpft. Es kann zu Stress, finanziellen Engpässen und einem Mangel an klarer Perspektive führen. E",
@@ -2862,6 +3584,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-12T08:16:38.220Z",
   "excerpt": "Wertsachen optimal absichern – Schutz für Ihre wertvollsten BesitztümerOb ererbter Schmuck, luxuriöse Uhren, Kunstwerke, Musikinstrumente oder teure Elektronik – viele Menschen besitzen Gegenstände von hohem materiellem und emotionalem Wert. Doch sind diese wirklich ausreichend geschützt? Die meisten verlassen sich auf",
@@ -2885,6 +3613,12 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-12T07:44:20.152Z",
   "excerpt": "Rechtsformen – Firmengründung in der Schweiz – die richtige Wahl für Ihr Unternehmen Die Wahl der richtigen Rechtsform ist ein wesentlicher Bestandteil bei der Gründung eines Unternehmens in der Schweiz. Sie hat Einfluss auf die Haftung, die Besteuerung, die Finanzierungsmöglichkeiten und die rechtlichen Anforderungen,",
@@ -2908,6 +3642,12 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -2934,6 +3674,12 @@
    "Recht",
    "KMU"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -2960,6 +3706,12 @@
    "Hypotheken",
    "KMU"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Unternehmer"
   ],
@@ -2987,6 +3739,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -3015,6 +3773,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -3042,6 +3806,14 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -3069,6 +3841,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -3094,6 +3872,12 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-02T12:53:15.503Z",
   "excerpt": "Unternehmensnachfolge – Zukunft mit Weitsicht sichernDie Nachfolge eines Unternehmens ist weit mehr als nur ein Verkauf oder eine Übergabe – sie ist ein emotionaler, rechtlicher und finanzieller Prozess, der mit Sorgfalt und Voraussicht geplant werden muss. Wer frühzeitig handelt, sichert nicht nur den Fortbestand sein",
@@ -3118,6 +3902,12 @@
    "Versicherungen",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -3144,6 +3934,12 @@
    "Versicherungen",
    "Recht"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-02T12:28:09.690Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -3167,6 +3963,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-02T12:16:27.635Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -3192,6 +3994,13 @@
    "Anlagen",
    "Steuern"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -3216,6 +4025,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-05-02T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -3239,6 +4052,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-29T09:52:29.358Z",
   "excerpt": "Betriebshaftpflicht – Schutz vor den finanziellen Folgen von SchädenUnfälle und Missgeschicke geschehen oft schneller als erwartet. Gerade für Unternehmen ist es daher entscheidend, sich gegen die finanziellen Risiken abzusichern, die durch Personen-, Sach- oder Vermögensschäden im betrieblichen Alltag entstehen können",
@@ -3263,6 +4082,12 @@
    "Versicherungen",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -3288,6 +4113,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-29T08:55:09.857Z",
   "excerpt": "Akquisitionsfinanzierung: Unternehmenswachstum gezielt realisieren Die Übernahme eines Unternehmens ist ein strategischer Schritt zur Stärkung der Marktposition – zugleich aber auch ein komplexes finanzielles Vorhaben. Eine Akquisitionsfinanzierung ermöglicht es, ein anderes Unternehmen oder einen Teil davon zu erwerbe",
@@ -3312,6 +4143,12 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -3337,6 +4174,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-29T08:49:07.664Z",
   "excerpt": "Liquidität gezielt steuern – Betriebskredite als finanzieller HebelEin stabiler Liquiditätsfluss ist für den Unternehmenserfolg essenziell. Gerade bei grösseren Investitionen, wie dem Einkauf von Rohstoffen für einen Grossauftrag, oder bei saisonalen Schwankungen, die vorübergehend die Einnahmen mindern, kann ein Betri",
@@ -3361,6 +4204,12 @@
    "Recht",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-28T12:01:18.688Z",
   "excerpt": "Güterstand – finanzielle Weichenstellung bei der EheschliessungMit der Heirat beginnt auch ein neuer finanzieller Abschnitt. Der Güterstand bestimmt, wem während der Ehe welches Vermögen gehört und wie es bei Scheidung oder im Todesfall aufgeteilt wird. In der Schweiz unterscheidet man drei Güterstände: Errungenschafts",
@@ -3384,6 +4233,12 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Familien",
    "Pensionierungsplanung"
@@ -3413,6 +4268,15 @@
    "Vorsorge",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Recht",
+   "Steuern",
+   "Vorsorge",
+   "Finanzen"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Familien",
    "Pensionierungsplanung"
@@ -3439,6 +4303,12 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3464,6 +4334,12 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-25T08:35:30.349Z",
   "excerpt": "Vorsorgeauftrag und Patientenverfügung: Selbstbestimmung sichern – Verantwortung übernehmenDie eigene Handlungsfähigkeit ist ein hohes Gut – doch sie ist nicht selbstverständlich. Krankheit, Alter oder eine plötzliche Urteilsunfähigkeit können dazu führen, dass wichtige Entscheidungen nicht mehr selbst getroffen werden",
@@ -3487,6 +4363,12 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-25T06:58:24.619Z",
   "excerpt": "Testament und Nachlassplanung: Rechtzeitig vorsorgen lohnt sichSich mit dem eigenen Tod zu beschäftigen, fällt vielen schwer – und doch ist eine frühzeitige Nachlassplanung entscheidend, um Konflikte unter den Erben zu vermeiden. Wer keine Vorkehrungen trifft, überlässt die Verteilung seines Vermögens der gesetzlichen ",
@@ -3511,6 +4393,12 @@
    "Immobilien",
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3536,6 +4424,12 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3562,6 +4456,12 @@
    "Steuern",
    "Recht"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-24T13:02:29.837Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -3586,6 +4486,13 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3613,6 +4520,13 @@
    "Immobilien",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3638,6 +4552,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-23T08:39:03.247Z",
   "excerpt": "Organhaftpflichtversicherung: Schutz für Führungskräfte und Unternehmen Ob in einem internationalen Grosskonzern oder einem lokalen KMU – ein Fehler in der Unternehmensführung kann weitreichende Konsequenzen nach sich ziehen. Mitglieder der Geschäftsleitung, des Verwaltungsrats und weitere Entscheidungsträger tragen ei",
@@ -3661,6 +4581,12 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3687,6 +4613,13 @@
    "Versicherungen",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Versicherungen",
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -3714,6 +4647,14 @@
    "Anlagen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Anlagen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -3740,6 +4681,12 @@
    "Finanzen",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -3765,6 +4712,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-16T09:03:35.140Z",
   "excerpt": "Für Gründer, Unternehmer und Finanzverantwortliche ist ein gutes Liquiditätsmanagement unerlässlich. Es sorgt dafür, dass jederzeit genügend Barmittel zur Verfügung stehen, um laufende Ausgaben zu decken – unabhängig von der Profitabilität.",
@@ -3789,6 +4742,12 @@
    "Vorsorge",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -3814,6 +4773,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-16T08:36:34.852Z",
   "excerpt": "Mitarbeiterbeteiligung Mitarbeiterbeteiligung: Gemeinsam am Unternehmenserfolg teilhaben",
@@ -3838,6 +4803,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3864,6 +4836,13 @@
    "KMU",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "KMU",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer",
    "Unternehmer"
@@ -3890,6 +4869,10 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3913,6 +4896,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-13T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -3937,6 +4924,13 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -3962,6 +4956,12 @@
   "topics": [
    "Steuern"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-09T08:33:43.241Z",
   "excerpt": "Kapitalanlagen und Steuern: Das sollten Sie wissenKapitalanlagen und Vermögen bieten eine Vielzahl steuerlicher Möglichkeiten. In der Schweiz unterliegen Einkünfte aus Wertschriften – etwa Zinsen, Dividenden und Kapitalgewinnen – der Einkommenssteuer. Doch es gibt auch steuerliche Vorteile, insbesondere durch Abzüge fü",
@@ -3985,6 +4985,12 @@
   "topics": [
    "Steuern"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-09T07:59:48.245Z",
   "excerpt": "Steuererklärung stressfrei erledigen – mit smzh!Alle Jahre wieder steht die Steuererklärung an – und mit ihr die Unsicherheit: Habe ich wirklich alle Abzüge genutzt? Zahle ich vielleicht zu viel?",
@@ -4009,6 +5015,12 @@
    "Steuern",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Steuern"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -4034,6 +5046,12 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-08T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4059,6 +5077,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Immobilien",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -4086,6 +5111,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -4111,6 +5143,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4134,6 +5172,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-04-03T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4158,6 +5200,13 @@
    "Anlagen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -4185,6 +5234,13 @@
    "Finanzen",
    "KMU"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "KMU"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4211,6 +5267,13 @@
    "Anlagen",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -4236,6 +5299,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4265,6 +5334,13 @@
    "Anlagen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -4292,6 +5368,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-03-28T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4313,6 +5396,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-03-26T00:00:00.000Z",
   "excerpt": "Ich arbeite als Salesforce Product Owner bei der smzh. Meine Aufgabe ist es, die Entwicklung und Optimierung unseres Salesforce-Systems zu leiten, um die Effizienz zu steigern. Seit meinem Einstieg haben sich meine Verantwortlichkeiten weiterentwickelt – insbesondere im Bereich der Systemarchitektur, der Integration ex",
@@ -4338,6 +5425,14 @@
    "Steuern",
    "Recht"
   ],
+  "cmsCategories": [
+   "KMU",
+   "Steuern",
+   "Recht"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4365,6 +5460,14 @@
    "Hypotheken",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -4390,6 +5493,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4413,6 +5522,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-03-10T00:00:00.000Z",
   "excerpt": "Finanzberatung mit Weitsicht – Ercan Adiller im GesprächFinanzplanung ist weit mehr als Zahlen und Verträge – es geht um Sicherheit, Weitsicht und die richtigen Entscheidungen für die Zukunft. Ercan Adiller, Finanzberater bei der smzh, gibt seit fast einem Jahrzehnt seinen Kundinnen und Kunden genau diese Sicherheit. M",
@@ -4437,6 +5550,12 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-03-07T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4458,6 +5577,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-03-04T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4483,6 +5606,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Finanzen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -4511,6 +5641,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4537,6 +5673,13 @@
    "KMU",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "KMU",
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung",
    "Unternehmer"
@@ -4563,6 +5706,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -4588,6 +5737,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4613,6 +5768,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4638,6 +5799,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-02-24T00:00:00.000Z",
   "excerpt": "Andreas Krümmel, Branchenexperte und Mitglied des Verwaltungsrats der smzh, gibt spannende Einblicke in die Zukunft der Versicherungsbranche, von KI über Prämienentwicklung bis hin zu flexibler Vorsorgeplanung.",
@@ -4663,6 +5830,12 @@
    "Vorsorge",
    "Recht"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger",
    "Pensionierungsplanung"
@@ -4692,6 +5865,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4717,6 +5896,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4742,6 +5927,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4765,6 +5956,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-02-10T00:00:00.000Z",
   "excerpt": "Kimmy Repond: Von Herausforderungen und grossen ZielenDas Hallenstadion in Zürich pulsierte vor Energie während der Art on Ice Shows – und Kimmy Repond war mittendrin. Mit ihren erst 18 Jahren ist sie bereits siebenfache Schweizermeisterin, holte den dritten Platz an der Europameisterschaft 2023 und den fünften Platz a",
@@ -4786,6 +5981,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-02-07T00:00:00.000Z",
   "excerpt": "Alexia Paganini: Vom Wettkampf-Eis zur Luftakrobatik – eine neue Bühne bei Art on IceDas Hallenstadion in Zürich ist erfüllt von der einzigartigen Atmosphäre von Art on Ice – und mittendrin: Alexia Paganini. Die ehemalige Schweizer Meisterin begeistert das Publikum dieses Jahr nicht nur mit ihren eleganten Läufen auf d",
@@ -4807,6 +6006,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-02-06T00:00:00.000Z",
   "excerpt": "Lukas Britschgi: Vom Europameister-Triumph zum Showstar bei Art on IceEin emotionaler Höhepunkt jagt den nächsten: Nur wenige Tage nach seinem grandiosen Sieg bei der Eiskunstlauf-Europameisterschaft steht Lukas Britschgi erneut im Rampenlicht – diesmal auf der Bühne von Art on Ice. Wir haben ihn bei den Proben im Hall",
@@ -4830,6 +6033,10 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -4855,6 +6062,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-02-03T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4878,6 +6091,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4906,6 +6125,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -4929,6 +6154,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-01-24T00:00:00.000Z",
   "excerpt": "Zürich, 24. Januar 2024 – Mit der Verlängerung der Titel-Partnerschaft von Emmi CAFFÈ LATTE dürfen wir bereits die nächste erfreuliche Nachricht verkünden: smzh wird ab 2025 neuer Hauptsponsor der höchsten Schweizer Beachvolleyball-Tour.",
@@ -4950,6 +6179,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-01-24T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -4973,6 +6206,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -4999,6 +6238,12 @@
    "KMU",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -5022,6 +6267,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-01-14T00:00:00.000Z",
   "excerpt": "Der Fussball erlebt einen tiefgreifenden Wandel durch den Einsatz künstlicher Intelligenz (KI). Traditionell von Intuition und Erfahrung geprägt, setzen Spitzenklubs zunehmend auf datengetriebene Analysen, um taktische Muster zu entschlüsseln und Talente zu entdecken. Diese Technologie ermöglicht es auch kleineren Vere",
@@ -5048,6 +6297,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -5074,6 +6329,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-01-09T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5097,6 +6356,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2025-01-06T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5118,6 +6383,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2025-01-06T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5142,6 +6411,13 @@
    "Anlagen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -5170,6 +6446,12 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -5193,6 +6475,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-12-21T00:00:00.000Z",
   "excerpt": "In unserer Video-Reihe Flash Talk treffen wir spannende UnternehmerInnen und Persönlichkeiten, die ihre einzigartigen Geschichten, Erfahrungen und Visionen mit uns teilen. Diese kurzen, prägnanten Gespräche bieten wertvolle Einblicke in die Welt von Leadership, Unternehmertum und persönlichen Erfolgsstrategien – alles kompakt und auf den Punkt gebracht.",
@@ -5216,6 +6502,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -5241,6 +6531,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -5264,6 +6560,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-12-16T00:00:00.000Z",
   "excerpt": "Werner Schlegel, der talentierte Schwinger aus Hemberg im Toggenburg, begeistert nicht nur durch seine beeindruckende Technik und Energie, sondern auch durch seine Werte, die er sowohl im Sport als auch im Alltag lebt. Als leidenschaftlicher Botschafter der Schweizer Tradition ist er tief mit seiner Heimat verbunden und bleibt trotz sportlicher Erfolge immer der bodenständige Junge aus dem idyllischen Toggenburg.",
@@ -5289,6 +6589,14 @@
    "Hypotheken",
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken",
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -5314,6 +6622,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -5337,6 +6651,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-12-11T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5360,6 +6678,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-12-09T00:00:00.000Z",
   "excerpt": "Komplexität, sich wandelnde Kundenbedürfnisse und der Wunsch nach einem harmonischen Zusammenspiel verschiedener Vermögensbereiche. Doch wie lässt sich dieser Anspruch in der Praxis umsetzen? Diese Fragen wurden im letzten Artikel (bitte auf Blog 1 verlinken) behandelt. Im folgenden Interview mit unserem CEO, Gzim Hasani, geht er auf die Herausforderungen moderner Vermögensverwaltung ein und stellt die ganzheitliche Lösung der smzh vor.",
@@ -5383,6 +6707,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-12-09T00:00:00.000Z",
   "excerpt": "Experten sind sich einig: Ein ganzheitlicher Ansatz wird in der Vermögensverwaltung immer wichtiger, um den steigenden Anforderungen und komplexeren Bedürfnissen der Kunden gerecht zu werden. Dieses Thema wurde in einem redaktionellen Beitrag der «Future of Finance»-Beilage des Tagesanzeigers aufgegriffen.",
@@ -5407,6 +6737,13 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -5433,6 +6770,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-12-06T00:00:00.000Z",
   "excerpt": "Seit der letzten geldpolitischen Entscheidung der SNB, den Leitzins von 1.25% auf 1.00% zu senken, hat sich die Zinskurve der Swap-Sätze deutlich nach unten verschoben (Abb. 1). Zinssätze für Laufzeiten von 1 bis 10 Jahren liegen unter 0.30%, mit besonders niedrigen Werten von 0.10% bis 0.15% für 2- bis 5-jährige Laufzeiten. Diese Entwicklung signalisiert die wachsende Markterwartung einer Rückkehr zu Negativzinsen – ein Szenario, das der neue SNB-Präsident Martin Schlegel bereits angedeutet hat.",
@@ -5454,6 +6798,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-12-04T00:00:00.000Z",
   "excerpt": "Rolf Fongué, ehemaliger Leichtathlet und dreifacher Schweizer Meister im 100-Meter-Sprint, hat sich nach seiner Sportkarriere eine neue Bühne geschaffen: den Fussball. Mit seiner Firma Fongué Performance unterstützt er Fussballspieler dabei, schneller und robuster zu werden – ein entscheidender Vorteil im modernen Fussball, der immer dynamischer wird.",
@@ -5477,6 +6825,10 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -5504,6 +6856,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-11-28T00:00:00.000Z",
   "excerpt": "Zinsmarkt: Die Zinsswap-Kurve liegt im mittleren und längeren Segment tiefer als im Vormonat. Der Markt preist weiterhin mindestens zwei Zinsschritte im Dezember und März ein und stellt einen möglichen dritten Schritt im Juni in Aussicht.",
@@ -5529,6 +6887,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-25T00:00:00.000Z",
   "excerpt": "Weev ist eine cloudbasierte SaaS-Plattform für den digitalen Fertigungsprozess in der Schuh- und Bekleidungsindustrie. Die Plattform bietet eine vereinfachte und ganzheitliche Lösung, die die Art und Weise optimiert, wie Produktentwickler, Designer, Einkäufer und Produzenten ihre Konzepte zur Realität bringen. Weev deckt die gesamte Wertschöpfungskette ab und zeigt messbare Ergebnisse in Zeit- und Kosteneinsparungen und führt zu erheblichen Verbesserungen in der Qualität der Zusammenarbeit über die gesamte Wertschöpfungskette hinweg. Transparenz, Nachhaltigkeit, Kreislaufwirtschaft, Markteinführungszeit und Branchenexpertise machen Weev einzigartig.",
@@ -5550,6 +6914,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-20T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5573,6 +6941,10 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -5601,6 +6973,13 @@
    "Immobilien",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Vorsorge"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer",
    "Pensionierungsplanung"
@@ -5627,6 +7006,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -5650,6 +7033,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-15T00:00:00.000Z",
   "excerpt": "Prof. Dr. Florim Cuculi: Chefarzt für Kardiologie und Unternehmer mit HerzProf. Dr. Florim Cuculi ist Chefarzt für Kardiologie am Luzerner Kantonsspital sowie Geschäftsführer des Cardio Center Luzern. Seine Arbeit verbindet medizinische Präzision mit unternehmerischem Weitblick. Im Gespräch teilt er Einblicke in seinen",
@@ -5671,6 +7058,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-14T00:00:00.000Z",
   "excerpt": "Künstliche Intelligenz / Artificial Intelligence (AI) ist zunehmend unverzichtbar für Geschäftsabläufe geworden, wobei sie bei der Auswertung komplexer Daten, der Optimierung von Prozessen und der Problemlösung unterstützt. Dennoch kann sie den menschlichen Faktor im Denken und im erfolgreichen Kundenbeziehungsmanageme",
@@ -5692,6 +7083,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-13T00:00:00.000Z",
   "excerpt": "Im Rahmen der Partnerschaft mit Binelli Group war die smzh ag im April zu Gast im Showroom in Adliswil. Dank der Partnerschaft profitieren die Mitarbeitenden von Binelli Group von kostenlosen Finanzberatungen für jede Lebenslage. Sei es für die jungen Mitarbeitenden, die sich erstmalig um ihre kümmern, die Middle-Ager, die sich für ein Eigenheim interessieren oder wertvolle langjährige Mitarbeitende, die sich erste Gedanken über das Leben nach der Pensionierung machen.",
@@ -5713,6 +7108,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-12T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -5736,6 +7135,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-12T00:00:00.000Z",
   "excerpt": "⁠Andreas Krümmel⁠ is the former CEO at Generali Switzerland and a current board member at ⁠SMZH⁠, an independent partner in all matters related to finance, insurance, real estate, tax and law, for both private and corporate clients. He holds an MBA from HSG and spent 20 years working in insurance, for companies like Winterthur Group, AXA and Generali. During his chat with Silvan, Andreas discussed his key leadership principles (which boil down to simplifying things to the maximum, and listening before deciding), reminisced over Switzerland’s slow digitization process from the 80s until now, and reflected on the role insurtech startups are playing in today’s landscape.",
@@ -5757,6 +7162,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-11T00:00:00.000Z",
   "excerpt": "Anja Graf: Unternehmerin mit Weitsicht und LeidenschaftAnja Graf, CEO, Gründerin und Chairwoman von Visionapartments, hat in den letzten zwei Jahrzehnten beeindruckende Erfolge erzielt. Als Pionierin im Bereich Serviced Apartments hat sie früh erkannt, wie wichtig es ist, Wohnraum flexibel, hochwertig und serviceorient",
@@ -5778,6 +7187,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-11T00:00:00.000Z",
   "excerpt": "Seinen Schützlingen, den Pferden des Circus Knie, gehört seine volle Aufmerksamkeit. Ivan Knie arbeitet mit viel Einfühlungsvermögen mit ihnen. Es ist der Grundstein dafür, dass seine Darbietungen in der Manege so leicht wirken. Daneben ist Ivan Knie auch für den Auf- und Abbau der Stallungen sowie den Transport der Pf",
@@ -5802,6 +7215,12 @@
    "Immobilien",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -5828,6 +7247,12 @@
    "Anlagen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Anleger"
   ],
@@ -5853,6 +7278,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-11-04T00:00:00.000Z",
   "excerpt": "⁠Gzim Hasani⁠ is the CEO of and a partner at ⁠smzh⁠, an independent financial advisory company headquartered in Zurich, Switzerland. He holds a MSc in Banking and Finance and started his career working for Credit Suisse and Julius Baer, before venturing into entrepreneurship. In 2018, Hasani left the bank and founded Impegno & Partners, before then taking over smzh in 2019. smzh’s goal is to join all types of financial advisory in one, thereby truly putting the customer in the driving seat, by allowing him or her to make holistic decisions. They offer advice in the areas of finance and investments, pensions, mortgages, insurance, real estate, and tax and law. smzh’s vision is to offer the best possible advice to all clients.",
@@ -5877,6 +7308,12 @@
    "Anlagen",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Anleger",
    "Eigenheimkäufer"
@@ -5903,6 +7340,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -5929,6 +7372,13 @@
    "KMU",
    "Finanzen"
   ],
+  "cmsCategories": [
+   "KMU",
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Unternehmer"
   ],
@@ -5955,6 +7405,13 @@
    "Finanzen",
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Finanzen",
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-10-30T00:00:00.000Z",
   "excerpt": "Die Zinsswap-Kurve reagierte auf die neuesten Inflationsdaten mit einem Rückgang, vor allem im mittleren Laufzeitbereich. Der zweijährige Swapsatz liegen derzeit bei etwa 0.35%, während der zehnjährige Swapsatz rund 0.57% erreicht. Der Abwärtstrend bei den Marktzinsen setzt sich zwar fort, konzentriert sich jedoch hauptsächlich auf das mittlere Segment.",
@@ -5976,6 +7433,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-29T00:00:00.000Z",
   "excerpt": "Carla Vilela Gonzaga Hänny: Nachhaltigkeit als Markenzeichen mit NikinCarla Vilela Gonzaga Hänny, Mitinhaberin und Verwaltungsrätin von Nikin, hat sich mit dem Schweizer Modelabel einen Namen gemacht, das Nachhaltigkeit und soziale Verantwortung in den Mittelpunkt stellt. Bei jedem verkauften Produkt pflanzt Nikin eine",
@@ -5997,6 +7458,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-23T00:00:00.000Z",
   "excerpt": "Vor etwas mehr als einem Jahr habe ich als Privat- und Firmenkundenberaterin bei der smzh gestartet. Seit Juli 2024 bin ich nun als Account Managerin Partnership & Events tätig.",
@@ -6018,6 +7483,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-23T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6039,6 +7508,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-22T00:00:00.000Z",
   "excerpt": "Dorothy Khadem-Missagh: Visionen für Musik, Führung und GesellschaftDorothy Khadem-Missagh, Pianistin, Dirigentin und Gründerin des Beethoven Frühlingsfestivals, begeistert mit ihrem Engagement für die klassische Musik und ihre Vision einer gleichberechtigten Zukunft. Als erfahrene Künstlerin und inspirierende Persönli",
@@ -6060,6 +7533,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-22T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6081,6 +7558,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-14T00:00:00.000Z",
   "excerpt": "Mirjam Staub-Bisang: Nachhaltigkeit, Führung und die Zukunft der FinanzweltVom CEO zur VR-PräsidentinMirjam Staub-Bisang, ehemalige CEO von BlackRock Schweiz und neu zur Verwaltungsratspräsidentin gewählt, teilt spannende Einblicke in ihre Karriere und Leidenschaft für nachhaltige Investments. Beim Forbes Women’s Summi",
@@ -6102,6 +7583,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-09T00:00:00.000Z",
   "excerpt": "Der Forbes Women's Summit 2024 bot einen Tag voller Inspiration, Networking und vielfältiger Perspektiven. Über 300 Gäste kamen im Park Hyatt Zürich zusammen, um unter dem Motto «Diversity & Profits» von einer Reihe beeindruckender Rednerinnen und Redner zu lernen und sich auszutauschen.",
@@ -6123,6 +7608,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-10-03T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6146,6 +7635,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-09-27T00:00:00.000Z",
   "excerpt": "In ihrer aktuellen geldpolitischen Lagebeurteilung hat die SNB den Leitzins um 0.25% auf 1.00% gesenkt. Trotz dieser Massnahme bleibt die Zinskurve invers, da der zweijährige Swap-Satz mittlerweile auf 0.45% und der zehnjährige auf 0.62% gefallen sind. Der Abwärtstrend bei den Marktzinsen, der bereits in den Wochen vor",
@@ -6171,6 +7666,12 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [
+   "Anlagen"
+  ],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -6194,6 +7695,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-25T00:00:00.000Z",
   "excerpt": "Meine derzeitige Rolle ist im Bereich «Young Talents & People Operations» innerhalb der Abteilung «People, Culture & Recruiting». Ursprünglich habe ich jedoch im Bereich «Account Management & Advisory Support» angefangen.",
@@ -6217,6 +7722,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-09-23T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6240,6 +7751,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-23T00:00:00.000Z",
   "excerpt": "⁠Aurelia Frick⁠ is an advisory and board member and the former Foreign Minister of Liechtenstein. She’s got a PhD in Law, but her journey took some unexpected turns. After working in a big law firm in Zurich, she quickly realized that the life of a lawyer wasn’t for her. She felt isolated and bored, missing the chance to interact with people and make a real difference. So she leaped into politics, where she could actually see the impact of her work. She spent 10 years in the government, tackling everything from foreign affairs to culture, and learned a lot about navigating complex environments. Now, she’s on the executive board at SMZH, a company helping people with finance, insurance, real estate, and more. She’s passionate about supporting startups, pushing for better education, and finding new ways to solve old problems. For Aurelia, it’s all about doing what matters and making a real impact, whether it’s in the boardroom or the classroom.",
@@ -6261,6 +7778,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-19T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6282,6 +7803,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-18T00:00:00.000Z",
   "excerpt": "Das Arosa ClassicCar 2024 verwandelte die malerische Alpenkulisse erneut in einen Hotspot für Liebhaber klassischer Rennwagen. Auf der legendären Bergrennstrecke präsentierten sich meisterhaft restaurierte Automobile, die mit kraftvollen Motoren und zeitloser Eleganz für Gänsehautmomente sorgten. Ein Wochenende voller ",
@@ -6303,6 +7828,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-16T00:00:00.000Z",
   "excerpt": "Am 11. September feierten wir die Eröffnung unseres neuen Standorts in Chur. Mit dieser Expansion stärken wir unsere regionale Präsenz in Graubünden und bieten unsere umfassenden Finanzdienstleistungen nun auch in der Hauptstadt des Kantons an. Nach der erfolgreichen Etablierung in Arosa war Chur der nächste logische S",
@@ -6324,6 +7853,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-16T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6345,6 +7878,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-09-04T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6368,6 +7905,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-09-02T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6389,6 +7932,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-31T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6410,6 +7957,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-31T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6433,6 +7984,10 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -6456,6 +8011,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-30T00:00:00.000Z",
   "excerpt": "Sarah Schlagenhauf: Blockchain und Technologie revolutionieren Luxus und KunstSarah Schlagenhauf, CEO und Gründerin von Vivents, erklärte beim FACES x Forbes Luxury Summit, wie Blockchain-Technologie neue Möglichkeiten für die Luxus- und Kunstbranche eröffnet.",
@@ -6479,6 +8038,12 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -6502,6 +8067,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-29T00:00:00.000Z",
   "excerpt": "Noah Veraguth: Erfolg, Wandel und die Zukunft von PegasusIm Rahmen des Auftritts der Schweizer Band Pegasus im Zirkus Knie sprach Frontmann Noah Veraguth über die Herausforderungen, Erfolge und Entwicklungen der Band, die seit fast zwei Jahrzehnten ein fester Bestandteil der Schweizer Musikszene ist.",
@@ -6523,6 +8092,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-28T00:00:00.000Z",
   "excerpt": "Ich bin Junior Advisor bei der smzh und habe mich auf Hypotheken und Finanzierungen spezialisiert. Über die Zeit hinweg hat sich meine Rolle kontinuierlich weiterentwickelt, da ich beständig neues Wissen gesammelt habe. Dies ermöglichte es mir, schrittweise mehr Verantwortung zu übernehmen, was ich sehr schätze. Mein A",
@@ -6546,6 +8119,12 @@
   "topics": [
    "Versicherungen"
   ],
+  "cmsCategories": [
+   "Versicherungen"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-23T00:00:00.000Z",
   "excerpt": "⁠Andreas Krümmel⁠ is the former CEO at Generali Switzerland and a current board member at ⁠SMZH⁠, an independent partner in all matters related to finance, insurance, real estate, tax and law, for both private and corporate clients. He holds an MBA from HSG and spent 20 years working in insurance, for companies like Wi",
@@ -6567,6 +8146,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-22T00:00:00.000Z",
   "excerpt": "Peter Nitz: Handwerkskunst für die moderne LuxusweltPeter Nitz, Gründer seiner gleichnamigen Luxusmarke für Lederwaren in Zürich, gab beim FACES x Forbes Luxury Summit Einblicke in seine Philosophie rund um Handwerkskunst, Nachhaltigkeit und die Trends in der Luxusindustrie.",
@@ -6590,6 +8173,10 @@
   "topics": [
    "KMU"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Unternehmer"
   ],
@@ -6613,6 +8200,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-09T00:00:00.000Z",
   "excerpt": "Jana M. Arden: Insights in die Welt des LuxusBeim FACES x Forbes Luxury Summit im Dolder teilte Jana M. Arden, Beraterin bei Capgemini, ihre Erfahrungen und Perspektiven zur Luxusindustrie. Mit einem Fokus auf Digitalisierung und Kundenbindung begleitet sie führende Marken in Bereichen wie Mode, Uhren, Schmuck und Kosm",
@@ -6634,6 +8225,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-05T00:00:00.000Z",
   "excerpt": "Wenn ich morgens ins Büro komme, überprüfe ich zunächst meine E-Mails, um dringende Anfragen, Termine und Meetings zu erfassen. Anschliessend widme ich mich der Planung und Koordination laufender Marketingkampagnen, Kommunikationsmassnahmen und Events. Dies umfasst häufig die Abstimmung mit verschiedenen Stakeholdern, ",
@@ -6657,6 +8252,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-08-05T00:00:00.000Z",
   "excerpt": "Seit dem geldpolitischen Entscheid der SNB ist eine Verschiebung der Zinsswap-Kurve nach unten zu beobachten. Die jüngsten Turbulenzen an den globalen Märkten, ausgelöst durch besorgniserregende US-Wirtschaftsdaten und die Anhebung des Leitzinses durch die japanische Notenbank, haben zu einem weiteren Rückgang der Zins",
@@ -6678,6 +8279,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-08-05T00:00:00.000Z",
   "excerpt": "Unser CEO und Managing Partner Gzim Hasani wurde von CEO Monthly als einflussreichster CEO 2024 in der Schweiz im Bereich Versicherungs- und Hypothekenlösungen ausgezeichnet.",
@@ -6699,6 +8304,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-07-25T00:00:00.000Z",
   "excerpt": "Remo Forrer: Der musikalische Aufstieg eines jungen TalentsRemo Forrer, Gewinner von The Voice of Switzerland 2020, ESC-Finalist 2023 mit seinem Hit «Watergun» und Energy Music Award-Gewinner, gab im Gespräch spannende Einblicke in seine musikalische Reise, seine Inspirationen und Pläne.",
@@ -6720,6 +8329,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-07-17T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6741,6 +8354,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-07-10T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6764,6 +8381,10 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -6787,6 +8408,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-07-01T00:00:00.000Z",
   "excerpt": "Steve Varsano: Revolution im Jet-Geschäft und der Einfluss von MarkenSteve Varsano, Gründer von The Jet Business, spricht über seine bahnbrechenden Ansätze im Verkauf von Privatjets, seine Erfahrungen mit Social Media und die Bedeutung von Marken in der Luxusindustrie. Mit einem innovativen Showroom in London hat er da",
@@ -6811,6 +8436,12 @@
    "Recht",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Recht"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -6836,6 +8467,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-06-25T00:00:00.000Z",
   "excerpt": "Der Entscheid der SNB, den Leitzins erneut um 0.25% zu senken, führte zu einer Verschiebung der Zinskurve nach unten. Swapsätze mit mittleren Laufzeiten von zwei bis fünf Jahren liegen nun leicht unter 1.00%, während die längerfristigen Zinsen geringfügig über 1.00% notieren.",
@@ -6861,6 +8498,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-06-25T00:00:00.000Z",
   "excerpt": "Ein typischer Arbeitstag im Bereich Key Clients & Corporates ist sehr dynamisch und geprägt von vielfältigen Aufgaben und intensiver Kundenbetreuung. Ein typischer Arbeitstag im Bereich Key Clients beginnt früh am Morgen mit dem Überprüfen von E-Mails und Nachrichten, um sicherzustellen, dass keine dringenden Anfragen ",
@@ -6886,6 +8529,13 @@
    "KMU",
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Versicherungen",
+   "KMU"
+  ],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung",
    "Unternehmer"
@@ -6910,6 +8560,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-06-13T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6931,6 +8585,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-28T00:00:00.000Z",
   "excerpt": "Die smzh freut sich, die erfolgreiche Eröffnung ihres neuen Standorts an der Bahnhofstrasse 55 in Frauenfeld bekannt zu geben. Die Veranstaltung in auserwähltem Rahmen fand letzte Woche statt. Unter den Gästen waren auch das Schwingtalent Werner Schlegel und der ehemalige Fussballer Pascal Thüler.",
@@ -6954,6 +8612,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-05-27T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6975,6 +8639,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-27T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -6996,6 +8664,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-24T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7019,6 +8691,10 @@
   "topics": [
    "Anlagen"
   ],
+  "cmsCategories": [],
+  "rubric": "kapitalmaerkte",
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Anleger"
   ],
@@ -7042,6 +8718,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-16T00:00:00.000Z",
   "excerpt": "Ich begann als Junior-Kundenberater bei der smzh und werde ab dem 1. Juni zum Kundenberater befördert.",
@@ -7063,6 +8743,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-13T00:00:00.000Z",
   "excerpt": "Klaus Fiala: Gastgeber des Forbes Money Summit über Kapitalismus und PurposeBeim ersten Forbes Money Summit in Zürich gab Klaus Fiala, Gastgeber und Veranstalter, spannende Einblicke in die Vision und Ziele des Events. Der Fokus des Summits lag auf dem Spannungsfeld zwischen Kapitalismus, Profit und Purpose.",
@@ -7086,6 +8770,10 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-13T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7107,6 +8795,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-08T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7128,6 +8820,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-08T00:00:00.000Z",
   "excerpt": "Stefan Berger: Eine neue Ära mit Forbes in der SchweizStefan Berger, CEO der Faces Media Group, teilt beim Forbes Money Summit 2024 in Zürich Einblicke in die Bedeutung des ersten Forbes Money Summits in der Schweiz und die strategische Partnerschaft zwischen Faces und Forbes.",
@@ -7149,6 +8845,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-03T00:00:00.000Z",
   "excerpt": "Kilian Fjellbakk Chiao: Zeit sinnvoll nutzen – Wie Zario das digitale Leben verändertKilian Fjellbakk Chiao, Co-Founder der App Zario, teilt seine Vision, wie Menschen durch die Reduktion ihrer Bildschirmzeit nicht nur produktiver, sondern auch erfüllter werden können.",
@@ -7170,6 +8870,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-03T00:00:00.000Z",
   "excerpt": "Madina Katter: Soziale Unternehmerin mit grossem HerzenBeim Forbes Money Summit teilte Madina Katter, eine soziale Unternehmerin, ihre inspirierende Reise und ihren Einsatz für nachhaltige soziale Projekte, insbesondere in der Ukraine.",
@@ -7191,6 +8895,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-05-03T00:00:00.000Z",
   "excerpt": "Noëlle Demole: Mit Leidenschaft und Vision die Welt verändernNoëlle Demole beeindruckt als Compliance Officer und Gründerin einer NGO in Indien, Shere Khan Youth Protection. Beim Forbes Money Summit spricht sie über ihre Arbeit, ihre Motivation und wie sie es schafft, mehrere Projekte parallel zu managen.",
@@ -7214,6 +8922,10 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-04-30T00:00:00.000Z",
   "excerpt": "Brigitte Oertli: Vom Spitzensport zur Powerfrau – eine inspirierende ReiseDie Karriere nach der KarriereBrigitte Oertli, zweifache Olympiasiegerin und ehemalige Skifahrerin, sprach im Flash Talk über ihre Zeit im Spitzensport und den Übergang ins Berufsleben. Nach ihrem Rücktritt mit 28 Jahren begann sie, sich beruflic",
@@ -7235,6 +8947,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [
    "Familien"
   ],
@@ -7258,6 +8974,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-04-27T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7281,6 +9001,12 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [
+   "Hypotheken"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-04-26T00:00:00.000Z",
   "excerpt": "Die Marktzinsen haben sich gegenüber dem Vormonat kaum verändert oder sind sogar leicht angestiegen. Dabei ist der Zinssatz für eine zweijährige Laufzeit aktuell am attraktivsten.",
@@ -7304,6 +9030,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-04-11T00:00:00.000Z",
   "excerpt": "Ausdauer, Leidenschaft und Perspektive: Ein Gespräch mit Eiskunstläufer Lukas BritschgiIm aktuellen Flash Talk gewährt Lukas Britschgi, mehrfacher Schweizer Meister im Eiskunstlauf und international erfolgreicher Athlet, persönliche Einblicke in seine sportliche Laufbahn, seine Motivation und seinen Umgang mit finanzie",
@@ -7325,6 +9055,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-03-27T00:00:00.000Z",
   "excerpt": "Ich arbeite aktuell bei der smzh als Kundenberater. Die Position ist grundsätzlich noch dieselbe, jedoch bemühe ich mich Schritt für Schritt, mehr Verantwortung zu übernehmen, damit die neuen Kollegen bereits von meinen Erfahrungen profitieren können.",
@@ -7346,6 +9080,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-03-26T00:00:00.000Z",
   "excerpt": "Wir sind überwältigt von den herausragenden Leistungen von Kimmy Repond und Lukas Britschgi bei der diesjährigen Eiskunstlauf-Weltmeisterschaft in Montreal. Beide verkörpern nicht nur unsere Werte in ihrer Leistungsbereitschaft und Motivation, sondern setzen auch neue Massstäbe für den Schweizer Eiskunstlauf.",
@@ -7369,6 +9107,10 @@
   "topics": [
    "Hypotheken"
   ],
+  "cmsCategories": [],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2024-03-22T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7392,6 +9134,12 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [
+   "Vorsorge"
+  ],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7415,6 +9163,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-02-29T00:00:00.000Z",
   "excerpt": "Die smzh ag unterstreicht mit diesen Schritten ihr klares Bekenntnis zum kontinuierlichen Wachstum, zur Weiterentwicklung ihrer Expertise und zur Anpassung ihres Angebots an die Bedürfnisse ihrer Kundschaft. «Ich bin überzeugt, dass wir mit unserem starken Team die Positionierung der smzh ag weiter voranbringen und ein",
@@ -7436,6 +9188,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-02-28T00:00:00.000Z",
   "excerpt": "Die Neubau Portal AG, das Portal für neues Wohnen in der Schweiz und die smzh ag geben ihre strategische Partnerschaft bekannt. Diese Zusammenarbeit markiert einen bedeutenden Schritt in der Stärkung beider Unternehmen sowie in der Förderung zukunftsweisender Finanzierungslösungen auf dem Schweizer Immobilien-Markt. Du",
@@ -7457,6 +9213,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-02-14T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7478,6 +9238,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-31T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7499,6 +9263,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-31T00:00:00.000Z",
   "excerpt": "Am 17. Januar erlebten wir im FIFA Museum einen unvergesslichen Abend, der den Auftakt zum IceSnowFootball - Arosa markierte. Der Abend war geprägt von Unterhaltung, spannenden Gesprächen und inspirierenden Begegnungen mit Fussball-Legenden, Freunden, Kunden und Partnern. Wir bedanken uns beim FIFA Museum für die tolle",
@@ -7522,6 +9290,10 @@
   "topics": [
    "Immobilien"
   ],
+  "cmsCategories": [],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -7545,6 +9317,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-31T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7566,6 +9342,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-30T00:00:00.000Z",
   "excerpt": "Im Rahmen des «Pre-Event IceSnowFootball - Arosa» im FIFA Museum hatten wir das Privileg, die legendären Fussballzwillinge Frank und Ronald De Boer aus Holland sowie Senad Lulic und Alex Frei in unseren Büroräumlichkeiten begrüssen zu dürfen.",
@@ -7587,6 +9367,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-29T00:00:00.000Z",
   "excerpt": "Die besser als erwartete makroökonomische Entwicklung ermöglichte im vergangenen Jahr eine Stabilisierung an den Finanzmärkten mit einer unterwartet positiven Entwicklung an den Börsen zum Jahresende.",
@@ -7608,6 +9392,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2024-01-25T00:00:00.000Z",
   "excerpt": "Aktuell bin ich Regionalleiter bei der smzh und führe zwei Teams; ein Team in Zürich und das andere in Aarau. Die Funktion hat sich laufend verändert, ich habe als Junior-Kundenberater angefangen und habe mich Jahr für Jahr weiterentwickelt.",
@@ -7629,6 +9417,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-12-20T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7650,6 +9442,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-12-20T00:00:00.000Z",
   "excerpt": "Durch die Organisation der ZSC Lions und durch meine Mitspieler, die schon etwas älter waren/sind.",
@@ -7671,6 +9467,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-12-14T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7692,6 +9492,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-11-26T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7713,6 +9517,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-11-24T00:00:00.000Z",
   "excerpt": "Meine aktuelle Funktion bei der smzh ist Kundenberater für Privat- und Firmenkunden. Im Laufe der Zeit konnte ich kontinuierlich meine Fähigkeiten weiterentwickeln und habe zum Ziel in naher Zukunft eine Führungsposition zu übernehmen.",
@@ -7734,6 +9542,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-11-24T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7755,6 +9567,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-11-17T00:00:00.000Z",
   "excerpt": "Durch das erfolgreiche und stetige Wachstum gilt es die langfristige Ausrichtung und Organisation weiter zu stärken, um die Erfolgsgeschichte weiterzuführen. Deshalb etabliert die smzh ein Advisory Board, welches sowohl die Geschäftsleitung als auch den Verwaltungsrat in den Themen Finanz- und Digitalisierungsstrategie",
@@ -7776,6 +9592,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-31T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -7797,6 +9617,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-31T00:00:00.000Z",
   "excerpt": "Kimmy Repond steht bereits auf dem Eis, seit sie vier Jahre alt ist. Die Faszination fürs Eiskunstlaufen kommt bei der 17-jährigen Baslerin nicht von ungefähr: schon ihre beiden älteren Schwestern waren Eiskunstläuferinnen.",
@@ -7818,6 +9642,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-03T00:00:00.000Z",
   "excerpt": "Die moderne Filiale im Altbau-Stil wurde am Vortag mit mehr als 130 Partnern und geladenen Gästen vorgestellt. Dieser Meilenstein bedeutet für die smzh ag eine wichtige Verankerung in der Region Bern, und unterstreicht den erfolgreichen Wachstumskurs der letzten Jahre deutlich.",
@@ -7841,6 +9669,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7866,6 +9698,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7891,6 +9727,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7916,6 +9756,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7941,6 +9785,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7966,6 +9814,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -7991,6 +9843,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": false,
   "audience": [
    "Pensionierungsplanung"
   ],
@@ -8014,6 +9870,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8038,6 +9898,13 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -8064,6 +9931,13 @@
    "Hypotheken",
    "Immobilien"
   ],
+  "cmsCategories": [
+   "Hypotheken",
+   "Immobilien"
+  ],
+  "rubric": "immobilien",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Eigenheimkäufer"
   ],
@@ -8089,6 +9963,12 @@
   "topics": [
    "Finanzen"
   ],
+  "cmsCategories": [
+   "Finanzen"
+  ],
+  "rubric": "steuern",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Die Fachleute von smzh ag haben darum für alle Lebensphasen die passenden Finanzlösungen. Dank ihrem 360° Check-up können massgeschneiderte Lösungen entwickelt werden, die nicht nur dafür sorgen, im Alter abgesichert zu sein, sondern auch auf die Erreichung persönlicher Wünsche und Ziele ausgerichtet sind.",
@@ -8112,6 +9992,10 @@
   "topics": [
    "Recht"
   ],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Die Ehe ist eine Entscheidung fürs Leben und mit dieser Entscheidung fallen auch rechtliche Themen an, zu welchen sich jedes Paar Gedanken machen muss. Dabei gibt es Themen, welche bereits vor der Hochzeit bearbeitet werden müssen und andere, welche auch zu einem späteren Zeitpunkt angeschaut werden können.",
@@ -8133,6 +10017,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8154,6 +10042,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Mit Andreas Krümmel gewinnt das stark wachsende Unternehmen einen Verwaltungsrat mit langjähriger und ausgewiesener Erfahrung in der Finanzindustrie. Der ehemalige CEO der Generali Schweiz sowie aktuelle Verwaltungsratspräsident der Sympany verstärkt per 1. Oktober 2023 den Finanzdienstleister als Verwaltungsrat und un",
@@ -8175,6 +10067,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8196,6 +10092,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Was für grossartige zwei Tage: Herzlichen Dank an alle Organisatoren und die Veranstalter des Arosa IceSnowFootball.",
@@ -8217,6 +10117,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8238,6 +10142,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Erfahren Sie mehr über die Eiskunstläuferin Alexia Paganini, die neue Botschafterin der smzh ist, und lernen Sie unseren Lernenden Syiar Tastan besser kennen.",
@@ -8259,6 +10167,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8280,6 +10192,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "168 Athletinnen und Athleten vertreten die Schweiz an den Olympischen Spielen in Peking. Umso mehr freut es uns, dass Talina Gantenbein dazugehört. Die talentierte Skicross-Fahrerin hat es mehr als verdient und zeigt damit einmal mehr, dass sich Disziplin, voller Einsatz und grosse Leidenschaft auszahlen. Wir sind extr",
@@ -8301,6 +10217,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Die von Roman Schuler (VRP) und Gzim Hasani (CEO) geführte sowie gehaltene smzh ag erweitert das Partnergremium. Als neue Partner haben sich Alfred W. Moeckli (VR), Pascal Jenny (VR) und Peter Siber (COO) ebenfalls am Unternehmen beteiligt.",
@@ -8322,6 +10242,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8343,6 +10267,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.",
@@ -8364,6 +10292,10 @@
   "series": null,
   "cadence": "adhoc",
   "topics": [],
+  "cmsCategories": [],
+  "rubric": null,
+  "hubEligible": false,
+  "leadEligible": false,
   "audience": [],
   "date": "2023-10-01T00:00:00.000Z",
   "excerpt": "Als ehemaliger CEO der Swissquote Bank, der Bank Zweiplus und der VP Bank Gruppe gewinnt die smzh ag mit Alfred W. Moeckli einen Verwaltungsrat mit ausgewiesener internationaler Erfahrung in der Finanzbranche. Alfred W. Moeckli wird nebst dem Verwaltungsratsmandat die smzh ag im Bereich Business Development als Strateg",
@@ -8387,6 +10319,10 @@
   "topics": [
    "Vorsorge"
   ],
+  "cmsCategories": [],
+  "rubric": "vorsorge",
+  "hubEligible": true,
+  "leadEligible": true,
   "audience": [
    "Pensionierungsplanung"
   ],
