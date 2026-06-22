@@ -29,6 +29,8 @@
 /de/artikel/Deutschlands-Schuldenbremse-Lockerung-Folgen-fuer-Finanz-und-Hypomaerkte/
 /de/artikel/US-Zollhammer-trifft-Schweiz/
 /de/artikel/abstimmung-individualbesteuerung/
+/de/artikel/abstimmung-keine-10-millionen-schweiz/
+/de/artikel/ahv-2030-pensionierung-planungsfrage/
 /de/artikel/aktienmaerkte-mut-vorsicht/
 /de/artikel/aktienportfolio-ki-diversifizieren/
 /de/artikel/aktuelle-beurteilung-des-immobilienmarktes-2025-01-07/
@@ -104,6 +106,7 @@
 /de/artikel/hypotheken-radar-april-2026/
 /de/artikel/hypotheken-radar-dezember-2025/
 /de/artikel/hypotheken-radar-januar-2026/
+/de/artikel/hypotheken-radar-juni-2026/
 /de/artikel/hypotheken-radar-maerz-2026/
 /de/artikel/hypotheken-radar-mai-2026/
 /de/artikel/hypotheken-radar-november-2025/
@@ -125,6 +128,7 @@
 /de/artikel/investment-guide-jan25/
 /de/artikel/investment-guide-juli-2025/
 /de/artikel/investment-guide-juni-2025/
+/de/artikel/investment-guide-juni-2026/
 /de/artikel/investment-guide-maerz-25/
 /de/artikel/investment-guide-mai-2025/
 /de/artikel/investment-guide-mai-2026/
@@ -155,6 +159,7 @@
 /de/artikel/nachhaltige-hypothek/
 /de/artikel/naechste-zinssenkung-der-snb/
 /de/artikel/negativzinsen-what-if/
+/de/artikel/neue-aera-fed/
 /de/artikel/neue-eigenmittelverordnung/
 /de/artikel/passive-anlagestrategie/
 /de/artikel/politische-risiken-schweizer-immobilienmarkt/
@@ -175,6 +180,7 @@
 /de/artikel/snb-news-leitzins-maerz-2025/
 /de/artikel/snb-nullzins-dezember-2025/
 /de/artikel/snb-senkt-Leitzins-erstmals-auf-null-prozent/
+/de/artikel/snb-zinsentscheid-juni/
 /de/artikel/sphere-interview/
 /de/artikel/supreme-court-zoelle/
 /de/artikel/swisspreneur-podcast-mit-andreas-kruemmel-insurance-in-switzerland-from-the-80s-until-now/
@@ -210,12 +216,14 @@
 /de/artikel/unsere-mitarbeiterin-zhanna-farruggio/
 /de/artikel/unsere-teilnahme-am-forbes-money-summit-2024/
 /de/artikel/us-shutdown-oktober-2025/
+/de/artikel/usa-iran-deal/
 /de/artikel/vermoegensverwaltung-immobilien/
 /de/artikel/volatilitaet-bedeutung-2026/
 /de/artikel/was-waere-wenn-trump-jerome-powell-entlaesst/
 /de/artikel/weniger-ahv-aufgrund-von-fehlenden-beitragsjahren/
 /de/artikel/wer-sich-sorgsam-um-sein-geld-kuemmert-lebt-unbeschwert/
 /de/artikel/wir-heissen-werner-schlegel-herzlich-willkommen-in-unserer-sportfamilie/
+/de/artikel/zuercher-wohnungsinitiativen/
 /de/autogrammkarten-art-on-ice-ambassadors/
 /de/autozuerich/
 /de/autozuerich25/
@@ -493,6 +501,7 @@
 /de/neubauprojekte/
 /de/news/
 /de/news/bekim-laski-neuer-cio/
+/de/news/bekim-laski-sphere/
 /de/news/burak-er-head-research-advisory-smzh/
 /de/news/das-neue-magazin-sport-and-business-ist-da/
 /de/news/die-smzh-ag-erweitert-den-kreis-der-partner/
@@ -583,6 +592,7 @@
 /de/smzh-athlete/
 /de/smzh-invest/
 /de/smzh-wettbewerb-quiz/
+/de/smzh-whitepaper-architektur-vermoegen/
 /de/smzh_ste_kunden/
 /de/smzh_ste_stimag/
 /de/smzhub/
