@@ -136,3 +136,13 @@ werden zwei Dinge gezielt wiederhergestellt bzw. bereinigt:
 Nicht reproduzierbar bleiben echte Backend-Funktionen (Formular-Absenden,
 Volltextsuche, Live-Filter) – das ist die prinzipielle Grenze eines statischen
 Mirrors.
+
+- **Mobiles Menue** (`build/mobile_menu.py`): das Original-Hamburger-Menue wird
+  per JS befuellt und ist im statischen Snapshot leer (bei < 1024px fehlten daher
+  alle Reiter). Es wird ein eigenes Overlay-Menue (Akkordeon via <details>, aus
+  build/menus.json) eingebaut und per Mini-JS am Hamburger geoeffnet.
+- **Inaktiv-Markierung** (`build/inactive_marks.py`): nicht funktionierende
+  Buttons (Suche, Sprachwahl, Filter, Formular-Submits) werden sichtbar als
+  inaktiv markiert (gedimmt, Tooltip) und Formular-Submits unterbunden – Hamburger
+  und Mobile-Menue bleiben ausgenommen. Tote /de/smzh_ste/-Links zeigen auf
+  /de/steuererklaerung/ (Original-Redirectziel).
