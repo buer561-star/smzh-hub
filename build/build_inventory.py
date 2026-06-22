@@ -93,11 +93,12 @@ def hub_type(seg, ctype, series, topics):
     """Redaktioneller Typ fuer den Hub."""
     if series: return 'serie'
     if ctype=='evergreen': return 'evergreen'
-    if seg=='news': return 'kommentar'
     if seg in ('flash-talk','edu-talk'): return 'talk'
     if seg=='podcast': return 'podcast'
-    # artikel
-    if topics: return 'kommentar'
+    # News & Artikel: nur mit echtem Finanz-Thema = redaktioneller Kommentar,
+    # themenlose Meldungen (PR/Unternehmen/Personen) = blog
+    if seg in ('news','artikel'):
+        return 'kommentar' if topics else 'blog'
     return 'blog'
 
 def flatten_excerpt(rich):
