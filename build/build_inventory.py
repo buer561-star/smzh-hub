@@ -89,6 +89,17 @@ def lead_cta(topics):
         if t in topics: return LEADCTA[t]
     return '360-Check-Up'
 
+def hub_type(seg, ctype, series, topics):
+    """Redaktioneller Typ fuer den Hub."""
+    if series: return 'serie'
+    if ctype=='evergreen': return 'evergreen'
+    if seg=='news': return 'kommentar'
+    if seg in ('flash-talk','edu-talk'): return 'talk'
+    if seg=='podcast': return 'podcast'
+    # artikel
+    if topics: return 'kommentar'
+    return 'blog'
+
 def flatten_excerpt(rich):
     if not isinstance(rich,list): return ''
     out=[]
@@ -162,6 +173,7 @@ def build():
             'localUrl': f"smzh.ch{path}index.html",
             'originalType': seg,
             'contentType': ctype,
+            'hubType': hub_type(seg, ctype, series, topics),
             'series': series,
             'cadence': cadence_for(series, ctype),
             'topics': topics,

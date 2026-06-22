@@ -7,3 +7,4 @@ build/*.out
 build/crawl-progress.log
 build/sm-*.xml
 build/sitemap-index.xml
+/build/backup/

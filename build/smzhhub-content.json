@@ -7,6 +7,7 @@
   "localUrl": "smzh.ch/de/artikel/neue-aera-fed/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -32,6 +33,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-zinsentscheid-juni/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -58,6 +60,7 @@
   "localUrl": "smzh.ch/de/artikel/usa-iran-deal/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -82,6 +85,7 @@
   "localUrl": "smzh.ch/de/artikel/boersengang-spacex/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -106,6 +110,7 @@
   "localUrl": "smzh.ch/de/news/bekim-laski-sphere/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -126,6 +131,7 @@
   "localUrl": "smzh.ch/de/artikel/zuercher-wohnungsinitiativen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -152,6 +158,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-juni-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -179,6 +186,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-juni-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -206,6 +214,7 @@
   "localUrl": "smzh.ch/de/artikel/ahv-2030-pensionierung-planungsfrage/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -231,6 +240,7 @@
   "localUrl": "smzh.ch/de/artikel/abstimmung-keine-10-millionen-schweiz/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -258,6 +268,7 @@
   "localUrl": "smzh.ch/de/artikel/sell-in-may/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -283,6 +294,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-mai-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -311,6 +323,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-mai-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -338,6 +351,7 @@
   "localUrl": "smzh.ch/de/artikel/gold-schwaeche-trotz-krise/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -362,6 +376,7 @@
   "localUrl": "smzh.ch/de/artikel/ausblick-immobilienmarkt-q2-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -389,6 +404,7 @@
   "localUrl": "smzh.ch/de/artikel/iran-update/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -414,6 +430,7 @@
   "localUrl": "smzh.ch/de/artikel/eigenmietwert-sanierung-bundesrat-2029/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -438,6 +455,7 @@
   "localUrl": "smzh.ch/de/artikel/aktienmaerkte-mut-vorsicht/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -463,6 +481,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-april-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -491,6 +510,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-april-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -518,6 +538,7 @@
   "localUrl": "smzh.ch/de/news/ernennung-deputy-ceo/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -538,6 +559,7 @@
   "localUrl": "smzh.ch/de/artikel/politische-risiken-schweizer-immobilienmarkt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -563,6 +585,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-entscheid-maerz-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -589,6 +612,7 @@
   "localUrl": "smzh.ch/de/artikel/iran-krieg-dauert-an-erste-kriegswoche/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -614,6 +638,7 @@
   "localUrl": "smzh.ch/de/artikel/kapitalbezug-steuerentscheid/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -640,6 +665,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-maerz-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -668,6 +694,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-marz-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -693,6 +720,7 @@
   "localUrl": "smzh.ch/de/artikel/tipps-steuernsparen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -716,6 +744,7 @@
   "localUrl": "smzh.ch/de/artikel/iran-konflikt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -741,6 +770,7 @@
   "localUrl": "smzh.ch/de/artikel/bekim-laski-interview-sphere/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -766,6 +796,7 @@
   "localUrl": "smzh.ch/de/artikel/supreme-court-zoelle/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -791,6 +822,7 @@
   "localUrl": "smzh.ch/de/artikel/abstimmung-individualbesteuerung/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -813,6 +845,7 @@
   "localUrl": "smzh.ch/de/artikel/franken-aufwertung-schweizer-anleger/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -838,6 +871,7 @@
   "localUrl": "smzh.ch/de/artikel/forbes-under-30-februar-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -860,6 +894,7 @@
   "localUrl": "smzh.ch/de/artikel/hypothekenradar-februar2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -888,6 +923,7 @@
   "localUrl": "smzh.ch/de/artikel/kevin-warsh-fed/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -913,6 +949,7 @@
   "localUrl": "smzh.ch/de/artikel/immobilienboom-kein-automatismus/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -940,6 +977,7 @@
   "localUrl": "smzh.ch/de/artikel/bitcoin-versus-gold/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -965,6 +1003,7 @@
   "localUrl": "smzh.ch/de/artikel/faq-groenland-konflikt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -990,6 +1029,7 @@
   "localUrl": "smzh.ch/de/news/morhart-skiadas-kaindl-smzh/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1020,6 +1060,7 @@
   "localUrl": "smzh.ch/de/artikel/zolldrohung-groenland-konflikt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1045,6 +1086,7 @@
   "localUrl": "smzh.ch/de/artikel/zehn-anlageideen-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1070,6 +1112,7 @@
   "localUrl": "smzh.ch/de/artikel/erfreuliches-anlagejahr-renditeimmobilien/index.html",
   "originalType": "artikel",
   "contentType": "evergreen",
+  "hubType": "evergreen",
   "series": null,
   "cadence": "evergreen",
   "topics": [
@@ -1097,6 +1140,7 @@
   "localUrl": "smzh.ch/de/artikel/Aktienmarktbewertungen-noch-gerechtfertigt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1123,6 +1167,7 @@
   "localUrl": "smzh.ch/de/artikel/ausblick-immobilienmarkt-q1-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -1151,6 +1196,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-januar-2026/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -1176,6 +1222,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-outlook-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1203,6 +1250,7 @@
   "localUrl": "smzh.ch/de/artikel/fruehpensionierung-unter-druck/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1228,6 +1276,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-nullzins-dezember-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1254,6 +1303,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-dezember-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -1280,6 +1330,7 @@
   "localUrl": "smzh.ch/de/artikel/schwellenlaenderanleihen-portfoliobeimischung-chf/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1305,6 +1356,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-zhanna-farruggio/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1325,6 +1377,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-dezember-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -1355,6 +1408,7 @@
   "localUrl": "smzh.ch/de/artikel/handelsdeal-schweiz-usa/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1380,6 +1434,7 @@
   "localUrl": "smzh.ch/de/artikel/gold-historische-rally-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1405,6 +1460,7 @@
   "localUrl": "smzh.ch/de/artikel/aktienportfolio-ki-diversifizieren/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1430,6 +1486,7 @@
   "localUrl": "smzh.ch/de/artikel/eigenmietwert-sanierung/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1460,6 +1517,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-november-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -1492,6 +1550,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-november-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -1520,6 +1579,7 @@
   "localUrl": "smzh.ch/de/artikel/ki-boom-finanzmaerkten/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1545,6 +1605,7 @@
   "localUrl": "smzh.ch/de/artikel/schweizer-franken-bleibt-zufluchtswaehrung/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1570,6 +1631,7 @@
   "localUrl": "smzh.ch/de/news/finanzdienstleistung-ein-rundumblick-mit-erfolg/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1590,6 +1652,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ist-neu-leistungssport-freundlicher-lehrbetrieb/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1610,6 +1673,7 @@
   "localUrl": "smzh.ch/de/news/wir-sind-neuer-hauptsponsor-von-talina-gantenbein/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1630,6 +1694,7 @@
   "localUrl": "smzh.ch/de/news/massgeschneiderte-finanzberatungen-fuer-privatpersonen-und-kmu/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1654,6 +1719,7 @@
   "localUrl": "smzh.ch/de/news/wir-sind-neuer-premium-partner-des-fc-aarau/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1674,6 +1740,7 @@
   "localUrl": "smzh.ch/de/artikel/aktuelle-beurteilung-des-immobilienmarktes-q3-25/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -1700,6 +1767,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-geldpolitik-oktober-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1725,6 +1793,7 @@
   "localUrl": "smzh.ch/de/artikel/small-mid-cap-aktien_okt25/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1750,6 +1819,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-radar-oktober-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "hypothekenradar",
   "cadence": "monthly",
   "topics": [
@@ -1772,6 +1842,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-burak-er/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1792,6 +1863,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-october-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -1819,6 +1891,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-nick-stoeckl/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -1839,6 +1912,7 @@
   "localUrl": "smzh.ch/de/artikel/us-shutdown-oktober-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1864,6 +1938,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-leitzins-null-oktober-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1890,6 +1965,7 @@
   "localUrl": "smzh.ch/de/artikel/bekim-laski-interview-moneycab/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1916,6 +1992,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-september-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -1943,6 +2020,7 @@
   "localUrl": "smzh.ch/de/news/burak-er-head-research-advisory-smzh/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1970,6 +2048,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-september-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -1998,6 +2077,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-lea-waespi/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -2018,6 +2098,7 @@
   "localUrl": "smzh.ch/de/artikel/volatilitaet-bedeutung-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2044,6 +2125,7 @@
   "localUrl": "smzh.ch/de/artikel/immobilien-kaufen-eigenkapital/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2070,6 +2152,7 @@
   "localUrl": "smzh.ch/de/artikel/switzerland-no-deal-was-nun/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2095,6 +2178,7 @@
   "localUrl": "smzh.ch/de/artikel/tipps-immobilien-kaufen/index.html",
   "originalType": "artikel",
   "contentType": "evergreen",
+  "hubType": "evergreen",
   "series": null,
   "cadence": "evergreen",
   "topics": [
@@ -2121,6 +2205,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-august-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -2148,6 +2233,7 @@
   "localUrl": "smzh.ch/de/artikel/unabhaengigkeit-hat-ihren-preis/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2175,6 +2261,7 @@
   "localUrl": "smzh.ch/de/artikel/schweizer-dividendenaktien-fokus/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2202,6 +2289,7 @@
   "localUrl": "smzh.ch/de/artikel/US-Zollhammer-trifft-Schweiz/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2227,6 +2315,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-august-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2255,6 +2344,7 @@
   "localUrl": "smzh.ch/de/news/hasani-ceo-statement-opinomic/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -2277,6 +2367,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-fc-aarau/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2301,6 +2392,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-ercan-adiller/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -2321,6 +2413,7 @@
   "localUrl": "smzh.ch/de/artikel/was-waere-wenn-trump-jerome-powell-entlaesst/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2343,6 +2436,7 @@
   "localUrl": "smzh.ch/de/artikel/lombardkredit-erklaerung/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2368,6 +2462,7 @@
   "localUrl": "smzh.ch/de/artikel/aktuelle-beurteilung-des-immobilienmarktes-juli/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -2396,6 +2491,7 @@
   "localUrl": "smzh.ch/de/artikel/comeback-der-schwellenlaender/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2421,6 +2517,7 @@
   "localUrl": "smzh.ch/de/artikel/anlagestrategie-wachstum/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2445,6 +2542,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-spezialist-fatmir-pervorfi/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -2465,6 +2563,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-juli-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2490,6 +2589,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-juli-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -2514,6 +2614,7 @@
   "localUrl": "smzh.ch/de/artikel/beste-anlagestrategie/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2539,6 +2640,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-senkt-leitzins-erstmals-auf-null-prozent/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2569,6 +2671,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-juni-25/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2597,6 +2700,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-juni-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -2621,6 +2725,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-tipp-juni/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2646,6 +2751,7 @@
   "localUrl": "smzh.ch/de/artikel/passive-anlagestrategie/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2671,6 +2777,7 @@
   "localUrl": "smzh.ch/de/artikel/immobilien-kaufen-ablauf/index.html",
   "originalType": "artikel",
   "contentType": "evergreen",
+  "hubType": "evergreen",
   "series": null,
   "cadence": "evergreen",
   "topics": [
@@ -2700,6 +2807,7 @@
   "localUrl": "smzh.ch/de/edu-talk/immobilien-und-erbschaft/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2725,6 +2833,7 @@
   "localUrl": "smzh.ch/de/edu-talk/budgetrechner-financial-hangover/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2747,6 +2856,7 @@
   "localUrl": "smzh.ch/de/edu-talk/wertsachenversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2769,6 +2879,7 @@
   "localUrl": "smzh.ch/de/edu-talk/rechtsformen-firmengruendung-in-der-schweiz/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2791,6 +2902,7 @@
   "localUrl": "smzh.ch/de/edu-talk/selbstaendigkeit-und-vorsorge/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2815,6 +2927,7 @@
   "localUrl": "smzh.ch/de/edu-talk/unternehmensbewertung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2840,6 +2953,7 @@
   "localUrl": "smzh.ch/de/news/fredi-pfammatter-gl/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2867,6 +2981,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-mai-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -2894,6 +3009,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-scale-up/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2918,6 +3034,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-mai-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2946,6 +3063,7 @@
   "localUrl": "smzh.ch/de/edu-talk/luxury-assets/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2970,6 +3088,7 @@
   "localUrl": "smzh.ch/de/edu-talk/nachfolgeplanung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -2992,6 +3111,7 @@
   "localUrl": "smzh.ch/de/edu-talk/gesundheitsvorsorge-grund-und-zusatzversicherung-versicherungswechsel/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3017,6 +3137,7 @@
   "localUrl": "smzh.ch/de/edu-talk/rechtsschutzversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3040,6 +3161,7 @@
   "localUrl": "smzh.ch/de/edu-talk/inventarversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3062,6 +3184,7 @@
   "localUrl": "smzh.ch/de/artikel/mit-gmbh-immobilien-kaufen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3089,6 +3212,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-cyrill-wassmer/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -3109,6 +3233,7 @@
   "localUrl": "smzh.ch/de/edu-talk/betriebshaftpflichtversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3131,6 +3256,7 @@
   "localUrl": "smzh.ch/de/edu-talk/gesundheitsvorsorge-zusatzversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3156,6 +3282,7 @@
   "localUrl": "smzh.ch/de/edu-talk/akquisitionsfinanzierung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3178,6 +3305,7 @@
   "localUrl": "smzh.ch/de/edu-talk/investitionsfinanzierung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3203,6 +3331,7 @@
   "localUrl": "smzh.ch/de/edu-talk/betriebsmittelfinanzierung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3225,6 +3354,7 @@
   "localUrl": "smzh.ch/de/edu-talk/ehe-gueterstaende-und-vermoegensaufteilung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3248,6 +3378,7 @@
   "localUrl": "smzh.ch/de/edu-talk/vorsorge-nach-der-heirat/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3273,6 +3404,7 @@
   "localUrl": "smzh.ch/de/edu-talk/ehe-heirat-im-ueberblick/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3301,6 +3433,7 @@
   "localUrl": "smzh.ch/de/edu-talk/immobilienkaufvertrag/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3325,6 +3458,7 @@
   "localUrl": "smzh.ch/de/edu-talk/erwachsenenschutzrecht/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3347,6 +3481,7 @@
   "localUrl": "smzh.ch/de/edu-talk/testament/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3369,6 +3504,7 @@
   "localUrl": "smzh.ch/de/edu-talk/immobilien-versicherungen/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3394,6 +3530,7 @@
   "localUrl": "smzh.ch/de/edu-talk/neubauten-und-baumaengel/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3418,6 +3555,7 @@
   "localUrl": "smzh.ch/de/edu-talk/ehe-und-steuern/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3441,6 +3579,7 @@
   "localUrl": "smzh.ch/de/edu-talk/baukredit/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3466,6 +3605,7 @@
   "localUrl": "smzh.ch/de/edu-talk/eigenheimfinanzierung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3492,6 +3632,7 @@
   "localUrl": "smzh.ch/de/edu-talk/organhaftungsversicherung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3514,6 +3655,7 @@
   "localUrl": "smzh.ch/de/edu-talk/bieterverfahren/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3538,6 +3680,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-joana-maeder/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3563,6 +3706,7 @@
   "localUrl": "smzh.ch/de/artikel/trump-powell-zinspolitik/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3589,6 +3733,7 @@
   "localUrl": "smzh.ch/de/edu-talk/investieren-ist-das-neue-sparen/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3614,6 +3759,7 @@
   "localUrl": "smzh.ch/de/edu-talk/cash-flow-management-und-betriebsmittelfinanzierung/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3636,6 +3782,7 @@
   "localUrl": "smzh.ch/de/edu-talk/altersvorsorge/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3661,6 +3808,7 @@
   "localUrl": "smzh.ch/de/edu-talk/erste-mitarbeiter-einstellen/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3683,6 +3831,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-stefan-schaerer/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3708,6 +3857,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-neubau-portal-ag/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3734,6 +3884,7 @@
   "localUrl": "smzh.ch/de/edu-talk/immobilien-kauf/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3758,6 +3909,7 @@
   "localUrl": "smzh.ch/de/edu-talk/abzugsmoglichkeiten/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -3778,6 +3930,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-rafael-szucs/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3803,6 +3956,7 @@
   "localUrl": "smzh.ch/de/edu-talk/steuererklarung-kapitalertrag/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3825,6 +3979,7 @@
   "localUrl": "smzh.ch/de/edu-talk/steuererklarung-online-tool/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3847,6 +4002,7 @@
   "localUrl": "smzh.ch/de/edu-talk/steuererklarung-eigenheimbesitzer/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3872,6 +4028,7 @@
   "localUrl": "smzh.ch/de/edu-talk/aktionaerbindungsvertrag/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3894,6 +4051,7 @@
   "localUrl": "smzh.ch/de/artikel/vermoegensverwaltung-immobilien/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3921,6 +4079,7 @@
   "localUrl": "smzh.ch/de/artikel/trumps-import-zoelle-finanzmaerkte/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3946,6 +4105,7 @@
   "localUrl": "smzh.ch/de/edu-talk/investieren-wie-fange-ich-an/index.html",
   "originalType": "edu-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -3970,6 +4130,7 @@
   "localUrl": "smzh.ch/de/artikel/rekord-importzoelle-usa-auswirkungen-schweiz/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -3990,6 +4151,7 @@
   "localUrl": "smzh.ch/de/artikel/anlagestrategie-immobilien/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4016,6 +4178,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-gzim-hasani/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4041,6 +4204,7 @@
   "localUrl": "smzh.ch/de/artikel/kosten-vermoegensverwaltung-vergleich/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4066,6 +4230,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-april-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -4093,6 +4258,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-immobilienmarkt-25q1/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -4119,6 +4285,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zins-hypothekarmarkt-april-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4142,6 +4309,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-patrick-cancedda/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4162,6 +4330,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-thomas-kaufmann/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4188,6 +4357,7 @@
   "localUrl": "smzh.ch/de/artikel/snb-news-leitzins-maerz-2025/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4214,6 +4384,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-robert-huber-ag/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4238,6 +4409,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-ercan-adiller/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4258,6 +4430,7 @@
   "localUrl": "smzh.ch/de/artikel/Deutschlands-Schuldenbremse-Lockerung-Folgen-fuer-Finanz-und-Hypomaerkte/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4281,6 +4454,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-dario-stuebi/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4301,6 +4475,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-2025-03-03/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4330,6 +4505,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-maerz-25/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -4354,6 +4530,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-alf-heller/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4380,6 +4557,7 @@
   "localUrl": "smzh.ch/de/artikel/sphere-interview/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4404,6 +4582,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-peter-siber/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4428,6 +4607,7 @@
   "localUrl": "smzh.ch/de/podcast/schweizer-erfolg-podcast-mit-gzim-hasani-leadership-investments-karriere/index.html",
   "originalType": "podcast",
   "contentType": "podcast",
+  "hubType": "podcast",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4452,6 +4632,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-andreas-kruemmel/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4474,6 +4655,7 @@
   "localUrl": "smzh.ch/de/artikel/bitcoin-und-ether-im-anlageportfolio-2026/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4504,6 +4686,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-liridona-makica/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4528,6 +4711,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-faces-media-group/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4552,6 +4736,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-siria-berli/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4576,6 +4761,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-kimmy-repond-art-on-ice/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4596,6 +4782,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-alexia-paganini-art-on-ice/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4616,6 +4803,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-lukas-britschgi-art-on-ice/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4636,6 +4824,7 @@
   "localUrl": "smzh.ch/de/artikel/immobilie-mieten-oder-kaufen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4660,6 +4849,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-2025-02-03/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4682,6 +4872,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-februar-2025/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -4709,6 +4900,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-bekim-laski/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4733,6 +4925,7 @@
   "localUrl": "smzh.ch/de/news/smzh-haupt-sponsor-emmi-caffe-latte-beachtour/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4753,6 +4946,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-pedro-schmidt-gruender-und-ceo-von-KA-EX/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4773,6 +4967,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-libs/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4797,6 +4992,7 @@
   "localUrl": "smzh.ch/de/artikel/Akquisitionsfinanzierung-2025-01-15/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4822,6 +5018,7 @@
   "localUrl": "smzh.ch/de/artikel/ki-profifussball/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4845,6 +5042,7 @@
   "localUrl": "smzh.ch/de/artikel/investment-guide-jan25/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "investment-guide",
   "cadence": "monthly",
   "topics": [
@@ -4872,6 +5070,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-pascal-jenny-mitglied-des-verwaltungsrats-der-smzh/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4892,6 +5091,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-2025-01-07/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -4914,6 +5114,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-tsering-andermatt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -4934,6 +5135,7 @@
   "localUrl": "smzh.ch/de/artikel/aktuelle-beurteilung-des-immobilienmarktes-2025-01-07/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -4962,6 +5164,7 @@
   "localUrl": "smzh.ch/de/artikel/saeule-3a-news/index.html",
   "originalType": "artikel",
   "contentType": "evergreen",
+  "hubType": "evergreen",
   "series": null,
   "cadence": "evergreen",
   "topics": [
@@ -4986,6 +5189,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-best-of/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5006,6 +5210,7 @@
   "localUrl": "smzh.ch/de/artikel/gender-pension-gap/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5030,6 +5235,7 @@
   "localUrl": "smzh.ch/de/artikel/CIO-weekly-2024-51/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5054,6 +5260,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-werner-schlegel/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5074,6 +5281,7 @@
   "localUrl": "smzh.ch/de/artikel/die-snb-senkt-leitzins/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5100,6 +5308,7 @@
   "localUrl": "smzh.ch/de/artikel/kmu-des-monats-carre-event-ag/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5124,6 +5333,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-daniel-eckmann/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5144,6 +5354,7 @@
   "localUrl": "smzh.ch/de/artikel/die-welt-der-finanzberatung-steht-vor-neuen-herausforderungen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5166,6 +5377,7 @@
   "localUrl": "smzh.ch/de/artikel/holistischer-ansatz-als-schluessel-zur-vermoegensverwaltung-der-zukunft/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5188,6 +5400,7 @@
   "localUrl": "smzh.ch/de/artikel/neue-eigenmittelverordnung/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5213,6 +5426,7 @@
   "localUrl": "smzh.ch/de/artikel/negativzinsen-what-if/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5236,6 +5450,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-rolf-fongue/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5256,6 +5471,7 @@
   "localUrl": "smzh.ch/de/news/bekim-laski-neuer-cio/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5282,6 +5498,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-2024-11-28/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5306,6 +5523,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-szilard-szurdok/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5328,6 +5546,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-alessia-schrepfer/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5348,6 +5567,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-dr-aurelia-frick/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5372,6 +5592,7 @@
   "localUrl": "smzh.ch/de/artikel/finanzierung-eigenheim-so-nutzen-sie-ihr-vorsorgevermoegen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5400,6 +5621,7 @@
   "localUrl": "smzh.ch/de/artikel/weniger-ahv-aufgrund-von-fehlenden-beitragsjahren/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5424,6 +5646,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-florim-cuculi/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5444,6 +5667,7 @@
   "localUrl": "smzh.ch/de/artikel/menschlichkeit-in-einer-von-kuenstlicher-intelligenz-gepraegten-aera/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5464,6 +5688,7 @@
   "localUrl": "smzh.ch/de/artikel/binelli-group-meets-smzh/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5484,6 +5709,7 @@
   "localUrl": "smzh.ch/de/artikel/die-smzh-als-presenting-partner-beim-sbn-dinner-ein-abend-voller-inspiration-und-visionen-aus-sport-und-business/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5504,6 +5730,7 @@
   "localUrl": "smzh.ch/de/podcast/swisspreneur-podcast-mit-andreas-kruemmel-insurance-in-switzerland-from-the-80s-until-now/index.html",
   "originalType": "podcast",
   "contentType": "podcast",
+  "hubType": "podcast",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5526,6 +5753,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-anja-graf/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5546,6 +5774,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-ivan-knie/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5566,6 +5795,7 @@
   "localUrl": "smzh.ch/de/artikel/naechste-zinssenkung-der-snb/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5591,6 +5821,7 @@
   "localUrl": "smzh.ch/de/artikel/gameplan-fed-zinssenkungszyklus/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5616,6 +5847,7 @@
   "localUrl": "smzh.ch/de/podcast/swisspreneur-podcast-mit-gzim-hasani-building-a-holistic-financial-advisory-company/index.html",
   "originalType": "podcast",
   "contentType": "podcast",
+  "hubType": "podcast",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5638,6 +5870,7 @@
   "localUrl": "smzh.ch/de/artikel/aktuelle-beurteilung-des-immobilienmarktes/index.html",
   "originalType": "artikel",
   "contentType": "publication",
+  "hubType": "serie",
   "series": "immobilien-outlook",
   "cadence": "quarterly",
   "topics": [
@@ -5664,6 +5897,7 @@
   "localUrl": "smzh.ch/de/artikel/smzh-praesentiert-cardio-center-luzern/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5688,6 +5922,7 @@
   "localUrl": "smzh.ch/de/artikel/ubs-und-der-cs-wegfall/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5713,6 +5948,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5736,6 +5972,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-carla-vilela-gonzaga-haenny/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5756,6 +5993,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-jenni-huber/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5776,6 +6014,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-mara-vergani/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5796,6 +6035,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-dorothy-khadem-missagh/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5816,6 +6056,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-taryn-steinberger/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5836,6 +6077,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-mirjam-staub-bisang/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5856,6 +6098,7 @@
   "localUrl": "smzh.ch/de/artikel/inspiring-voices-rueckblick-auf-den-forbes-women-s-summit-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5876,6 +6119,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-billi-bierling/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5896,6 +6140,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-1/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5920,6 +6165,7 @@
   "localUrl": "smzh.ch/de/podcast/swisspreneur-podcast-mit-tobias-reichmuth-and-marc-p-bernegger-building-ventures-from-crypto-to-longevity/index.html",
   "originalType": "podcast",
   "contentType": "podcast",
+  "hubType": "podcast",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5944,6 +6190,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-diellza-aliji/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -5964,6 +6211,7 @@
   "localUrl": "smzh.ch/de/artikel/ehc-arosa-100-jahre/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -5986,6 +6234,7 @@
   "localUrl": "smzh.ch/de/podcast/swisspreneur-podcast-mit-aurelia-frick-how-to-make-your-country-more-startup-friendly/index.html",
   "originalType": "podcast",
   "contentType": "podcast",
+  "hubType": "podcast",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6008,6 +6257,7 @@
   "localUrl": "smzh.ch/de/artikel/forbes-x-faces-business-meets-style-powered-by-smzh/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6028,6 +6278,7 @@
   "localUrl": "smzh.ch/de/artikel/rueckblick-auf-das-arosa-classic-car-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6048,6 +6299,7 @@
   "localUrl": "smzh.ch/de/news/wir-expandieren-weiter-die-eroeffnung-unseres-neuen-standorts-in-chur/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6068,6 +6320,7 @@
   "localUrl": "smzh.ch/de/news/eroeffnung-unseres-neuen-standorts-in-st-gallen-am-14-august-2024/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6088,6 +6341,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-markus-markwalder/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6108,6 +6362,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-2/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6130,6 +6385,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-daniel-uebelhard/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6150,6 +6406,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-hans-schmid/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6170,6 +6427,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-labinot-pirkuqi/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6194,6 +6452,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-sarah-schlagenhauf/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6214,6 +6473,7 @@
   "localUrl": "smzh.ch/de/artikel/smzh-praesentiert-dmbau/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6238,6 +6498,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-noah-veraguth/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6258,6 +6519,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-ralph-mazzucco/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6278,6 +6540,7 @@
   "localUrl": "smzh.ch/de/artikel/swisspreneur-podcast-mit-andreas-kruemmel-insurance-in-switzerland-from-the-80s-until-now/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6300,6 +6563,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-peter-nitz/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6320,6 +6584,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-ezgi-cinar/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6344,6 +6609,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-jana-m-arden/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6364,6 +6630,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-mitarbeiterin-melanie-guenthardt/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6384,6 +6651,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-3/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6406,6 +6674,7 @@
   "localUrl": "smzh.ch/de/news/gzim-hasani-wird-als-einflussreichster-ceo-2024-ausgezeichnet/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6426,6 +6695,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-remo-forrer/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6446,6 +6716,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-dr-rosalia-luketina/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6466,6 +6737,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-rea-bill/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6486,6 +6758,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-dr-tobias-reichmuth/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6510,6 +6783,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-steve-varsano/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6530,6 +6804,7 @@
   "localUrl": "smzh.ch/de/artikel/bvg-reform-und-ihre-auswirkungen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6555,6 +6830,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-4/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6579,6 +6855,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-rafael-szucs/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6601,6 +6878,7 @@
   "localUrl": "smzh.ch/de/artikel/bvg-reform-2024-was-kmu-jetzt-wissen-muessen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6628,6 +6906,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-felicitas-morhart/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6648,6 +6927,7 @@
   "localUrl": "smzh.ch/de/news/eroeffnung-des-neuen-standorts-in-frauenfeld-am-23-mai-2024/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6668,6 +6948,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-5/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6690,6 +6971,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-talina-gantenbein/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6710,6 +6992,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-dr-martha-boeckenfeld/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6730,6 +7013,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-andrej-majcen/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6754,6 +7038,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-josip-ivic/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6774,6 +7059,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-klaus-fiala/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6794,6 +7080,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-wolfgang-beltracchi/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6816,6 +7103,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-pren-pervorfi/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6836,6 +7124,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-stefan-berger/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6856,6 +7145,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-killian-fjellbakk-chiao/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6876,6 +7166,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-madina-katter/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6896,6 +7187,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-noelle-demole/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6916,6 +7208,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-brigitte-oertli/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -6938,6 +7231,7 @@
   "localUrl": "smzh.ch/de/artikel/wir-heissen-werner-schlegel-herzlich-willkommen-in-unserer-sportfamilie/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6960,6 +7254,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-teilnahme-am-forbes-money-summit-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -6980,6 +7275,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-6/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7004,6 +7300,7 @@
   "localUrl": "smzh.ch/de/flash-talk/flash-talk-mit-lukas-britschgi/index.html",
   "originalType": "flash-talk",
   "contentType": "talk",
+  "hubType": "talk",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7024,6 +7321,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-dave-langenstein/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7044,6 +7342,7 @@
   "localUrl": "smzh.ch/de/artikel/aussergewoehnliche-erfolge-bei-der-eiskunstlauf-wm-in-montreal/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7064,6 +7363,7 @@
   "localUrl": "smzh.ch/de/artikel/einschaetzung-zum-zins-und-hypothekarmarkt-7/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7086,6 +7386,7 @@
   "localUrl": "smzh.ch/de/artikel/die-vorteile-der-einzahlung-in-die-3-saeule-zu-beginn-des-jahres/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7110,6 +7411,7 @@
   "localUrl": "smzh.ch/de/news/kundenfokus-innovation-wachstum-smzh-setzt-kurs-fuer-die-zukunft/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7130,6 +7432,7 @@
   "localUrl": "smzh.ch/de/news/neubau-portal-ag-und-smzh-ag-verkuenden-strategische-partnerschaft/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7150,6 +7453,7 @@
   "localUrl": "smzh.ch/de/artikel/unsere-grossartigen-botschafter-innen-am-art-on-ice-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7170,6 +7474,7 @@
   "localUrl": "smzh.ch/de/artikel/ice-snow-football-arosa/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7190,6 +7495,7 @@
   "localUrl": "smzh.ch/de/artikel/pre-event-ice-snow-football-arosa-im-fifa-museum/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7210,6 +7516,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ag-setzt-auf-immobilien-expertise-und-verstaerkt-ihre-fuehrungsebene-mit-peter-meier/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7234,6 +7541,7 @@
   "localUrl": "smzh.ch/de/news/olympioniker-lukas-britschgi-wird-botschafter-fuer-smzh/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7254,6 +7562,7 @@
   "localUrl": "smzh.ch/de/artikel/fireside-chat-und-interviews-mit-fussball-legenden/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7274,6 +7583,7 @@
   "localUrl": "smzh.ch/de/artikel/ausblick-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7294,6 +7604,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-stefan-glavas/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7314,6 +7625,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-deniz-poqinka/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7334,6 +7646,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-julian-niedermann/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7354,6 +7667,7 @@
   "localUrl": "smzh.ch/de/news/erfolgreiche-eroeffnung-eines-weiteren-standortes-in-buchs-sg/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7374,6 +7688,7 @@
   "localUrl": "smzh.ch/de/artikel/dave-stewart-von-eurythmics-stargast-bei-art-on-ice-2024/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7394,6 +7709,7 @@
   "localUrl": "smzh.ch/de/artikel/unser-mitarbeiter-visar-ademi/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7414,6 +7730,7 @@
   "localUrl": "smzh.ch/de/artikel/interview-mit-flurin-platz-gc-amicitia-zuerich-handball/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7434,6 +7751,7 @@
   "localUrl": "smzh.ch/de/news/smzh-etabliert-ein-neues-advisory-board/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7454,6 +7772,7 @@
   "localUrl": "smzh.ch/de/artikel/talina-gantenbein-am-skicross-weltcup-2023-24/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7474,6 +7793,7 @@
   "localUrl": "smzh.ch/de/news/unsere-grosse-eiskunstlaufhoffnung-wird-smzh-botschafterin/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7494,6 +7814,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ag-mit-neuem-standort-in-bern/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7514,6 +7835,7 @@
   "localUrl": "smzh.ch/de/artikel/die-1-saule-part-1/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7538,6 +7860,7 @@
   "localUrl": "smzh.ch/de/artikel/die-1-saule-part-2/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7562,6 +7885,7 @@
   "localUrl": "smzh.ch/de/artikel/die-1-saule-part-3/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7586,6 +7910,7 @@
   "localUrl": "smzh.ch/de/artikel/die-1-saule-part-4/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7610,6 +7935,7 @@
   "localUrl": "smzh.ch/de/artikel/die-2-saule-part-3/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7634,6 +7960,7 @@
   "localUrl": "smzh.ch/de/artikel/die-2-saule-part-4/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7658,6 +7985,7 @@
   "localUrl": "smzh.ch/de/artikel/die-3-saule/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7682,6 +8010,7 @@
   "localUrl": "smzh.ch/de/artikel/das-19-jaehrige-karate-talent-siyar-tastan-ist-der-erste-smzh-lernende-und-befindet-sich-zurzeit-im-4/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "blog",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7702,6 +8031,7 @@
   "localUrl": "smzh.ch/de/artikel/nachhaltige-hypothek/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7727,6 +8057,7 @@
   "localUrl": "smzh.ch/de/artikel/hypotheken-richtig-abschliessen/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7752,6 +8083,7 @@
   "localUrl": "smzh.ch/de/artikel/wer-sich-sorgsam-um-sein-geld-kuemmert-lebt-unbeschwert/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7774,6 +8106,7 @@
   "localUrl": "smzh.ch/de/artikel/rechtliche-aspekte-bei-der-ehe-namensrecht/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
@@ -7796,6 +8129,7 @@
   "localUrl": "smzh.ch/de/news/smzh-bleibt-auf-expansionskurs/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7816,6 +8150,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ag-mit-neuem-zugang-im-verwaltungsrat-und-einem-weiteren-standort-in-bern/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7836,6 +8171,7 @@
   "localUrl": "smzh.ch/de/news/neuer-name-smzh-ag-veraenderungen-im-managementteam-und-neueroeffnung-in-aarau/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7856,6 +8192,7 @@
   "localUrl": "smzh.ch/de/news/wir-sind-weltmeister-am-arosa-ice-snow-football/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7876,6 +8213,7 @@
   "localUrl": "smzh.ch/de/news/smzh-bande-in-der-swiss-life-arena/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7896,6 +8234,7 @@
   "localUrl": "smzh.ch/de/news/das-neue-magazin-sport-and-business-ist-da/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7916,6 +8255,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ag-gewinnt-neue-verwaltungsraetin/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7936,6 +8276,7 @@
   "localUrl": "smzh.ch/de/news/talina-gantenbein-ist-dabei/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7956,6 +8297,7 @@
   "localUrl": "smzh.ch/de/news/die-smzh-ag-erweitert-den-kreis-der-partner/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7976,6 +8318,7 @@
   "localUrl": "smzh.ch/de/news/smzh-ist-neuer-partner-von-sandro-bovisi/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -7996,6 +8339,7 @@
   "localUrl": "smzh.ch/de/news/neue-destinations-partnerschaft-mit-arosa/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -8016,6 +8360,7 @@
   "localUrl": "smzh.ch/de/news/medienmitteilung/index.html",
   "originalType": "news",
   "contentType": "news",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [],
@@ -8036,6 +8381,7 @@
   "localUrl": "smzh.ch/de/artikel/die-2-saule-part-2/index.html",
   "originalType": "artikel",
   "contentType": "blog",
+  "hubType": "kommentar",
   "series": null,
   "cadence": "adhoc",
   "topics": [
