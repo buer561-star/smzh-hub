@@ -1,10 +1,19 @@
-# smzHub – lokaler 1:1 Asset-Mirror
+# smzh.ch – lokaler 1:1 Mirror (komplette deutsche Site)
 
-Ein originalgetreuer, offline lauffähiger Mirror der Seite
-[`https://smzh.ch/de/smzhub/`](https://smzh.ch/de/smzhub/) **und aller direkt
-darauf verlinkten Seiten**. Alle Seiten-Assets (HTML, CSS, JavaScript, Bilder,
-Schriften) wurden vom Original-Server heruntergeladen und sämtliche Links auf
-lokale, relative Pfade umgeschrieben.
+Ein originalgetreuer, offline lauffähiger Nachbau der **gesamten deutschen
+smzh.ch** – alle **663 Seiten** unter `/de/` (Startseite, Services, smzHub,
+smzh Markets, alle Artikel, News, Flash/Edu Talks, Podcasts, Team-, Event- und
+Rechtsseiten). Jede Seite wurde im Headless-Browser gerendert, sodass der per
+API nachgeladene Inhalt als statischer Snapshot eingefroren ist; alle Assets
+(CSS, Bilder, Schriften, PDFs) wurden lokal gespiegelt.
+
+**Wichtig – keine Verlinkung zum Original:** Sämtliche internen Links und
+Asset-Verweise zeigen ausschließlich auf lokale Kopien. Es existiert **kein
+einziger Verweis** mehr auf `smzh.ch` / `www.smzh.ch` / `cms.smzh.ch`. Nur
+externe Links (Social Media, YouTube etc.) bleiben unverändert.
+
+> Hinweis: Die ältere Tabelle unten listet die 16 zuerst gespiegelten Kernseiten
+> – inzwischen ist die **komplette** deutsche Site enthalten.
 
 ## Schnellstart
 
@@ -61,13 +70,19 @@ site/
 
 ## Mirror aktualisieren
 
-Der Mirror entsteht in zwei Stufen:
+Die komplette deutsche Site entsteht über diese Pipeline:
 
 ```bash
-./mirror.sh                       # 1) Grundgeruest + alle Assets (wget)
-node build/snapshot-all.cjs       # 2) Seiten im Headless-Browser rendern
-python3 build/postprocess.py      #    dynamischen Inhalt einfrieren + Assets lokal verlinken
+# URL-Liste stammt aus build/de-urls.txt (aus den smzh.ch-Sitemaps abgeleitet)
+node   build/crawl.cjs            # 1) alle 663 /de/-Seiten im Headless-Browser rendern
+                                  #    (Playwright, parallel, resuemierbar, 3x Retry)
+python3 build/postprocess_all.py  # 2) Inhalt einfrieren, Skripte entfernen,
+                                  #    Assets + interne Links lokal verlinken, Bilder nachladen
+python3 build/fixlinks.py         # 3) Nachzieh-Pass: letzte Original-/Root-Links lokalisieren
 ```
+
+Für nur die 16 Kernseiten existiert weiterhin der ältere Zweistufen-Weg
+(`build/snapshot-all.cjs` + `build/postprocess.py`).
 
 **Warum zwei Stufen?** smzh.ch ist eine Next.js-App; der eigentliche
 smzHub-Inhalt (Artikel, News, Flash Talks, Edu Talks, Podcasts) wird erst im
