@@ -208,7 +208,7 @@ def theme_inner(key):
         serhtml=f'<section class="ed-rubric ser-rubric"><div class="ed-rub-head"><span class="ed-kicker">Research</span><h2>Relevante Serien</h2></div><div class="ser-list">{rr}</div></section>'
     eg=evergreen_rubric(EVERGREEN.get(key,[]), 'Evergreen-Guides')
     cl,cp=THEME_CTA[key]
-    return crumb+intro+sec1+morehtml+serhtml+eg+cta(cl,cp)
+    return themebar(key)+crumb+intro+sec1+morehtml+serhtml+eg+cta(cl,cp)
 
 def series_inner(key):
     name,cad,slug,theme,desc=SERIES_BY[key]
@@ -230,7 +230,7 @@ def series_inner(key):
         arch+=(f'<a class="arch-row" href="{link(r["path"])}"><time>{esc(fdate(r.get("date")))}</time>'
                f'<span class="arch-title">{esc(r["title"])}</span>{pdf}</a>')
     arch_html=f'<section class="ed-rubric"><div class="ed-rub-head"><span class="ed-kicker">Archiv</span><h2>Frühere Ausgaben ({len(items)-1})</h2></div><div class="arch-list">{arch}</div></section>' if len(items)>1 else ''
-    return crumb+intro+cur_html+arch_html+cta('Beratung vereinbaren','de/terminvereinbaren/')
+    return themebar(theme)+crumb+intro+cur_html+arch_html+cta('Beratung vereinbaren','de/terminvereinbaren/')
 
 def archiv_inner(orig_inner):
     body=re.sub(r'<section id="smzh-research".*?</section>','',orig_inner,flags=re.S)
