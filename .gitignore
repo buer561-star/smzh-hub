@@ -1,2 +1,9 @@
 # lokale Server-/Build-Logs
 /tmp/
+# grosse, regenerierbare Zwischenresultate des Crawls (Roh-Renders)
+build/rendered2/
+build/rendered/
+build/*.out
+build/crawl-progress.log
+build/sm-*.xml
+build/sitemap-index.xml
