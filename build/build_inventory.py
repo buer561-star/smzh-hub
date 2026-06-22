@@ -101,47 +101,6 @@ def hub_type(seg, ctype, series, topics):
         return 'kommentar' if topics else 'blog'
     return 'blog'
 
-# ---- Rubriken-Zuordnung (eine kanonische Themenwelt pro Beitrag) ------------
-# 4 Themenwelten des Hubs. Jeder Beitrag bekommt GENAU eine Rubrik (oder None,
-# wenn er thematisch in keine passt -> erscheint nicht in den Themenwelten).
-RUBRICS=['kapitalmaerkte','immobilien','vorsorge','steuern']
-RUBRIC_TITLE={
- 'kapitalmaerkte':'Kapitalmärkte & Anlegen',
- 'immobilien':'Immobilien & Hypotheken',
- 'vorsorge':'Vorsorge & Pensionierung',
- 'steuern':'Steuern & Finanzplanung',
-}
-# Serien sind in ihrer Themenwelt verankert (Doppelfunktion: eigene Reihe +
-# Flagship-Anker in der Rubrik).
-RUBRIC_OF_SERIES={
- 'investment-guide':'kapitalmaerkte',
- 'hypothekenradar':'immobilien',
- 'immobilien-outlook':'immobilien',
-}
-
-def assign_rubric(series, cms_cats, topics):
-    """Kanonische Themenwelt nach klarer Prioritaet.
-    Serie schlaegt alles. PRIMAERQUELLE sind die redaktionell gesetzten
-    CMS-Kategorien (Single Source of Truth). Nur wenn ein Beitrag GAR KEINE
-    CMS-Kategorie hat, dienen die Keyword-Topics als Fallback – so verschmutzen
-    Heuristik-Treffer (z.B. ein Anlage-Artikel, der 'Vorsorge' nur erwaehnt)
-    die Zuordnung nicht. Prioritaet: Immobilien/Hypotheken > Vorsorge > Steuern >
-    Anlagen/Finanzen. Recht/Versicherungen/KMU -> keine Rubrik (None)."""
-    if series in RUBRIC_OF_SERIES:
-        return RUBRIC_OF_SERIES[series]
-    src=set(cms_cats) if cms_cats else set(topics or [])
-    if 'Immobilien' in src or 'Hypotheken' in src:
-        return 'immobilien'
-    if 'Vorsorge' in src:
-        return 'vorsorge'
-    if 'Steuern' in src:
-        return 'steuern'
-    if 'Anlagen' in src:
-        return 'kapitalmaerkte'
-    if 'Finanzen' in src:   # Finanzplanung ohne Anlage-Fokus
-        return 'steuern'
-    return None
-
 def flatten_excerpt(rich):
     if not isinstance(rich,list): return ''
     out=[]
@@ -205,15 +164,8 @@ def build():
         series=detect_series(title, slug, pdfs)
         ctype=detect_contenttype(seg, title, slug, series)
         topics=detect_topics(api_cats, title, slug, pdfs)
-        cms_cats=[c for c in api_cats if c and c!='Events']
-        htype=hub_type(seg, ctype, series, topics)
-        rubric=assign_rubric(series, cms_cats, topics)
         img=best_img(it.get('mainImage'))
         excerpt=flatten_excerpt(it.get('shortExcerpt')) or lead
-        # Hub-Startseite/Rubriken: nur kuratierte Typen mit sauberer Zuordnung
-        hub_eligible=bool(rubric) and htype in ('kommentar','serie','evergreen')
-        # Lead-geeignet: redaktioneller Kommentar mit Bild, Teaser und Rubrik
-        lead_eligible=(htype=='kommentar' and bool(img) and bool(excerpt) and bool(rubric))
         rows.append({
             'id': it.get('id'),
             'title': title,
@@ -222,14 +174,10 @@ def build():
             'localUrl': f"smzh.ch{path}index.html",
             'originalType': seg,
             'contentType': ctype,
-            'hubType': htype,
+            'hubType': hub_type(seg, ctype, series, topics),
             'series': series,
             'cadence': cadence_for(series, ctype),
             'topics': topics,
-            'cmsCategories': cms_cats,
-            'rubric': rubric,
-            'hubEligible': hub_eligible,
-            'leadEligible': lead_eligible,
             'audience': detect_audience(topics, title),
             'date': it.get('publishedDate') or it.get('publishedAt'),
             'excerpt': excerpt,
