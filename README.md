@@ -118,3 +118,21 @@ Build-Artefakte liegen unter `build/` (`wget.log`, gerenderte Rohseiten in
 
 Inhalte und Marken gehören smzh (Swiss Management Zürich). Dieser Mirror dient
 ausschließlich der lokalen, originalgetreuen Reproduktion zu Archiv-/Testzwecken.
+
+
+## Interaktivitaets-Fixes (ohne JavaScript-Framework)
+
+Da das Original-JS entfernt ist (sonst wuerde es den eingefrorenen Inhalt leeren),
+werden zwei Dinge gezielt wiederhergestellt bzw. bereinigt:
+
+- **Mega-Menues** (`build/capture-menus.cjs` -> `build/menus.json`,
+  `build/inject_menu.py`, `build/menu_fix.py`): die 4 Panels werden eingebaut;
+  ein kleines Vanilla-JS + CSS oeffnet das Panel bei Hover und blendet die 2.
+  Ebene (Kategorie -> Linkspalte) ein – wie im Original, ohne React.
+- **Statische Fixes** (`build/static_fixes.py`): der Cookie-Consent-Banner wird
+  ausgeblendet (ohne JS nicht wegklickbar), und der JS-Button „Mehr anzeigen"
+  verweist auf die Artikel-Uebersicht.
+
+Nicht reproduzierbar bleiben echte Backend-Funktionen (Formular-Absenden,
+Volltextsuche, Live-Filter) – das ist die prinzipielle Grenze eines statischen
+Mirrors.
