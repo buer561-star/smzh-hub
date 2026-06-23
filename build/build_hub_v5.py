@@ -64,15 +64,15 @@ DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Z
  ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es zusätzlich ankommt.','/de/wohneigentumsfoerderung/'),
  ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann 3a wirklich zählt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/das-3-saeulensystem-der-schweiz/')]
 RUBRICS=[
- {'intro':'Kann ich mir mein Eigenheim leisten – und zu welchen Konditionen?','more':'/de/smzhub-eigenheim/',
+ {'label':'Eigenheim','intro':'Kann ich mir mein Eigenheim leisten – und zu welchen Konditionen?','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
   'flags':[('hypothekenradar','/de/smzhub-serie-hypotheken-radar/'),('immobilien-outlook','/de/smzhub-serie-immobilien-outlook/')],
   'cta':('Hypothek prüfen lassen','/de/immobilienbewertung/')},
- {'intro':'Wie lege ich mein Vermögen sinnvoll und ruhig an?','more':'/de/smzhub-vermoegen/',
+ {'label':'Vermögen','intro':'Wie lege ich mein Vermögen sinnvoll und ruhig an?','more':'/de/smzhub-vermoegen/',
   'arts':['/de/artikel/neue-aera-fed/','/de/artikel/usa-iran-deal/','/de/artikel/boersengang-spacex/','/de/artikel/sell-in-may/'],
   'flags':[('investment-guide','/de/smzhub-serie-investment-guide/')],
   'cta':('Anlagestrategie besprechen','/de/terminvereinbaren/')},
- {'intro':'Reicht mein Geld bis zur – und in der – Pensionierung?','more':'/de/smzhub-zukunft/',
+ {'label':'Vorsorge','intro':'Reicht mein Geld bis zur – und in der – Pensionierung?','more':'/de/smzhub-zukunft/',
   'arts':['/de/artikel/ahv-2030-pensionierung-planungsfrage/','/de/artikel/kapitalbezug-steuerentscheid/','/de/artikel/fruehpensionierung-unter-druck/','/de/artikel/gender-pension-gap/'],
   'flags':[('dossier','/de/smzhub-dossier-pensionierung/')],
   'cta':('Vorsorge analysieren','/de/vorsorgeanalyse/')}]
@@ -143,18 +143,32 @@ def flag_card(key,path):
             f'<span class="v5-flag-cad">{esc(cad)}</span><span class="v5-flag-n">{esc(name)}</span>'
             f'<span class="v5-flag-go">{"Dossier öffnen" if key=="dossier" else "Zur Serie"} →</span></span></a>')
 
-def rubric(rb):
-    arts=''
-    for p in rb['arts']:
-        r=item(p)
-        if not r: continue
-        arts+=f'<a class="v5-al" href="{link(p)}"><span class="v5-al-t">{esc(r["title"])}</span><span class="v5-al-m">{esc(meta_of(p))}</span></a>'
-    flags=''.join(flag_card(k,pp) for k,pp in rb['flags'])
+FLAGCAD={'hypothekenradar':'monatlich','investment-guide':'monatlich','immobilien-outlook':'quartalsweise','dossier':'Dossier'}
+FLAGNM={'hypothekenradar':'Hypotheken-Radar','investment-guide':'Investment Guide','immobilien-outlook':'Immobilien-Outlook','dossier':'Pensionierung planen'}
+def rubric(rb, idx):
+    arts=[p for p in rb['arts'] if item(p)]
+    leadp=arts[0]; subs=arts[1:4]
+    lead=item(leadp); im=img_of(leadp,1080)
+    hero=(f'<a class="v5-rub-hero" href="{link(leadp)}"><span class="v5-rh-img">{imgt(im)}</span>'
+          f'<span class="v5-rh-b"><span class="v5-rh-cat">{esc(rb["label"])}</span>'
+          f'<span class="v5-rh-t">{esc(lead["title"])}</span>'
+          f'<span class="v5-rh-p">{esc(teaser(leadp,170))}</span>'
+          f'<span class="v5-rh-go">{esc(meta_of(leadp))} · Beitrag lesen →</span></span></a>')
+    sub_html=''.join(f'<a class="v5-sl" href="{link(p)}"><span class="v5-sl-t">{esc(item(p)["title"])}</span>'
+                     f'<span class="v5-sl-m">{esc(meta_of(p))}</span></a>' for p in subs)
+    flag_html=''.join(f'<a class="v5-fl-row" href="{link(fp)}"><span class="v5-fl-k">{esc(FLAGCAD.get(k,""))}</span>'
+                      f'<span class="v5-fl-n">{esc(FLAGNM.get(k,""))}</span><span class="v5-fl-go">{"öffnen" if k=="dossier" else "Zur Serie"} →</span></a>'
+                      for k,fp in rb['flags'])
     cl,cp=rb['cta']
-    return (f'<section class="v5-sec"><div class="v5-head v5-head-sm"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>'
+    side=(f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div>'
+          f'<div class="v5-fl-list">{flag_html}</div>'
+          f'<a class="v5-cta" href="{link(cp)}">{esc(cl)} →</a></div>')
+    rev = idx%2==1
+    cols = '2fr 3fr' if rev else '3fr 2fr'
+    cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
+    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-head v5-head-sm"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>'
             f'<a class="v5-more" href="{link(rb["more"])}">Ganze Rubrik →</a></div>'
-            f'<div class="v5-rub-grid"><div class="v5-al-list">{arts}</div>'
-            f'<div class="v5-rub-side">{flags}<a class="v5-cta" href="{link(cp)}">{esc(cl)} →</a></div></div></section>')
+            f'<div class="{cls}" style="--cols:{cols}">{hero+side}</div></section>')
 
 def research():
     cols=''
@@ -169,7 +183,7 @@ def research():
             f'<div class="v5-rs-row">{cols}</div></div></section>')
 
 def home_inner():
-    return '<div class="v5">'+hero()+'<div class="v5-wrap">'+decisions()+season()+''.join(rubric(r) for r in RUBRICS)+'</div>'+research()+'</div>'
+    return '<div class="v5">'+hero()+'<div class="v5-wrap">'+decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div>'+research()+'</div>'
 
 FONTS=('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
  '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">')
@@ -189,21 +203,23 @@ CSS='''<style id="smzh-v5-css">
 /* Hero */
 .v5-hero{background:var(--navy);color:#fff;border-radius:0 0 22px 22px}
 .v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
-@media(min-width:960px){.v5-hero-in{grid-template-columns:1fr 460px;gap:3rem;padding:4.5rem 1.5rem 4.8rem;align-items:center}}
-.v5-hero-l{max-width:48ch}
-.v5-hero-l h1{color:#fff;font-size:clamp(2rem,3.6vw,3rem);font-weight:800;line-height:1.08}
-.v5-hero-l p{color:#bcd3e2;font-size:1.1rem;line-height:1.6;margin:1.2rem 0 0;max-width:44ch}
+@media(min-width:960px){.v5-hero-in{grid-template-columns:35fr 65fr;gap:2.5rem;padding:4.5rem 1.5rem 4.8rem;align-items:center}}
+.v5-hero-l{max-width:none}
+.v5-hero-l h1{color:#fff;font-size:clamp(1.9rem,2.7vw,2.5rem);font-weight:800;line-height:1.1;hyphens:auto;overflow-wrap:break-word}
+.v5-hero-l p{color:#bcd3e2;font-size:1.08rem;line-height:1.6;margin:1.2rem 0 0;max-width:42ch}
 .v5-hero-r{position:relative}
-.h-slides{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1.02;background:#fff;box-shadow:0 34px 64px -30px rgba(0,0,0,.55)}
-.h-slide{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.h-slides{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:#06283b;box-shadow:0 34px 64px -28px rgba(0,0,0,.6)}
+.h-slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none}
 .h-slide.on{opacity:1;pointer-events:auto}
-.h-slide-img{flex:0 0 47%;overflow:hidden;background:#06283b}
-.h-slide-img img{width:100%;height:100%;object-fit:cover}
-.h-slide-c{flex:1;display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.4rem;background:#fff}
+.h-slide-img{position:absolute;inset:0;overflow:hidden}
+.h-slide-img img{width:100%;height:100%;object-fit:cover;transform-origin:62% 38%;animation:kbzoom 14s ease-in-out infinite alternate}
+@keyframes kbzoom{from{transform:scale(1.015)}to{transform:scale(1.11)}}
+@media(prefers-reduced-motion:reduce){.h-slide-img img{animation:none}}
+.h-slide-c{position:absolute;left:1.1rem;right:1.1rem;bottom:1.1rem;display:flex;flex-direction:column;gap:.4rem;padding:1.25rem 1.45rem;border-radius:14px;background:rgba(255,255,255,.76);backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%);box-shadow:0 12px 34px -18px rgba(3,49,75,.55)}
 .h-slide-cat{font-size:.82rem;font-weight:600;color:var(--teal)}
-.h-slide-t{font-size:1.2rem;font-weight:700;color:var(--navy);line-height:1.24;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.h-slide-p{font-size:.9rem;color:var(--muted);line-height:1.45;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.h-slide-go{font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.2rem}
+.h-slide-t{font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.22;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.h-slide-p{font-size:.9rem;color:var(--muted);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.h-slide-go{font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.1rem}
 .h-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.1rem}
 .h-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.2s}
 .h-dot.on{background:#fff;width:26px;border-radius:5px}
@@ -239,25 +255,34 @@ CSS='''<style id="smzh-v5-css">
 .v5-head-sm{border-top:1px solid var(--line);padding-top:1.5rem}
 .v5-rub-intro{font-size:clamp(1.15rem,1.9vw,1.5rem);font-weight:700;color:var(--navy);max-width:30ch}
 .v5-rub-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
-@media(min-width:880px){.v5-rub-grid{grid-template-columns:1.6fr 1fr;gap:2.4rem}}
-.v5-al-list{display:flex;flex-direction:column}
-.v5-al{display:flex;align-items:baseline;justify-content:space-between;gap:1.2rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
-.v5-al:first-child{padding-top:0}
-.v5-al-t{font-size:1.08rem;font-weight:700;color:var(--navy);line-height:1.3}
-.v5-al:hover .v5-al-t{color:var(--teal)}
-.v5-al-m{font-size:.8rem;color:var(--faint);white-space:nowrap}
-.v5-rub-side{display:flex;flex-direction:column;gap:.9rem}
-.v5-flag{display:flex;gap:.9rem;align-items:stretch;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;transition:.15s}
-.v5-flag:hover{border-color:var(--teal);box-shadow:0 14px 30px -22px rgba(3,49,75,.55)}
-.v5-flag-cov{flex:0 0 84px;background:var(--lblue);overflow:hidden}
-.v5-flag-cov img{width:100%;height:100%;object-fit:cover}
-.v5-flag-cov-dos{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--teal))}
-.v5-flag-dos-i{color:#fff;font-size:1.5rem;opacity:.85}
-.v5-flag-b{display:flex;flex-direction:column;gap:.15rem;padding:.85rem .95rem}
-.v5-flag-cad{font-size:.76rem;color:var(--muted)}
-.v5-flag-n{font-size:1.05rem;font-weight:800;color:var(--navy)}
-.v5-flag-go{font-size:.8rem;font-weight:700;color:var(--teal);margin-top:.2rem}
-.v5-cta{display:block;text-align:center;background:var(--navy);color:#fff;font-weight:700;padding:.85rem 1.2rem;border-radius:10px;margin-top:.3rem}
+@media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.2rem;align-items:stretch}
+ .v5-rub-grid.rev .v5-rub-hero{order:2}.v5-rub-grid.rev .v5-rub-side{order:1}}
+/* Lead-Hero (60%): Bild oben, Titel + Text unten */
+.v5-rub-hero{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;transition:.15s}
+.v5-rub-hero:hover{box-shadow:0 18px 42px -26px rgba(3,49,75,.55)}
+.v5-rh-img{aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-rh-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-rub-hero:hover .v5-rh-img img{transform:scale(1.04)}
+.v5-rh-b{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.6rem 1.6rem}
+.v5-rh-cat{font-size:.82rem;font-weight:600;color:var(--teal)}
+.v5-rh-t{font-size:clamp(1.3rem,2vw,1.65rem);font-weight:800;color:var(--navy);line-height:1.22}
+.v5-rh-p{color:var(--muted);line-height:1.5}
+.v5-rh-go{font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.1rem}
+/* Sub-Content rechts (ohne Bild), füllt Rechteck, bündig unten */
+.v5-rub-side{display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem}
+.v5-sl-list{display:flex;flex-direction:column}
+.v5-sl{display:flex;align-items:baseline;justify-content:space-between;gap:1.2rem;padding:.95rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.v5-sl:first-child{padding-top:0}
+.v5-sl-t{font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+.v5-sl:hover .v5-sl-t{color:var(--teal)}
+.v5-sl-m{font-size:.78rem;color:var(--faint);white-space:nowrap}
+.v5-fl-list{display:flex;flex-direction:column;gap:.6rem}
+.v5-fl-row{display:flex;align-items:center;gap:.8rem;padding:.7rem .95rem;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:10px;background:var(--lblue);text-decoration:none}
+.v5-fl-row:hover{box-shadow:0 10px 24px -18px rgba(3,49,75,.5)}
+.v5-fl-k{font-size:.74rem;color:var(--muted);min-width:78px}
+.v5-fl-n{font-weight:700;color:var(--navy);flex:1}
+.v5-fl-go{font-size:.78rem;color:var(--teal);font-weight:700;white-space:nowrap}
+.v5-cta{display:block;text-align:center;background:var(--navy);color:#fff;font-weight:700;padding:.9rem 1.2rem;border-radius:10px}
 .v5-cta:hover{background:var(--teal)}
 /* Research */
 .v5-research{background:var(--lblue);padding:3rem 1.5rem;margin-top:1rem}
@@ -276,8 +301,9 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-se-cta,#ed-root .v5-se-tag,#ed-root .v5-se-h,#ed-root .v5-se-p{color:#fff!important}
 #ed-root .h-slide-t{color:#03314B!important}#ed-root .h-slide-cat{color:#185E7F!important}#ed-root .h-slide-go{color:#185E7F!important}#ed-root .h-slide-p{color:#5b6b7a!important}
 #ed-root .v5-hero-l h1{color:#fff!important}
-#ed-root .v5-more,#ed-root .v5-flag-go,#ed-root .v5-rs-go,#ed-root .v5-se-sub-go{color:#185E7F!important}
-#ed-root .v5-dec-q,#ed-root .v5-al-t,#ed-root .v5-flag-n,#ed-root .v5-rs-n,#ed-root .v5-se-sub-t,#ed-root .v5-rub-intro,#ed-root .v5 h2{color:#03314B!important}
+#ed-root .v5-more,#ed-root .v5-rh-cat,#ed-root .v5-rh-go,#ed-root .v5-fl-go,#ed-root .v5-rs-go,#ed-root .v5-se-sub-go{color:#185E7F!important}
+#ed-root .v5-dec-q,#ed-root .v5-rh-t,#ed-root .v5-sl-t,#ed-root .v5-fl-n,#ed-root .v5-rs-n,#ed-root .v5-se-sub-t,#ed-root .v5-rub-intro,#ed-root .v5 h2{color:#03314B!important}
+#ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
 </style>'''
 JS='''<script id="smzh-v5-js">
