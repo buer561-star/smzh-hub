@@ -67,13 +67,13 @@ DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Z
  ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es zusätzlich ankommt.','/de/wohneigentumsfoerderung/'),
  ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann 3a wirklich zählt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/das-3-saeulensystem-der-schweiz/')]
 RUBRICS=[
- {'label':'Eigenheim','intro':'Kann ich mir mein Eigenheim leisten – und zu welchen Konditionen?','more':'/de/smzhub-eigenheim/',
+ {'label':'Eigenheim','intro':'Eigenheim & Hypothek','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
   'tool':{'imgfrom':'/de/artikel/zuercher-wohnungsinitiativen/','href':'/de/immobilienbewertung-rechner/','tag':'Rechner','t':'Tragbarkeit in zwei Minuten prüfen','go':'Jetzt prüfen'}},
- {'label':'Vermögen','intro':'Wie lege ich mein Vermögen sinnvoll und ruhig an?','more':'/de/smzhub-vermoegen/',
+ {'label':'Vermögen','intro':'Vermögen & Anlegen','more':'/de/smzhub-vermoegen/',
   'arts':['/de/artikel/neue-aera-fed/','/de/artikel/usa-iran-deal/','/de/artikel/boersengang-spacex/','/de/artikel/sell-in-may/'],
   'tool':{'imgfrom':'/de/artikel/boersengang-spacex/','href':'/de/risikoprofil-erstellen/','tag':'Check','t':'Welche Anlagestrategie passt zu Ihnen?','go':'Check starten'}},
- {'label':'Vorsorge','intro':'Reicht mein Geld bis zur – und in der – Pensionierung?','more':'/de/smzhub-zukunft/',
+ {'label':'Vorsorge','intro':'Vorsorge & Pensionierung','more':'/de/smzhub-zukunft/',
   'arts':['/de/artikel/ahv-2030-pensionierung-planungsfrage/','/de/artikel/kapitalbezug-steuerentscheid/','/de/artikel/fruehpensionierung-unter-druck/','/de/artikel/gender-pension-gap/'],
   'tool':{'imgfrom':'/de/artikel/fruehpensionierung-unter-druck/','href':'/de/vorsorgeanalyse/','tag':'Analyse','t':'Reicht Ihr Geld bis in die Pensionierung?','go':'Analyse starten'}}]
 FLAGMETA={'hypothekenradar':('Hypotheken-Radar','monatlich'),'investment-guide':('Investment Guide','monatlich'),
