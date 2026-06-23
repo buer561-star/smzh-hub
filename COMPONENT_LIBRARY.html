@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>smzhHub Component Library (V5)</title>
+<!-- Lebendes Nachschlagewerk. Quelle der Wahrheit bleibt der Style-Block
+     <style id="smzh-v5-css"> in build/build_hub_v5.py. Dieses CSS ist 1:1 von dort
+     uebernommen; ein Zusatzblock am Ende definiert die NEUE Flagship-Komponente.
+     Regeln: siehe DESIGN_CONTRACT.md (Repo-Root). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- =========================================================================
+     v5-CSS — uebernommen aus build/build_hub_v5.py (Style-Block smzh-v5-css).
+     Token-Scope auf #ed-root umgestellt auf .v5 (die Library hat keine Chrome).
+     ========================================================================= -->
+<style id="smzh-v5-css">
+.v5{--navy:#03314B;--teal:#185E7F;--lblue:#E9F4FC;--ink:#1c2b36;--muted:#5b6b7a;--faint:#8b9aa8;--line:#e5e7eb}
+.v5,.v5 *{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;box-sizing:border-box}
+.v5{color:var(--ink)}
+.v5-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+.v5 h1,.v5 h2,.v5 h3{letter-spacing:-.02em;color:var(--navy);margin:0}
+.v5 a{text-decoration:none;color:inherit}
+.v5-sec{margin:5rem 0}
+.v5-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.4rem}
+.v5-head h2{font-size:clamp(1.4rem,2.4vw,1.85rem);font-weight:800}
+.v5-sub{color:var(--muted);font-size:.92rem;margin:.35rem 0 0}
+.v5-more{color:var(--teal);font-weight:700;font-size:.9rem;white-space:nowrap}
+.v5-more:hover{color:var(--navy)}
+.v5-funnels{position:relative}
+.v5-fn-top{background:var(--navy);padding:2.6rem 1.5rem 3.6rem}
+.v5-fn-in{max-width:1180px;margin:0 auto}
+.v5-fn-h{color:#fff;font-size:clamp(1.4rem,2.4vw,1.85rem);font-weight:800;line-height:1.15}
+.v5-fn-sub{color:#bcd3e2;font-size:.95rem;line-height:1.5;margin:.45rem 0 0;max-width:60ch}
+.v5-fn-body{background:linear-gradient(180deg,#e7f0f8 0%,#f3f9fd 55%,#fff 100%);padding:0 1.5rem 3rem}
+.v5-fn-body .v5-fgrid{margin-top:-2.6rem}
+.v5-fgrid{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:760px){.v5-fgrid{grid-template-columns:repeat(6,1fr)}
+ .v5-funnel{grid-column:span 2}.v5-funnel.wide{grid-column:span 3}}
+.v5-funnel{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;min-height:172px;background:#fff;border:1px solid #e2e9f0;border-radius:16px;padding:1.6rem 1.7rem;box-shadow:0 18px 40px -22px rgba(3,49,75,.5);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-funnel::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.v5-funnel:hover{transform:translateY(-4px);box-shadow:0 28px 52px -24px rgba(3,49,75,.5);border-color:#cdd6df}
+.v5-funnel:hover::before{transform:scaleY(1)}
+.v5-funnel-n{position:absolute;top:1.1rem;right:1.4rem;font-size:1.35rem;font-weight:800;color:#e3ebf2;letter-spacing:-.02em;transition:color .25s ease}
+.v5-funnel:hover .v5-funnel-n{color:var(--teal)}
+.v5-funnel-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.2;max-width:82%}
+.v5-funnel-d{font-size:.92rem;color:var(--muted);line-height:1.5;flex:1}
+.v5-funnel-go{display:inline-flex;align-items:center;gap:.3em;font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.2rem}
+.v5-funnel-go::after{content:"\2192";transition:transform .25s ease}
+.v5-funnel:hover .v5-funnel-go::after{transform:translateX(4px)}
+.v5-phead{background:var(--navy);color:#fff;border-radius:0 0 22px 22px;padding:3.4rem 1.5rem 3.6rem}
+.v5-phead-in{max-width:1180px;margin:0 auto}
+.v5-eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#7fb3cc;margin:0 0 .6rem}
+.v5-phead h1{color:#fff;font-size:clamp(1.9rem,2.7vw,2.5rem);font-weight:800;line-height:1.12}
+.v5-phead p{color:#bcd3e2;font-size:1.08rem;line-height:1.6;margin:1rem 0 0;max-width:60ch}
+.v5-lead{font-size:1.1rem;line-height:1.65;color:var(--ink);max-width:64ch}
+.v5-note{background:var(--lblue);border:1px solid #d7e6f2;border-radius:12px;padding:1.2rem 1.4rem;color:var(--ink);line-height:1.6}
+.v5-back{display:inline-flex;align-items:center;gap:.4em;font-weight:700;color:var(--teal)}
+.v5-backsec{margin-top:3rem}
+.v5-dec-fresh{margin-top:auto;padding-top:.7rem;font-size:.72rem;font-weight:700;letter-spacing:.01em;color:var(--faint);display:inline-flex;align-items:center;gap:.45em}
+.v5-dec-fresh::before{content:"";width:6px;height:6px;border-radius:50%;background:#28a745;box-shadow:0 0 0 3px rgba(40,167,69,.15)}
+.art-fig{margin:1.7rem 0 2rem}
+.art-figw{position:relative;border-radius:18px;overflow:hidden;background:var(--lblue);box-shadow:0 26px 54px -30px rgba(3,49,75,.6)}
+.art-figw::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,49,75,0) 52%,rgba(3,49,75,.5));pointer-events:none}
+.art-fig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;height:auto}
+.art-fig-tag{position:absolute;z-index:2;left:15px;top:15px;font-size:.68rem;font-weight:700;letter-spacing:.01em;color:#fff;background:rgba(3,49,75,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);padding:.42rem .75rem;border-radius:999px}
+.art-fig figcaption{font-size:.82rem;color:var(--faint);margin:.7rem 0 0;padding-left:.9rem;border-left:2px solid var(--teal);line-height:1.45}
+.art-cta{position:relative;overflow:hidden;color:#fff;border-radius:20px;padding:2.1rem 2.1rem 1.8rem;margin:2.6rem 0;background:linear-gradient(152deg,#03314B 0%,#0a3f5d 50%,#16566f 128%);box-shadow:0 32px 64px -36px rgba(3,49,75,.9)}
+.art-cta::before{content:"";position:absolute;right:-70px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(126,200,230,.32),rgba(126,200,230,0) 70%);pointer-events:none}
+.art-cta::after{content:"";position:absolute;left:-50px;bottom:-100px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(24,94,127,.55),rgba(24,94,127,0) 72%);pointer-events:none}
+.art-cta>*{position:relative;z-index:1}
+.art-cta-eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.71rem;font-weight:700;letter-spacing:.02em;color:#a6d2e6;margin:0 0 .8rem}
+.art-cta-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#38c172;box-shadow:0 0 0 4px rgba(56,193,114,.2)}
+.art-cta h3{color:#fff;font-size:clamp(1.3rem,2.2vw,1.55rem);font-weight:800;letter-spacing:-.01em;line-height:1.18;margin:0 0 .55rem}
+.art-cta p{color:#cce1ed;margin:0 0 1.35rem;line-height:1.6;max-width:54ch}
+.art-cta-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.art-cta-btn{display:inline-flex!important;align-items:center;gap:.55em;font-weight:700;font-size:1rem;line-height:1;padding:.95rem 1.55rem;border-radius:999px;text-decoration:none!important;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s,background .2s,border-color .2s}
+.art-cta-btn .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.art-cta-btn:hover .ar{transform:translateX(4px)}
+.art-cta-btn1{background:linear-gradient(135deg,#1f93c4,#136f97);color:#fff;box-shadow:0 16px 32px -16px rgba(19,111,151,.9)}
+.art-cta-btn1:hover{transform:translateY(-2px);box-shadow:0 22px 42px -16px rgba(38,150,190,.95)}
+.art-cta-btn2{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.42)}
+.art-cta-btn2:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.72);transform:translateY(-2px)}
+.art-cta-trust{display:flex;flex-wrap:wrap;gap:.35rem 1.2rem;margin:1.15rem 0 0;font-size:.79rem;color:#9ec3d5}
+.art-cta-trust span{display:inline-flex;align-items:center;gap:.4em}
+.art-cta-trust span::before{content:"\2713";color:#38c172;font-weight:800}
+.art-related{margin:3.1rem 0 1rem;border-top:1px solid var(--line);padding-top:1.9rem}
+.art-related-eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--teal);margin:0 0 .35rem}
+.art-related h2{font-size:1.3rem;font-weight:800;color:var(--navy);margin:0;letter-spacing:-.01em}
+.art-rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:.9rem;margin-top:1.3rem}
+.art-rel-card{position:relative;display:flex;flex-direction:column;gap:.55rem;min-height:150px;padding:1.15rem 1.2rem 1.2rem;border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden;text-decoration:none!important;transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,border-color .22s}
+.art-rel-card::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .26s}
+.art-rel-card:hover{transform:translateY(-3px);border-color:#cfe0ec;box-shadow:0 20px 38px -24px rgba(3,49,75,.5)}
+.art-rel-card:hover::before{transform:scaleY(1)}
+.art-rel-k{font-size:.69rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.art-rel-t{font-size:1.02rem;font-weight:700;color:var(--navy);line-height:1.32}
+.art-rel-go{margin-top:auto;font-size:.83rem;font-weight:700;color:var(--teal);display:inline-flex;align-items:center;gap:.4em}
+.art-rel-go .ar{transition:transform .22s}
+.art-rel-card:hover .art-rel-go .ar{transform:translateX(4px)}
+/* Decisions */
+.v5-dec-nav{display:flex;gap:.5rem;flex:0 0 auto}
+.v5-dec-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:1.45rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;user-select:none}
+.v5-dec-arrow:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 8px 18px -12px rgba(3,49,75,.5)}
+.v5-dec-vp{overflow:hidden}
+.v5-dec-track{display:flex;gap:1.1rem;align-items:stretch}
+.v5-dec-track .v5-dec{flex:0 0 86%}
+@media(min-width:560px){.v5-dec-track .v5-dec{flex:0 0 calc((100% - 1.1rem)/2)}}
+@media(min-width:980px){.v5-dec-track .v5-dec{flex:0 0 calc((100% - 3.3rem)/4)}}
+.v5-dec{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);transition:.15s}
+.v5-dec:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(3,49,75,.45);border-color:#cdd6df}
+.v5-dec-cat{font-size:.8rem;font-weight:600;color:var(--teal)}
+.v5-dec-q{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.18}
+.v5-dec-d{font-size:.9rem;color:var(--muted);line-height:1.45;position:relative;z-index:1}
+.v5-dec-shape{position:absolute;right:-26px;bottom:-26px;width:74px;height:74px;border-radius:20px;opacity:.10;transform:rotate(18deg)}
+/* Season */
+.v5-season{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:880px){.v5-season{grid-template-columns:1.5fr 1fr}}
+.v5-se-hero{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.6rem;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border-radius:16px;padding:2rem 2.1rem;min-height:230px;justify-content:flex-end}
+.v5-se-tag{font-size:.82rem;font-weight:600;color:#bfe2f1}
+.v5-se-h{font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:800;line-height:1.15;color:#fff}
+.v5-se-p{color:#d3e6f1;line-height:1.5;max-width:48ch}
+.v5-se-cta{margin-top:.4rem;font-weight:700;color:#fff}
+.v5-se-subs{display:flex;flex-direction:column;gap:1.1rem}
+.v5-se-sub{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.15rem 1.3rem;flex:1;transition:.15s}
+.v5-se-sub:hover{border-color:var(--teal);box-shadow:0 12px 26px -20px rgba(3,49,75,.5)}
+.v5-se-sub-t{font-weight:700;color:var(--navy);line-height:1.3}
+.v5-se-sub-go{color:var(--teal);font-weight:800}
+/* Rubric */
+.v5-rub-sec{margin:5.6rem 0}
+.v5-rub-head{border-top:1px solid var(--line);padding-top:2.4rem;margin-bottom:2rem}
+.v5-rub-intro{font-size:clamp(1.2rem,1.9vw,1.55rem);font-weight:700;color:var(--navy);max-width:none}
+.v5-rub-desc{color:var(--muted);font-size:1rem;line-height:1.5;margin:.45rem 0 0;max-width:62ch}
+.v5-rub-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.8rem;align-items:stretch}
+ .v5-rub-grid.rev .v5-rub-hero{order:2}.v5-rub-grid.rev .v5-rub-side{order:1}}
+.v5-rub-hero{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;transition:.15s}
+.v5-rub-hero:hover{box-shadow:0 18px 42px -26px rgba(3,49,75,.55)}
+.v5-rh-img{aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-rh-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-rub-hero:hover .v5-rh-img img{transform:scale(1.04)}
+.v5-rh-b{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.6rem 1.6rem}
+.v5-rh-cat{font-size:.82rem;font-weight:600;color:var(--teal)}
+.v5-rh-t{font-size:clamp(1.3rem,2vw,1.65rem);font-weight:800;color:var(--navy);line-height:1.22}
+.v5-rh-p{color:var(--muted);line-height:1.5}
+.v5-rh-go{font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.1rem}
+.v5-rub-side{display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem}
+.v5-sl-list{display:flex;flex-direction:column}
+.v5-sl{display:flex;align-items:baseline;justify-content:space-between;gap:1.2rem;padding:.95rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.v5-sl:first-child{padding-top:0}
+.v5-sl-t{font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+.v5-sl:hover .v5-sl-t{color:var(--teal)}
+.v5-sl-m{font-size:.78rem;color:var(--faint);white-space:nowrap}
+.v5-mid{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;transition:.15s;margin-top:1.4rem}
+.v5-mid:hover{box-shadow:0 18px 40px -24px rgba(3,49,75,.55);transform:translateY(-2px)}
+.v5-mid-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-mid-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-mid:hover .v5-mid-img img{transform:scale(1.05)}
+.v5-mid-tag{position:absolute;top:.7rem;left:.7rem;font-size:.7rem;font-weight:700;color:#fff;background:var(--teal);padding:.22rem .6rem;border-radius:999px}
+.v5-mid-b{display:flex;flex-direction:column;gap:.3rem;padding:1rem 1.2rem 1.15rem}
+.v5-mid-t{font-weight:700;color:var(--navy);line-height:1.25;font-size:1.08rem}
+.v5-mid-go{font-size:.84rem;font-weight:700;color:var(--teal);display:inline-flex;align-items:center;gap:.3em}
+.v5-mid-go::after{content:"\2192";transition:transform .25s ease}
+.v5-mid:hover .v5-mid-go::after{transform:translateX(4px)}
+/* Research */
+.v5-research{background:var(--lblue);padding:3rem 1.5rem;margin-top:1rem}
+.v5-rs-in{max-width:1180px;margin:0 auto}
+.v5-rs-row{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:760px){.v5-rs-row{grid-template-columns:repeat(3,1fr)}}
+.v5-rs{display:flex;flex-direction:column;gap:.4rem;background:#fff;border:1px solid #d7e6f2;border-radius:12px;padding:1.1rem;transition:.15s}
+.v5-rs:hover{box-shadow:0 16px 34px -22px rgba(3,49,75,.5);transform:translateY(-2px)}
+.v5-rs-cov{aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:var(--lblue);margin-bottom:.4rem}
+.v5-rs-cov img{width:100%;height:100%;object-fit:cover}
+.v5-rs-n{font-size:1.15rem;font-weight:800;color:var(--navy)}
+.v5-rs-cad{font-size:.84rem;color:var(--muted)}
+.v5-rs-go{font-size:.84rem;font-weight:700;color:var(--teal);margin-top:.3rem}
+.v5 h1,.v5 h2,.v5 h3{letter-spacing:-.022em;text-wrap:balance}
+.v5 a:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+</style>
+
+<!-- =========================================================================
+     NEU: Flagship-Research-Anker. Definiert hier (Spec); der builder uebernimmt
+     diesen Block 1:1 in den smzh-v5-css-Block von build/build_hub_v5.py.
+     Reuse vor Neubau — nur die wirklich neuen v5-fa*-Klassen, alles auf
+     bestehenden Tokens. Keine Versalien in v5-fa-badge (Label-Regel).
+     ========================================================================= -->
+<style id="smzh-v5-flagship-css">
+.v5-flagship{margin:5.6rem 0}
+.v5-fa-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:880px){.v5-fa-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+.v5-fa{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(3,49,75,.55);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-fa:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(3,49,75,.55);border-color:#cdd6df}
+.v5-fa-cov{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-fa-cov img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-fa:hover .v5-fa-cov img{transform:scale(1.04)}
+.v5-fa-badge{position:absolute;left:14px;top:14px;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(3,49,75,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);padding:.4rem .75rem;border-radius:999px}
+.v5-fa-body{display:flex;flex-direction:column;gap:.55rem;padding:1.5rem 1.6rem 1.3rem;flex:1}
+.v5-fa-title{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:800;color:var(--navy);line-height:1.2}
+.v5-fa-sub{font-size:.95rem;color:var(--muted);line-height:1.5;margin:0}
+.v5-fa-latest{display:flex;flex-direction:column;gap:.2rem;margin-top:.5rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.v5-fa-date{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-fa-latest-t{font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+.v5-fa-latest-t:hover{color:var(--teal)}
+.v5-fa-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:auto;padding:1.1rem 1.6rem 1.5rem;background:var(--navy)}
+.v5-fa-cta{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:var(--navy);background:#fff;padding:.8rem 1.3rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-fa-cta .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-fa-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
+.v5-fa-cta:hover .ar{transform:translateX(4px)}
+.v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
+.v5-fa-archive:hover{color:#fff}
+</style>
+
+<style>
+/* Nur fuer die Library-Seite selbst (kein Teil des Systems). */
+body{margin:0;background:#f4f7fa}
+.lib-top{background:var(--navy,#03314B);color:#fff;padding:2.4rem 1.5rem}
+.lib-top-in{max-width:1180px;margin:0 auto;font-family:'Plus Jakarta Sans',sans-serif}
+.lib-top h1{margin:0;font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.lib-top p{margin:.5rem 0 0;color:#bcd3e2;max-width:70ch;line-height:1.55}
+.lib-sec{max-width:1180px;margin:0 auto;padding:2.6rem 1.5rem;border-bottom:1px solid #e0e7ee}
+.lib-sec>h2.lib-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:800;color:#03314B;margin:0 0 .3rem;letter-spacing:-.01em}
+.lib-meta{font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;color:#5b6b7a;margin:0 0 1.4rem;line-height:1.5}
+.lib-meta code{background:#e9eff5;color:#185E7F;padding:.08rem .35rem;border-radius:4px;font-size:.92em}
+.lib-stage{background:#fff;border:1px solid #e0e7ee;border-radius:14px;padding:1.6rem;overflow:hidden}
+.lib-stage.dark{background:#03314B}
+details.lib-code{margin-top:1rem;font-family:'Plus Jakarta Sans',sans-serif}
+details.lib-code>summary{cursor:pointer;font-size:.82rem;font-weight:700;color:#185E7F}
+details.lib-code pre{background:#0f2533;color:#cfe0ec;padding:1rem 1.1rem;border-radius:10px;overflow:auto;font-size:.76rem;line-height:1.5;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.lib-ph{background:linear-gradient(135deg,#cfe0ec,#e9f4fc);width:100%;height:100%;display:block}
+</style>
+</head>
+<body>
+
+<div class="lib-top">
+  <div class="lib-top-in">
+    <h1>smzhHub Component Library — V5</h1>
+    <p>Lebendes Nachschlagewerk der erlaubten V5-Komponenten mit ihren echten Klassennamen.
+       Regelwerk: DESIGN_CONTRACT.md. Quelle der Wahrheit fuer das CSS bleibt der
+       Style-Block <code style="color:#9fd0ee">smzh-v5-css</code> in
+       <code style="color:#9fd0ee">build/build_hub_v5.py</code>. Bildflaechen sind hier
+       Platzhalter. Keine Versalien in Labels (Pre-Deploy-geprueft).</p>
+  </div>
+</div>
+
+<div class="v5">
+
+<!-- ===================== Page-Head ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Page-Head (Themenwelt)</h2>
+  <p class="lib-meta">Klassen: <code>.v5-phead</code> · <code>.v5-phead-in</code> · <code>.v5-eyebrow</code> · h1 · p — Navy-Kopf der Unterseiten. Eyebrow in Normalschrift.</p>
+  <div class="lib-stage" style="padding:0">
+    <section class="v5-phead"><div class="v5-phead-in">
+      <p class="v5-eyebrow">smzhHub · Themenwelt</p>
+      <h1>Eigenheim &amp; Hypothek</h1>
+      <p>Fuer alle, die kaufen, verlaengern oder ihre Finanzierung neu ausrichten wollen.</p>
+    </div></section>
+  </div>
+</section>
+
+<!-- ===================== Section-Head ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Section-Head</h2>
+  <p class="lib-meta">Klassen: <code>.v5-head</code> (h2 + <code>.v5-sub</code> + <code>.v5-more</code>). Ueberschriftzeile mit optionalem Beistrich-Link.</p>
+  <div class="lib-stage">
+    <div class="v5-head">
+      <div><h2>Wiederkehrende Einschaetzungen von smzh</h2>
+      <p class="v5-sub">Laufend aktualisierte Einordnungen zu den Finanzfragen, die anstehen.</p></div>
+      <a class="v5-more" href="#">Alle Publikationen &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Themenwelten-Band ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Themenwelten-Band (Funnel)</h2>
+  <p class="lib-meta">Klassen: <code>.v5-funnels</code> · <code>.v5-fn-top</code> · <code>.v5-fn-in</code> · <code>.v5-fgrid</code> · <code>.v5-funnel</code>(<code>.wide</code>) mit <code>.v5-funnel-n/-t/-d/-go</code>.</p>
+  <div class="lib-stage" style="padding:0;overflow:hidden">
+    <section class="v5-funnels">
+      <div class="v5-fn-top"><div class="v5-fn-in">
+        <h2 class="v5-fn-h">Ihre Themenwelten</h2>
+        <p class="v5-fn-sub">Fuenf Einstiege in den smzhHub &ndash; waehlen Sie Ihren Schwerpunkt.</p>
+      </div></div>
+      <div class="v5-fn-body"><div class="v5-fn-in"><div class="v5-fgrid">
+        <a class="v5-funnel" href="#"><span class="v5-funnel-n">01</span><span class="v5-funnel-t">Eigenheim &amp; Hypothek</span><span class="v5-funnel-d">Kaufen, finanzieren oder die Hypothek neu ausrichten.</span><span class="v5-funnel-go">Bereich oeffnen</span></a>
+        <a class="v5-funnel" href="#"><span class="v5-funnel-n">02</span><span class="v5-funnel-t">Immobilienanlagen</span><span class="v5-funnel-d">Renditeobjekte und indirekte Immobilienanlagen einordnen.</span><span class="v5-funnel-go">Bereich oeffnen</span></a>
+        <a class="v5-funnel" href="#"><span class="v5-funnel-n">03</span><span class="v5-funnel-t">Kapitalmaerkte &amp; Anlagen</span><span class="v5-funnel-d">Maerkte, Portfolios und die passende Anlagestrategie.</span><span class="v5-funnel-go">Bereich oeffnen</span></a>
+        <a class="v5-funnel wide" href="#"><span class="v5-funnel-n">04</span><span class="v5-funnel-t">Vorsorge &amp; Pensionierung</span><span class="v5-funnel-d">AHV, BVG, 3a und der Weg in die Pensionierung.</span><span class="v5-funnel-go">Bereich oeffnen</span></a>
+        <a class="v5-funnel wide" href="#"><span class="v5-funnel-n">05</span><span class="v5-funnel-t">smzh horizon</span><span class="v5-funnel-d">Perspektiven, Trends und Ausblick von smzh.</span><span class="v5-funnel-go">Bereich oeffnen</span></a>
+      </div></div></div>
+    </section>
+  </div>
+</section>
+
+<!-- ===================== Decision-Cards ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Decision-Cards</h2>
+  <p class="lib-meta">Klassen: <code>.v5-dec-sec</code> · <code>.v5-dec-vp</code> · <code>.v5-dec-track</code> · <code>.v5-dec</code> mit <code>.v5-dec-cat/-q/-d/-fresh/-shape</code>. <code>.v5-dec-fresh</code> ist Label-Klasse (Normalschrift + Statuspunkt).</p>
+  <div class="lib-stage">
+    <div class="v5-dec-vp"><div class="v5-dec-track" style="flex-wrap:wrap">
+      <a class="v5-dec" href="#" style="flex:1 1 230px"><span class="v5-dec-cat">Hypothek</span><span class="v5-dec-q">SARON oder Festhypothek?</span><span class="v5-dec-d">Welche Strategie traegt, wenn die Zinsen tief sind, aber Planungssicherheit zaehlt.</span><span class="v5-dec-fresh">Aktualisiert · 2026</span><span class="v5-dec-shape" style="background:#185E7F"></span></a>
+      <a class="v5-dec" href="#" style="flex:1 1 230px"><span class="v5-dec-cat">Eigenheim</span><span class="v5-dec-q">Kaufen oder warten?</span><span class="v5-dec-d">Wie Preise, Eigenkapital und Tragbarkeit zusammenspielen &ndash; und worauf es jetzt ankommt.</span><span class="v5-dec-fresh">Aktualisiert · 2026</span><span class="v5-dec-shape" style="background:#03314B"></span></a>
+    </div></div>
+  </div>
+</section>
+
+<!-- ===================== Saison-Block ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Saison-Block</h2>
+  <p class="lib-meta">Klassen: <code>.v5-season</code> · <code>.v5-se-hero</code> (<code>.v5-se-tag/-h/-p/-cta</code>) + <code>.v5-se-subs</code>/<code>.v5-se-sub</code>. Ein grosser Aufmacher + Sub-Links.</p>
+  <div class="lib-stage">
+    <div class="v5-season">
+      <a class="v5-se-hero" href="#"><span class="v5-se-tag">Aktuell relevant</span><span class="v5-se-h">Krankenkasse 2027: pruefen, bevor die Police automatisch weiterlaeuft</span><span class="v5-se-p">Praemie, Franchise und Modellwahl wirken jedes Jahr direkt auf Ihr Budget.</span><span class="v5-se-cta">Praemien vergleichen &rarr;</span></a>
+      <div class="v5-se-subs">
+        <a class="v5-se-sub" href="#"><span class="v5-se-sub-t">Praemien optimieren ohne Leistungsverlust</span><span class="v5-se-sub-go">&rarr;</span></a>
+        <a class="v5-se-sub" href="#"><span class="v5-se-sub-t">Welche Franchise passt zu Ihrem Profil?</span><span class="v5-se-sub-go">&rarr;</span></a>
+        <a class="v5-se-sub" href="#"><span class="v5-se-sub-t">Budget fuer 2027 durchrechnen</span><span class="v5-se-sub-go">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Rubrik-Block ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Rubrik-Block (Lead-Hero + Side + Mid-Hero)</h2>
+  <p class="lib-meta">Klassen: <code>.v5-rub-sec</code> · <code>.v5-rub-head</code> (<code>.v5-rub-intro</code> + <code>.v5-rub-desc</code>) · <code>.v5-rub-grid</code>(<code>.rev</code>) · <code>.v5-rub-hero</code> (<code>.v5-rh-img/-cat/-t/-p/-go</code>) + <code>.v5-rub-side</code> (<code>.v5-sl-list</code>/<code>.v5-sl</code>, <code>.v5-mid</code>).</p>
+  <div class="lib-stage">
+    <div class="v5-rub-head"><h3 class="v5-rub-intro">Eigenheim &amp; Hypothek</h3><p class="v5-rub-desc">Fuer alle, die kaufen, verlaengern oder ihre Finanzierung neu ausrichten wollen.</p></div>
+    <div class="v5-rub-grid" style="--cols:1.45fr 1fr">
+      <a class="v5-rub-hero" href="#">
+        <span class="v5-rh-img"><span class="lib-ph"></span></span>
+        <span class="v5-rh-b"><span class="v5-rh-cat">Eigenheim</span><span class="v5-rh-t">Was der juengste Zinsentscheid fuer Ihre Hypothek bedeutet</span><span class="v5-rh-p">Eine Einordnung, wie sich die neue Lage auf Festhypothek und SARON auswirkt.</span><span class="v5-rh-go">6 Min · Beitrag lesen</span></span>
+      </a>
+      <div class="v5-rub-side">
+        <div class="v5-sl-list">
+          <a class="v5-sl" href="#"><span class="v5-sl-t">Wohnungsinitiativen: was sich aendern koennte</span><span class="v5-sl-m">5 Min</span></a>
+          <a class="v5-sl" href="#"><span class="v5-sl-t">Eigenmietwert: der Stand nach dem Entscheid</span><span class="v5-sl-m">7 Min</span></a>
+          <a class="v5-sl" href="#"><span class="v5-sl-t">Sanierung und Steuern richtig planen</span><span class="v5-sl-m">4 Min</span></a>
+        </div>
+        <a class="v5-mid" href="#">
+          <span class="v5-mid-img"><span class="lib-ph"></span><span class="v5-mid-tag">Rechner</span></span>
+          <span class="v5-mid-b"><span class="v5-mid-t">Tragbarkeit in zwei Minuten pruefen</span><span class="v5-mid-go">Tragbarkeit berechnen</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Research-Band ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Research-Band (Standard, 3 Serien)</h2>
+  <p class="lib-meta">Klassen: <code>.v5-research</code> · <code>.v5-rs-in</code> · <code>.v5-rs-row</code> · <code>.v5-rs</code> (<code>.v5-rs-cov/-n/-cad/-go</code>). Drei wiederkehrende Serien als Cover-Karten. Fuer das prominente 2er-Paar siehe Flagship-Anker unten.</p>
+  <div class="lib-stage" style="padding:0;overflow:hidden">
+    <section class="v5-research"><div class="v5-rs-in">
+      <div class="v5-head"><div><h2>Wiederkehrende Einschaetzungen von smzh</h2></div><a class="v5-more" href="#">Alle Publikationen &rarr;</a></div>
+      <div class="v5-rs-row">
+        <a class="v5-rs" href="#"><span class="v5-rs-cov"><span class="lib-ph"></span></span><span class="v5-rs-n">Hypotheken-Radar</span><span class="v5-rs-cad">monatlich · 9 Ausgaben</span><span class="v5-rs-go">Serie ansehen &rarr;</span></a>
+        <a class="v5-rs" href="#"><span class="v5-rs-cov"><span class="lib-ph"></span></span><span class="v5-rs-n">Investment Guide</span><span class="v5-rs-cad">monatlich · 16 Ausgaben</span><span class="v5-rs-go">Serie ansehen &rarr;</span></a>
+        <a class="v5-rs" href="#"><span class="v5-rs-cov"><span class="lib-ph"></span></span><span class="v5-rs-n">Immobilien-Outlook</span><span class="v5-rs-cad">quartalsweise · 7 Ausgaben</span><span class="v5-rs-go">Serie ansehen &rarr;</span></a>
+      </div>
+    </div></section>
+  </div>
+</section>
+
+<!-- ===================== Eyebrows / Labels ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Eyebrows &amp; Labels (Pre-Deploy-geprueft)</h2>
+  <p class="lib-meta">Klassen: <code>.v5-eyebrow</code> · <code>.v5-dec-fresh</code> · <code>.art-fig-tag</code> · <code>.art-rel-k</code> · <code>.art-related-eyebrow</code> · <code>.art-cta-eyebrow</code>. Regel: keine Versalien, <code>letter-spacing .01&ndash;.02em</code>, <code>font-weight 700</code>.</p>
+  <div class="lib-stage" style="display:flex;flex-wrap:wrap;gap:1.4rem 2.2rem;align-items:center">
+    <p class="v5-eyebrow" style="margin:0">smzhHub · Themenwelt</p>
+    <span class="v5-dec-fresh" style="margin:0;padding:0">Aktualisiert · 2026</span>
+    <p class="art-rel-k" style="margin:0">Ratgeber · Hypothek</p>
+    <p class="art-related-eyebrow" style="margin:0">Passend dazu</p>
+    <p class="art-cta-eyebrow" style="margin:0">360° Check-Up</p>
+    <span style="position:relative;display:inline-block"><span class="art-fig-tag" style="position:static;display:inline-block">Quelle: smzh Research</span></span>
+  </div>
+</section>
+
+<!-- ===================== Artikel: Figur ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Artikel — Bildfigur</h2>
+  <p class="lib-meta">Klassen: <code>.art-fig</code> · <code>.art-figw</code> · <code>.art-fig-tag</code> · <code>figcaption</code>. Redaktionelle Bildfigur (kein Diagramm).</p>
+  <div class="lib-stage">
+    <figure class="art-fig" style="margin:0;max-width:680px">
+      <div class="art-figw"><span class="art-fig-tag">Marktdaten</span><span class="lib-ph" style="aspect-ratio:16/9"></span></div>
+      <figcaption>Bildunterschrift mit Quellenangabe &ndash; die Redaktion liefert den Text.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== Artikel: CTA ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Artikel — CTA-Block</h2>
+  <p class="lib-meta">Klassen: <code>.art-cta</code> · <code>.art-cta-eyebrow</code> · h3 · p · <code>.art-cta-row</code> · <code>.art-cta-btn</code>(<code>1</code>/<code>2</code>) mit <code>.ar</code>-Pfeil · <code>.art-cta-trust</code>. Genau ein Primaer-Button (<code>btn1</code>).</p>
+  <div class="lib-stage dark">
+    <div class="art-cta" style="margin:0">
+      <p class="art-cta-eyebrow">360° Check-Up</p>
+      <h3>Nutzen Sie unseren 360° Check-Up</h3>
+      <p>Wissen ist der Einstieg. Entscheidend ist, was es fuer Ihre Situation bedeutet.</p>
+      <div class="art-cta-row">
+        <a class="art-cta-btn art-cta-btn1" href="#">Naechsten Schritt klaeren <span class="ar">&rarr;</span></a>
+        <a class="art-cta-btn art-cta-btn2" href="#">Mehr erfahren</a>
+      </div>
+      <div class="art-cta-trust"><span>unabhaengig</span><span>kostenlos &amp; unverbindlich</span><span>persoenlich</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Artikel: Related ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Artikel — Related-Block</h2>
+  <p class="lib-meta">Klassen: <code>.art-related</code> · <code>.art-related-eyebrow</code> · h2 · <code>.art-rel-grid</code> · <code>.art-rel-card</code> (<code>.art-rel-k/-t/-go</code> mit <code>.ar</code>).</p>
+  <div class="lib-stage">
+    <section class="art-related" style="margin:0;border-top:0;padding-top:0">
+      <p class="art-related-eyebrow">Passend dazu</p>
+      <h2>Weiterlesen</h2>
+      <div class="art-rel-grid">
+        <a class="art-rel-card" href="#"><span class="art-rel-k">Ratgeber · Hypothek</span><span class="art-rel-t">SARON oder Festhypothek: die Entscheidung</span><span class="art-rel-go">Lesen <span class="ar">&rarr;</span></span></a>
+        <a class="art-rel-card" href="#"><span class="art-rel-k">Ratgeber · Eigenheim</span><span class="art-rel-t">Wie viel Eigenkapital Sie wirklich brauchen</span><span class="art-rel-go">Lesen <span class="ar">&rarr;</span></span></a>
+        <a class="art-rel-card" href="#"><span class="art-rel-k">Ratgeber · Tragbarkeit</span><span class="art-rel-t">Reicht Ihr Einkommen fuer die Bank?</span><span class="art-rel-go">Lesen <span class="ar">&rarr;</span></span></a>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ===================== FLAGSHIP-RESEARCH-ANKER (NEU) ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Flagship-Research-Anker (NEU)</h2>
+  <p class="lib-meta">
+    Gleichwertiges, prominentes Paar (Hypotheken-Radar + Immobilien-Outlook). Desktop zweispaltig
+    <code>1fr 1fr</code> (gleichwertig), mobil gestapelt. Hebt sich von Decision-/Standardkarten ab durch
+    groesseres Cover, dunklen Navy-Footer je Anker und mehr Luft.<br>
+    Wiederverwendet (keine neuen Werte): Tokens <code>--navy/--teal/--lblue/--muted/--faint/--line</code>,
+    Cover-Logik wie <code>.v5-rs-cov</code>, Pillen-/Pfeil-Logik wie <code>.art-cta-btn</code>, Schatten/Transition aus dem Contract,
+    Badge folgt der Eyebrow-Regel.<br>
+    Neue Klassen: <code>.v5-flagship</code> · <code>.v5-fa-grid</code> · <code>.v5-fa</code> · <code>.v5-fa-cov</code> ·
+    <code>.v5-fa-badge</code> · <code>.v5-fa-body</code> · <code>.v5-fa-title</code> · <code>.v5-fa-sub</code> ·
+    <code>.v5-fa-latest</code> · <code>.v5-fa-date</code> · <code>.v5-fa-latest-t</code> · <code>.v5-fa-foot</code> ·
+    <code>.v5-fa-archive</code> · <code>.v5-fa-cta</code>.
+  </p>
+  <div class="lib-stage">
+    <section class="v5-flagship" style="margin:0">
+      <div class="v5-head"><div><h2>Institutionelle Research-Basis</h2><p class="v5-sub">Zwei wiederkehrende Reihen von smzh &ndash; gleichwertig, fortlaufend, archiviert.</p></div></div>
+      <div class="v5-fa-grid">
+
+        <!-- Anker 1 -->
+        <article class="v5-fa">
+          <div class="v5-fa-cov"><span class="lib-ph"></span><span class="v5-fa-badge">Research-Reihe · monatlich</span></div>
+          <div class="v5-fa-body">
+            <h3 class="v5-fa-title">Hypotheken-Radar</h3>
+            <p class="v5-fa-sub">Zinslage, SARON und Festhypothek &ndash; jeden Monat eingeordnet fuer Ihre Finanzierungsentscheidung.</p>
+            <div class="v5-fa-latest">
+              <span class="v5-fa-date">Aktuellste Ausgabe · Juni 2026</span>
+              <a class="v5-fa-latest-t" href="#">Titel der aktuellsten Ausgabe (Redaktion)</a>
+            </div>
+          </div>
+          <div class="v5-fa-foot">
+            <a class="v5-fa-cta" href="#">Zur Reihe <span class="ar">&rarr;</span></a>
+            <a class="v5-fa-archive" href="#">Alle Ausgaben &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Anker 2 -->
+        <article class="v5-fa">
+          <div class="v5-fa-cov"><span class="lib-ph"></span><span class="v5-fa-badge">Research-Reihe · quartalsweise</span></div>
+          <div class="v5-fa-body">
+            <h3 class="v5-fa-title">Immobilien-Outlook</h3>
+            <p class="v5-fa-sub">Preise, Regulierung und Marktlage am Schweizer Immobilienmarkt &ndash; jedes Quartal eingeordnet.</p>
+            <div class="v5-fa-latest">
+              <span class="v5-fa-date">Aktuellste Ausgabe · Q2 2026</span>
+              <a class="v5-fa-latest-t" href="#">Titel der aktuellsten Ausgabe (Redaktion)</a>
+            </div>
+          </div>
+          <div class="v5-fa-foot">
+            <a class="v5-fa-cta" href="#">Zur Reihe <span class="ar">&rarr;</span></a>
+            <a class="v5-fa-archive" href="#">Alle Ausgaben &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </div>
+
+  <details class="lib-code">
+    <summary>Markup-Spezifikation (ein Anker) &mdash; fuer den builder</summary>
+<pre>&lt;section class="v5-flagship"&gt;
+  &lt;div class="v5-head"&gt;&lt;div&gt;
+    &lt;h2&gt;{Section-Titel}&lt;/h2&gt;
+    &lt;p class="v5-sub"&gt;{Section-Subtitle}&lt;/p&gt;
+  &lt;/div&gt;&lt;/div&gt;
+  &lt;div class="v5-fa-grid"&gt;
+    &lt;article class="v5-fa"&gt;
+      &lt;div class="v5-fa-cov"&gt;{img aktuellste Ausgabe}&lt;span class="v5-fa-badge"&gt;{Format, Normalschrift}&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="v5-fa-body"&gt;
+        &lt;h3 class="v5-fa-title"&gt;{Reihen-Name}&lt;/h3&gt;
+        &lt;p class="v5-fa-sub"&gt;{Subtitle}&lt;/p&gt;
+        &lt;div class="v5-fa-latest"&gt;
+          &lt;span class="v5-fa-date"&gt;Aktuellste Ausgabe · {Datum}&lt;/span&gt;
+          &lt;a class="v5-fa-latest-t" href="{Ausgabe}"&gt;{Titel}&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="v5-fa-foot"&gt;
+        &lt;a class="v5-fa-cta" href="{Reihe}"&gt;{CTA} &lt;span class="ar"&gt;&amp;rarr;&lt;/span&gt;&lt;/a&gt;
+        &lt;a class="v5-fa-archive" href="{Archiv}"&gt;{Archiv-Label} &amp;rarr;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;!-- zweiter Anker identisch aufgebaut --&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+  </details>
+  <details class="lib-code">
+    <summary>CSS-Spezifikation (in smzh-v5-css uebernehmen) &mdash; fuer den builder</summary>
+<pre>.v5-flagship{margin:5.6rem 0}
+.v5-fa-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:880px){.v5-fa-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+.v5-fa{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:0 18px 44px -26px rgba(3,49,75,.55);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-fa:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(3,49,75,.55);border-color:#cdd6df}
+.v5-fa-cov{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-fa-cov img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-fa:hover .v5-fa-cov img{transform:scale(1.04)}
+.v5-fa-badge{position:absolute;left:14px;top:14px;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;
+  background:rgba(3,49,75,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.28);padding:.4rem .75rem;border-radius:999px}
+.v5-fa-body{display:flex;flex-direction:column;gap:.55rem;padding:1.5rem 1.6rem 1.3rem;flex:1}
+.v5-fa-title{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:800;color:var(--navy);line-height:1.2}
+.v5-fa-sub{font-size:.95rem;color:var(--muted);line-height:1.5;margin:0}
+.v5-fa-latest{display:flex;flex-direction:column;gap:.2rem;margin-top:.5rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.v5-fa-date{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-fa-latest-t{font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+.v5-fa-latest-t:hover{color:var(--teal)}
+.v5-fa-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:auto;
+  padding:1.1rem 1.6rem 1.5rem;background:var(--navy)}
+.v5-fa-cta{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:var(--navy);
+  background:#fff;padding:.8rem 1.3rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-fa-cta .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-fa-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
+.v5-fa-cta:hover .ar{transform:translateX(4px)}
+.v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
+.v5-fa-archive:hover{color:#fff}
+
+/* Achtung beim Einbau in build_hub_v5.py:
+   - KEIN text-transform:uppercase (Pre-Deploy-Lint blockt das).
+   - v5-fa-badge-Text ohne Versalien (Label-Regel).
+   - Wegen Chrome-Link-Overrides auf #ed-root ggf. Farben absichern, analog
+     den bestehenden #ed-root-...{color:...!important}-Zeilen, u. a.:
+       #ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}
+       #ed-root .v5-fa-sub{color:#5b6b7a!important}
+       #ed-root .v5-fa-date{color:#8b9aa8!important}
+       #ed-root .v5-fa-cta{color:#03314B!important}
+       #ed-root .v5-fa-archive{color:#9fd0ee!important}
+       #ed-root .v5-fa-badge{color:#fff!important} */
+</pre>
+  </details>
+</section>
+
+</div>
+</body>
+</html>
