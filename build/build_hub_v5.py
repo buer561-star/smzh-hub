@@ -101,9 +101,11 @@ def hero():
                  f'<span class="h-slide-p">{esc(teaser(p,110))}</span>'
                  f'<span class="h-slide-go">Beitrag lesen →</span></span></a>')
         dots+=f'<span class="h-dot{" on" if i==0 else ""}" role="button" tabindex="0" data-i="{i}" aria-label="Beitrag {i+1}"></span>'
-    return (f'<section class="v5-hero"><div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
+    return (f'<section class="v5-hero"><div class="v5-hero-in">'
+            f'<div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
             f'<p>Einordnungen, Research und Ratgeber zu Eigenheim, Vermögen, Vorsorge und Steuern – kuratiert nach Ihren Fragen.</p></div>'
-            f'<div class="v5-hero-r v5-car"><div class="h-slides">{slides}</div><div class="h-dots">{dots}</div></div></section>')
+            f'<div class="v5-hero-r v5-car"><div class="h-slides">{slides}</div><div class="h-dots">{dots}</div></div>'
+            f'</div></section>')
 
 def decisions():
     cards=''
@@ -185,13 +187,14 @@ CSS='''<style id="smzh-v5-css">
 .v5-more{color:var(--teal);font-weight:700;font-size:.9rem;white-space:nowrap}
 .v5-more:hover{color:var(--navy)}
 /* Hero */
-.v5-hero{display:grid;grid-template-columns:1fr;gap:2rem;background:var(--navy);color:#fff;border-radius:0 0 22px 22px;padding:3rem 1.5rem 3.4rem}
-@media(min-width:960px){.v5-hero{grid-template-columns:1fr minmax(300px,400px);gap:4.5rem;padding:5rem 5rem 5.4rem;align-items:center}}
-.v5-hero-l{max-width:46ch}
+.v5-hero{background:var(--navy);color:#fff;border-radius:0 0 22px 22px}
+.v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
+@media(min-width:960px){.v5-hero-in{grid-template-columns:1fr 460px;gap:3rem;padding:4.5rem 1.5rem 4.8rem;align-items:center}}
+.v5-hero-l{max-width:48ch}
 .v5-hero-l h1{color:#fff;font-size:clamp(2rem,3.6vw,3rem);font-weight:800;line-height:1.08}
 .v5-hero-l p{color:#bcd3e2;font-size:1.1rem;line-height:1.6;margin:1.2rem 0 0;max-width:44ch}
 .v5-hero-r{position:relative}
-.h-slides{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#fff;box-shadow:0 34px 64px -30px rgba(0,0,0,.55)}
+.h-slides{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1.02;background:#fff;box-shadow:0 34px 64px -30px rgba(0,0,0,.55)}
 .h-slide{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transition:opacity .6s ease;pointer-events:none}
 .h-slide.on{opacity:1;pointer-events:auto}
 .h-slide-img{flex:0 0 47%;overflow:hidden;background:#06283b}
