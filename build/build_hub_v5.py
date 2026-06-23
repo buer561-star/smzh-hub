@@ -42,6 +42,9 @@ def meta_of(p):
     m=fdate(r.get('date'))
     if r.get('readingTime'): m+=f' · {r["readingTime"]} Min'
     return m
+def rmin(p):
+    r=item(p)
+    return f'{r["readingTime"]} Min' if r and r.get('readingTime') else ''
 
 # ---- kuratierte Inhalte ----
 ig=series_items('investment-guide'); io=series_items('immobilien-outlook'); hr=series_items('hypothekenradar')
@@ -66,16 +69,13 @@ DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Z
 RUBRICS=[
  {'label':'Eigenheim','intro':'Kann ich mir mein Eigenheim leisten – und zu welchen Konditionen?','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
-  'flags':[('hypothekenradar','/de/smzhub-serie-hypotheken-radar/'),('immobilien-outlook','/de/smzhub-serie-immobilien-outlook/')],
-  'cta':('Hypothek prüfen lassen','/de/immobilienbewertung/')},
+  'tool':{'imgfrom':'/de/artikel/zuercher-wohnungsinitiativen/','href':'/de/immobilienbewertung-rechner/','tag':'Rechner','t':'Tragbarkeit in zwei Minuten prüfen','go':'Jetzt prüfen'}},
  {'label':'Vermögen','intro':'Wie lege ich mein Vermögen sinnvoll und ruhig an?','more':'/de/smzhub-vermoegen/',
   'arts':['/de/artikel/neue-aera-fed/','/de/artikel/usa-iran-deal/','/de/artikel/boersengang-spacex/','/de/artikel/sell-in-may/'],
-  'flags':[('investment-guide','/de/smzhub-serie-investment-guide/')],
-  'cta':('Anlagestrategie besprechen','/de/terminvereinbaren/')},
+  'tool':{'imgfrom':'/de/artikel/boersengang-spacex/','href':'/de/risikoprofil-erstellen/','tag':'Check','t':'Welche Anlagestrategie passt zu Ihnen?','go':'Check starten'}},
  {'label':'Vorsorge','intro':'Reicht mein Geld bis zur – und in der – Pensionierung?','more':'/de/smzhub-zukunft/',
   'arts':['/de/artikel/ahv-2030-pensionierung-planungsfrage/','/de/artikel/kapitalbezug-steuerentscheid/','/de/artikel/fruehpensionierung-unter-druck/','/de/artikel/gender-pension-gap/'],
-  'flags':[('dossier','/de/smzhub-dossier-pensionierung/')],
-  'cta':('Vorsorge analysieren','/de/vorsorgeanalyse/')}]
+  'tool':{'imgfrom':'/de/artikel/fruehpensionierung-unter-druck/','href':'/de/vorsorgeanalyse/','tag':'Analyse','t':'Reicht Ihr Geld bis in die Pensionierung?','go':'Analyse starten'}}]
 FLAGMETA={'hypothekenradar':('Hypotheken-Radar','monatlich'),'investment-guide':('Investment Guide','monatlich'),
  'immobilien-outlook':('Immobilien-Outlook','quartalsweise'),'dossier':('Pensionierung planen','Dossier · Storyline')}
 RESEARCH=[('Hypotheken-Radar','monatlich · 9 Ausgaben','/de/smzhub-serie-hypotheken-radar/','hypothekenradar'),
@@ -149,25 +149,25 @@ def rubric(rb, idx):
     arts=[p for p in rb['arts'] if item(p)]
     leadp=arts[0]; subs=arts[1:4]
     lead=item(leadp); im=img_of(leadp,1080)
+    rm=rmin(leadp); goline=(rm+' · ' if rm else '')+'Beitrag lesen →'
     hero=(f'<a class="v5-rub-hero" href="{link(leadp)}"><span class="v5-rh-img">{imgt(im)}</span>'
           f'<span class="v5-rh-b"><span class="v5-rh-cat">{esc(rb["label"])}</span>'
           f'<span class="v5-rh-t">{esc(lead["title"])}</span>'
           f'<span class="v5-rh-p">{esc(teaser(leadp,170))}</span>'
-          f'<span class="v5-rh-go">{esc(meta_of(leadp))} · Beitrag lesen →</span></span></a>')
+          f'<span class="v5-rh-go">{esc(goline)}</span></span></a>')
     sub_html=''.join(f'<a class="v5-sl" href="{link(p)}"><span class="v5-sl-t">{esc(item(p)["title"])}</span>'
-                     f'<span class="v5-sl-m">{esc(meta_of(p))}</span></a>' for p in subs)
-    flag_html=''.join(f'<a class="v5-fl-row" href="{link(fp)}"><span class="v5-fl-k">{esc(FLAGCAD.get(k,""))}</span>'
-                      f'<span class="v5-fl-n">{esc(FLAGNM.get(k,""))}</span><span class="v5-fl-go">{"öffnen" if k=="dossier" else "Zur Serie"} →</span></a>'
-                      for k,fp in rb['flags'])
-    cl,cp=rb['cta']
-    side=(f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div>'
-          f'<div class="v5-fl-list">{flag_html}</div>'
-          f'<a class="v5-cta" href="{link(cp)}">{esc(cl)} →</a></div>')
+                     +(f'<span class="v5-sl-m">{esc(rmin(p))}</span>' if rmin(p) else '')+'</a>' for p in subs)
+    # Mid-Hero / subtiler CTA: highlighted Tool/Check/Analyse mit Bild (Platzhalter-Slot)
+    t=rb['tool']; tim=img_of(t['imgfrom'],640)
+    mid=(f'<a class="v5-mid" href="{link(t["href"])}"><span class="v5-mid-img">{imgt(tim)}'
+         f'<span class="v5-mid-tag">{esc(t["tag"])}</span></span>'
+         f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(t["t"])}</span>'
+         f'<span class="v5-mid-go">{esc(t["go"])} →</span></span></a>')
+    side=f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div>{mid}</div>'
     rev = idx%2==1
-    cols = '2fr 3fr' if rev else '3fr 2fr'
+    cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
     cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
-    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-head v5-head-sm"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>'
-            f'<a class="v5-more" href="{link(rb["more"])}">Ganze Rubrik →</a></div>'
+    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3></div>'
             f'<div class="{cls}" style="--cols:{cols}">{hero+side}</div></section>')
 
 def research():
@@ -194,7 +194,7 @@ CSS='''<style id="smzh-v5-css">
 .v5-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
 .v5 h1,.v5 h2,.v5 h3{letter-spacing:-.02em;color:var(--navy);margin:0}
 .v5 a{text-decoration:none;color:inherit}
-.v5-sec{margin:3.4rem 0}
+.v5-sec{margin:5rem 0}
 .v5-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.4rem}
 .v5-head h2{font-size:clamp(1.4rem,2.4vw,1.85rem);font-weight:800}
 .v5-sub{color:var(--muted);font-size:.92rem;margin:.35rem 0 0}
@@ -252,10 +252,11 @@ CSS='''<style id="smzh-v5-css">
 .v5-se-sub-t{font-weight:700;color:var(--navy);line-height:1.3}
 .v5-se-sub-go{color:var(--teal);font-weight:800}
 /* Rubric */
-.v5-head-sm{border-top:1px solid var(--line);padding-top:1.5rem}
-.v5-rub-intro{font-size:clamp(1.15rem,1.9vw,1.5rem);font-weight:700;color:var(--navy);max-width:30ch}
+.v5-rub-sec{margin:5.6rem 0}
+.v5-rub-head{border-top:1px solid var(--line);padding-top:2.4rem;margin-bottom:2rem}
+.v5-rub-intro{font-size:clamp(1.2rem,1.9vw,1.55rem);font-weight:700;color:var(--navy);max-width:34ch}
 .v5-rub-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
-@media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.2rem;align-items:stretch}
+@media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.8rem;align-items:stretch}
  .v5-rub-grid.rev .v5-rub-hero{order:2}.v5-rub-grid.rev .v5-rub-side{order:1}}
 /* Lead-Hero (60%): Bild oben, Titel + Text unten */
 .v5-rub-hero{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;transition:.15s}
@@ -284,6 +285,16 @@ CSS='''<style id="smzh-v5-css">
 .v5-fl-go{font-size:.78rem;color:var(--teal);font-weight:700;white-space:nowrap}
 .v5-cta{display:block;text-align:center;background:var(--navy);color:#fff;font-weight:700;padding:.9rem 1.2rem;border-radius:10px}
 .v5-cta:hover{background:var(--teal)}
+/* Mid-Hero (subtiler CTA: Rechner/Check/Analyse mit Bild) */
+.v5-mid{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;transition:.15s;margin-top:1.4rem}
+.v5-mid:hover{box-shadow:0 18px 40px -24px rgba(3,49,75,.55);transform:translateY(-2px)}
+.v5-mid-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-mid-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-mid:hover .v5-mid-img img{transform:scale(1.05)}
+.v5-mid-tag{position:absolute;top:.7rem;left:.7rem;font-size:.7rem;font-weight:700;color:#fff;background:var(--teal);padding:.22rem .6rem;border-radius:999px}
+.v5-mid-b{display:flex;flex-direction:column;gap:.3rem;padding:1rem 1.2rem 1.15rem}
+.v5-mid-t{font-weight:700;color:var(--navy);line-height:1.25;font-size:1.08rem}
+.v5-mid-go{font-size:.84rem;font-weight:700;color:var(--teal)}
 /* Research */
 .v5-research{background:var(--lblue);padding:3rem 1.5rem;margin-top:1rem}
 .v5-rs-in{max-width:1180px;margin:0 auto}
@@ -302,7 +313,8 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .h-slide-t{color:#03314B!important}#ed-root .h-slide-cat{color:#185E7F!important}#ed-root .h-slide-go{color:#185E7F!important}#ed-root .h-slide-p{color:#5b6b7a!important}
 #ed-root .v5-hero-l h1{color:#fff!important}
 #ed-root .v5-more,#ed-root .v5-rh-cat,#ed-root .v5-rh-go,#ed-root .v5-fl-go,#ed-root .v5-rs-go,#ed-root .v5-se-sub-go{color:#185E7F!important}
-#ed-root .v5-dec-q,#ed-root .v5-rh-t,#ed-root .v5-sl-t,#ed-root .v5-fl-n,#ed-root .v5-rs-n,#ed-root .v5-se-sub-t,#ed-root .v5-rub-intro,#ed-root .v5 h2{color:#03314B!important}
+#ed-root .v5-dec-q,#ed-root .v5-rh-t,#ed-root .v5-sl-t,#ed-root .v5-mid-t,#ed-root .v5-rs-n,#ed-root .v5-se-sub-t,#ed-root .v5-rub-intro,#ed-root .v5 h2{color:#03314B!important}
+#ed-root .v5-mid-go{color:#185E7F!important}#ed-root .v5-mid-tag{color:#fff!important}
 #ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
 </style>'''
