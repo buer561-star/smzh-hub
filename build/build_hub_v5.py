@@ -12,6 +12,7 @@ import sys; sys.path.insert(0,'build')
 import postprocess_all as P
 
 SITE='site'; SMZH=os.path.join(SITE,'smzh.ch'); CHROME_SRC='build/backup/pre-ia/smzhub-index.html'
+BASE='https://buer561-star.github.io/smzh-hub/smzh.ch'  # Canonical-/OG-Basis (GitHub Pages)
 rows=json.load(open('build/smzhhub-content.json',encoding='utf-8'))
 BYP={r['path']:r for r in rows}
 P_='../../'
@@ -56,16 +57,16 @@ HERO=[  # (path-or-row, kategorie)
  (ig[0]['path'] if ig else None,'Anlagen'),
  (io[0]['path'] if io else None,'Eigenheim'),
 ]
-DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Zinsen tief bleiben, aber Planungssicherheit zählt?','/de/hypothekenarten-im-vergleich/'),
- ('Eigenheim','Kaufen oder warten?','Wie Preisentwicklung, Eigenkapital und Tragbarkeit zusammenspielen.','/de/wie-kaufe-ich-eine-immobilie/'),
- ('Vorsorge','Rente oder Kapital?','Eine Entscheidung, die Steuern, Sicherheit und Flexibilität gleichzeitig betrifft.','/de/leistungen-im-alter/'),
- ('Anlegen','3a Konto oder Wertschriften?','Warum die Wahl der Anlageform über Jahrzehnte mehr bewirkt als die Einzahlung allein.','/de/altersvorsorge-optimierung-saeule-3a/'),
- ('Eigenheim','Reicht mein Einkommen für die Bank?','Wie Banken die Tragbarkeit rechnen – und was Sie daran beeinflussen können.','/de/optimierung-der-tragbarkeit/'),
- ('Vermögen','Amortisieren oder investieren?','Wann Schuldenabbau sinnvoll ist – und wann Ihr Kapital mehr bewirkt.','/de/finanzplan-erstellen/'),
- ('Vorsorge','Früher pensionieren oder weiterarbeiten?','Was ein früherer Ausstieg kostet – und wie er finanzierbar bleibt.','/de/pensionsplanung/'),
- ('Steuern','Wo verschenke ich jedes Jahr Steuern?','Welche Abzüge und Einzahlungen wirklich einen Unterschied machen.','/de/steuerabzuege-optimal-nutzen/'),
- ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es zusätzlich ankommt.','/de/wohneigentumsfoerderung/'),
- ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann 3a wirklich zählt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/das-3-saeulensystem-der-schweiz/')]
+DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Strategie 2026 trägt, wenn die SNB-Zinsen tief sind, aber Planungssicherheit zählt.','/de/ratgeber-saron-oder-festhypothek/'),
+ ('Eigenheim','Kaufen oder warten?','Wie Preise, Eigenkapital und Tragbarkeit 2026 zusammenspielen – und worauf es jetzt ankommt.','/de/ratgeber-eigenheim-kaufen-oder-warten/'),
+ ('Vorsorge','Rente oder Kapital?','Die Pensionierungsentscheidung 2026 – mit Folgen für Steuern, Sicherheit und Flexibilität.','/de/ratgeber-rente-oder-kapitalbezug/'),
+ ('Anlegen','3a Konto oder Wertschriften?','Warum die Anlageform der Säule 3a über Jahrzehnte mehr bewirkt als die Einzahlung – Stand 2026.','/de/ratgeber-saeule-3a-konto-oder-wertschriften/'),
+ ('Eigenheim','Reicht mein Einkommen für die Bank?','Wie Banken die Tragbarkeit 2026 rechnen – und was Sie daran heute beeinflussen können.','/de/ratgeber-tragbarkeit-hypothek/'),
+ ('Vermögen','Amortisieren oder investieren?','Schulden tilgen oder anlegen: was sich bei den Zinsen von 2026 für Sie langfristig mehr lohnt.','/de/ratgeber-amortisieren-oder-investieren/'),
+ ('Vorsorge','Früher pensionieren oder weiterarbeiten?','Was ein früherer Ausstieg 2026 kostet – und wie er finanzierbar bleibt.','/de/ratgeber-frueher-pensionieren/'),
+ ('Steuern','Wo verschenke ich jedes Jahr Steuern?','Welche Abzüge und Einzahlungen Sie für das Steuerjahr 2026 jetzt noch nutzen können.','/de/ratgeber-steuern-sparen/'),
+ ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es 2026 zusätzlich ankommt.','/de/ratgeber-eigenkapital-eigenheim/'),
+ ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann sich 3a 2026 wirklich lohnt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/ratgeber-lohnt-sich-saeule-3a/')]
 RUBRICS=[
  {'label':'Eigenheim','intro':'Eigenheim & Hypothek','desc':'Für alle, die kaufen, verlängern oder ihre Finanzierung neu ausrichten wollen.','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
@@ -113,11 +114,12 @@ def decisions():
     for i,(cat,q,desc,p) in enumerate(DECISIONS):
         cards+=(f'<a class="v5-dec" href="{link(p)}"><span class="v5-dec-cat">{esc(cat)}</span>'
                 f'<span class="v5-dec-q">{esc(q)}</span><span class="v5-dec-d">{esc(desc)}</span>'
+                f'<span class="v5-dec-fresh">Aktualisiert · 2026</span>'
                 f'<span class="v5-dec-shape" style="background:{shapes[i%4]}"></span></a>')
     nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
          '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
     return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
-            f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht ohne Einordnung entschieden werden.</p></div>'
+            f'<p class="v5-sub">Konkrete Einordnungen zu den Finanzfragen, die 2026 anstehen – laufend aktualisiert.</p></div>'
             f'{nav}</div>'
             f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
 
@@ -261,6 +263,42 @@ CSS='''<style id="smzh-v5-css">
 .v5-note{background:var(--lblue);border:1px solid #d7e6f2;border-radius:12px;padding:1.2rem 1.4rem;color:var(--ink);line-height:1.6}
 .v5-back{display:inline-flex;align-items:center;gap:.4em;font-weight:700;color:var(--teal)}
 .v5-backsec{margin-top:3rem}
+/* Entscheidungs-Karten: Aktualitäts-Chip */
+.v5-dec-fresh{margin-top:auto;padding-top:.7rem;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:.45em}
+.v5-dec-fresh::before{content:"";width:6px;height:6px;border-radius:50%;background:#28a745;box-shadow:0 0 0 3px rgba(40,167,69,.15)}
+/* Ratgeber-Artikel (Lead-Gen + SEO) */
+.art-bc{font-size:.8rem;color:var(--faint);margin:1.2rem 0 .2rem}
+.art-bc a{color:var(--teal);font-weight:600}
+.art-body{max-width:760px;margin:0 auto;padding-bottom:1rem}
+.art-lead{font-size:1.18rem;line-height:1.65;color:var(--navy);font-weight:500;margin:1.4rem 0 1.2rem}
+.art-fig{margin:1.4rem 0 1.6rem}
+.art-fig img{width:100%;height:auto;border-radius:14px;display:block;box-shadow:0 18px 40px -24px rgba(3,49,75,.5)}
+.art-fig figcaption{font-size:.82rem;color:var(--faint);margin-top:.5rem;text-align:center}
+.art-body h2{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:800;color:var(--navy);margin:2.4rem 0 .7rem;letter-spacing:-.01em}
+.art-body h3{font-size:1.12rem;font-weight:700;color:var(--navy);margin:1.5rem 0 .4rem}
+.art-body p{font-size:1.05rem;line-height:1.72;color:var(--ink);margin:.8rem 0}
+.art-body ul,.art-body ol{font-size:1.05rem;line-height:1.7;color:var(--ink);padding-left:1.3rem;margin:.7rem 0}
+.art-body li{margin:.4rem 0}
+.art-body a{color:var(--teal);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.art-table{width:100%;border-collapse:collapse;margin:1.3rem 0;font-size:.97rem}
+.art-table th,.art-table td{border:1px solid var(--line);padding:.7rem .9rem;text-align:left;vertical-align:top}
+.art-table th{background:var(--lblue);color:var(--navy);font-weight:700}
+.art-cta{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border-radius:16px;padding:1.8rem 1.9rem;margin:2.2rem 0}
+.art-cta h3{color:#fff;font-size:1.3rem;font-weight:800;margin:0 0 .5rem}
+.art-cta p{color:#dbe9f1;margin:0 0 1.1rem;line-height:1.55}
+.art-cta-row{display:flex;flex-wrap:wrap;gap:.7rem}
+.art-cta-btn{display:inline-block;background:#fff;color:var(--navy);font-weight:700;padding:.8rem 1.3rem;border-radius:10px;transition:.15s}
+.art-cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(0,0,0,.5)}
+.art-cta-btn2{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.art-faq{margin:2.6rem 0 1rem}
+.art-faq-q{font-weight:700;color:var(--navy);font-size:1.08rem;margin:1.4rem 0 .25rem}
+.art-faq-a{color:var(--ink);line-height:1.72;margin:0}
+.art-related{margin-top:2.4rem;border-top:1px solid var(--line);padding-top:1.3rem}
+.art-related h2{font-size:1.15rem;font-weight:800;color:var(--navy);margin:0 0 .6rem}
+.art-related ul{list-style:none;padding:0;margin:0}
+.art-related li{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.art-related a{color:var(--navy);font-weight:700}
+.art-related a:hover{color:var(--teal)}
 /* Hero */
 .v5-hero{background:var(--navy);color:#fff}
 .v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
@@ -383,6 +421,11 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-funnel-n{color:#e3ebf2!important}#ed-root .v5-funnel:hover .v5-funnel-n{color:#185E7F!important}
 #ed-root .v5-fn-h{color:#fff!important}#ed-root .v5-fn-sub{color:#bcd3e2!important}
 #ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}
+#ed-root .v5-dec-fresh{color:#8b9aa8!important}
+#ed-root .art-body a,#ed-root .art-bc a,#ed-root .art-related a{color:#185E7F!important}
+#ed-root .art-body p,#ed-root .art-body li,#ed-root .art-faq-a{color:#1c2b36!important}
+#ed-root .art-body h2,#ed-root .art-body h3,#ed-root .art-lead,#ed-root .art-faq-q,#ed-root .art-related a,#ed-root .art-related h2{color:#03314B!important}
+#ed-root .art-cta h3{color:#fff!important}#ed-root .art-cta p{color:#dbe9f1!important}#ed-root .art-cta-btn{color:#03314B!important}#ed-root .art-cta-btn2{color:#fff!important}#ed-root .art-table th{color:#03314B!important}
 /* === frontend-design polish (rein visuell) === */
 html{scroll-behavior:smooth}
 .v5 h1,.v5 h2,.v5 h3{letter-spacing:-.022em;text-wrap:balance}
@@ -459,7 +502,7 @@ def balanced_div_end(s,start):
         if depth==0: return start+m.end()
     return -1
 
-def build_page(slug_parts, inner, title):
+def build_page(slug_parts, inner, title, meta=None):
     html=open(CHROME_SRC,encoding='utf-8',errors='ignore').read()
     m=re.search(r'<div class="content-hub[^"]*"',html)
     o=html.index('>',m.start())+1; c=balanced_div_end(html,m.start())
@@ -470,6 +513,24 @@ def build_page(slug_parts, inner, title):
     # Schluss-CTA (360°-Band im Chrome) konsumentenorientiert umtexten – seitenscharf, Routing unverändert
     for old,new in CTA_COPY:
         after=after.replace(old,new,1)
+    # --- SEO-Head: Description, Canonical, Open Graph/Twitter, JSON-LD (verhindert Duplicate-Tags des geklonten Chrome) ---
+    meta=meta or {}
+    before=re.sub(r'<meta property="og:title"[^>]*>',f'<meta property="og:title" content="{esc(title)}">',before,count=1)
+    before=re.sub(r'<meta name="twitter:title"[^>]*>',f'<meta name="twitter:title" content="{esc(title)}">',before,count=1)
+    desc=meta.get('desc')
+    if desc:
+        before=re.sub(r'<meta name="description"[^>]*>',f'<meta name="description" content="{esc(desc)}">',before,count=1)
+        before=re.sub(r'<meta property="og:description"[^>]*>',f'<meta property="og:description" content="{esc(desc)}">',before,count=1)
+        before=re.sub(r'<meta name="twitter:description"[^>]*>',f'<meta name="twitter:description" content="{esc(desc)}">',before,count=1)
+    url=BASE+'/'+'/'.join(slug_parts)+'/'
+    head_add=f'<link rel="canonical" href="{url}">'
+    if '<meta property="og:url"' in before:
+        before=re.sub(r'<meta property="og:url"[^>]*>',f'<meta property="og:url" content="{url}">',before,count=1)
+    else:
+        head_add+=f'<meta property="og:url" content="{url}">'
+    for blob in meta.get('jsonld',[]):
+        head_add+='<script type="application/ld+json">'+json.dumps(blob,ensure_ascii=False)+'</script>'
+    before=before.replace('</head>',head_add+'</head>',1)
     full=before+inner+after
     full=re.sub(r'<title>.*?</title>',f'<title>{esc(title)}</title>',full,count=1,flags=re.S)
     d=os.path.join(SMZH,*slug_parts); os.makedirs(d,exist_ok=True)
@@ -503,10 +564,18 @@ def horizon_inner():
     return category_inner('smzhHub · Themenwelt','smzh horizon',
         'Perspektiven, Trends und Ausblick von smzh.',body)
 
+ORG={'@type':'Organization','name':'smzh','url':'https://smzh.ch','logo':'https://smzh.ch/favicon.ico'}
+
 def main():
-    build_page(('de','smzhub'),home_inner(),'smzhHub – Klarheit für Ihre Finanzentscheidungen')
-    build_page(('de','smzhub-immobilienanlagen'),immobilienanlagen_inner(),'Immobilienanlagen – smzhHub')
-    build_page(('de','smzhub-horizon'),horizon_inner(),'smzh horizon – smzhHub')
+    home_meta={'desc':'smzhHub ordnet Märkte, Eigenheim, Vorsorge und Steuern so ein, dass Sie Ihre nächste Finanzentscheidung 2026 sicherer treffen. Einordnungen, Ratgeber und Research.',
+        'jsonld':[{'@context':'https://schema.org','@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/','publisher':ORG}]}
+    build_page(('de','smzhub'),home_inner(),'smzhHub – Klarheit für Ihre Finanzentscheidungen',home_meta)
+    build_page(('de','smzhub-immobilienanlagen'),immobilienanlagen_inner(),'Immobilienanlagen einordnen | smzhHub',
+        {'desc':'Renditeobjekte und indirekte Immobilienanlagen verständlich eingeordnet: Rendite, Risiken, Regulierung und Finanzierung für Ihre Anlageentscheidung.',
+         'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'Immobilienanlagen','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
+    build_page(('de','smzhub-horizon'),horizon_inner(),'smzh horizon – Trends & Ausblick | smzhHub',
+        {'desc':'smzh horizon bündelt den längeren Blick: makroökonomische Trends, strukturelle Entwicklungen und Ausblicke, die die Themenwelten des smzhHub verbinden.',
+         'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'smzh horizon','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
     print('OK V5: Landing Page + Themenwelten-Seiten (Immobilienanlagen, smzh horizon) geschrieben.')
 
 if __name__=='__main__':
