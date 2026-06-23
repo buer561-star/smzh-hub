@@ -57,35 +57,35 @@ HERO=[  # (path-or-row, kategorie)
  (io[0]['path'] if io else None,'Eigenheim'),
 ]
 DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Zinsen tief bleiben, aber Planungssicherheit zählt?','/de/hypothekenarten-im-vergleich/'),
- ('Eigenheim','Kaufen oder warten?','Wie Preisentwicklung, Eigenkapital und Lebensplanung zusammenhängen.','/de/wie-kaufe-ich-eine-immobilie/'),
- ('Vorsorge','Rente oder Kapital?','Die Pensionierungsentscheidung, die selten sauber vorbereitet wird.','/de/leistungen-im-alter/'),
- ('Anlegen','3a Konto oder Wertschriften?','Warum Sparen allein über lange Zeiträume oft nicht genügt.','/de/altersvorsorge-optimierung-saeule-3a/'),
+ ('Eigenheim','Kaufen oder warten?','Wie Preisentwicklung, Eigenkapital und Tragbarkeit zusammenspielen.','/de/wie-kaufe-ich-eine-immobilie/'),
+ ('Vorsorge','Rente oder Kapital?','Eine Entscheidung, die Steuern, Sicherheit und Flexibilität gleichzeitig betrifft.','/de/leistungen-im-alter/'),
+ ('Anlegen','3a Konto oder Wertschriften?','Warum die Wahl der Anlageform über Jahrzehnte mehr bewirkt als die Einzahlung allein.','/de/altersvorsorge-optimierung-saeule-3a/'),
  ('Eigenheim','Reicht mein Einkommen für die Bank?','Wie Banken die Tragbarkeit rechnen – und was Sie daran beeinflussen können.','/de/optimierung-der-tragbarkeit/'),
- ('Vermögen','Amortisieren oder investieren?','Hypothek tilgen oder das Geld anlegen – was sich für Sie langfristig mehr lohnt.','/de/finanzplan-erstellen/'),
+ ('Vermögen','Amortisieren oder investieren?','Wann Schuldenabbau sinnvoll ist – und wann Ihr Kapital mehr bewirkt.','/de/finanzplan-erstellen/'),
  ('Vorsorge','Früher pensionieren oder weiterarbeiten?','Was ein früherer Ausstieg kostet – und wie er finanzierbar bleibt.','/de/pensionsplanung/'),
- ('Steuern','Wo verschenke ich jedes Jahr Steuern?','Welche Abzüge und Vorsorgebezüge wirklich einen Unterschied machen.','/de/steuerabzuege-optimal-nutzen/'),
+ ('Steuern','Wo verschenke ich jedes Jahr Steuern?','Welche Abzüge und Einzahlungen wirklich einen Unterschied machen.','/de/steuerabzuege-optimal-nutzen/'),
  ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es zusätzlich ankommt.','/de/wohneigentumsfoerderung/'),
  ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann 3a wirklich zählt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/das-3-saeulensystem-der-schweiz/')]
 RUBRICS=[
- {'label':'Eigenheim','intro':'Eigenheim & Hypothek','more':'/de/smzhub-eigenheim/',
+ {'label':'Eigenheim','intro':'Eigenheim & Hypothek','desc':'Für alle, die kaufen, verlängern oder ihre Finanzierung neu ausrichten wollen.','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
-  'tool':{'imgfrom':'/de/artikel/zuercher-wohnungsinitiativen/','href':'/de/immobilienbewertung-rechner/','tag':'Rechner','t':'Tragbarkeit in zwei Minuten prüfen','go':'Jetzt prüfen'}},
- {'label':'Vermögen','intro':'Vermögen & Anlegen','more':'/de/smzhub-vermoegen/',
+  'tool':{'imgfrom':'/de/artikel/zuercher-wohnungsinitiativen/','href':'/de/immobilienbewertung-rechner/','tag':'Rechner','t':'Tragbarkeit in zwei Minuten prüfen','go':'Tragbarkeit berechnen'}},
+ {'label':'Vermögen','intro':'Vermögen & Anlegen','desc':'Märkte, Zinsen und Portfolios verständlich eingeordnet – ohne tägliches Börsenrauschen.','more':'/de/smzhub-vermoegen/',
   'arts':['/de/artikel/neue-aera-fed/','/de/artikel/usa-iran-deal/','/de/artikel/boersengang-spacex/','/de/artikel/sell-in-may/'],
-  'tool':{'imgfrom':'/de/artikel/boersengang-spacex/','href':'/de/risikoprofil-erstellen/','tag':'Check','t':'Welche Anlagestrategie passt zu Ihnen?','go':'Check starten'}},
- {'label':'Vorsorge','intro':'Vorsorge & Pensionierung','more':'/de/smzhub-zukunft/',
+  'tool':{'imgfrom':'/de/artikel/boersengang-spacex/','href':'/de/risikoprofil-erstellen/','tag':'Check','t':'Welche Anlagestrategie passt zu Ihnen?','go':'Anlagestrategie einordnen'}},
+ {'label':'Vorsorge','intro':'Vorsorge & Pensionierung','desc':'AHV, BVG, 3a und Pensionierung als Lebensplanung – nicht als Produktliste.','more':'/de/smzhub-zukunft/',
   'arts':['/de/artikel/ahv-2030-pensionierung-planungsfrage/','/de/artikel/kapitalbezug-steuerentscheid/','/de/artikel/fruehpensionierung-unter-druck/','/de/artikel/gender-pension-gap/'],
-  'tool':{'imgfrom':'/de/artikel/fruehpensionierung-unter-druck/','href':'/de/vorsorgeanalyse/','tag':'Analyse','t':'Reicht Ihr Geld bis in die Pensionierung?','go':'Analyse starten'}}]
+  'tool':{'imgfrom':'/de/artikel/fruehpensionierung-unter-druck/','href':'/de/vorsorgeanalyse/','tag':'Analyse','t':'Reicht Ihr Geld bis in die Pensionierung?','go':'Vorsorge analysieren'}}]
 FLAGMETA={'hypothekenradar':('Hypotheken-Radar','monatlich'),'investment-guide':('Investment Guide','monatlich'),
  'immobilien-outlook':('Immobilien-Outlook','quartalsweise'),'dossier':('Pensionierung planen','Dossier · Storyline')}
 RESEARCH=[('Hypotheken-Radar','monatlich · 9 Ausgaben','/de/smzhub-serie-hypotheken-radar/','hypothekenradar'),
  ('Investment Guide','monatlich · 16 Ausgaben','/de/smzhub-serie-investment-guide/','investment-guide'),
  ('Immobilien-Outlook','quartalsweise · 7 Ausgaben','/de/smzhub-serie-immobilien-outlook/','immobilien-outlook')]
 # Saison (Krankenkasse) – kuratiertes Saisonthema, Links auf reale Seiten
-SEASON_HERO=('Krankenkasse 2027: jetzt vergleichen statt automatisch zahlen','Prämien steigen erneut – wer Grundversicherung, Franchise und Modell prüft, spart oft mehrere Hundert Franken pro Jahr.','Prämien vergleichen','/de/krankenkasse-vergleichen/')
+SEASON_HERO=('Krankenkasse 2027: prüfen, bevor die Police automatisch weiterläuft','Prämie, Franchise und Modellwahl wirken jedes Jahr direkt auf Ihr Budget. Der richtige Moment zu prüfen ist, bevor die neue Police automatisch weiterläuft.','Prämien vergleichen','/de/krankenkasse-vergleichen/')
 SEASON_SUBS=[('Prämien optimieren ohne Leistungsverlust','/de/krankenkassen-praemienoptimierung/'),
  ('Welche Franchise passt zu Ihrem Profil?','/de/krankenkasse-vergleichen/'),
- ('Budgetrechner nutzen','/de/budgetrechner/')]
+ ('Budget für 2027 durchrechnen','/de/budgetrechner/')]
 
 # ---- Render ----
 def hero():
@@ -103,7 +103,7 @@ def hero():
         dots+=f'<span class="h-dot{" on" if i==0 else ""}" role="button" tabindex="0" data-i="{i}" aria-label="Beitrag {i+1}"></span>'
     return (f'<section class="v5-hero"><div class="v5-hero-in">'
             f'<div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
-            f'<p>Einordnungen, Research und Ratgeber zu Eigenheim, Vermögen, Vorsorge und Steuern – kuratiert nach Ihren Fragen.</p></div>'
+            f'<p>smzhHub ordnet Märkte, Eigenheim, Vorsorge und Steuern so ein, dass Sie Ihre nächste Entscheidung sicherer treffen.</p></div>'
             f'<div class="v5-hero-r v5-car"><div class="h-slides">{slides}</div><div class="h-dots">{dots}</div></div>'
             f'</div></section>')
 
@@ -117,7 +117,7 @@ def decisions():
     nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
          '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
     return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
-            f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht unter Unsicherheit entschieden werden.</p></div>'
+            f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht ohne Einordnung entschieden werden.</p></div>'
             f'{nav}</div>'
             f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
 
@@ -126,7 +126,7 @@ def season():
     subs=''
     for st,sp in SEASON_SUBS:
         subs+=f'<a class="v5-se-sub" href="{link(sp)}"><span class="v5-se-sub-t">{esc(st)}</span><span class="v5-se-sub-go">→</span></a>'
-    hero=(f'<a class="v5-se-hero" href="{link(cp)}"><span class="v5-se-tag">Saisonthema</span>'
+    hero=(f'<a class="v5-se-hero" href="{link(cp)}"><span class="v5-se-tag">Aktuell relevant</span>'
           f'<span class="v5-se-h">{esc(t)}</span><span class="v5-se-p">{esc(teaser)}</span>'
           f'<span class="v5-se-cta">{esc(cl)} →</span></a>')
     return f'<section class="v5-sec"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
@@ -167,7 +167,8 @@ def rubric(rb, idx):
     rev = idx%2==1
     cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
     cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
-    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3></div>'
+    desc=f'<p class="v5-rub-desc">{esc(rb["desc"])}</p>' if rb.get('desc') else ''
+    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>{desc}</div>'
             f'<div class="{cls}" style="--cols:{cols}">{hero+side}</div></section>')
 
 def research():
@@ -255,6 +256,7 @@ CSS='''<style id="smzh-v5-css">
 .v5-rub-sec{margin:5.6rem 0}
 .v5-rub-head{border-top:1px solid var(--line);padding-top:2.4rem;margin-bottom:2rem}
 .v5-rub-intro{font-size:clamp(1.2rem,1.9vw,1.55rem);font-weight:700;color:var(--navy);max-width:none}
+.v5-rub-desc{color:var(--muted);font-size:1rem;line-height:1.5;margin:.45rem 0 0;max-width:62ch}
 .v5-rub-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
 @media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.8rem;align-items:stretch}
  .v5-rub-grid.rev .v5-rub-hero{order:2}.v5-rub-grid.rev .v5-rub-side{order:1}}
@@ -378,6 +380,14 @@ if('IntersectionObserver' in window && !rm){
 });})();
 </script>'''
 
+# Schluss-CTA-Umtextung (nur Beschriftung; Links/Routing/Layout unverändert)
+CTA_COPY=[
+ ('Nutzen Sie unseren 360° Check-Up','Wissen ist der Einstieg. Entscheidend ist, was es für Ihre Situation bedeutet.'),
+ ('Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.',
+  'smzh hilft, Marktinformationen, Vorsorge, Eigenheim, Steuern und Vermögen in eine konkrete Finanzentscheidung zu übersetzen.'),
+ ('<span>Unverbindlichen Termin vereinbaren</span>','<span>Nächsten Schritt klären</span>'),
+]
+
 def balanced_div_end(s,start):
     depth=0
     for m in re.finditer(r'<(/?)div\b[^>]*>',s[start:]):
@@ -393,6 +403,9 @@ def main():
     if 'id="smzh-v5-css"' not in before: before=before.replace('</head>',FONTS+CSS+'</head>',1)
     before=re.sub(r'(<div class="content-hub[^"]*")',r'\1 id="ed-root"',before,count=1)
     if 'id="smzh-v5-js"' not in after: after=after.replace('</body>',JS+'</body>',1)
+    # Schluss-CTA (360°-Band im Chrome) konsumentenorientiert umtexten – seitenscharf, Routing unverändert
+    for old,new in CTA_COPY:
+        after=after.replace(old,new,1)
     full=before+home_inner()+after
     full=re.sub(r'<title>.*?</title>','<title>smzhHub – Klarheit für Ihre Finanzentscheidungen</title>',full,count=1,flags=re.S)
     d=os.path.join(SMZH,'de','smzhub'); os.makedirs(d,exist_ok=True)
