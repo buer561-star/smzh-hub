@@ -149,7 +149,7 @@ def rubric(rb, idx):
     arts=[p for p in rb['arts'] if item(p)]
     leadp=arts[0]; subs=arts[1:4]
     lead=item(leadp); im=img_of(leadp,1080)
-    rm=rmin(leadp); goline=(rm+' · ' if rm else '')+'Beitrag lesen →'
+    rm=rmin(leadp); goline=(rm+' · ' if rm else '')+'Beitrag lesen'
     hero=(f'<a class="v5-rub-hero" href="{link(leadp)}"><span class="v5-rh-img">{imgt(im)}</span>'
           f'<span class="v5-rh-b"><span class="v5-rh-cat">{esc(rb["label"])}</span>'
           f'<span class="v5-rh-t">{esc(lead["title"])}</span>'
@@ -162,7 +162,7 @@ def rubric(rb, idx):
     mid=(f'<a class="v5-mid" href="{link(t["href"])}"><span class="v5-mid-img">{imgt(tim)}'
          f'<span class="v5-mid-tag">{esc(t["tag"])}</span></span>'
          f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(t["t"])}</span>'
-         f'<span class="v5-mid-go">{esc(t["go"])} →</span></span></a>')
+         f'<span class="v5-mid-go">{esc(t["go"])}</span></span></a>')
     side=f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div>{mid}</div>'
     rev = idx%2==1
     cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
@@ -317,6 +317,34 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-mid-go{color:#185E7F!important}#ed-root .v5-mid-tag{color:#fff!important}
 #ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
+/* === frontend-design polish (rein visuell) === */
+html{scroll-behavior:smooth}
+.v5 h1,.v5 h2,.v5 h3{letter-spacing:-.022em;text-wrap:balance}
+.v5 ::selection{background:rgba(24,94,127,.18);color:var(--navy)}
+.v5 a:focus-visible,.v5 [role="button"]:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+/* Wärmere Tiefe statt flacher Flächen */
+.v5-hero{position:relative;overflow:hidden}
+.v5-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 88% -10%,rgba(24,94,127,.55),transparent 60%),radial-gradient(80% 70% at -10% 110%,rgba(24,94,127,.32),transparent 55%);pointer-events:none}
+.v5-hero-in{position:relative;z-index:1}
+.v5-dec,.v5-rub-hero,.v5-mid,.v5-se-sub,.v5-rs{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-rub-hero:hover{transform:translateY(-3px)}
+.v5-rh-go,.v5-mid-go{display:inline-flex;align-items:center;gap:.3em}
+.v5-rh-go::after,.v5-mid-go::after{content:"\\2192";transition:transform .25s ease}
+.v5-rub-hero:hover .v5-rh-go::after,.v5-mid:hover .v5-mid-go::after{transform:translateX(4px)}
+.v5-sl{position:relative;transition:padding-left .2s ease}
+.v5-sl::before{content:"";position:absolute;left:-.85rem;top:50%;width:3px;height:0;background:var(--teal);border-radius:2px;transform:translateY(-50%);transition:height .25s ease}
+.v5-sl:hover{padding-left:.85rem}
+.v5-sl:hover::before{height:62%}
+/* Page-Load: gestaffelte Hero-Reveal */
+@media(prefers-reduced-motion:no-preference){
+ @keyframes v5up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+ .v5-hero-l h1{animation:v5up .7s both cubic-bezier(.2,.7,.2,1)}
+ .v5-hero-l p{animation:v5up .7s .12s both cubic-bezier(.2,.7,.2,1)}
+ .v5-hero-r{animation:v5up .8s .22s both cubic-bezier(.2,.7,.2,1)}
+ /* Scroll-Reveal (JS fügt .v5-reveal hinzu; ohne JS bleibt alles sichtbar) */
+ .v5-reveal{opacity:0;transform:translateY(22px)}
+ .v5-reveal.r-in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+}
 </style>'''
 JS='''<script id="smzh-v5-js">
 (function(){function r(f){if(document.readyState!=='loading')f();else document.addEventListener('DOMContentLoaded',f);}
@@ -338,7 +366,16 @@ function back(){if(busy)return;busy=true;var s=step();track.style.transition='no
  setTimeout(function(){busy=false;},480);}
 if(next){next.addEventListener('click',fwd);next.addEventListener('keydown',function(e){if(e.key==='Enter')fwd();});}
 if(prev){prev.addEventListener('click',back);prev.addEventListener('keydown',function(e){if(e.key==='Enter')back();});}
-});});})();
+});
+/* Scroll-Reveal: rein visuell, ohne IO/Reduced-Motion bleibt alles sichtbar */
+try{var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if('IntersectionObserver' in window && !rm){
+ var els=document.querySelectorAll('.v5-wrap .v5-sec');
+ els.forEach(function(el){el.classList.add('v5-reveal');});
+ var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('r-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+ els.forEach(function(el){io.observe(el);});
+}}catch(e){}
+});})();
 </script>'''
 
 def balanced_div_end(s,start):
