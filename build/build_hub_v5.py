@@ -101,7 +101,7 @@ def hero():
                  f'<span class="h-slide-p">{esc(teaser(p,110))}</span>'
                  f'<span class="h-slide-go">Beitrag lesen →</span></span></a>')
         dots+=f'<span class="h-dot{" on" if i==0 else ""}" role="button" tabindex="0" data-i="{i}" aria-label="Beitrag {i+1}"></span>'
-    return (f'<section class="v5-hero" id="einstieg"><div class="v5-hero-in">'
+    return (f'<section class="v5-hero"><div class="v5-hero-in">'
             f'<div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
             f'<p>smzhHub ordnet Märkte, Eigenheim, Vorsorge und Steuern so ein, dass Sie Ihre nächste Entscheidung sicherer treffen.</p></div>'
             f'<div class="v5-hero-r v5-car"><div class="h-slides">{slides}</div><div class="h-dots">{dots}</div></div>'
@@ -116,7 +116,7 @@ def decisions():
                 f'<span class="v5-dec-shape" style="background:{shapes[i%4]}"></span></a>')
     nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
          '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
-    return (f'<section class="v5-sec v5-dec-sec" id="entscheidungen"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
+    return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
             f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht ohne Einordnung entschieden werden.</p></div>'
             f'{nav}</div>'
             f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
@@ -129,7 +129,7 @@ def season():
     hero=(f'<a class="v5-se-hero" href="{link(cp)}"><span class="v5-se-tag">Aktuell relevant</span>'
           f'<span class="v5-se-h">{esc(t)}</span><span class="v5-se-p">{esc(teaser)}</span>'
           f'<span class="v5-se-cta">{esc(cl)} →</span></a>')
-    return f'<section class="v5-sec" id="aktuell"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
+    return f'<section class="v5-sec"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
 
 def flag_card(key,path):
     name,cad=FLAGMETA[key]
@@ -168,8 +168,7 @@ def rubric(rb, idx):
     cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
     cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
     desc=f'<p class="v5-rub-desc">{esc(rb["desc"])}</p>' if rb.get('desc') else ''
-    secid=' id="themen"' if idx==0 else ''
-    return (f'<section class="v5-sec v5-rub-sec"{secid}><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>{desc}</div>'
+    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>{desc}</div>'
             f'<div class="{cls}" style="--cols:{cols}">{hero+side}</div></section>')
 
 def research():
@@ -184,28 +183,30 @@ def research():
             f'<a class="v5-more" href="{link("/de/smzhub-research/")}">Alle Publikationen →</a></div>'
             f'<div class="v5-rs-row">{cols}</div></div></section>')
 
-# ---- Navigation: globale Hub-Reiter (Content-Welten) + lokaler Seiten-Navigator (Anker) ----
-HUBTABS=[('alle','Alle','#einstieg'),('aktuell','Aktuell','#aktuell'),('entscheiden','Entscheiden','#entscheidungen'),
- ('eigenheim','Eigenheim','/de/smzhub-eigenheim/'),('vermoegen','Vermögen','/de/smzhub-vermoegen/'),
- ('zukunft','Zukunft','/de/smzhub-zukunft/'),('research','Research','/de/smzhub-research/')]
-PNAV=[('einstieg','Einstieg'),('entscheidungen','Entscheidungen'),('aktuell','Aktueller Fokus'),('themen','Themen'),('beratung','Beratung')]
+# ---- Themenwelten als Funnel-Kacheln (3 oben, 2 unten) – je eigene Hub-Seite ----
+FUNNELS=[
+ ('Eigenheim & Hypothek','Kaufen, finanzieren oder die Hypothek neu ausrichten.','/de/smzhub-eigenheim/'),
+ ('Immobilienanlagen','Renditeobjekte und indirekte Immobilienanlagen einordnen.','/de/smzhub-immobilienanlagen/'),
+ ('Kapitalmärkte & Anlagen','Märkte, Portfolios und die passende Anlagestrategie.','/de/smzhub-vermoegen/'),
+ ('Vorsorge & Pensionierung','AHV, BVG, 3a und der Weg in die Pensionierung.','/de/smzhub-zukunft/'),
+ ('smzh horizon','Perspektiven, Trends und Ausblick von smzh.','/de/smzhub-horizon/'),
+]
 
-def hub_tabs(active='alle'):
-    items=''
-    for key,label,href in HUBTABS:
-        h=href if href.startswith('#') else link(href)
-        cls='v5-htab'+(' on' if key==active else '')
-        cur=' aria-current="page"' if key==active else ''
-        items+=f'<a class="{cls}" href="{h}"{cur}>{esc(label)}</a>'
-    return f'<nav class="v5-htabs" aria-label="smzhHub Bereiche"><div class="v5-htabs-in">{items}</div></nav>'
-
-def pagenav():
-    items=''.join(f'<a class="v5-pnav-link" href="#{aid}" data-sec="{aid}">{esc(label)}</a>' for aid,label in PNAV)
-    return f'<nav class="v5-pnav" aria-label="Auf dieser Seite"><div class="v5-pnav-in">{items}</div></nav>'
+def funnels():
+    cards=''
+    for i,(t,d,href) in enumerate(FUNNELS):
+        wide=' wide' if i>=3 else ''
+        cards+=(f'<a class="v5-funnel{wide}" href="{link(href)}">'
+                f'<span class="v5-funnel-t">{esc(t)}</span>'
+                f'<span class="v5-funnel-d">{esc(d)}</span>'
+                f'<span class="v5-funnel-go">Bereich öffnen</span></a>')
+    return (f'<section class="v5-sec v5-funnels"><div class="v5-head"><div>'
+            f'<h2>Ihre Themenwelten</h2><p class="v5-sub">Fünf Einstiege in den smzhHub – wählen Sie Ihren Schwerpunkt.</p></div></div>'
+            f'<div class="v5-fgrid">{cards}</div></section>')
 
 def home_inner():
-    return ('<div class="v5">'+hub_tabs('alle')+hero()+pagenav()+'<div class="v5-wrap">'
-            +decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>')
+    return ('<div class="v5">'+hero()+'<div class="v5-wrap">'
+            +funnels()+decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>')
 
 FONTS=('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
  '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">')
@@ -222,22 +223,30 @@ CSS='''<style id="smzh-v5-css">
 .v5-sub{color:var(--muted);font-size:.92rem;margin:.35rem 0 0}
 .v5-more{color:var(--teal);font-weight:700;font-size:.9rem;white-space:nowrap}
 .v5-more:hover{color:var(--navy)}
-/* Globale Hub-Reiter (prominent, Content-Welten) */
-.v5-htabs{background:#fff;border-bottom:1px solid var(--line)}
-.v5-htabs-in{max-width:1180px;margin:0 auto;display:flex;gap:.3rem;padding:0 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.v5-htabs-in::-webkit-scrollbar{display:none}
-.v5-htab{flex:0 0 auto;padding:1.05rem .85rem;font-size:1rem;font-weight:600;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
-.v5-htab:hover{color:var(--navy)}
-.v5-htab.on{color:var(--navy);font-weight:700;border-bottom-color:var(--teal)}
-/* Lokaler Seiten-Navigator (subtil, Utility, Anker) */
-.v5-pnav{background:rgba(255,255,255,.92);border-bottom:1px solid var(--line)}
-@media(min-width:1024px){.v5-pnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
-.v5-pnav-in{max-width:1180px;margin:0 auto;display:flex;gap:.35rem;padding:.5rem 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.v5-pnav-in::-webkit-scrollbar{display:none}
-.v5-pnav-link{flex:0 0 auto;padding:.32rem .72rem;font-size:.82rem;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:999px;transition:.15s}
-.v5-pnav-link:hover{color:var(--navy);background:var(--lblue)}
-.v5-pnav-link.on{color:var(--teal);background:var(--lblue)}
-#einstieg,#entscheidungen,#aktuell,#themen,#beratung{scroll-margin-top:64px}
+/* Themenwelten – Funnel-Kacheln (3 oben, 2 unten) */
+.v5-funnels{margin:3.2rem 0 5rem}
+.v5-fgrid{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:760px){.v5-fgrid{grid-template-columns:repeat(6,1fr)}
+ .v5-funnel{grid-column:span 2}.v5-funnel.wide{grid-column:span 3}}
+.v5-funnel{position:relative;display:flex;flex-direction:column;gap:.5rem;min-height:160px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-funnel::before{content:"";position:absolute;left:0;top:1.5rem;bottom:1.5rem;width:3px;border-radius:0 3px 3px 0;background:var(--teal);opacity:0;transition:opacity .25s ease}
+.v5-funnel:hover{transform:translateY(-3px);box-shadow:0 20px 40px -22px rgba(3,49,75,.45);border-color:#cdd6df}
+.v5-funnel:hover::before{opacity:1}
+.v5-funnel-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.2}
+.v5-funnel-d{font-size:.92rem;color:var(--muted);line-height:1.5;flex:1}
+.v5-funnel-go{display:inline-flex;align-items:center;gap:.3em;font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.2rem}
+.v5-funnel-go::after{content:"\\2192";transition:transform .25s ease}
+.v5-funnel:hover .v5-funnel-go::after{transform:translateX(4px)}
+/* Themenwelt-Seiten (Kategorie-Stubs) */
+.v5-phead{background:var(--navy);color:#fff;border-radius:0 0 22px 22px;padding:3.4rem 1.5rem 3.6rem}
+.v5-phead-in{max-width:1180px;margin:0 auto}
+.v5-eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7fb3cc;margin:0 0 .6rem}
+.v5-phead h1{color:#fff;font-size:clamp(1.9rem,2.7vw,2.5rem);font-weight:800;line-height:1.12}
+.v5-phead p{color:#bcd3e2;font-size:1.08rem;line-height:1.6;margin:1rem 0 0;max-width:60ch}
+.v5-lead{font-size:1.1rem;line-height:1.65;color:var(--ink);max-width:64ch}
+.v5-note{background:var(--lblue);border:1px solid #d7e6f2;border-radius:12px;padding:1.2rem 1.4rem;color:var(--ink);line-height:1.6}
+.v5-back{display:inline-flex;align-items:center;gap:.4em;font-weight:700;color:var(--teal)}
+.v5-backsec{margin-top:3rem}
 /* Hero */
 .v5-hero{background:var(--navy);color:#fff;border-radius:0 0 22px 22px}
 .v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
@@ -356,8 +365,8 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-mid-go{color:#185E7F!important}#ed-root .v5-mid-tag{color:#fff!important}
 #ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
-#ed-root .v5-htab{color:#5b6b7a!important}#ed-root .v5-htab.on,#ed-root .v5-htab:hover{color:#03314B!important}
-#ed-root .v5-pnav-link{color:#5b6b7a!important}#ed-root .v5-pnav-link:hover{color:#03314B!important}#ed-root .v5-pnav-link.on{color:#185E7F!important}
+#ed-root .v5-funnel-t{color:#03314B!important}#ed-root .v5-funnel-d{color:#5b6b7a!important}#ed-root .v5-funnel-go{color:#185E7F!important}
+#ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}
 /* === frontend-design polish (rein visuell) === */
 html{scroll-behavior:smooth}
 .v5 h1,.v5 h2,.v5 h3{letter-spacing:-.022em;text-wrap:balance}
@@ -416,19 +425,12 @@ if('IntersectionObserver' in window && !rm){
  var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('r-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
  els.forEach(function(el){io.observe(el);});
 }}catch(e){}
-/* Scrollspy: lokalen Seiten-Navigator mit aktuellem Abschnitt markieren */
-try{var pn=document.querySelector('.v5-pnav');
-if(pn && 'IntersectionObserver' in window){
- var lk={};pn.querySelectorAll('.v5-pnav-link').forEach(function(a){lk[a.getAttribute('data-sec')]=a;});
- var io2=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){Object.keys(lk).forEach(function(k){lk[k].classList.toggle('on',k===en.target.id);});}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
- Object.keys(lk).forEach(function(id){var el=document.getElementById(id);if(el)io2.observe(el);});
-}}catch(e){}
 });})();
 </script>'''
 
 # Schluss-CTA-Umtextung (nur Beschriftung; Links/Routing/Layout unverändert)
 CTA_COPY=[
- ('<h3 class="text-xl font-medium">Nutzen Sie unseren 360° Check-Up</h3>','<h3 class="text-xl font-medium" id="beratung">Wissen ist der Einstieg. Entscheidend ist, was es für Ihre Situation bedeutet.</h3>'),
+ ('Nutzen Sie unseren 360° Check-Up','Wissen ist der Einstieg. Entscheidend ist, was es für Ihre Situation bedeutet.'),
  ('Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.',
   'smzh hilft, Marktinformationen, Vorsorge, Eigenheim, Steuern und Vermögen in eine konkrete Finanzentscheidung zu übersetzen.'),
  ('<span>Unverbindlichen Termin vereinbaren</span>','<span>Nächsten Schritt klären</span>'),
@@ -441,7 +443,7 @@ def balanced_div_end(s,start):
         if depth==0: return start+m.end()
     return -1
 
-def main():
+def build_page(slug_parts, inner, title):
     html=open(CHROME_SRC,encoding='utf-8',errors='ignore').read()
     m=re.search(r'<div class="content-hub[^"]*"',html)
     o=html.index('>',m.start())+1; c=balanced_div_end(html,m.start())
@@ -452,11 +454,44 @@ def main():
     # Schluss-CTA (360°-Band im Chrome) konsumentenorientiert umtexten – seitenscharf, Routing unverändert
     for old,new in CTA_COPY:
         after=after.replace(old,new,1)
-    full=before+home_inner()+after
-    full=re.sub(r'<title>.*?</title>','<title>smzhHub – Klarheit für Ihre Finanzentscheidungen</title>',full,count=1,flags=re.S)
-    d=os.path.join(SMZH,'de','smzhub'); os.makedirs(d,exist_ok=True)
+    full=before+inner+after
+    full=re.sub(r'<title>.*?</title>',f'<title>{esc(title)}</title>',full,count=1,flags=re.S)
+    d=os.path.join(SMZH,*slug_parts); os.makedirs(d,exist_ok=True)
     open(os.path.join(d,'index.html'),'w',encoding='utf-8').write(full)
-    print('OK V5: Landing Page geschrieben (Hero+Karussell · Entscheidungen · Saison · 3 Rubriken · Research).')
+
+def sl_row(t,h): return f'<a class="v5-sl" href="{link(h)}"><span class="v5-sl-t">{esc(t)}</span><span class="v5-sl-m">→</span></a>'
+
+def category_inner(eyebrow,title,intro,body):
+    return ('<div class="v5"><section class="v5-phead"><div class="v5-phead-in">'
+            f'<p class="v5-eyebrow">{esc(eyebrow)}</p><h1>{esc(title)}</h1><p>{esc(intro)}</p></div></section>'
+            f'<div class="v5-wrap">{body}'
+            f'<section class="v5-sec v5-backsec"><a class="v5-back" href="{link("/de/smzhub/")}">← Zurück zum smzhHub</a></section>'
+            '</div></div>')
+
+def immobilienanlagen_inner():
+    arts=[p for p in ['/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/','/de/artikel/abstimmung-keine-10-millionen-schweiz/'] if item(p)]
+    rows_html=sl_row('Immobilien-Outlook – quartalsweises Research','/de/smzhub-serie-immobilien-outlook/')
+    rows_html+=''.join(sl_row(item(p)['title'],p) for p in arts)
+    body=('<section class="v5-sec"><p class="v5-lead">Immobilien als Kapitalanlage folgen anderen Regeln als das selbstbewohnte '
+          'Eigenheim: Rendite, Leerstandsrisiko, Regulierung und Finanzierung entscheiden über den Erfolg. Dieser Bereich '
+          'ordnet Renditeobjekte und indirekte Immobilienanlagen für Anlegerinnen und Anleger ein.</p></section>'
+          f'<section class="v5-sec"><div class="v5-head"><div><h2>Relevante Einschätzungen</h2></div></div><div class="v5-sl-list">{rows_html}</div></section>')
+    return category_inner('smzhHub · Themenwelt','Immobilienanlagen',
+        'Renditeobjekte und indirekte Immobilienanlagen – eingeordnet für Ihre Anlageentscheidung.',body)
+
+def horizon_inner():
+    body=('<section class="v5-sec"><p class="v5-lead">smzh horizon bündelt den längeren Blick: makroökonomische Trends, '
+          'strukturelle Entwicklungen und Ausblicke, die einzelne Themenwelten miteinander verbinden.</p></section>'
+          '<section class="v5-sec"><div class="v5-note">Dieser Bereich wird derzeit aufgebaut. Bis dahin finden Sie '
+          f'aktuelle Einschätzungen und Publikationen im <a class="v5-back" href="{link("/de/smzhub-research/")}">Research-Bereich</a>.</div></section>')
+    return category_inner('smzhHub · Themenwelt','smzh horizon',
+        'Perspektiven, Trends und Ausblick von smzh.',body)
+
+def main():
+    build_page(('de','smzhub'),home_inner(),'smzhHub – Klarheit für Ihre Finanzentscheidungen')
+    build_page(('de','smzhub-immobilienanlagen'),immobilienanlagen_inner(),'Immobilienanlagen – smzhHub')
+    build_page(('de','smzhub-horizon'),horizon_inner(),'smzh horizon – smzhHub')
+    print('OK V5: Landing Page + Themenwelten-Seiten (Immobilienanlagen, smzh horizon) geschrieben.')
 
 if __name__=='__main__':
     main()
