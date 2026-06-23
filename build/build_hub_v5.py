@@ -21,6 +21,9 @@ def fdate(iso):
     try: d=datetime.fromisoformat(iso.replace('Z','+00:00')); return f"{MON[d.strftime('%b')]} {d.year}"
     except Exception: return ''
 def esc(s): return H.escape(s or '')
+def teaser(p,n=120):
+    r=item(p); t=(r.get('excerpt') or '') if r else ''
+    return (t[:n].rsplit(' ',1)[0]+'…') if len(t)>n else t
 def link(p): return P_+'/'.join(s for s in p.strip('/').split('/') if s)+'/index.html'
 def item(p): return BYP.get(p) or BYP.get('/'+p.strip('/')+'/')
 def opt_img(cms,w):
@@ -86,9 +89,10 @@ def hero():
         im=img_of(p,1080); r=item(p)
         if not r: continue
         slides+=(f'<a class="h-slide{" on" if i==0 else ""}" href="{link(p)}">'
-                 f'<span class="h-slide-img">{imgt(im)}</span><span class="h-slide-ov"></span>'
+                 f'<span class="h-slide-img">{imgt(im)}</span>'
                  f'<span class="h-slide-c"><span class="h-slide-cat">{esc(cat)}</span>'
                  f'<span class="h-slide-t">{esc(r["title"])}</span>'
+                 f'<span class="h-slide-p">{esc(teaser(p,110))}</span>'
                  f'<span class="h-slide-go">Beitrag lesen →</span></span></a>')
         dots+=f'<span class="h-dot{" on" if i==0 else ""}" role="button" tabindex="0" data-i="{i}" aria-label="Beitrag {i+1}"></span>'
     return (f'<section class="v5-hero"><div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
@@ -174,20 +178,22 @@ CSS='''<style id="smzh-v5-css">
 .v5-more:hover{color:var(--navy)}
 /* Hero */
 .v5-hero{display:grid;grid-template-columns:1fr;gap:2rem;background:var(--navy);color:#fff;border-radius:0 0 22px 22px;padding:3rem 1.5rem 3.4rem}
-@media(min-width:960px){.v5-hero{grid-template-columns:35fr 65fr;gap:3rem;padding:4rem 4rem 4.4rem;align-items:center}}
-.v5-hero-l h1{color:#fff;font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;line-height:1.1}
-.v5-hero-l p{color:#bcd3e2;font-size:1.08rem;line-height:1.55;margin:1rem 0 0;max-width:40ch}
+@media(min-width:960px){.v5-hero{grid-template-columns:1fr minmax(300px,400px);gap:4.5rem;padding:5rem 5rem 5.4rem;align-items:center}}
+.v5-hero-l{max-width:46ch}
+.v5-hero-l h1{color:#fff;font-size:clamp(2rem,3.6vw,3rem);font-weight:800;line-height:1.08}
+.v5-hero-l p{color:#bcd3e2;font-size:1.1rem;line-height:1.6;margin:1.2rem 0 0;max-width:44ch}
 .v5-hero-r{position:relative}
-.h-slides{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#06283b;box-shadow:0 30px 60px -34px rgba(0,0,0,.6)}
-.h-slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none}
+.h-slides{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#fff;box-shadow:0 34px 64px -30px rgba(0,0,0,.55)}
+.h-slide{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transition:opacity .6s ease;pointer-events:none}
 .h-slide.on{opacity:1;pointer-events:auto}
-.h-slide-img,.h-slide-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.h-slide-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,40,59,.95) 6%,rgba(3,40,59,.4) 46%,rgba(3,40,59,0) 78%)}
-.h-slide-c{position:absolute;left:0;right:0;bottom:0;padding:1.7rem 1.9rem;color:#fff}
-.h-slide-cat{display:inline-block;font-size:.82rem;font-weight:700;color:#9fd0ee}
-.h-slide-t{display:block;font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:700;line-height:1.2;margin:.4rem 0 .5rem;color:#fff}
-.h-slide-go{font-size:.86rem;font-weight:700;color:#cfe6f4}
-.h-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
+.h-slide-img{flex:0 0 47%;overflow:hidden;background:#06283b}
+.h-slide-img img{width:100%;height:100%;object-fit:cover}
+.h-slide-c{flex:1;display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.4rem;background:#fff}
+.h-slide-cat{font-size:.82rem;font-weight:600;color:var(--teal)}
+.h-slide-t{font-size:1.2rem;font-weight:700;color:var(--navy);line-height:1.24;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.h-slide-p{font-size:.9rem;color:var(--muted);line-height:1.45;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.h-slide-go{font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.2rem}
+.h-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.1rem}
 .h-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.2s}
 .h-dot.on{background:#fff;width:26px;border-radius:5px}
 /* Decisions */
@@ -252,7 +258,7 @@ CSS='''<style id="smzh-v5-css">
 /* Spezifitäts-Overrides gegen Chrome-Link-Styles */
 #ed-root .v5-cta,#ed-root .v5-cta:hover{color:#fff!important}
 #ed-root .v5-se-cta,#ed-root .v5-se-tag,#ed-root .v5-se-h,#ed-root .v5-se-p{color:#fff!important}
-#ed-root .h-slide-t{color:#fff!important}#ed-root .h-slide-cat{color:#9fd0ee!important}#ed-root .h-slide-go{color:#cfe6f4!important}
+#ed-root .h-slide-t{color:#03314B!important}#ed-root .h-slide-cat{color:#185E7F!important}#ed-root .h-slide-go{color:#185E7F!important}#ed-root .h-slide-p{color:#5b6b7a!important}
 #ed-root .v5-hero-l h1{color:#fff!important}
 #ed-root .v5-more,#ed-root .v5-flag-go,#ed-root .v5-rs-go,#ed-root .v5-se-sub-go{color:#185E7F!important}
 #ed-root .v5-dec-q,#ed-root .v5-al-t,#ed-root .v5-flag-n,#ed-root .v5-rs-n,#ed-root .v5-se-sub-t,#ed-root .v5-rub-intro,#ed-root .v5 h2{color:#03314B!important}
