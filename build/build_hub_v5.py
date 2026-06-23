@@ -183,7 +183,7 @@ def research():
             f'<div class="v5-rs-row">{cols}</div></div></section>')
 
 def home_inner():
-    return '<div class="v5">'+hero()+'<div class="v5-wrap">'+decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div>'+research()+'</div>'
+    return '<div class="v5">'+hero()+'<div class="v5-wrap">'+decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>'
 
 FONTS=('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
  '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">')
@@ -254,7 +254,7 @@ CSS='''<style id="smzh-v5-css">
 /* Rubric */
 .v5-rub-sec{margin:5.6rem 0}
 .v5-rub-head{border-top:1px solid var(--line);padding-top:2.4rem;margin-bottom:2rem}
-.v5-rub-intro{font-size:clamp(1.2rem,1.9vw,1.55rem);font-weight:700;color:var(--navy);max-width:34ch}
+.v5-rub-intro{font-size:clamp(1.2rem,1.9vw,1.55rem);font-weight:700;color:var(--navy);max-width:none}
 .v5-rub-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
 @media(min-width:880px){.v5-rub-grid{grid-template-columns:var(--cols,3fr 2fr);gap:2.8rem;align-items:stretch}
  .v5-rub-grid.rev .v5-rub-hero{order:2}.v5-rub-grid.rev .v5-rub-side{order:1}}
