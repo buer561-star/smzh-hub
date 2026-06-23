@@ -729,7 +729,7 @@ def eigenheim_cta():
             '<div class="art-cta-row">'
             f'<a class="art-cta-btn art-cta-btn1" href="{link("/de/terminvereinbaren/")}">360°-Finanzcheck vereinbaren<span class="ar">→</span></a>'
             f'<a class="art-cta-btn art-cta-btn2" href="{link("/de/finanzierungsberatung/")}">Finanzierungsberatung ansehen<span class="ar">→</span></a></div>'
-            '<div class="art-cta-trust"><span>Unverbindlich</span><span>Persönlich beraten</span><span>Auf Ihre Situation bezogen</span></div>'
+            '<div class="art-cta-trust"><span>Unverbindlich</span><span>Persönlich beraten</span><span>Auf Ihre Situation</span></div>'
             '</div>')
 
 def eigenheim_inner():
