@@ -101,7 +101,7 @@ def hero():
                  f'<span class="h-slide-p">{esc(teaser(p,110))}</span>'
                  f'<span class="h-slide-go">Beitrag lesen →</span></span></a>')
         dots+=f'<span class="h-dot{" on" if i==0 else ""}" role="button" tabindex="0" data-i="{i}" aria-label="Beitrag {i+1}"></span>'
-    return (f'<section class="v5-hero"><div class="v5-hero-in">'
+    return (f'<section class="v5-hero" id="einstieg"><div class="v5-hero-in">'
             f'<div class="v5-hero-l"><h1>Klarheit für Ihre nächste Finanzentscheidung.</h1>'
             f'<p>smzhHub ordnet Märkte, Eigenheim, Vorsorge und Steuern so ein, dass Sie Ihre nächste Entscheidung sicherer treffen.</p></div>'
             f'<div class="v5-hero-r v5-car"><div class="h-slides">{slides}</div><div class="h-dots">{dots}</div></div>'
@@ -116,7 +116,7 @@ def decisions():
                 f'<span class="v5-dec-shape" style="background:{shapes[i%4]}"></span></a>')
     nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
          '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
-    return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
+    return (f'<section class="v5-sec v5-dec-sec" id="entscheidungen"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
             f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht ohne Einordnung entschieden werden.</p></div>'
             f'{nav}</div>'
             f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
@@ -129,7 +129,7 @@ def season():
     hero=(f'<a class="v5-se-hero" href="{link(cp)}"><span class="v5-se-tag">Aktuell relevant</span>'
           f'<span class="v5-se-h">{esc(t)}</span><span class="v5-se-p">{esc(teaser)}</span>'
           f'<span class="v5-se-cta">{esc(cl)} →</span></a>')
-    return f'<section class="v5-sec"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
+    return f'<section class="v5-sec" id="aktuell"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
 
 def flag_card(key,path):
     name,cad=FLAGMETA[key]
@@ -168,7 +168,8 @@ def rubric(rb, idx):
     cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
     cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
     desc=f'<p class="v5-rub-desc">{esc(rb["desc"])}</p>' if rb.get('desc') else ''
-    return (f'<section class="v5-sec v5-rub-sec"><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>{desc}</div>'
+    secid=' id="themen"' if idx==0 else ''
+    return (f'<section class="v5-sec v5-rub-sec"{secid}><div class="v5-rub-head"><h3 class="v5-rub-intro">{esc(rb["intro"])}</h3>{desc}</div>'
             f'<div class="{cls}" style="--cols:{cols}">{hero+side}</div></section>')
 
 def research():
@@ -183,8 +184,28 @@ def research():
             f'<a class="v5-more" href="{link("/de/smzhub-research/")}">Alle Publikationen →</a></div>'
             f'<div class="v5-rs-row">{cols}</div></div></section>')
 
+# ---- Navigation: globale Hub-Reiter (Content-Welten) + lokaler Seiten-Navigator (Anker) ----
+HUBTABS=[('alle','Alle','#einstieg'),('aktuell','Aktuell','#aktuell'),('entscheiden','Entscheiden','#entscheidungen'),
+ ('eigenheim','Eigenheim','/de/smzhub-eigenheim/'),('vermoegen','Vermögen','/de/smzhub-vermoegen/'),
+ ('zukunft','Zukunft','/de/smzhub-zukunft/'),('research','Research','/de/smzhub-research/')]
+PNAV=[('einstieg','Einstieg'),('entscheidungen','Entscheidungen'),('aktuell','Aktueller Fokus'),('themen','Themen'),('beratung','Beratung')]
+
+def hub_tabs(active='alle'):
+    items=''
+    for key,label,href in HUBTABS:
+        h=href if href.startswith('#') else link(href)
+        cls='v5-htab'+(' on' if key==active else '')
+        cur=' aria-current="page"' if key==active else ''
+        items+=f'<a class="{cls}" href="{h}"{cur}>{esc(label)}</a>'
+    return f'<nav class="v5-htabs" aria-label="smzhHub Bereiche"><div class="v5-htabs-in">{items}</div></nav>'
+
+def pagenav():
+    items=''.join(f'<a class="v5-pnav-link" href="#{aid}" data-sec="{aid}">{esc(label)}</a>' for aid,label in PNAV)
+    return f'<nav class="v5-pnav" aria-label="Auf dieser Seite"><div class="v5-pnav-in">{items}</div></nav>'
+
 def home_inner():
-    return '<div class="v5">'+hero()+'<div class="v5-wrap">'+decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>'
+    return ('<div class="v5">'+hub_tabs('alle')+hero()+pagenav()+'<div class="v5-wrap">'
+            +decisions()+season()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>')
 
 FONTS=('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
  '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">')
@@ -201,6 +222,22 @@ CSS='''<style id="smzh-v5-css">
 .v5-sub{color:var(--muted);font-size:.92rem;margin:.35rem 0 0}
 .v5-more{color:var(--teal);font-weight:700;font-size:.9rem;white-space:nowrap}
 .v5-more:hover{color:var(--navy)}
+/* Globale Hub-Reiter (prominent, Content-Welten) */
+.v5-htabs{background:#fff;border-bottom:1px solid var(--line)}
+.v5-htabs-in{max-width:1180px;margin:0 auto;display:flex;gap:.3rem;padding:0 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.v5-htabs-in::-webkit-scrollbar{display:none}
+.v5-htab{flex:0 0 auto;padding:1.05rem .85rem;font-size:1rem;font-weight:600;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+.v5-htab:hover{color:var(--navy)}
+.v5-htab.on{color:var(--navy);font-weight:700;border-bottom-color:var(--teal)}
+/* Lokaler Seiten-Navigator (subtil, Utility, Anker) */
+.v5-pnav{background:rgba(255,255,255,.92);border-bottom:1px solid var(--line)}
+@media(min-width:1024px){.v5-pnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
+.v5-pnav-in{max-width:1180px;margin:0 auto;display:flex;gap:.35rem;padding:.5rem 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.v5-pnav-in::-webkit-scrollbar{display:none}
+.v5-pnav-link{flex:0 0 auto;padding:.32rem .72rem;font-size:.82rem;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:999px;transition:.15s}
+.v5-pnav-link:hover{color:var(--navy);background:var(--lblue)}
+.v5-pnav-link.on{color:var(--teal);background:var(--lblue)}
+#einstieg,#entscheidungen,#aktuell,#themen,#beratung{scroll-margin-top:64px}
 /* Hero */
 .v5-hero{background:var(--navy);color:#fff;border-radius:0 0 22px 22px}
 .v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
@@ -319,6 +356,8 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-mid-go{color:#185E7F!important}#ed-root .v5-mid-tag{color:#fff!important}
 #ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
+#ed-root .v5-htab{color:#5b6b7a!important}#ed-root .v5-htab.on,#ed-root .v5-htab:hover{color:#03314B!important}
+#ed-root .v5-pnav-link{color:#5b6b7a!important}#ed-root .v5-pnav-link:hover{color:#03314B!important}#ed-root .v5-pnav-link.on{color:#185E7F!important}
 /* === frontend-design polish (rein visuell) === */
 html{scroll-behavior:smooth}
 .v5 h1,.v5 h2,.v5 h3{letter-spacing:-.022em;text-wrap:balance}
@@ -377,12 +416,19 @@ if('IntersectionObserver' in window && !rm){
  var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('r-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
  els.forEach(function(el){io.observe(el);});
 }}catch(e){}
+/* Scrollspy: lokalen Seiten-Navigator mit aktuellem Abschnitt markieren */
+try{var pn=document.querySelector('.v5-pnav');
+if(pn && 'IntersectionObserver' in window){
+ var lk={};pn.querySelectorAll('.v5-pnav-link').forEach(function(a){lk[a.getAttribute('data-sec')]=a;});
+ var io2=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){Object.keys(lk).forEach(function(k){lk[k].classList.toggle('on',k===en.target.id);});}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+ Object.keys(lk).forEach(function(id){var el=document.getElementById(id);if(el)io2.observe(el);});
+}}catch(e){}
 });})();
 </script>'''
 
 # Schluss-CTA-Umtextung (nur Beschriftung; Links/Routing/Layout unverändert)
 CTA_COPY=[
- ('Nutzen Sie unseren 360° Check-Up','Wissen ist der Einstieg. Entscheidend ist, was es für Ihre Situation bedeutet.'),
+ ('<h3 class="text-xl font-medium">Nutzen Sie unseren 360° Check-Up</h3>','<h3 class="text-xl font-medium" id="beratung">Wissen ist der Einstieg. Entscheidend ist, was es für Ihre Situation bedeutet.</h3>'),
  ('Unser 360° Check-Up ist eine Analyse Ihrer aktuellen Ausgangslage. Mit ihr finden wir heraus, wie Ihre individuelle Situation optimiert werden könnte.',
   'smzh hilft, Marktinformationen, Vorsorge, Eigenheim, Steuern und Vermögen in eine konkrete Finanzentscheidung zu übersetzen.'),
  ('<span>Unverbindlichen Termin vereinbaren</span>','<span>Nächsten Schritt klären</span>'),
