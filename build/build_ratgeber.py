@@ -7,7 +7,7 @@ Artikel (/de/ratgeber-...). Ziel: maximale Lead-Generierung, sauberes On-Page-SE
 
 Schweizer Rechtschreibung (ss). Nutzt das Chrome + V5-CSS via build_hub_v5.build_page.
 """
-import re, html as H
+import re, os, json, html as H
 import build_hub_v5 as V
 
 BASE = V.BASE
@@ -418,6 +418,14 @@ ARTICLES = [
 ]
 
 # ---------------------------------------------------------------------------
+SLUG_RUBRIK = {a['slug']: a['rubrik'] for a in ARTICLES}
+ASSET_DIR = os.path.join('site','smzh.ch','de','_assets','ratgeber')
+SRC_LABEL = {'unsplash':'Unsplash','pexels':'Pexels'}
+try:
+    CREDITS = json.load(open(os.path.join(ASSET_DIR,'credits.json'),encoding='utf-8'))
+except Exception:
+    CREDITS = {}
+
 def reading_time(html_text):
     words=len(re.findall(r"[A-Za-zÄÖÜäöü']+", re.sub(r'<[^>]+>',' ',html_text)))
     return max(3, round(words/200)), words
@@ -426,9 +434,14 @@ def cta_block(art, mid):
     href,label=art['cta']
     h = 'Wie sieht das in Ihrer Situation aus?' if mid else art['cta_h']
     txt = 'Eine unverbindliche Einschätzung zeigt, was für Sie konkret zählt – ohne Verpflichtung.' if mid else art['cta_p']
-    return (f'<div class="art-cta"><h3>{esc(h)}</h3><p>{esc(txt)}</p>'
-            f'<div class="art-cta-row"><a class="art-cta-btn" href="{link(href)}">{esc(label)} →</a>'
-            f'<a class="art-cta-btn art-cta-btn2" href="{link(BOOK)}">Beratung vereinbaren →</a></div></div>')
+    eyebrow = 'Persönliche Einschätzung' if mid else 'Kostenlos & unverbindlich'
+    return (f'<div class="art-cta"><p class="art-cta-eyebrow">{esc(eyebrow)}</p>'
+            f'<h3>{esc(h)}</h3><p>{esc(txt)}</p>'
+            f'<div class="art-cta-row">'
+            f'<a class="art-cta-btn art-cta-btn1" href="{link(href)}">{esc(label)}<span class="ar">→</span></a>'
+            f'<a class="art-cta-btn art-cta-btn2" href="{link(BOOK)}">Beratung vereinbaren<span class="ar">→</span></a></div>'
+            f'<div class="art-cta-trust"><span>Unverbindlich</span><span>In wenigen Minuten</span><span>Persönlich beraten</span></div>'
+            f'</div>')
 
 def article_inner(art, mins):
     secs=[f'<h2>{esc(h2)}</h2>{body}' for h2,body in art['body']]
@@ -436,14 +449,32 @@ def article_inner(art, mins):
     mid=cta_block(art,True)
     body_secs = secs[:2] + [mid] + secs[2:]
     faq=''.join(f'<p class="art-faq-q">{esc(q)}</p><p class="art-faq-a">{esc(ans)}</p>' for q,ans in art['faq'])
-    related=''.join(f'<li><a href="{link(p)}">{esc(t)}</a></li>' for t,p in art['related'])
+    rel_cards=''
+    for t,pth in art['related']:
+        rslug=pth.strip('/').split('/')[-1]
+        kick=SLUG_RUBRIK.get(rslug,'Ratgeber')
+        rel_cards+=(f'<a class="art-rel-card" href="{link(pth)}">'
+                    f'<span class="art-rel-k">{esc(kick)}</span>'
+                    f'<span class="art-rel-t">{esc(t)}</span>'
+                    f'<span class="art-rel-go">Weiterlesen <span class="ar">→</span></span></a>')
     bc=(f'<div class="art-bc"><a href="{link("/de/smzhub/")}">smzhHub</a> › '
         f'<a href="{link(art["rubrik_href"])}">{esc(art["rubrik"])}</a> › {esc(art["h1_short"])}</div>')
     fig=''
-    src=V.img_of(art.get('img',''),1080) if art.get('img') else None
-    if src:
-        fig=(f'<figure class="art-fig"><img src="{src}" alt="{esc(art["imgalt"])}" width="1080" height="608" loading="lazy">'
-             f'<figcaption>{esc(art["imgalt"])}</figcaption></figure>')
+    slug=art['slug']
+    if os.path.exists(os.path.join(ASSET_DIR,slug+'.jpg')):
+        cr=CREDITS.get(slug,{})
+        cap=esc(art['imgalt'])
+        ph=(cr.get('photographer') or '').strip()
+        lbl=SRC_LABEL.get(cr.get('source'),'')
+        if ph and 'contributor' not in ph.lower():
+            cap+=' · Foto: '+esc(ph)+(f' / {lbl}' if lbl else '')
+        elif lbl:
+            cap+=' · Foto: '+lbl
+        src=V.P_+'de/_assets/ratgeber/'+slug+'.jpg'
+        fig=(f'<figure class="art-fig"><div class="art-figw">'
+             f'<span class="art-fig-tag">{esc(art["rubrik"])}</span>'
+             f'<img src="{src}" alt="{esc(art["imgalt"])}" width="1600" height="900" loading="lazy"></div>'
+             f'<figcaption>{cap}</figcaption></figure>')
     return ('<div class="v5">'
             '<section class="v5-phead"><div class="v5-phead-in">'
             f'<p class="v5-eyebrow">{esc(art["rubrik"])} · Stand 2026 · {mins} Min</p>'
@@ -456,11 +487,13 @@ def article_inner(art, mins):
             f'{"".join(body_secs)}'
             f'<div class="art-faq"><h2>Häufige Fragen</h2>{faq}</div>'
             f'{cta_block(art,False)}'
-            f'<div class="art-related"><h2>Passend dazu im smzhHub</h2><ul>{related}</ul></div>'
+            f'<div class="art-related"><p class="art-related-eyebrow">Weiterlesen</p>'
+            f'<h2>Passend zu Ihrer Entscheidung</h2>'
+            f'<div class="art-rel-grid">{rel_cards}</div></div>'
             f'<p style="margin-top:1.4rem"><a class="v5-back" href="{link("/de/smzhub/")}">← Zurück zum smzhHub</a></p>'
             '</article></div></div>')
 
-def jsonld_for(art, url, mins):
+def jsonld_for(art, url, mins, img_url=None):
     bc={'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
         {'@type':'ListItem','position':1,'name':'smzhHub','item':BASE+'/de/smzhub/'},
         {'@type':'ListItem','position':2,'name':art['rubrik'],'item':BASE+link(art['rubrik_href']).replace('../../','/').replace('/index.html','/')},
@@ -470,6 +503,7 @@ def jsonld_for(art, url, mins):
         'description':art['desc'],'inLanguage':'de-CH','author':ORG,'publisher':ORG,
         'mainEntityOfPage':url,'datePublished':'2026-01-15','dateModified':'2026-06-23',
         'keywords':', '.join([art['kw']]+art['kw2'])}
+    if img_url: article['image']=img_url
     faq={'@context':'https://schema.org','@type':'FAQPage','mainEntity':[
         {'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a_}} for q,a_ in art['faq']]}
     return [bc,article,faq]
@@ -480,7 +514,9 @@ def build_all():
         mins,_=reading_time(inner_tmp)
         inner=article_inner(art,mins)
         url=BASE+'/de/'+art['slug']+'/'
-        meta={'desc':art['desc'],'jsonld':jsonld_for(art,url,mins)}
+        img_url=BASE+'/de/_assets/ratgeber/'+art['slug']+'.jpg' if os.path.exists(os.path.join(ASSET_DIR,art['slug']+'.jpg')) else None
+        meta={'desc':art['desc'],'jsonld':jsonld_for(art,url,mins,img_url)}
+        if img_url: meta['image']=img_url
         V.build_page(('de',art['slug']),inner,art['title'],meta)
     print(f'OK Ratgeber: {len(ARTICLES)} Lead-Gen-/SEO-Artikel geschrieben.')
 

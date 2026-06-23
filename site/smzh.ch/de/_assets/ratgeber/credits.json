@@ -1,0 +1,82 @@
+{
+  "ratgeber-saron-oder-festhypothek": {
+    "source": "unsplash",
+    "page_url": "https://unsplash.com/photos/holding-house-keys-in-front-of-the-entrance-bqUZEAeWuok",
+    "direct_url": "https://images.unsplash.com/photo-1741156386380-0236c72eb6f9?w=1600&h=900&fit=crop&q=80&fm=jpg",
+    "photographer": "Jakub Żerdzicki",
+    "alt_de": "Hand hält Hausschlüssel mit Haus-Anhänger vor einer modernen Wohnung",
+    "verified": true
+  },
+  "ratgeber-eigenheim-kaufen-oder-warten": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/aerial-view-of-a-village-9310802/",
+    "direct_url": "https://images.pexels.com/photos/9310802/pexels-photo-9310802.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Pexels contributor",
+    "alt_de": "Luftaufnahme eines Wohnquartiers mit Einfamilienhäusern und Gärten",
+    "verified": true
+  },
+  "ratgeber-rente-oder-kapitalbezug": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/happy-elderly-couple-walking-in-forest-with-dog-4148966/",
+    "direct_url": "https://images.pexels.com/photos/4148966/pexels-photo-4148966.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Gustavo Fring",
+    "alt_de": "Glückliches älteres Paar spaziert mit Hund durch einen herbstlichen Wald",
+    "verified": true
+  },
+  "ratgeber-saeule-3a-konto-oder-wertschriften": {
+    "source": "unsplash",
+    "page_url": "https://unsplash.com/photos/stock-chart-indicates-growth-and-potential-profit-Q_vhJv5im-8",
+    "direct_url": "https://images.unsplash.com/photo-1745270917233-65e776a47547?w=1600&h=900&fit=crop&q=80&fm=jpg",
+    "photographer": "Arturo Añez",
+    "alt_de": "Aufsteigendes Kursdiagramm mit grünen und roten Kerzen auf einem Bildschirm",
+    "verified": true
+  },
+  "ratgeber-tragbarkeit-hypothek": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/person-holding-black-calculator-while-using-laptop-8296981/",
+    "direct_url": "https://images.pexels.com/photos/8296981/pexels-photo-8296981.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Mikhail Nilov",
+    "alt_de": "Hände mit Taschenrechner über Finanzunterlagen auf einem Schreibtisch",
+    "verified": true
+  },
+  "ratgeber-amortisieren-oder-investieren": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/euro-coins-arranged-increasingly-on-green-surface-37416563/",
+    "direct_url": "https://images.pexels.com/photos/37416563/pexels-photo-37416563.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Pexels contributor",
+    "alt_de": "Aufsteigend gestapelte Euro-Münzen auf grünem Hintergrund als Symbol für Vermögensaufbau",
+    "verified": true
+  },
+  "ratgeber-frueher-pensionieren": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/senior-hiker-admiring-lake-view-in-patagonia-37828837/",
+    "direct_url": "https://images.pexels.com/photos/37828837/pexels-photo-37828837.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Pexels contributor",
+    "alt_de": "Älterer Mann mit Rucksack geniesst den Ausblick auf Berge und einen See",
+    "verified": true
+  },
+  "ratgeber-steuern-sparen": {
+    "source": "unsplash",
+    "page_url": "https://unsplash.com/photos/htol9OLeW20",
+    "direct_url": "https://images.unsplash.com/photo-1580674287165-60059e9ac2aa?w=1600&h=900&fit=crop&q=80&fm=jpg",
+    "photographer": "Claudio Schwarz",
+    "alt_de": "Aufgefächerte Schweizer Franken Banknoten von 10 bis 1000 Franken",
+    "verified": true
+  },
+  "ratgeber-eigenkapital-eigenheim": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/a-black-piggy-bank-in-the-middle-of-coins-3943727/",
+    "direct_url": "https://images.pexels.com/photos/3943727/pexels-photo-3943727.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "cottonbro studio",
+    "alt_de": "Schwarzes Sparschwein umgeben von zahlreichen Münzen als Symbol für Eigenkapital",
+    "verified": true
+  },
+  "ratgeber-lohnt-sich-saeule-3a": {
+    "source": "pexels",
+    "page_url": "https://www.pexels.com/photo/green-plant-on-a-person-s-hand-5550910/",
+    "direct_url": "https://images.pexels.com/photos/5550910/pexels-photo-5550910.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    "photographer": "Pexels contributor",
+    "alt_de": "Hand hält Erde mit jungem Sämling neben Münzstapeln als Symbol für langfristiges Sparen",
+    "verified": true
+  }
+}
