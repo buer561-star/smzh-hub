@@ -102,8 +102,8 @@ Hero (Verortung „Eigenheim & Hypothek") → **Research-Anker wählen** (Radar 
 ### 2.1 Flagship-Quellen
 | Anker | Serie (Slug) | Cadence | Ausgaben (Ist) | Aktuellste Ausgabe | Archiv-Ziel |
 |---|---|---|---|---|---|
-| Hypotheken-Radar | `smzhub-serie-hypotheken-radar` | monatlich | 8 | jeweils neueste (build-dynamisch, `series_items('hypothekenradar')[0]`) | Serien-Seite |
-| Immobilien-Outlook | `smzhub-serie-immobilien-outlook` | quartalsweise | 8 | jeweils neueste (`series_items('immobilien-outlook')[0]`) | Serien-Seite |
+| Hypotheken-Radar | `smzhub-serie-hypotheken-radar` | monatlich | 9 | jeweils neueste (build-dynamisch, `series_items('hypothekenradar')[0]`) | Serien-Seite |
+| Immobilien-Outlook | `smzhub-serie-immobilien-outlook` | quartalsweise | 7 | jeweils neueste (`series_items('immobilien-outlook')[0]`) | Serien-Seite |
 
 > Aktuellste Ausgabe wird **dynamisch** aus den Serien-Items gezogen (neuestes Datum), nicht hartkodiert.
 
