@@ -658,7 +658,9 @@ def main():
         shutil.rmtree(os.path.join(SMZH,'de',old), ignore_errors=True)
 
     write('de/smzhub/', home_inner(), 'smzHub – Finanzwissen für Ihre Entscheidungen')
-    write('de/smzhub-eigenheim/', theme_inner('eigenheim'), 'Eigenheim – smzHub')
+    # Build-Linien-Trennung (PAGE_SCHEMA §1, Entscheidung 1): smzhub-eigenheim ist auf V5
+    # migriert und wird ausschliesslich von build/build_hub_v5.py (eigenheim_inner) erzeugt.
+    # Hier daher KEIN write() mehr, damit sich die beiden Builds nicht gegenseitig ueberschreiben.
     write('de/smzhub-vermoegen/', theme_inner('vermoegen'), 'Vermögen – smzHub')
     write('de/smzhub-zukunft/', theme_inner('zukunft'), 'Zukunft – smzHub')
     write('de/smzhub-steuern/', theme_inner('steuern'), 'Steuern – smzHub')

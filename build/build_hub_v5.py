@@ -429,6 +429,30 @@ CSS='''<style id="smzh-v5-css">
 .v5-rs-n{font-size:1.15rem;font-weight:800;color:var(--navy)}
 .v5-rs-cad{font-size:.84rem;color:var(--muted)}
 .v5-rs-go{font-size:.84rem;font-weight:700;color:var(--teal);margin-top:.3rem}
+/* Flagship-Research-Anker (gleichwertiges Premium-Paar; Spec: COMPONENT_LIBRARY.html) */
+.v5-flagship{margin:5.6rem 0}
+.v5-fa-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:880px){.v5-fa-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+.v5-fa{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(3,49,75,.55);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-fa:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(3,49,75,.55);border-color:#cdd6df}
+.v5-fa-cov{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--lblue)}
+.v5-fa-cov img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.v5-fa:hover .v5-fa-cov img{transform:scale(1.04)}
+.v5-fa-badge{position:absolute;left:14px;top:14px;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(3,49,75,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);padding:.4rem .75rem;border-radius:999px}
+.v5-fa-body{display:flex;flex-direction:column;gap:.55rem;padding:1.5rem 1.6rem 1.3rem;flex:1}
+.v5-fa-title{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:800;color:var(--navy);line-height:1.2}
+.v5-fa-sub{font-size:.95rem;color:var(--muted);line-height:1.5;margin:0}
+.v5-fa-latest{display:flex;flex-direction:column;gap:.2rem;margin-top:.5rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.v5-fa-date{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-fa-latest-t{font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+.v5-fa-latest-t:hover{color:var(--teal)}
+.v5-fa-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:auto;padding:1.1rem 1.6rem 1.5rem;background:var(--navy)}
+.v5-fa-cta{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:var(--navy);background:#fff;padding:.8rem 1.3rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-fa-cta .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-fa-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
+.v5-fa-cta:hover .ar{transform:translateX(4px)}
+.v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
+.v5-fa-archive:hover{color:#fff}
 /* Spezifitäts-Overrides gegen Chrome-Link-Styles */
 #ed-root .v5-cta,#ed-root .v5-cta:hover{color:#fff!important}
 #ed-root .v5-se-cta,#ed-root .v5-se-tag,#ed-root .v5-se-h,#ed-root .v5-se-p{color:#fff!important}
@@ -444,6 +468,7 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-fn-h{color:#fff!important}#ed-root .v5-fn-sub{color:#bcd3e2!important}
 #ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}
 #ed-root .v5-dec-fresh{color:#8b9aa8!important}
+#ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}#ed-root .v5-fa-sub{color:#5b6b7a!important}#ed-root .v5-fa-date{color:#8b9aa8!important}#ed-root .v5-fa-cta{color:#03314B!important}#ed-root .v5-fa-archive{color:#9fd0ee!important}#ed-root .v5-fa-badge{color:#fff!important}
 #ed-root .art-body a,#ed-root .art-bc a,#ed-root .art-related a{color:#185E7F!important}
 #ed-root .art-body p,#ed-root .art-body li,#ed-root .art-faq-a{color:#1c2b36!important}
 #ed-root .art-body h2,#ed-root .art-body h3,#ed-root .art-lead,#ed-root .art-faq-q,#ed-root .art-related a,#ed-root .art-related h2{color:#03314B!important}
@@ -594,19 +619,122 @@ def horizon_inner():
     return category_inner('smzhHub · Themenwelt','smzh horizon',
         'Perspektiven, Trends und Ausblick von smzh.',body)
 
+# ===================== Themenwelt: Eigenheim & Hypothek (V5 + Flagship-Anker) =====================
+# Flagship-Anker (PAGE_SCHEMA §1.4 Block 2+3, §3): zwei gleichwertige Research-Reihen.
+# Aktuellste Ausgabe wird build-dynamisch aus series_items(key)[0] gezogen (neuestes Datum),
+# Datenbasis ist dasselbe smzhhub-content.json wie in der Editorial-Linie (kein Import nötig).
+EIGENHEIM_FLAGSHIP=[
+ {'key':'hypothekenradar','badge':'Research-Reihe · monatlich','title':'Hypotheken-Radar',
+  'sub':'Der monatliche Taktgeber zu Zinsen, SARON und Festhypothek – als Entscheidungshilfe, wenn Sie abschliessen, verlängern oder umschulden.',
+  'cta':('Hypothek prüfen','/de/immobilienbewertung/'),'archive':'/de/smzhub-serie-hypotheken-radar/'},
+ {'key':'immobilien-outlook','badge':'Research-Reihe · quartalsweise','title':'Immobilien-Outlook',
+  'sub':'Der quartalsweise Marktkompass zu Preisen, Tragbarkeit und Regionen – Orientierung für grössere Kauf- und Eigentumsentscheidungen.',
+  'cta':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),'archive':'/de/smzhub-serie-immobilien-outlook/'}]
+# Decision-Cards (PAGE_SCHEMA §1.6/§2.2): nur Rubrik Eigenheim/Hypothek, auf reale Ratgeber geroutet.
+EIGENHEIM_DECISIONS=[
+ ('Hypothek','SARON oder Festhypothek?','Welche Strategie 2026 trägt, wenn die SNB-Zinsen tief sind, aber Planungssicherheit zählt.','/de/ratgeber-saron-oder-festhypothek/'),
+ ('Eigenheim','Reicht mein Einkommen für die Bank?','Wie Banken die Tragbarkeit 2026 rechnen – und was Sie daran heute beeinflussen können.','/de/ratgeber-tragbarkeit-hypothek/'),
+ ('Vermögen','Amortisieren oder investieren?','Schulden tilgen oder anlegen: was sich bei den Zinsen von 2026 für Sie langfristig mehr lohnt.','/de/ratgeber-amortisieren-oder-investieren/'),
+ ('Eigenheim','Kaufen oder warten?','Wie Preise, Eigenkapital und Tragbarkeit 2026 zusammenspielen – und worauf es jetzt ankommt.','/de/ratgeber-eigenheim-kaufen-oder-warten/'),
+ ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es 2026 zusätzlich ankommt.','/de/ratgeber-eigenkapital-eigenheim/')]
+# Tools-Verweis-Slot (PAGE_SCHEMA §1.4 Block 5): schlanker Link, kein eigener Rechner.
+EIGENHEIM_TOOL={'tag':'Rechner','t':'Tragbarkeit und Immobilienwert prüfen',
+ 'go':'Tragbarkeit berechnen','href':'/de/immobilienbewertung-rechner/'}
+# Vertiefung Grundlagen (PAGE_SCHEMA §1.4 Block 6a, §2.3) – aus EVERGREEN['immobilien'].
+EIGENHEIM_EVERGREEN=[('Tragbarkeit optimieren','/de/optimierung-der-tragbarkeit/'),
+ ('Hypothekenarten im Vergleich','/de/hypothekenarten-im-vergleich/'),
+ ('Wie kaufe ich eine Immobilie?','/de/wie-kaufe-ich-eine-immobilie/'),
+ ('Wohneigentumsförderung','/de/wohneigentumsfoerderung/')]
+EIGENHEIM_DOSSIER=('/de/smzhub-dossier-eigenheim/','Eigenheim finanzieren')
+
+def eigenheim_flagship():
+    cards=''
+    for fa in EIGENHEIM_FLAGSHIP:
+        its=series_items(fa['key']); cur=its[0] if its else None
+        im=opt_img(cur['image'],640) if cur else None
+        cov=f'<span class="v5-fa-cov">{imgt(im)}<span class="v5-fa-badge">{esc(fa["badge"])}</span></span>'
+        latest=''
+        if cur:
+            date=fdate(cur.get('date'))
+            datelbl='Aktuelle Ausgabe'+(f' · {date}' if date else '')
+            latest=(f'<span class="v5-fa-latest"><span class="v5-fa-date">{esc(datelbl)}</span>'
+                    f'<a class="v5-fa-latest-t" href="{link(cur["path"])}">{esc(cur["title"])}</a></span>')
+        cl,cp=fa['cta']
+        foot=(f'<div class="v5-fa-foot"><a class="v5-fa-cta" href="{link(cp)}">{esc(cl)} <span class="ar">→</span></a>'
+              f'<a class="v5-fa-archive" href="{link(fa["archive"])}">Alle Ausgaben →</a></div>')
+        cards+=(f'<article class="v5-fa">{cov}<div class="v5-fa-body">'
+                f'<h3 class="v5-fa-title">{esc(fa["title"])}</h3>'
+                f'<p class="v5-fa-sub">{esc(fa["sub"])}</p>{latest}</div>{foot}</article>')
+    head=('<div class="v5-head"><div><h2>Unsere Research-Reihen zu Eigenheim und Hypothek</h2>'
+          '<p class="v5-sub">Zwei feste Formate, die wir regelmässig fortschreiben – kein loser '
+          'Beitragsstrom, sondern eine verlässliche Grundlage für Finanzierungs- und Kaufentscheidungen.</p></div></div>')
+    return f'<section class="v5-flagship">{head}<div class="v5-fa-grid">{cards}</div></section>'
+
+def eigenheim_decisions():
+    cards=''
+    shapes=['#185E7F','#03314B','#185E7F','#03314B','#185E7F']
+    for i,(cat,q,desc,p) in enumerate(EIGENHEIM_DECISIONS):
+        cards+=(f'<a class="v5-dec" href="{link(p)}"><span class="v5-dec-cat">{esc(cat)}</span>'
+                f'<span class="v5-dec-q">{esc(q)}</span><span class="v5-dec-d">{esc(desc)}</span>'
+                f'<span class="v5-dec-fresh">Aktualisiert · 2026</span>'
+                f'<span class="v5-dec-shape" style="background:{shapes[i%5]}"></span></a>')
+    nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
+         '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
+    return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Ihre Entscheidung</h2>'
+            f'<p class="v5-sub">Konkrete Fragen rund um Eigenheim und Hypothek – mit dem passenden Einstieg in den Ratgeber.</p></div>'
+            f'{nav}</div><div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
+
+def eigenheim_tools():
+    t=EIGENHEIM_TOOL; tim=img_of('/de/artikel/zuercher-wohnungsinitiativen/',640)
+    mid=(f'<a class="v5-mid" href="{link(t["href"])}" style="max-width:420px;margin-top:0">'
+         f'<span class="v5-mid-img">{imgt(tim)}<span class="v5-mid-tag">{esc(t["tag"])}</span></span>'
+         f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(t["t"])}</span>'
+         f'<span class="v5-mid-go">{esc(t["go"])}</span></span></a>')
+    return (f'<section class="v5-sec"><div class="v5-head"><div><h2>Rechner & Tools</h2>'
+            f'<p class="v5-sub">Selbst einordnen, bevor Sie beraten lassen: Tragbarkeit und Immobilienwert in wenigen Minuten.</p></div></div>'
+            f'{mid}</section>')
+
+def eigenheim_depth():
+    rows_html=''.join(f'<a class="v5-sl" href="{link(h)}"><span class="v5-sl-t">{esc(t)}</span>'
+                      f'<span class="v5-sl-m">→</span></a>' for t,h in EIGENHEIM_EVERGREEN)
+    grundlagen=(f'<div class="v5-head"><div><h2>Grundlagen vertiefen</h2>'
+                f'<p class="v5-sub">Die wichtigsten Evergreen-Erklärungen rund um Kauf, Tragbarkeit und Finanzierung.</p></div></div>'
+                f'<div class="v5-sl-list">{rows_html}</div>')
+    dp,dt=EIGENHEIM_DOSSIER
+    dossier=(f'<a class="v5-mid" href="{link(dp)}" style="max-width:420px">'
+             f'<span class="v5-mid-b" style="padding:1.2rem 1.4rem">'
+             f'<span class="v5-mid-tag" style="position:static;width:max-content;margin-bottom:.5rem">Dossier</span>'
+             f'<span class="v5-mid-t">{esc(dt)}</span>'
+             f'<span class="v5-mid-go">Dem roten Faden folgen</span></span></a>')
+    return f'<section class="v5-sec">{grundlagen}{dossier}</section>'
+
+def eigenheim_inner():
+    hero=('<section class="v5-phead"><div class="v5-phead-in">'
+          '<p class="v5-eyebrow">smzhHub · Themenwelt</p><h1>Eigenheim &amp; Hypothek</h1>'
+          '<p>Kaufen, finanzieren, halten: die Entscheidungen rund um Wohneigentum, sachlich eingeordnet. '
+          'Wir verbinden laufendes Research zu Zinsen, Hypotheken und Immobilienmarkt mit konkreten Schritten für Ihre Situation.</p>'
+          f'<p style="margin-top:1.4rem"><a class="v5-fa-cta" href="{link("/de/terminvereinbaren/")}">Finanzierung besprechen <span class="ar">→</span></a></p>'
+          '</div></section>')
+    body=(eigenheim_flagship()+eigenheim_decisions()+eigenheim_tools()+eigenheim_depth()
+          +f'<section class="v5-sec v5-backsec"><a class="v5-back" href="{link("/de/smzhub/")}">← Zurück zum smzhHub</a></section>')
+    return f'<div class="v5">{hero}<div class="v5-wrap">{body}</div></div>'
+
 ORG={'@type':'Organization','name':'smzh','url':'https://smzh.ch','logo':'https://smzh.ch/favicon.ico'}
 
 def main():
     home_meta={'desc':'smzhHub ordnet Märkte, Eigenheim, Vorsorge und Steuern so ein, dass Sie Ihre nächste Finanzentscheidung 2026 sicherer treffen. Einordnungen, Ratgeber und Research.',
         'jsonld':[{'@context':'https://schema.org','@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/','publisher':ORG}]}
     build_page(('de','smzhub'),home_inner(),'smzhHub – Klarheit für Ihre Finanzentscheidungen',home_meta)
+    build_page(('de','smzhub-eigenheim'),eigenheim_inner(),'Eigenheim & Hypothek einordnen | smzhHub',
+        {'desc':'Eigenheim & Hypothek sachlich eingeordnet: Hypotheken-Radar und Immobilien-Outlook, Entscheidungspfade zu SARON, Tragbarkeit und Eigenkapital sowie der Weg zur Finanzierungsberatung.',
+         'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'Eigenheim & Hypothek','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
     build_page(('de','smzhub-immobilienanlagen'),immobilienanlagen_inner(),'Immobilienanlagen einordnen | smzhHub',
         {'desc':'Renditeobjekte und indirekte Immobilienanlagen verständlich eingeordnet: Rendite, Risiken, Regulierung und Finanzierung für Ihre Anlageentscheidung.',
          'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'Immobilienanlagen','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
     build_page(('de','smzhub-horizon'),horizon_inner(),'smzh horizon – Trends & Ausblick | smzhHub',
         {'desc':'smzh horizon bündelt den längeren Blick: makroökonomische Trends, strukturelle Entwicklungen und Ausblicke, die die Themenwelten des smzhHub verbinden.',
          'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'smzh horizon','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
-    print('OK V5: Landing Page + Themenwelten-Seiten (Immobilienanlagen, smzh horizon) geschrieben.')
+    print('OK V5: Landing Page + Themenwelten-Seiten (Eigenheim & Hypothek, Immobilienanlagen, smzh horizon) geschrieben.')
 
 if __name__=='__main__':
     main()

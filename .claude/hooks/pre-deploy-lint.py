@@ -29,7 +29,8 @@ def rel(f, r):
 def hub_pages(r):
     d = os.path.join(r, 'site', 'smzh.ch', 'de')
     pages = [os.path.join(d, p, 'index.html')
-             for p in ('smzhub', 'smzhub-horizon', 'smzhub-immobilienanlagen')]
+             for p in ('smzhub', 'smzhub-horizon', 'smzhub-immobilienanlagen',
+                       'smzhub-eigenheim')]
     pages += sorted(glob.glob(os.path.join(d, 'ratgeber-*', 'index.html')))
     return [p for p in pages if os.path.exists(p)]
 
