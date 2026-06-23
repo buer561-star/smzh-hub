@@ -56,7 +56,13 @@ HERO=[  # (path-or-row, kategorie)
 DECISIONS=[('Hypothek','SARON oder Festhypothek?','Welche Laufzeit passt, wenn Zinsen tief bleiben, aber Planungssicherheit zählt?','/de/hypothekenarten-im-vergleich/'),
  ('Eigenheim','Kaufen oder warten?','Wie Preisentwicklung, Eigenkapital und Lebensplanung zusammenhängen.','/de/wie-kaufe-ich-eine-immobilie/'),
  ('Vorsorge','Rente oder Kapital?','Die Pensionierungsentscheidung, die selten sauber vorbereitet wird.','/de/leistungen-im-alter/'),
- ('Anlegen','3a Konto oder Wertschriften?','Warum Sparen allein über lange Zeiträume oft nicht genügt.','/de/altersvorsorge-optimierung-saeule-3a/')]
+ ('Anlegen','3a Konto oder Wertschriften?','Warum Sparen allein über lange Zeiträume oft nicht genügt.','/de/altersvorsorge-optimierung-saeule-3a/'),
+ ('Eigenheim','Reicht mein Einkommen für die Bank?','Wie Banken die Tragbarkeit rechnen – und was Sie daran beeinflussen können.','/de/optimierung-der-tragbarkeit/'),
+ ('Vermögen','Amortisieren oder investieren?','Hypothek tilgen oder das Geld anlegen – was sich für Sie langfristig mehr lohnt.','/de/finanzplan-erstellen/'),
+ ('Vorsorge','Früher pensionieren oder weiterarbeiten?','Was ein früherer Ausstieg kostet – und wie er finanzierbar bleibt.','/de/pensionsplanung/'),
+ ('Steuern','Wo verschenke ich jedes Jahr Steuern?','Welche Abzüge und Vorsorgebezüge wirklich einen Unterschied machen.','/de/steuerabzuege-optimal-nutzen/'),
+ ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es zusätzlich ankommt.','/de/wohneigentumsfoerderung/'),
+ ('Vorsorge','Lohnt sich die Säule 3a für mich?','Wann 3a wirklich zählt – und wann Ihr Geld anderswo besser aufgehoben ist.','/de/das-3-saeulensystem-der-schweiz/')]
 RUBRICS=[
  {'intro':'Kann ich mir mein Eigenheim leisten – und zu welchen Konditionen?','more':'/de/smzhub-eigenheim/',
   'arts':['/de/artikel/snb-zinsentscheid-juni/','/de/artikel/zuercher-wohnungsinitiativen/','/de/artikel/abstimmung-keine-10-millionen-schweiz/','/de/artikel/eigenmietwert-sanierung-bundesrat-2029/'],
@@ -106,10 +112,12 @@ def decisions():
         cards+=(f'<a class="v5-dec" href="{link(p)}"><span class="v5-dec-cat">{esc(cat)}</span>'
                 f'<span class="v5-dec-q">{esc(q)}</span><span class="v5-dec-d">{esc(desc)}</span>'
                 f'<span class="v5-dec-shape" style="background:{shapes[i%4]}"></span></a>')
-    return (f'<section class="v5-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
+    nav=('<div class="v5-dec-nav"><span class="v5-dec-arrow v5-dec-prev" role="button" tabindex="0" aria-label="Zurück">‹</span>'
+         '<span class="v5-dec-arrow v5-dec-next" role="button" tabindex="0" aria-label="Weiter">›</span></div>')
+    return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Entscheiden statt nur informieren</h2>'
             f'<p class="v5-sub">Wichtige Finanzfragen sollten nicht unter Unsicherheit entschieden werden.</p></div>'
-            f'<a class="v5-more" href="{link("/de/smzhub-archiv/")}">Alle Entscheidungshilfen →</a></div>'
-            f'<div class="v5-dec-row">{cards}</div></section>')
+            f'{nav}</div>'
+            f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
 
 def season():
     t,teaser,cl,cp=SEASON_HERO
@@ -197,9 +205,14 @@ CSS='''<style id="smzh-v5-css">
 .h-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.2s}
 .h-dot.on{background:#fff;width:26px;border-radius:5px}
 /* Decisions */
-.v5-dec-row{display:grid;grid-template-columns:1fr;gap:1.1rem}
-@media(min-width:560px){.v5-dec-row{grid-template-columns:1fr 1fr}}
-@media(min-width:980px){.v5-dec-row{grid-template-columns:repeat(4,1fr)}}
+.v5-dec-nav{display:flex;gap:.5rem;flex:0 0 auto}
+.v5-dec-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:1.45rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;user-select:none}
+.v5-dec-arrow:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 8px 18px -12px rgba(3,49,75,.5)}
+.v5-dec-vp{overflow:hidden}
+.v5-dec-track{display:flex;gap:1.1rem;align-items:stretch}
+.v5-dec-track .v5-dec{flex:0 0 86%}
+@media(min-width:560px){.v5-dec-track .v5-dec{flex:0 0 calc((100% - 1.1rem)/2)}}
+@media(min-width:980px){.v5-dec-track .v5-dec{flex:0 0 calc((100% - 3.3rem)/4)}}
 .v5-dec{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);transition:.15s}
 .v5-dec:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(3,49,75,.45);border-color:#cdd6df}
 .v5-dec-cat{font-size:.8rem;font-weight:600;color:var(--teal)}
@@ -271,7 +284,20 @@ var sl=c.querySelectorAll('.h-slide'),dt=c.querySelectorAll('.h-dot'),i=0,n=sl.l
 function go(k){i=(k+n)%n;sl.forEach(function(e,j){e.classList.toggle('on',j===i)});dt.forEach(function(d,j){d.classList.toggle('on',j===i)})}
 function au(){t=setInterval(function(){go(i+1)},5000)}function rs(){clearInterval(t);au()}
 dt.forEach(function(d,j){d.addEventListener('click',function(){go(j);rs()});d.addEventListener('keydown',function(e){if(e.key==='Enter'){go(j);rs()}})});
-c.addEventListener('mouseenter',function(){clearInterval(t)});c.addEventListener('mouseleave',au);go(0);au();});});})();
+c.addEventListener('mouseenter',function(){clearInterval(t)});c.addEventListener('mouseleave',au);go(0);au();});
+document.querySelectorAll('.v5-dec-sec').forEach(function(sec){
+var track=sec.querySelector('.v5-dec-track'),prev=sec.querySelector('.v5-dec-prev'),next=sec.querySelector('.v5-dec-next');
+if(!track||track.children.length<2)return;var busy=false;
+function step(){var c=track.children[0],cs=getComputedStyle(track),g=parseFloat(cs.columnGap||cs.gap||0)||0;return c.getBoundingClientRect().width+g;}
+function fwd(){if(busy)return;busy=true;var s=step();track.style.transition='transform .45s ease';track.style.transform='translateX(-'+s+'px)';
+ var d=function(e){if(e.target!==track||e.propertyName!=='transform')return;track.style.transition='none';track.appendChild(track.firstElementChild);track.style.transform='translateX(0)';track.removeEventListener('transitionend',d);busy=false;};
+ track.addEventListener('transitionend',d);}
+function back(){if(busy)return;busy=true;var s=step();track.style.transition='none';track.insertBefore(track.lastElementChild,track.firstElementChild);track.style.transform='translateX(-'+s+'px)';
+ requestAnimationFrame(function(){track.style.transition='transform .45s ease';track.style.transform='translateX(0)';});
+ setTimeout(function(){busy=false;},480);}
+if(next){next.addEventListener('click',fwd);next.addEventListener('keydown',function(e){if(e.key==='Enter')fwd();});}
+if(prev){prev.addEventListener('click',back);prev.addEventListener('keydown',function(e){if(e.key==='Enter')back();});}
+});});})();
 </script>'''
 
 def balanced_div_end(s,start):
