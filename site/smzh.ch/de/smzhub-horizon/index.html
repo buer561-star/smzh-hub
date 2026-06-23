@@ -61,16 +61,25 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 .v5-sub{color:var(--muted);font-size:.92rem;margin:.35rem 0 0}
 .v5-more{color:var(--teal);font-weight:700;font-size:.9rem;white-space:nowrap}
 .v5-more:hover{color:var(--navy)}
-/* Themenwelten – Funnel-Kacheln (3 oben, 2 unten) */
-.v5-funnels{margin:3.2rem 0 5rem}
+/* Themenwelten – Funnel-Band: setzt das Navy des Hero fort, Kacheln schweben über der Naht */
+.v5-funnels{position:relative}
+.v5-fn-top{background:var(--navy);padding:2.6rem 1.5rem 3.6rem}
+.v5-fn-in{max-width:1180px;margin:0 auto}
+.v5-fn-h{color:#fff;font-size:clamp(1.4rem,2.4vw,1.85rem);font-weight:800;line-height:1.15}
+.v5-fn-sub{color:#bcd3e2;font-size:.95rem;line-height:1.5;margin:.45rem 0 0;max-width:60ch}
+.v5-fn-body{background:linear-gradient(180deg,#e7f0f8 0%,#f3f9fd 55%,#fff 100%);padding:0 1.5rem 3rem}
+.v5-fn-body .v5-fgrid{margin-top:-2.6rem}
+.v5-wrap>.v5-sec:first-child{margin-top:3.6rem}
 .v5-fgrid{display:grid;grid-template-columns:1fr;gap:1.2rem}
 @media(min-width:760px){.v5-fgrid{grid-template-columns:repeat(6,1fr)}
  .v5-funnel{grid-column:span 2}.v5-funnel.wide{grid-column:span 3}}
-.v5-funnel{position:relative;display:flex;flex-direction:column;gap:.5rem;min-height:160px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
-.v5-funnel::before{content:"";position:absolute;left:0;top:1.5rem;bottom:1.5rem;width:3px;border-radius:0 3px 3px 0;background:var(--teal);opacity:0;transition:opacity .25s ease}
-.v5-funnel:hover{transform:translateY(-3px);box-shadow:0 20px 40px -22px rgba(3,49,75,.45);border-color:#cdd6df}
-.v5-funnel:hover::before{opacity:1}
-.v5-funnel-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.2}
+.v5-funnel{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;min-height:172px;background:#fff;border:1px solid #e2e9f0;border-radius:16px;padding:1.6rem 1.7rem;box-shadow:0 18px 40px -22px rgba(3,49,75,.5);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
+.v5-funnel::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.v5-funnel:hover{transform:translateY(-4px);box-shadow:0 28px 52px -24px rgba(3,49,75,.5);border-color:#cdd6df}
+.v5-funnel:hover::before{transform:scaleY(1)}
+.v5-funnel-n{position:absolute;top:1.1rem;right:1.4rem;font-size:1.35rem;font-weight:800;color:#e3ebf2;letter-spacing:-.02em;transition:color .25s ease}
+.v5-funnel:hover .v5-funnel-n{color:var(--teal)}
+.v5-funnel-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.2;max-width:82%}
 .v5-funnel-d{font-size:.92rem;color:var(--muted);line-height:1.5;flex:1}
 .v5-funnel-go{display:inline-flex;align-items:center;gap:.3em;font-size:.86rem;font-weight:700;color:var(--teal);margin-top:.2rem}
 .v5-funnel-go::after{content:"\2192";transition:transform .25s ease}
@@ -86,7 +95,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 .v5-back{display:inline-flex;align-items:center;gap:.4em;font-weight:700;color:var(--teal)}
 .v5-backsec{margin-top:3rem}
 /* Hero */
-.v5-hero{background:var(--navy);color:#fff;border-radius:0 0 22px 22px}
+.v5-hero{background:var(--navy);color:#fff}
 .v5-hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 3.4rem}
 @media(min-width:960px){.v5-hero-in{grid-template-columns:35fr 65fr;gap:2.5rem;padding:4.5rem 1.5rem 4.8rem;align-items:center}}
 .v5-hero-l{max-width:none}
@@ -204,6 +213,8 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 #ed-root .v5-rh-p,#ed-root .v5-sl-m,#ed-root .v5-fl-k{color:#5b6b7a!important}
 #ed-root .v5-dec-cat{color:#185E7F!important}
 #ed-root .v5-funnel-t{color:#03314B!important}#ed-root .v5-funnel-d{color:#5b6b7a!important}#ed-root .v5-funnel-go{color:#185E7F!important}
+#ed-root .v5-funnel-n{color:#e3ebf2!important}#ed-root .v5-funnel:hover .v5-funnel-n{color:#185E7F!important}
+#ed-root .v5-fn-h{color:#fff!important}#ed-root .v5-fn-sub{color:#bcd3e2!important}
 #ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}
 /* === frontend-design polish (rein visuell) === */
 html{scroll-behavior:smooth}
