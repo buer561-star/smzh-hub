@@ -21,6 +21,10 @@ def fdate(iso):
     if not iso: return ''
     try: d=datetime.fromisoformat(iso.replace('Z','+00:00')); return f"{MON[d.strftime('%b')]} {d.year}"
     except Exception: return ''
+def fquarter(iso):
+    if not iso: return ''
+    try: d=datetime.fromisoformat(iso.replace('Z','+00:00')); return f"Q{(d.month-1)//3+1} {d.year}"
+    except Exception: return ''
 def esc(s): return H.escape(s or '')
 def teaser(p,n=120):
     r=item(p); t=(r.get('excerpt') or '') if r else ''
@@ -258,6 +262,10 @@ CSS='''<style id="smzh-v5-css">
 .v5-phead-in{max-width:1180px;margin:0 auto}
 .v5-eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.01em;color:#7fb3cc;margin:0 0 .6rem}
 .v5-phead h1{color:#fff;font-size:clamp(1.9rem,2.7vw,2.5rem);font-weight:800;line-height:1.12}
+.v5-phead-cta{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:var(--navy);background:#fff;padding:.85rem 1.4rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-phead-cta .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-phead-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
+.v5-phead-cta:hover .ar{transform:translateX(4px)}
 .v5-phead p{color:#bcd3e2;font-size:1.08rem;line-height:1.6;margin:1rem 0 0;max-width:60ch}
 .v5-lead{font-size:1.1rem;line-height:1.65;color:var(--ink);max-width:64ch}
 .v5-note{background:var(--lblue);border:1px solid #d7e6f2;border-radius:12px;padding:1.2rem 1.4rem;color:var(--ink);line-height:1.6}
@@ -466,7 +474,7 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-funnel-t{color:#03314B!important}#ed-root .v5-funnel-d{color:#5b6b7a!important}#ed-root .v5-funnel-go{color:#185E7F!important}
 #ed-root .v5-funnel-n{color:#e3ebf2!important}#ed-root .v5-funnel:hover .v5-funnel-n{color:#185E7F!important}
 #ed-root .v5-fn-h{color:#fff!important}#ed-root .v5-fn-sub{color:#bcd3e2!important}
-#ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}
+#ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}#ed-root .v5-phead-cta{color:#03314B!important}
 #ed-root .v5-dec-fresh{color:#8b9aa8!important}
 #ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}#ed-root .v5-fa-sub{color:#5b6b7a!important}#ed-root .v5-fa-date{color:#8b9aa8!important}#ed-root .v5-fa-cta{color:#03314B!important}#ed-root .v5-fa-archive{color:#9fd0ee!important}#ed-root .v5-fa-badge{color:#fff!important}
 #ed-root .art-body a,#ed-root .art-bc a,#ed-root .art-related a{color:#185E7F!important}
@@ -501,6 +509,8 @@ html{scroll-behavior:smooth}
  .v5-reveal{opacity:0;transform:translateY(22px)}
  .v5-reveal.r-in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
 }
+/* Mobile: Touch-Ziele der Pillen-CTAs auf >=44px (vertikales Padding) */
+@media(max-width:600px){.v5-fa-cta,.v5-phead-cta{padding-top:1.05rem;padding-bottom:1.05rem}}
 </style>'''
 JS='''<script id="smzh-v5-js">
 (function(){function r(f){if(document.readyState!=='loading')f();else document.addEventListener('DOMContentLoaded',f);}
@@ -626,7 +636,7 @@ def horizon_inner():
 EIGENHEIM_FLAGSHIP=[
  {'key':'hypothekenradar','badge':'Research-Reihe · monatlich','title':'Hypotheken-Radar',
   'sub':'Der monatliche Taktgeber zu Zinsen, SARON und Festhypothek – als Entscheidungshilfe, wenn Sie abschliessen, verlängern oder umschulden.',
-  'cta':('Hypothek prüfen','/de/immobilienbewertung/'),'archive':'/de/smzhub-serie-hypotheken-radar/'},
+  'cta':('Hypothek prüfen','/de/terminvereinbaren/'),'archive':'/de/smzhub-serie-hypotheken-radar/'},
  {'key':'immobilien-outlook','badge':'Research-Reihe · quartalsweise','title':'Immobilien-Outlook',
   'sub':'Der quartalsweise Marktkompass zu Preisen, Tragbarkeit und Regionen – Orientierung für grössere Kauf- und Eigentumsentscheidungen.',
   'cta':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),'archive':'/de/smzhub-serie-immobilien-outlook/'}]
@@ -638,8 +648,8 @@ EIGENHEIM_DECISIONS=[
  ('Eigenheim','Kaufen oder warten?','Wie Preise, Eigenkapital und Tragbarkeit 2026 zusammenspielen – und worauf es jetzt ankommt.','/de/ratgeber-eigenheim-kaufen-oder-warten/'),
  ('Eigenheim','Wie viel Eigenkapital brauche ich wirklich?','20 Prozent sind nur die halbe Wahrheit – worauf es 2026 zusätzlich ankommt.','/de/ratgeber-eigenkapital-eigenheim/')]
 # Tools-Verweis-Slot (PAGE_SCHEMA §1.4 Block 5): schlanker Link, kein eigener Rechner.
-EIGENHEIM_TOOL={'tag':'Rechner','t':'Tragbarkeit und Immobilienwert prüfen',
- 'go':'Tragbarkeit berechnen','href':'/de/immobilienbewertung-rechner/'}
+EIGENHEIM_TOOL={'tag':'Rechner','t':'Immobilienwert und Tragbarkeit prüfen',
+ 'go':'Zum Immobilienrechner','href':'/de/immobilienbewertung-rechner/'}
 # Vertiefung Grundlagen (PAGE_SCHEMA §1.4 Block 6a, §2.3) – aus EVERGREEN['immobilien'].
 EIGENHEIM_EVERGREEN=[('Tragbarkeit optimieren','/de/optimierung-der-tragbarkeit/'),
  ('Hypothekenarten im Vergleich','/de/hypothekenarten-im-vergleich/'),
@@ -655,7 +665,7 @@ def eigenheim_flagship():
         cov=f'<span class="v5-fa-cov">{imgt(im)}<span class="v5-fa-badge">{esc(fa["badge"])}</span></span>'
         latest=''
         if cur:
-            date=fdate(cur.get('date'))
+            date=fquarter(cur.get('date')) if fa['key']=='immobilien-outlook' else fdate(cur.get('date'))
             datelbl='Aktuelle Ausgabe'+(f' · {date}' if date else '')
             latest=(f'<span class="v5-fa-latest"><span class="v5-fa-date">{esc(datelbl)}</span>'
                     f'<a class="v5-fa-latest-t" href="{link(cur["path"])}">{esc(cur["title"])}</a></span>')
@@ -691,7 +701,7 @@ def eigenheim_tools():
          f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(t["t"])}</span>'
          f'<span class="v5-mid-go">{esc(t["go"])}</span></span></a>')
     return (f'<section class="v5-sec"><div class="v5-head"><div><h2>Rechner & Tools</h2>'
-            f'<p class="v5-sub">Selbst einordnen, bevor Sie beraten lassen: Tragbarkeit und Immobilienwert in wenigen Minuten.</p></div></div>'
+            f'<p class="v5-sub">Selbst einordnen, bevor Sie beraten lassen: Immobilienwert und Tragbarkeit in wenigen Minuten.</p></div></div>'
             f'{mid}</section>')
 
 def eigenheim_depth():
@@ -708,14 +718,29 @@ def eigenheim_depth():
              f'<span class="v5-mid-go">Dem roten Faden folgen</span></span></a>')
     return f'<section class="v5-sec">{grundlagen}{dossier}</section>'
 
+# Schluss-CTA (PAGE_SCHEMA §1.4 Block 7): themenweiter Beratungs-/360°-CTA, terminorientiert.
+# Wiederverwendung der .art-cta-Komponente (vgl. COMPONENT_LIBRARY „Artikel — CTA-Block"),
+# genau ein Primaer-Button (btn1) auf /de/terminvereinbaren/, sekundaer auf den Finanzierungs-Erstkontakt.
+def eigenheim_cta():
+    return ('<div class="art-cta"><p class="art-cta-eyebrow">360° Check-Up</p>'
+            '<h3>Wie tragfähig ist Ihre Eigenheim- und Hypothekenstrategie?</h3>'
+            '<p>Im 360°-Finanzcheck ordnen wir Tragbarkeit, Zinsstrategie und Eigenkapital für Ihre '
+            'Situation ein – und zeigen die nächsten Schritte, bevor Sie kaufen, verlängern oder umschulden.</p>'
+            '<div class="art-cta-row">'
+            f'<a class="art-cta-btn art-cta-btn1" href="{link("/de/terminvereinbaren/")}">360°-Finanzcheck vereinbaren<span class="ar">→</span></a>'
+            f'<a class="art-cta-btn art-cta-btn2" href="{link("/de/finanzierungsberatung/")}">Finanzierungsberatung ansehen<span class="ar">→</span></a></div>'
+            '<div class="art-cta-trust"><span>Unverbindlich</span><span>Persönlich beraten</span><span>Auf Ihre Situation bezogen</span></div>'
+            '</div>')
+
 def eigenheim_inner():
     hero=('<section class="v5-phead"><div class="v5-phead-in">'
           '<p class="v5-eyebrow">smzhHub · Themenwelt</p><h1>Eigenheim &amp; Hypothek</h1>'
           '<p>Kaufen, finanzieren, halten: die Entscheidungen rund um Wohneigentum, sachlich eingeordnet. '
           'Wir verbinden laufendes Research zu Zinsen, Hypotheken und Immobilienmarkt mit konkreten Schritten für Ihre Situation.</p>'
-          f'<p style="margin-top:1.4rem"><a class="v5-fa-cta" href="{link("/de/terminvereinbaren/")}">Finanzierung besprechen <span class="ar">→</span></a></p>'
+          f'<p style="margin-top:1.4rem"><a class="v5-phead-cta" href="{link("/de/terminvereinbaren/")}">Finanzierung besprechen <span class="ar">→</span></a></p>'
           '</div></section>')
     body=(eigenheim_flagship()+eigenheim_decisions()+eigenheim_tools()+eigenheim_depth()
+          +eigenheim_cta()
           +f'<section class="v5-sec v5-backsec"><a class="v5-back" href="{link("/de/smzhub/")}">← Zurück zum smzhHub</a></section>')
     return f'<div class="v5">{hero}<div class="v5-wrap">{body}</div></div>'
 
