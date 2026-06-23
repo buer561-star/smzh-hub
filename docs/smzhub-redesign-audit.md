@@ -155,3 +155,19 @@ Lead- und Thought-Leadership-Hebel.
 - **Score:** Blogartikel-Lead-Logik 4 → 8; Lead Generation 8 → 9.
 - **Offen:** Key-Takeaways/„Darum geht es"-Box bewusst weggelassen (Gefahr der
   Textdopplung); Inhaltsverzeichnis für Langtexte noch offen.
+
+### Iteration 8 – V3: Digitales Advisory- & Research-Interface (Neuausrichtung)
+Visuelle Richtung gewechselt: weg vom Editorial-Magazin (V2 verworfen), hin zu
+einem modernen digitalen Advisory-/Research-Interface. Weiss + Navy, Sans, klare
+Linien, funktionale Module – kein Creme/Serif/Nummern/Bühnen.
+- **Neue Module:** Intelligence Hero mit Current-Signals-Panel (Research-Feed
+  statt Slider) · Decision Matrix (strukturierte Tabelle) · Advisory Journeys
+  (Frage → Flagship-Anker → wichtigste Inhalte → nächster Schritt, je Rubrik mit
+  eigenem Akzent) · Research Signal Band (kompakte institutionelle Karten) ·
+  CTA Panel.
+- **Artikel V3:** Brief-Karte „Darum geht es" + „Das erfahren Sie" (Abschnitte als
+  Anker), End-Block „Was bedeutet das für mich?" + Flagship + Related + Zurück.
+- **Dateien:** `build/build_hub_v3.py` (neu), `build/enhance_articles.py` (V3),
+  Hub-Seiten + 241 Artikelseiten neu gerendert. Backups: `build/backup/v2-editorial/`,
+  `build/backup/v3-advisory/`.
+- 2122 Links geprüft, 0 defekt.
