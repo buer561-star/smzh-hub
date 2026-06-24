@@ -210,6 +210,60 @@
 .v5-fa-cta:hover .ar{transform:translateX(4px)}
 .v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
 .v5-fa-archive:hover{color:#fff}
+/* NEU (Contract §6.3): High-End-Variante des Outlook-Segments — nur Bestands-Tokens.
+   Ganze Flagship-Karte auf Navy-Flaeche; Hellwerte exakt wie .v5-phead (#fff/#bcd3e2).
+   Kein neuer Farbwert, kein neuer Radius/Schatten. */
+.v5-fa--feature{background:var(--navy);border-color:transparent}
+.v5-fa--feature .v5-fa-title{color:#fff}
+.v5-fa--feature .v5-fa-sub{color:#bcd3e2}
+.v5-fa--feature .v5-fa-latest{border-top-color:rgba(255,255,255,.16)}
+.v5-fa--feature .v5-fa-date{color:#9ec3d5}
+.v5-fa--feature .v5-fa-latest-t{color:#fff}
+.v5-fa--feature .v5-fa-latest-t:hover{color:#9fd0ee}
+/* im Feature-Modus traegt die Karte die Navy-Flaeche schon selbst -> Foot transparent */
+.v5-fa--feature .v5-fa-foot{background:transparent;padding-top:.2rem}
+</style>
+
+<!-- =========================================================================
+     NEU: Zins-Verlaufs-Chart · LP-Download-Block · LP-Archiv-Liste.
+     Spec hier; der builder uebernimmt die Regeln nach DESIGN_CONTRACT §7/§8
+     in build/build_hub_v5.py. Reuse vor Neubau — alles auf Bestands-Tokens.
+     Zins-Chart: statisches Inline-SVG, EINE Datenreihe, keine JS-Lib (Contract §7).
+     Download-Pille: Geometrie wie .v5-fa-cta/.art-cta-btn. Archiv: Bestandskarten.
+     ========================================================================= -->
+<style id="smzh-v5-lp-css">
+/* --- Zins-Verlaufs-Chart (Contract §7) --- */
+.v5-ratechart{margin:5rem 0}
+.v5-rc-fig{margin:1.6rem 0 0;position:relative;border-radius:18px;overflow:hidden;background:var(--lblue);box-shadow:0 26px 54px -30px rgba(3,49,75,.6)}
+.v5-rc-svg{display:block;width:100%;height:auto;background:#fff}
+.v5-rc-area{fill:var(--lblue);stroke:none}
+.v5-rc-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.v5-rc-axis{stroke:var(--line);stroke-width:1}
+.v5-rc-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.v5-rc-dot{fill:var(--teal)}
+.v5-rc-lbl{fill:var(--faint);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600}
+.v5-rc-lbl.v5-rc-lbl-y{text-anchor:end}
+.v5-rc-lbl.v5-rc-lbl-x{text-anchor:middle}
+.v5-rc-fig figcaption{font-size:.82rem;color:var(--faint);margin:0;padding:.7rem .9rem .9rem;border-left:2px solid var(--teal);line-height:1.45;background:#fff}
+/* --- LP: Download-Block der neuesten Ausgabe (Contract §8.2) --- */
+.v5-dl{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);max-width:680px}
+.v5-dl-meta{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-dl-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.25}
+.v5-dl-p{font-size:.95rem;color:var(--muted);line-height:1.55;margin:0}
+.v5-dl-act{margin-top:.7rem}
+.v5-dl-btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:#fff;background:var(--navy);padding:.85rem 1.4rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-dl-btn .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-dl-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(3,49,75,.6)}
+.v5-dl-btn:hover .ar{transform:translateY(2px)}
+.v5-dl-read{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.95rem;color:var(--teal)}
+.v5-dl-read .ar{transition:transform .22s}
+.v5-dl-read:hover .ar{transform:translateX(4px)}
+/* --- LP: Archiv-Liste (Contract §8.3) — nutzt Bestandskarten .v5-sl/.v5-rs --- */
+.v5-arch{max-width:760px}
+.v5-arch .v5-sl-list{margin-top:.4rem}
+.v5-arch-all{display:inline-flex;align-items:center;gap:.4em;margin-top:1.1rem;font-weight:700;font-size:.9rem;color:var(--teal)}
+.v5-arch-all .ar{transition:transform .22s}
+.v5-arch-all:hover .ar{transform:translateX(4px)}
 </style>
 
 <style>
@@ -424,96 +478,138 @@ details.lib-code pre{background:#0f2533;color:#cfe0ec;padding:1rem 1.1rem;border
   </div>
 </section>
 
-<!-- ===================== FLAGSHIP-RESEARCH-ANKER (NEU) ===================== -->
+<!-- ===================== FLAGSHIP-RESEARCH-SEGMENT (GEAENDERT) ===================== -->
 <section class="lib-sec">
-  <h2 class="lib-h">Flagship-Research-Anker (NEU)</h2>
+  <h2 class="lib-h">Flagship-Research-Segment (Vollbreite + Kontext-Rail)</h2>
   <p class="lib-meta">
-    Gleichwertiges, prominentes Paar (Hypotheken-Radar + Immobilien-Outlook). Desktop zweispaltig
-    <code>1fr 1fr</code> (gleichwertig), mobil gestapelt. Hebt sich von Decision-/Standardkarten ab durch
-    groesseres Cover, dunklen Navy-Footer je Anker und mehr Luft.<br>
-    Wiederverwendet (keine neuen Werte): Tokens <code>--navy/--teal/--lblue/--muted/--faint/--line</code>,
-    Cover-Logik wie <code>.v5-rs-cov</code>, Pillen-/Pfeil-Logik wie <code>.art-cta-btn</code>, Schatten/Transition aus dem Contract,
-    Badge folgt der Eyebrow-Regel.<br>
-    Neue Klassen: <code>.v5-flagship</code> · <code>.v5-fa-grid</code> · <code>.v5-fa</code> · <code>.v5-fa-cov</code> ·
-    <code>.v5-fa-badge</code> · <code>.v5-fa-body</code> · <code>.v5-fa-title</code> · <code>.v5-fa-sub</code> ·
-    <code>.v5-fa-latest</code> · <code>.v5-fa-date</code> · <code>.v5-fa-latest-t</code> · <code>.v5-fa-foot</code> ·
-    <code>.v5-fa-archive</code> · <code>.v5-fa-cta</code>.
+    <strong>Geaendert (PAGE_SCHEMA §3 / Contract §6):</strong> kein <code>1fr 1fr</code>-Paar mehr,
+    sondern <strong>ein vollbreites Segment je Reihe</strong> &ndash; linke Flagship-Hauptspalte
+    (<code>.v5-fa</code>) + rechtes Kontext-Rail (<code>.v5-rub-side</code>), aufgebaut im
+    Bestands-Raster <code>.v5-rub-grid</code> (Variable <code>--cols</code>). Mobil rutscht das Rail
+    <strong>unter</strong> die Hauptspalte. Genau <strong>ein</strong> Segment-CTA je Segment, der
+    <strong>auf die jeweilige LP</strong> zeigt. Rail = reine Lese-Links (<code>.v5-sl</code>) +
+    optional ein Rechner-<code>.v5-mid</code>.<br>
+    Reuse (keine neuen Werte): <code>.v5-rub-grid</code>/<code>.v5-rub-side</code>/<code>.v5-sl</code>/<code>.v5-mid</code>-Geruest,
+    alle <code>.v5-fa-*</code>-Klassen, Tokens, Cover-Logik wie <code>.v5-rs-cov</code>, Pillen-/Pfeil-Logik wie
+    <code>.art-cta-btn</code>, Badge nach Eyebrow-Regel.<br>
+    Outlook-Segment zusaetzlich High-End hervorgehoben &ndash; <strong>nur ueber Bestands-Tokens</strong>
+    (Modifier <code>.v5-fa--feature</code>: Navy-Flaeche + Hellwerte exakt wie <code>.v5-phead</code>).
+    Einzige neue Klasse: <code>.v5-fa--feature</code>.
   </p>
   <div class="lib-stage">
     <section class="v5-flagship" style="margin:0">
-      <div class="v5-head"><div><h2>Institutionelle Research-Basis</h2><p class="v5-sub">Zwei wiederkehrende Reihen von smzh &ndash; gleichwertig, fortlaufend, archiviert.</p></div></div>
-      <div class="v5-fa-grid">
+      <div class="v5-head"><div><h2>Unsere Research-Reihen zu Eigenheim und Hypothek</h2><p class="v5-sub">Zwei feste Formate, die wir regelmaessig fortschreiben &ndash; eine verlaessliche Grundlage statt loser Beitragsstrom.</p></div></div>
 
-        <!-- Anker 1 -->
+      <!-- Segment A: Hypotheken-Radar (Standard, vollbreit + Rail) -->
+      <div class="v5-rub-grid" style="--cols:3fr 2fr;margin-bottom:2.8rem">
         <article class="v5-fa">
           <div class="v5-fa-cov"><span class="lib-ph"></span><span class="v5-fa-badge">Research-Reihe · monatlich</span></div>
           <div class="v5-fa-body">
             <h3 class="v5-fa-title">Hypotheken-Radar</h3>
             <p class="v5-fa-sub">Zinslage, SARON und Festhypothek &ndash; jeden Monat eingeordnet fuer Ihre Finanzierungsentscheidung.</p>
             <div class="v5-fa-latest">
-              <span class="v5-fa-date">Aktuellste Ausgabe · Juni 2026</span>
-              <a class="v5-fa-latest-t" href="#">Titel der aktuellsten Ausgabe (Redaktion)</a>
+              <span class="v5-fa-date">Aktuelle Ausgabe · Juni 2026</span>
+              <a class="v5-fa-latest-t" href="#">Titel der aktuellen Ausgabe (Redaktion)</a>
             </div>
           </div>
           <div class="v5-fa-foot">
-            <a class="v5-fa-cta" href="#">Zur Reihe <span class="ar">&rarr;</span></a>
+            <a class="v5-fa-cta" href="#">Zum Hypotheken-Radar <span class="ar">&rarr;</span></a>
             <a class="v5-fa-archive" href="#">Alle Ausgaben &rarr;</a>
           </div>
         </article>
+        <div class="v5-rub-side">
+          <div class="v5-sl-list">
+            <a class="v5-sl" href="#"><span class="v5-sl-t">SARON oder Festhypothek?</span><span class="v5-sl-m">7 Min</span></a>
+            <a class="v5-sl" href="#"><span class="v5-sl-t">Reicht mein Einkommen fuer die Bank?</span><span class="v5-sl-m">6 Min</span></a>
+            <a class="v5-sl" href="#"><span class="v5-sl-t">Amortisieren oder investieren?</span><span class="v5-sl-m">5 Min</span></a>
+          </div>
+          <a class="v5-mid" href="#">
+            <span class="v5-mid-img"><span class="lib-ph"></span><span class="v5-mid-tag">Rechner</span></span>
+            <span class="v5-mid-b"><span class="v5-mid-t">Tragbarkeit in zwei Minuten pruefen</span><span class="v5-mid-go">Zum Tragbarkeitsrechner</span></span>
+          </a>
+        </div>
+      </div>
 
-        <!-- Anker 2 -->
-        <article class="v5-fa">
+      <!-- Segment B: Immobilien-Outlook (High-End, vollbreit + Rail; Hauptspalte .v5-fa--feature) -->
+      <div class="v5-rub-grid" style="--cols:3fr 2fr">
+        <article class="v5-fa v5-fa--feature">
           <div class="v5-fa-cov"><span class="lib-ph"></span><span class="v5-fa-badge">Research-Reihe · quartalsweise</span></div>
           <div class="v5-fa-body">
             <h3 class="v5-fa-title">Immobilien-Outlook</h3>
             <p class="v5-fa-sub">Preise, Regulierung und Marktlage am Schweizer Immobilienmarkt &ndash; jedes Quartal eingeordnet.</p>
             <div class="v5-fa-latest">
-              <span class="v5-fa-date">Aktuellste Ausgabe · Q2 2026</span>
-              <a class="v5-fa-latest-t" href="#">Titel der aktuellsten Ausgabe (Redaktion)</a>
+              <span class="v5-fa-date">Aktuelle Ausgabe · Q2 2026</span>
+              <a class="v5-fa-latest-t" href="#">Titel der aktuellen Ausgabe (Redaktion)</a>
             </div>
           </div>
           <div class="v5-fa-foot">
-            <a class="v5-fa-cta" href="#">Zur Reihe <span class="ar">&rarr;</span></a>
+            <a class="v5-fa-cta" href="#">Zum Immobilien-Outlook <span class="ar">&rarr;</span></a>
             <a class="v5-fa-archive" href="#">Alle Ausgaben &rarr;</a>
           </div>
         </article>
-
+        <div class="v5-rub-side">
+          <div class="v5-sl-list">
+            <a class="v5-sl" href="#"><span class="v5-sl-t">Kaufen oder warten?</span><span class="v5-sl-m">6 Min</span></a>
+            <a class="v5-sl" href="#"><span class="v5-sl-t">Wie viel Eigenkapital brauche ich wirklich?</span><span class="v5-sl-m">5 Min</span></a>
+            <a class="v5-sl" href="#"><span class="v5-sl-t">Wie kaufe ich eine Immobilie?</span><span class="v5-sl-m">8 Min</span></a>
+          </div>
+          <a class="v5-mid" href="#">
+            <span class="v5-mid-img"><span class="lib-ph"></span><span class="v5-mid-tag">Rechner</span></span>
+            <span class="v5-mid-b"><span class="v5-mid-t">Immobilienwert einschaetzen</span><span class="v5-mid-go">Zum Bewertungsrechner</span></span>
+          </a>
+        </div>
       </div>
+
     </section>
   </div>
 
   <details class="lib-code">
-    <summary>Markup-Spezifikation (ein Anker) &mdash; fuer den builder</summary>
+    <summary>Markup-Spezifikation (ein Segment, vollbreit + Rail) &mdash; fuer den builder</summary>
 <pre>&lt;section class="v5-flagship"&gt;
   &lt;div class="v5-head"&gt;&lt;div&gt;
     &lt;h2&gt;{Section-Titel}&lt;/h2&gt;
     &lt;p class="v5-sub"&gt;{Section-Subtitle}&lt;/p&gt;
   &lt;/div&gt;&lt;/div&gt;
-  &lt;div class="v5-fa-grid"&gt;
-    &lt;article class="v5-fa"&gt;
-      &lt;div class="v5-fa-cov"&gt;{img aktuellste Ausgabe}&lt;span class="v5-fa-badge"&gt;{Format, Normalschrift}&lt;/span&gt;&lt;/div&gt;
+
+  &lt;!-- pro Reihe EIN .v5-rub-grid: links .v5-fa, rechts .v5-rub-side --&gt;
+  &lt;div class="v5-rub-grid" style="--cols:3fr 2fr"&gt;
+    &lt;article class="v5-fa"&gt;            &lt;!-- Outlook: class="v5-fa v5-fa--feature" --&gt;
+      &lt;div class="v5-fa-cov"&gt;{img aktuelle Ausgabe}&lt;span class="v5-fa-badge"&gt;{Format, Normalschrift}&lt;/span&gt;&lt;/div&gt;
       &lt;div class="v5-fa-body"&gt;
         &lt;h3 class="v5-fa-title"&gt;{Reihen-Name}&lt;/h3&gt;
-        &lt;p class="v5-fa-sub"&gt;{Subtitle}&lt;/p&gt;
+        &lt;p class="v5-fa-sub"&gt;{Erklaertext}&lt;/p&gt;
         &lt;div class="v5-fa-latest"&gt;
-          &lt;span class="v5-fa-date"&gt;Aktuellste Ausgabe · {Datum}&lt;/span&gt;
+          &lt;span class="v5-fa-date"&gt;Aktuelle Ausgabe · {Datum}&lt;/span&gt;
           &lt;a class="v5-fa-latest-t" href="{Ausgabe}"&gt;{Titel}&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class="v5-fa-foot"&gt;
-        &lt;a class="v5-fa-cta" href="{Reihe}"&gt;{CTA} &lt;span class="ar"&gt;&amp;rarr;&lt;/span&gt;&lt;/a&gt;
-        &lt;a class="v5-fa-archive" href="{Archiv}"&gt;{Archiv-Label} &amp;rarr;&lt;/a&gt;
+        &lt;a class="v5-fa-cta" href="{LP-URL}"&gt;{Segment-CTA} &lt;span class="ar"&gt;&amp;rarr;&lt;/span&gt;&lt;/a&gt;
+        &lt;a class="v5-fa-archive" href="{LP-URL}"&gt;Alle Ausgaben &amp;rarr;&lt;/a&gt;
       &lt;/div&gt;
     &lt;/article&gt;
-    &lt;!-- zweiter Anker identisch aufgebaut --&gt;
+    &lt;div class="v5-rub-side"&gt;
+      &lt;div class="v5-sl-list"&gt;
+        &lt;a class="v5-sl" href="{ratgeber}"&gt;&lt;span class="v5-sl-t"&gt;{Lese-Link}&lt;/span&gt;&lt;span class="v5-sl-m"&gt;{Min}&lt;/span&gt;&lt;/a&gt;
+        &lt;!-- 2-4 reine Lese-Links --&gt;
+      &lt;/div&gt;
+      &lt;a class="v5-mid" href="{rechner}"&gt;     &lt;!-- optional: genau EIN Tools-Slot --&gt;
+        &lt;span class="v5-mid-img"&gt;{img}&lt;span class="v5-mid-tag"&gt;Rechner&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="v5-mid-b"&gt;&lt;span class="v5-mid-t"&gt;{Tool}&lt;/span&gt;&lt;span class="v5-mid-go"&gt;{Link}&lt;/span&gt;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
+  &lt;!-- zweites Segment identisch; Outlook-Hauptspalte mit v5-fa--feature --&gt;
 &lt;/section&gt;</pre>
   </details>
   <details class="lib-code">
     <summary>CSS-Spezifikation (in smzh-v5-css uebernehmen) &mdash; fuer den builder</summary>
-<pre>.v5-flagship{margin:5.6rem 0}
-.v5-fa-grid{display:grid;grid-template-columns:1fr;gap:1.6rem}
-@media(min-width:880px){.v5-fa-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+<pre>/* Segment-Layout: KEIN eigenes Grid mehr — das Bestands-.v5-rub-grid
+   (mit --cols und Mobile-Stacking) traegt das vollbreite Segment + Rail.
+   .v5-fa-grid (1fr 1fr) wird fuer Flagships NICHT mehr verwendet. */
+.v5-flagship{margin:5.6rem 0}
+
+/* Flagship-Hauptspalte (Klassen 1:1 aus der Vor-Iteration, unveraendert): */
 .v5-fa{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
   box-shadow:0 18px 44px -26px rgba(3,49,75,.55);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease}
 .v5-fa:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(3,49,75,.55);border-color:#cdd6df}
@@ -540,18 +636,233 @@ details.lib-code pre{background:#0f2533;color:#cfe0ec;padding:1rem 1.1rem;border
 .v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
 .v5-fa-archive:hover{color:#fff}
 
+/* NEU — einzige neue Klasse: High-End-Variante Outlook-Segment (Contract §6.3).
+   Nur Bestands-Tokens: Navy-Flaeche + Hellwerte exakt wie .v5-phead. */
+.v5-fa--feature{background:var(--navy);border-color:transparent}
+.v5-fa--feature .v5-fa-title{color:#fff}
+.v5-fa--feature .v5-fa-sub{color:#bcd3e2}
+.v5-fa--feature .v5-fa-latest{border-top-color:rgba(255,255,255,.16)}
+.v5-fa--feature .v5-fa-date{color:#9ec3d5}
+.v5-fa--feature .v5-fa-latest-t{color:#fff}
+.v5-fa--feature .v5-fa-latest-t:hover{color:#9fd0ee}
+.v5-fa--feature .v5-fa-foot{background:transparent;padding-top:.2rem}
+
 /* Achtung beim Einbau in build_hub_v5.py:
    - KEIN text-transform:uppercase (Pre-Deploy-Lint blockt das).
-   - v5-fa-badge-Text ohne Versalien (Label-Regel).
-   - Wegen Chrome-Link-Overrides auf #ed-root ggf. Farben absichern, analog
-     den bestehenden #ed-root-...{color:...!important}-Zeilen, u. a.:
-       #ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}
-       #ed-root .v5-fa-sub{color:#5b6b7a!important}
-       #ed-root .v5-fa-date{color:#8b9aa8!important}
-       #ed-root .v5-fa-cta{color:#03314B!important}
-       #ed-root .v5-fa-archive{color:#9fd0ee!important}
-       #ed-root .v5-fa-badge{color:#fff!important} */
+   - v5-fa-badge-Text ohne Versalien (Label-Regel §3).
+   - Segment NICHT mit .v5-fa-grid bauen, sondern mit .v5-rub-grid (--cols, .rev,
+     Mobile-Stacking sind dort schon vorhanden — Reuse).
+   - Wegen Chrome-Link-Overrides auf #ed-root die bestehenden
+     #ed-root .v5-fa-* {color:...!important}-Zeilen (Z. ~479) bleiben gueltig;
+     fuer die Feature-Variante ergaenzen, sonst ueberschreibt die Chrome-Regel die
+     Hellwerte:
+       #ed-root .v5-fa--feature .v5-fa-title,#ed-root .v5-fa--feature .v5-fa-latest-t{color:#fff!important}
+       #ed-root .v5-fa--feature .v5-fa-sub{color:#bcd3e2!important}
+       #ed-root .v5-fa--feature .v5-fa-date{color:#9ec3d5!important} */
 </pre>
+  </details>
+</section>
+
+<!-- ===================== ZINS-VERLAUFS-CHART (NEU) ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">Zins-Verlaufs-Chart (NEU &mdash; redaktionelle Datenfigur)</h2>
+  <p class="lib-meta">
+    <strong>Statisches Inline-SVG, EINE Datenreihe, keine JS-Lib</strong> (Contract §7). Abgegrenzt von
+    No-Go §5.3 (kein generischer/3D-/Torten-/Balken-Chart): eine reduzierte Zeitreihe im Stil einer
+    <code>.art-fig</code> &ndash; dezente Achsen, Linie in <code>--teal</code>, Flaeche in <code>--lblue</code>,
+    Quellen-<code>figcaption</code> wie <code>.art-fig figcaption</code>.<br>
+    Klassen: <code>.v5-ratechart</code> · <code>.v5-rc-fig</code> · <code>.v5-rc-svg</code> ·
+    <code>.v5-rc-area</code> · <code>.v5-rc-line</code> · <code>.v5-rc-axis</code> · <code>.v5-rc-grid</code> ·
+    <code>.v5-rc-dot</code> · <code>.v5-rc-lbl</code> (<code>-x</code>/<code>-y</code>).<br>
+    <strong>Wichtig:</strong> die folgenden Stuetzpunkte sind <em>Demonstrations-Geometrie</em> zur
+    Skalierung &mdash; die <strong>realen Datenpunkte liefert das editorial (WP2)</strong>; in der finalen
+    Figur keine erfundenen Werte.
+  </p>
+  <div class="lib-stage">
+    <section class="v5-ratechart" style="margin:0">
+      <div class="v5-head"><div><h2>Wie haben sich die Zinsen entwickelt?</h2><p class="v5-sub">Eine Zeitreihe als faktischer Anker &ndash; neutraler Datenblock, kein CTA.</p></div></div>
+      <figure class="v5-rc-fig" style="margin:0;max-width:760px">
+        <!-- viewBox: 720 x 320 Koordinatenraum. Plot-Flaeche: x 56..680, y 28..272.
+             Y-Skala (Demo): 0 % unten (y=272) .. 3 % oben (y=28)  => 1 %  ≙ 81.3 px.
+             X-Skala (Demo): 6 Jahresstuetzpunkte, Schritt 124.8 px ab x=56.
+             Werte hier sind PLATZHALTER (vom editorial zu ersetzen). -->
+        <svg class="v5-rc-svg" viewBox="0 0 720 320" preserveAspectRatio="xMidYMid meet" role="img"
+             aria-labelledby="rc-t rc-d" style="aspect-ratio:720/320">
+          <title id="rc-t">Zinsentwicklung &ndash; Zeitreihe</title>
+          <desc id="rc-d">Eine Datenreihe ueber mehrere Jahre. Platzhalter-Geometrie; reale Werte vom editorial.</desc>
+          <!-- horizontale Gitterlinien + Y-Labels (0/1/2/3 %) -->
+          <line class="v5-rc-grid" x1="56" y1="272" x2="680" y2="272"></line>
+          <line class="v5-rc-grid" x1="56" y1="190.7" x2="680" y2="190.7"></line>
+          <line class="v5-rc-grid" x1="56" y1="109.3" x2="680" y2="109.3"></line>
+          <line class="v5-rc-grid" x1="56" y1="28" x2="680" y2="28"></line>
+          <text class="v5-rc-lbl v5-rc-lbl-y" x="46" y="276">0 %</text>
+          <text class="v5-rc-lbl v5-rc-lbl-y" x="46" y="194.7">1 %</text>
+          <text class="v5-rc-lbl v5-rc-lbl-y" x="46" y="113.3">2 %</text>
+          <text class="v5-rc-lbl v5-rc-lbl-y" x="46" y="32">3 %</text>
+          <!-- Flaeche unter der Linie (zur Grundlinie y=272 geschlossen) -->
+          <path class="v5-rc-area" d="M56,150 L180.8,130 L305.6,95 L430.4,110 L555.2,60 L680,80 L680,272 L56,272 Z"></path>
+          <!-- EINE Datenreihe -->
+          <polyline class="v5-rc-line" points="56,150 180.8,130 305.6,95 430.4,110 555.2,60 680,80"></polyline>
+          <!-- dezente Stuetzpunkt-Marker -->
+          <circle class="v5-rc-dot" cx="56" cy="150" r="3.5"></circle>
+          <circle class="v5-rc-dot" cx="180.8" cy="130" r="3.5"></circle>
+          <circle class="v5-rc-dot" cx="305.6" cy="95" r="3.5"></circle>
+          <circle class="v5-rc-dot" cx="430.4" cy="110" r="3.5"></circle>
+          <circle class="v5-rc-dot" cx="555.2" cy="60" r="3.5"></circle>
+          <circle class="v5-rc-dot" cx="680" cy="80" r="3.5"></circle>
+          <!-- X-Achse + Jahres-Labels (Normalschrift, keine Versalien) -->
+          <line class="v5-rc-axis" x1="56" y1="272" x2="680" y2="272"></line>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="56" y="292">2020</text>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="180.8" y="292">2021</text>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="305.6" y="292">2022</text>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="430.4" y="292">2023</text>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="555.2" y="292">2024</text>
+          <text class="v5-rc-lbl v5-rc-lbl-x" x="680" y="292">2025</text>
+        </svg>
+        <figcaption>Quelle: {Datenquelle, z. B. SNB / SARON} &ndash; Stand {Datum}. Bildunterschrift und Werte liefert das editorial.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <details class="lib-code">
+    <summary>Skalierungs-/viewBox-Spezifikation &mdash; fuer den builder &amp; das editorial</summary>
+<pre>viewBox        : 0 0 720 320  (Koordinatenraum, responsiv ueber width:100%;height:auto)
+Plot-Flaeche   : x 56..680 (Breite 624), y 28..272 (Hoehe 244)
+Y-Achse (Demo) : 0 % bei y=272, Max 3 % bei y=28  =>  px_pro_prozent = 244 / 3 = 81.33
+                 y(wert%) = 272 − wert% * 81.33      (Max-% an die Datenlage anpassen)
+X-Achse        : n Jahresstuetzpunkte gleich verteilt:
+                 x(i) = 56 + i * (624 / (n−1))       (Demo n=6 -> Schritt 124.8)
+Reihe          : genau EINE polyline.v5-rc-line; Flaeche path.v5-rc-area zur Grundlinie
+                 (… L letzterX,272 L ersterX,272 Z) geschlossen.
+
+Regeln (Contract §7.4):
+ - genau 1 Datenreihe; mehrere Reihen => mehrere getrennte &lt;figure&gt;.
+ - kein JS, keine Chart-Lib, keine Tooltips; Achsen dezenter als die Linie.
+ - figcaption mit Quellenangabe Pflicht; Labels ohne Versalien.
+ - Datenpunkte vom editorial — bis dahin deklarierter Platzhalter, KEINE erfundenen Werte.</pre>
+  </details>
+  <details class="lib-code">
+    <summary>CSS-Spezifikation (in smzh-v5-css uebernehmen)</summary>
+<pre>.v5-ratechart{margin:5rem 0}
+.v5-rc-fig{margin:1.6rem 0 0;position:relative;border-radius:18px;overflow:hidden;background:var(--lblue);
+  box-shadow:0 26px 54px -30px rgba(3,49,75,.6)}
+.v5-rc-svg{display:block;width:100%;height:auto;background:#fff}
+.v5-rc-area{fill:var(--lblue);stroke:none}
+.v5-rc-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.v5-rc-axis{stroke:var(--line);stroke-width:1}
+.v5-rc-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.v5-rc-dot{fill:var(--teal)}
+.v5-rc-lbl{fill:var(--faint);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600}
+.v5-rc-lbl.v5-rc-lbl-y{text-anchor:end}
+.v5-rc-lbl.v5-rc-lbl-x{text-anchor:middle}
+.v5-rc-fig figcaption{font-size:.82rem;color:var(--faint);margin:0;padding:.7rem .9rem .9rem;
+  border-left:2px solid var(--teal);line-height:1.45;background:#fff}
+/* Hinweis: SVG-Fuellungen (fill) werden von den #ed-root-Link-Overrides nicht getroffen;
+   die Tokens greifen direkt. Kein text-transform, keine Versalien in den Labels. */</pre>
+  </details>
+</section>
+
+<!-- ===================== LP — DOWNLOAD-BLOCK (NEU) ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">LP &mdash; Download-Block der neuesten Ausgabe (NEU)</h2>
+  <p class="lib-meta">
+    Fuer die Flagship-LPs (Contract §8.2). Download-Pille <code>.v5-dl-btn</code> nutzt die
+    <strong>Pillen-Geometrie von <code>.v5-fa-cta</code>/<code>.art-cta-btn</code></strong> (navy/weiss, Pfeil).
+    PDF aus <code>series_items(key)[0].pdfs</code> (bevorzugt <code>_DE_</code>).
+    <strong>Fallback ohne PDF:</strong> kein Button, nur Artikel-Lese-Link <code>.v5-dl-read</code>.<br>
+    Klassen: <code>.v5-dl</code> · <code>.v5-dl-meta</code> · <code>.v5-dl-t</code> · <code>.v5-dl-p</code> ·
+    <code>.v5-dl-act</code> · <code>.v5-dl-btn</code> · <code>.v5-dl-read</code>.
+  </p>
+  <div class="lib-stage" style="display:flex;flex-direction:column;gap:1.4rem">
+    <!-- Normalfall: PDF vorhanden -->
+    <div class="v5-dl">
+      <span class="v5-dl-meta">Aktuelle Ausgabe · Juni 2026</span>
+      <span class="v5-dl-t">Titel der aktuellen Ausgabe (Redaktion)</span>
+      <p class="v5-dl-p">Kurz, was diese Ausgabe einordnet &ndash; ein Satz von der Redaktion.</p>
+      <div class="v5-dl-act"><a class="v5-dl-btn" href="#">Aktuelle Ausgabe herunterladen (PDF) <span class="ar">&darr;</span></a></div>
+    </div>
+    <!-- Fallback: keine PDF -> kein Button, nur Lese-Link -->
+    <div class="v5-dl">
+      <span class="v5-dl-meta">Aktuelle Ausgabe · Juni 2026</span>
+      <span class="v5-dl-t">Titel der aktuellen Ausgabe (kein PDF hinterlegt)</span>
+      <p class="v5-dl-p">Fallback-Zustand: ohne <code>pdfs</code>-Datei wird <strong>kein</strong> Download-Button gerendert.</p>
+      <div class="v5-dl-act"><a class="v5-dl-read" href="#">Ausgabe lesen <span class="ar">&rarr;</span></a></div>
+    </div>
+  </div>
+  <details class="lib-code">
+    <summary>Markup-/CSS-Spezifikation &mdash; fuer den builder</summary>
+<pre>&lt;!-- Normalfall (PDF vorhanden) --&gt;
+&lt;div class="v5-dl"&gt;
+  &lt;span class="v5-dl-meta"&gt;Aktuelle Ausgabe · {Datum/Quartal}&lt;/span&gt;
+  &lt;span class="v5-dl-t"&gt;{Titel}&lt;/span&gt;
+  &lt;p class="v5-dl-p"&gt;{kurze Einordnung}&lt;/p&gt;
+  &lt;div class="v5-dl-act"&gt;&lt;a class="v5-dl-btn" href="{PDF-URL}" download&gt;Aktuelle Ausgabe herunterladen (PDF) &lt;span class="ar"&gt;&amp;darr;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Fallback (kein pdfs-File): KEIN Button, nur Lese-Link --&gt;
+&lt;div class="v5-dl"&gt; … &lt;div class="v5-dl-act"&gt;&lt;a class="v5-dl-read" href="{Artikel}"&gt;Ausgabe lesen &lt;span class="ar"&gt;&amp;rarr;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+.v5-dl{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:1.5rem 1.6rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);max-width:680px}
+.v5-dl-meta{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-dl-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.25}
+.v5-dl-p{font-size:.95rem;color:var(--muted);line-height:1.55;margin:0}
+.v5-dl-act{margin-top:.7rem}
+.v5-dl-btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:#fff;
+  background:var(--navy);padding:.85rem 1.4rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-dl-btn .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-dl-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(3,49,75,.6)}
+.v5-dl-btn:hover .ar{transform:translateY(2px)}
+.v5-dl-read{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.95rem;color:var(--teal)}
+.v5-dl-read .ar{transition:transform .22s}
+.v5-dl-read:hover .ar{transform:translateX(4px)}
+
+/* #ed-root-Absicherung gegen Chrome-Link-Overrides:
+   #ed-root .v5-dl-t{color:#03314B!important}
+   #ed-root .v5-dl-p{color:#5b6b7a!important}
+   #ed-root .v5-dl-meta{color:#8b9aa8!important}
+   #ed-root .v5-dl-btn{color:#fff!important}
+   #ed-root .v5-dl-read{color:#185E7F!important} */</pre>
+  </details>
+</section>
+
+<!-- ===================== LP — ARCHIV-LISTE (NEU) ===================== -->
+<section class="lib-sec">
+  <h2 class="lib-h">LP &mdash; Archiv-Liste (NEU)</h2>
+  <p class="lib-meta">
+    Fuer die Flagship-LPs (Contract §8.3). <strong>Bestandskarten</strong> &ndash; <code>.v5-sl</code>-Liste
+    (Titel + Datum) <em>oder</em> <code>.v5-rs</code>-Cover-Karten; <strong>keine neue Kartenklasse</strong>.
+    Pflicht-Verweis &bdquo;Alle Ausgaben&ldquo; auf die <strong>Serien-Seite</strong>. Reine Lese-Links, kein CTA.<br>
+    Klassen: <code>.v5-arch</code> (duenner Wrapper) + Bestand <code>.v5-sl</code>/<code>.v5-sl-list</code>/<code>.v5-rs</code> + <code>.v5-arch-all</code>.
+  </p>
+  <div class="lib-stage">
+    <section class="v5-arch">
+      <div class="v5-head"><div><h2>Alle Ausgaben</h2><p class="v5-sub">Frueheres Material zum Nachlesen &ndash; jede Ausgabe als Lese-Link.</p></div></div>
+      <div class="v5-sl-list">
+        <a class="v5-sl" href="#"><span class="v5-sl-t">Ausgabe-Titel (Redaktion)</span><span class="v5-sl-m">Mai 2026</span></a>
+        <a class="v5-sl" href="#"><span class="v5-sl-t">Ausgabe-Titel (Redaktion)</span><span class="v5-sl-m">Apr 2026</span></a>
+        <a class="v5-sl" href="#"><span class="v5-sl-t">Ausgabe-Titel (Redaktion)</span><span class="v5-sl-m">Maerz 2026</span></a>
+      </div>
+      <a class="v5-arch-all" href="#">Alle Ausgaben auf der Serien-Seite ansehen <span class="ar">&rarr;</span></a>
+    </section>
+  </div>
+  <details class="lib-code">
+    <summary>Markup-/CSS-Spezifikation &mdash; fuer den builder</summary>
+<pre>&lt;section class="v5-arch"&gt;
+  &lt;div class="v5-head"&gt;&lt;div&gt;&lt;h2&gt;Alle Ausgaben&lt;/h2&gt;&lt;p class="v5-sub"&gt;{Sub}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="v5-sl-list"&gt;
+    &lt;a class="v5-sl" href="{Ausgabe}"&gt;&lt;span class="v5-sl-t"&gt;{Titel}&lt;/span&gt;&lt;span class="v5-sl-m"&gt;{Datum}&lt;/span&gt;&lt;/a&gt;
+    &lt;!-- series_items(key) absteigend, letzte N --&gt;
+  &lt;/div&gt;
+  &lt;a class="v5-arch-all" href="{Serien-Seite}"&gt;Alle Ausgaben … &lt;span class="ar"&gt;&amp;rarr;&lt;/span&gt;&lt;/a&gt;
+&lt;/section&gt;
+
+.v5-arch{max-width:760px}
+.v5-arch .v5-sl-list{margin-top:.4rem}
+.v5-arch-all{display:inline-flex;align-items:center;gap:.4em;margin-top:1.1rem;font-weight:700;font-size:.9rem;color:var(--teal)}
+.v5-arch-all .ar{transition:transform .22s}
+.v5-arch-all:hover .ar{transform:translateX(4px)}
+/* Alternativ .v5-rs/.v5-rs-row statt .v5-sl-list (Cover-Karten) — beides Bestand.
+   #ed-root .v5-arch-all{color:#185E7F!important} (Chrome-Link-Override absichern) */</pre>
   </details>
 </section>
 

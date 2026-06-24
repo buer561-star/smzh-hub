@@ -86,15 +86,21 @@ schriftliche Begruendung in diesem Dokument.
 | Saison-Block | `.v5-season` / `.v5-se-hero` / `.v5-se-sub` | Ein grosser Saison-Aufmacher + Sub-Links |
 | Rubrik-Block | `.v5-rub-sec` / `.v5-rub-grid` / `.v5-rub-hero` + `.v5-rub-side` (`.v5-sl`, `.v5-mid`) | Lead-Hero + Sub-Liste + Tool-Mid-Hero |
 | Research-Band | `.v5-research` / `.v5-rs-row` / `.v5-rs` (`.v5-rs-cov/-n/-cad/-go`) | 3 wiederkehrende Serien als Cover-Karten |
-| **Flagship-Research-Anker** | `.v5-flagship` / `.v5-fa` (siehe Abschnitt 6) | Gleichwertiges Premium-Paar (Hypotheken-Radar + Immobilien-Outlook) |
+| **Flagship-Research-Segment** | `.v5-flagship` / `.v5-fa` + Rail `.v5-rub-side` (siehe Abschnitt 6) | Ein vollbreites Premium-Segment je Reihe mit rechtem Kontext-Rail (Hypotheken-Radar, Immobilien-Outlook) |
+| **Zins-Verlaufs-Chart** | `.v5-ratechart` / `.v5-rc-fig` (siehe Abschnitt 7) | Redaktionelle, statische Zeitreihen-Figur (Inline-SVG, 1 Datenreihe) |
+| **LP-Download-Block** | `.v5-dl` / `.v5-dl-btn` (siehe Abschnitt 8) | Download der neuesten Ausgabe (PDF-Pille) + Fallback Artikel-Link |
+| **LP-Archiv-Liste** | `.v5-arch` (`.v5-sl`/`.v5-rs`-Karten) (siehe Abschnitt 8) | Ausgaben-Liste mit Datum + Verweis auf die Serien-Seite |
 | Section-Head | `.v5-head` (h2 + `.v5-sub` + optional `.v5-more`) | Ueberschrift-Zeile mit Beistrich-Link |
 | Eyebrow/Label | siehe Abschnitt 3 | kleine Auszeichner |
 | Artikel-Bausteine | `.art-body`, `.art-fig`/`.art-fig-tag`, `.art-cta*`, `.art-faq*`, `.art-related`/`.art-rel-card` | Ratgeber-Seiten |
 | Karte allgemein | `.v5-sl`, `.v5-mid`, `.v5-rs`, `.art-rel-card` | Standardkarten/Listenzeilen |
 
 Legacy-Hinweis: `.v5-flag*` (`flag_card`) existiert nur als ungestyltes Markup im Build
-und ist NICHT Teil des Systems. Der neue Flagship-Anker (Abschnitt 6) ersetzt diese Idee
-sauber und gestylt. `.v5-flag*` nicht weiterverwenden.
+und ist NICHT Teil des Systems. Das Flagship-Segment (Abschnitt 6) ersetzt diese Idee
+sauber und gestylt. `.v5-flag*` nicht weiterverwenden. Ebenso abgeloest: `.v5-fa-grid`
+(`1fr 1fr`) als gleichwertiges Flagship-**Paar** — das Flagship ist jetzt ein vollbreites
+Segment im Bestands-`.v5-rub-grid` + Rail (Abschnitt 6); `.v5-fa-grid` bleibt nur ein
+generischer 2-Spalten-Container, nicht das Flagship-Muster.
 
 ---
 
@@ -157,53 +163,258 @@ Verboten — wird abgelehnt:
 
 ---
 
-## 6. Flagship-Research-Anker (neue Komponente)
+## 6. Flagship-Research-Segment (geaendert: Vollbreiten-Segment + Kontext-Rail)
 
-### 6.1 Zweck und Abgrenzung
-Ein **gleichwertiges, prominentes Paar** aus zwei institutionellen Research-Reihen —
-**Hypotheken-Radar** und **Immobilien-Outlook** — das die Wertigkeit "institutionelle
-Research-Basis" traegt. Es steht ueber den Decision-Cards/Standardkarten und hebt sich
-klar von ihnen ab durch: groessere Cover, dunkler Navy-Footer-Block je Anker,
-zweispaltiges, exakt gleichwertiges Desktop-Layout (kein Lead/Sub-Gefaelle), mehr
-vertikale Luft. Auf der Subpage "Eigenheim & Hypothek" ist dies der obere Anker.
+> **Geaendert mit PAGE_SCHEMA §3 (Entscheidung 3).** Das fruehere "gleichwertige
+> 2er-Paar nebeneinander" (`.v5-fa-grid` als `1fr 1fr`) ist abgeloest. Neues Muster:
+> **ein eigenstaendiges, vollbreites Segment je Flagship** (Hypotheken-Radar, dann
+> Immobilien-Outlook) mit linker Hauptspalte (Flagship) und **rechtem Kontext-Rail**.
+> Aufbau lehnt sich an den Bestands-Rubrik-Block (`.v5-rub-grid` + `.v5-rub-side`) an,
+> wird aber als Premium-Flagship-Segment gefuehrt. Die `.v5-fa-*`-Klassen werden
+> **wiederverwendet**, nur die Anordnung (Hauptspalte breit + Rail statt 2er-Grid)
+> aendert sich. Legacy-Hinweis: `.v5-fa-grid` als `1fr 1fr`-Paar wird **nicht** mehr
+> als Flagship-Muster verwendet (bleibt nur als generischer 2-Spalten-Grid-Container).
+
+### 6.1 Zweck, Aufbau und Verhalten
+Pro wiederkehrender Research-Reihe **ein vollbreites Segment**, das die Wertigkeit
+"institutionelle Research-Basis" traegt und die Reihe in **einen** Beratungspfad
+(neu: auf die jeweilige Flagship-LP) ueberleitet. Auf "Eigenheim & Hypothek" stehen
+zwei solche Segmente direkt nach dem Hero: zuerst Hypotheken-Radar, dann Immobilien-Outlook.
+
+Aufbau je Segment (zweispaltig, Bestands-Raster `.v5-rub-grid`):
+1. **Linke Hauptspalte** (breit) — die Flagship-Karte `.v5-fa` mit:
+   Cover/Visual, Format-Badge ("Research-Reihe · monatlich" / "· quartalsweise"),
+   Titel, Erklaertext, Zeile "aktuelle Ausgabe", Archiv-Link und **genau einem**
+   Beratungs-/Segment-CTA, der **neu auf die jeweilige LP** zeigt
+   (`/de/smzhub-hypotheken-radar/` bzw. `/de/smzhub-immobilien-outlook/`).
+2. **Rechtes Kontext-Rail** (`.v5-rub-side`) — reale, thematisch passende Beitraege als
+   `.v5-sl`-Liste (reine Lese-Links) **plus optional ein** Rechner-`.v5-mid` (Tools-Slot,
+   deklariertes Element, §8-Ausnahme in PAGE_SCHEMA). **Kein** zweiter Beratungs-CTA im Rail.
 
 Verhalten:
-- Desktop (>= 880px): zwei gleich grosse Spalten (`1fr 1fr`), beide Anker identisch
-  aufgebaut, keiner dominiert.
-- Mobil: gestapelt (eine Spalte), Reihenfolge Hypotheken-Radar zuerst.
+- **Desktop (>= 880px):** Hauptspalte breit, Rail schmal — Spaltenverhaeltnis ueber die
+  Bestands-Variable `--cols` (z. B. `3fr 2fr`, identisch zur Rubrik-Logik). Die zwei
+  Segmente stehen **untereinander** (je ein voller `.v5-rub-grid`), nicht nebeneinander.
+- **Mobil (< 880px):** eine Spalte — das **Rail rutscht unter** die Flagship-Hauptspalte
+  desselben Segments (Bestandsverhalten von `.v5-rub-grid`). Reihenfolge der Segmente:
+  Hypotheken-Radar zuerst, Immobilien-Outlook danach.
 
-### 6.2 Pflicht-Anatomie je Anker
-1. **Cover/Visual** — `v5-fa-cov` (Bild aus der jeweils aktuellsten Ausgabe; Ratio 16/9, Radius wie grosse Flaeche). Fallback: `--lblue`-Flaeche.
-2. **Format-Badge** — `v5-fa-badge`, Normalschrift, KEINE Versalien (z. B. "Research-Reihe · monatlich"). Faellt unter die Label-Regel (Abschnitt 3).
-3. **Headline** — `v5-fa-title` (Name der Reihe, h-Ebene als `<span>`/h3, weight 800, navy).
-4. **Subtitle** — `v5-fa-sub` (ein Satz, was die Reihe leistet; `--muted`).
-5. **Zeile "aktuellste Ausgabe"** — `v5-fa-latest` mit Datum (`v5-fa-date`, `--faint`) + Titel-Link (`v5-fa-latest-t`, navy/teal-hover).
-6. **Archiv-Einstieg** — `v5-fa-archive` (sekundaerer Textlink zu allen Ausgaben, `--teal`).
-7. **Primaerer CTA-Button** — `v5-fa-cta` (Pille, navy-Flaeche, weiss; fuehrt zur Reihe/zum Abo). Genau EIN Primaer-Button je Anker.
+### 6.2 Pflicht-Anatomie je Segment
+**Hauptspalte (`.v5-fa`, Klassen wiederverwendet):**
+1. **Cover/Visual** — `v5-fa-cov` (Bild aus der aktuellsten Ausgabe `series_items(key)[0].image`; Ratio 16/9). Fallback: `--lblue`-Flaeche.
+2. **Format-Badge** — `v5-fa-badge`, Normalschrift, KEINE Versalien (z. B. "Research-Reihe · monatlich"). Label-Regel (Abschnitt 3).
+3. **Titel** — `v5-fa-title` (Reihen-Name, h3, weight 800, navy).
+4. **Erklaertext** — `v5-fa-sub` (ein Satz, was die Reihe leistet; `--muted`).
+5. **Zeile "aktuelle Ausgabe"** — `v5-fa-latest`: Datum (`v5-fa-date`, `--faint`) + Titel-Link (`v5-fa-latest-t`, navy/teal-hover; Lese-Link auf den Beitrag).
+6. **Archiv-Link** — `v5-fa-archive` (sekundaerer Textlink "Alle Ausgaben"; im Eigenheim-Muster auf die **LP**, da diese den Archiv-Block traegt — PAGE_SCHEMA §3.2-Hinweis).
+7. **Genau ein Segment-CTA** — `v5-fa-cta` (Pille, navy-Flaeche/weiss, Pfeil), **routet auf die jeweilige LP** (nicht mehr direkt auf die Serie). Kein zweiter Primaer-Button.
 
-### 6.3 Reuse vor Neubau
-- Wiederverwendete Tokens/Muster (keine neuen Werte): `--navy`, `--teal`, `--lblue`,
-  `--muted`, `--faint`, `--line`; Section-Head `.v5-head`/`.v5-sub`; Cover-Behandlung
-  wie `.v5-rs-cov` (object-fit cover, Radius); Pillen-Geometrie und Hover-Pfeil-Logik wie
-  `.art-cta-btn` (`gap:.55em`, Pfeil `transform:translateX(4px)` on hover); Schatten- und
-  Transition-Standards aus Abschnitt 1.5; Eyebrow-Regel aus Abschnitt 3.
-- Nur wirklich neue Klassen (weil ein gleichwertiges, prominenteres 2er-Layout im
-  Bestand fehlt): `v5-flagship`, `v5-fa-grid`, `v5-fa`, `v5-fa-cov`, `v5-fa-badge`,
-  `v5-fa-body`, `v5-fa-title`, `v5-fa-sub`, `v5-fa-latest`, `v5-fa-date`,
-  `v5-fa-latest-t`, `v5-fa-foot`, `v5-fa-archive`, `v5-fa-cta`.
+**Rechtes Rail (`.v5-rub-side`, Klassen wiederverwendet):**
+8. **`.v5-sl`-Liste** mit 2-4 realen Lese-Links (aus `EIGENHEIM_DECISIONS`/`EIGENHEIM_EVERGREEN`), Titel + Meta (`.v5-sl-m`). Reine Lese-Links.
+9. **Optional ein `.v5-mid`** als Rechner-Slot (Tools-Verweis), mit `.v5-mid-tag` "Rechner". Max. einer je Rail.
 
-### 6.4 Regeln fuer den Flagship-Anker
-- Genau zwei Anker, visuell exakt gleichwertig. Kein dritter Anker in diesem Block
-  (weitere Reihen gehoeren ins normale `.v5-research`-Band).
-- Genau ein Primaer-CTA je Anker; Archiv-Einstieg ist sekundaerer Textlink, kein zweiter Button.
-- Badge folgt der Label-Regel: keine Versalien, `letter-spacing .01-.02em`.
-- Der dunkle Footer-Block je Anker nutzt die Navy-Flaeche; er ist das einzige zusaetzlich
-  zulaessige dunkle Element ausserhalb von Hero/phead/CTA und dient der Abhebung von den
-  Standardkarten.
-- Keine bunten Badges, keine Icons ausser dem CTA-Pfeil, kein Diagramm im Cover.
-- Texte (Headline, Subtitle, Badge-Wortlaut, Ausgaben-Titel) liefert die Redaktion —
-  dieses Dokument legt nur Struktur, Klassen und Stil fest.
+### 6.3 High-End-Hervorhebung des Outlook-Segments (nur Bestands-Tokens)
+Das Outlook-Segment darf zusaetzlich als **gehobene Publikation** hervorgehoben werden —
+**ausschliesslich ueber bestehende Tokens, KEINE neuen Farben/Schriften/Schatten**. Zulaessig:
+- **Staerkere Navy-Praesenz** der Hauptspalte ueber den Modifier `.v5-fa--feature` (siehe
+  COMPONENT_LIBRARY): ganze Flagship-Karte auf `--navy`-Flaeche statt `#fff`, Titel/Erklaertext
+  in den vorhandenen Hellwerten (`#fff` / `#bcd3e2` — dieselben Werte wie `.v5-phead`), Cover
+  bleibt; das Segment liest sich wie ein kleiner, fokussierter "phead-Block".
+- Der Segment-CTA bleibt die **eine** weisse Pille (`v5-fa-cta`), jetzt auf Navy = derselbe
+  Kontrast wie der CTA im `.v5-fa-foot`. Archiv-Link in `#9fd0ee` (Bestandswert).
+- Der `.v5-fa--feature`-Block ist — wie der `.v5-fa-foot` und Hero/phead/CTA — ein bewusst
+  zugelassenes dunkles Flaechen-Element; **kein** drittes neues dunkles Muster, sondern die
+  vorhandene Navy-Flaeche auf die Karte angewandt.
+**Nicht erlaubt:** ein "Premium"-Goldton, eine zweite Akzentfarbe, ein groesserer Radius
+ausserhalb 18-22px, eine Sonderschrift oder ein staerkerer Schatten als in §1.5 definiert.
+Differenzierung laeuft ueber **Flaeche (Navy) + Luft + Reihenfolge**, nicht ueber neue Tokens.
+
+### 6.4 Reuse vor Neubau
+- **Wiederverwendete Muster/Klassen (kein Neubau):** das gesamte `.v5-rub-grid` +
+  `.v5-rub-side` + `.v5-sl`/`.v5-sl-list` + `.v5-mid`-Geruest (inkl. `--cols`,
+  `.rev`-Logik, Mobile-Stacking); saemtliche `.v5-fa-*`-Klassen aus der Vor-Iteration;
+  Section-Head `.v5-head`/`.v5-sub`; Cover-Logik wie `.v5-rs-cov`; Pillen-/Pfeil-Logik
+  wie `.art-cta-btn` (`gap:.55em`, Pfeil `translateX(4px)`); Schatten/Transition §1.5;
+  Label-Regel §3.
+- **Nur eine wirklich neue Klasse** (mit Begruendung): `v5-fa--feature` — Modifier fuer
+  die High-End-Navy-Variante des Outlook-Segments. Begruendung: im Bestand existiert keine
+  Flagship-Karte auf Navy-Vollflaeche; der Modifier setzt nur **bestehende** Token-Werte
+  (`--navy`, `#fff`, `#bcd3e2`, `#9fd0ee`) neu zusammen, fuehrt keinen neuen Wert ein.
+- Es entstehen **keine** neuen Layout-Klassen fuer das Segment selbst — es nutzt das
+  Bestands-`.v5-rub-grid`-Geruest. `.v5-fa-grid` (`1fr 1fr`) wird fuer Flagships nicht
+  mehr verwendet.
+
+### 6.5 Regeln fuer das Flagship-Segment
+- **Genau ein** Segment-CTA je Segment (Pille → LP). Archiv-Link und Ausgaben-Titel sind
+  sekundaere Textlinks, kein zweiter Button. Rail-Links sind **reine Lese-Links**; der
+  Rechner-`.v5-mid` ist ein deklariertes Tool, kein Blog-CTA (§8-Ausnahme).
+- **Zwei** aufeinanderfolgende Segmente (Radar, dann Outlook) — kein drittes Flagship-Segment
+  auf derselben Seite (weitere Reihen → `.v5-research`-Band).
+- Badge folgt der Label-Regel: keine Versalien, `letter-spacing .01-.02em`, weight 700.
+- High-End-Hervorhebung nur ueber Bestands-Tokens (§6.3) — keine neue Farbe/Schrift.
+- Keine bunten Badges, keine Icons ausser dem CTA-/Listen-Pfeil, **kein Diagramm im Cover**
+  (Cover ist ein Ausgaben-Bild, kein Chart).
+- Texte (Titel, Erklaertext, Badge-Wortlaut, Ausgaben-Titel, Rail-Linktexte) liefert die
+  Redaktion; dieses Dokument legt nur Struktur, Klassen und Stil fest.
 
 Vollstaendige Markup-/CSS-Spezifikation: siehe `COMPONENT_LIBRARY.html`, Abschnitt
-"Flagship-Research-Anker". Den Block baut der `builder` nach dieser Spec in
-`build/build_hub_v5.py` und auf die Subpage ein — nicht der Guardian.
+"Flagship-Research-Segment". Den Block baut der `builder` nach dieser Spec in
+`build/build_hub_v5.py` und auf die Subpage/LP ein — nicht der Guardian.
+
+---
+
+## 7. Zins-Verlaufs-Chart (neue Komponente — redaktionelle Datenfigur)
+
+### 7.1 Zweck und Abgrenzung zum No-Go §5.3
+Die Block-4-Sektion "Wie haben sich die Zinsen entwickelt?" (PAGE_SCHEMA §1.4/§2.6)
+braucht eine **echte Zeitreihen-Figur** (SNB-Leitzins / SARON / repraesentative
+Festhypothek). Sie wird als **statisches Inline-SVG-Linien-/Flaechen-Chart OHNE
+JS-Bibliothek** umgesetzt und ist **ausdruecklich von §5.3 abgegrenzt**: §5.3 verbietet
+*generische* Charts, 3D-Balken, Tortendiagramme, Funnel-Pyramiden und
+Prozess-Pfeil-Ketten. Erlaubt — und hier gemeint — ist eine **reduzierte, redaktionelle
+Datenfigur** im Stil einer `.art-fig`: eine einzige Zeitreihe, dezente Achsen, klare
+Quellenangabe. Sie zaehlt damit zu den in §5.3 ausdruecklich zugelassenen "echten
+redaktionellen Bildfiguren (`.art-fig`)", nur als Vektor statt Pixelbild.
+
+### 7.2 Pflicht-Anatomie
+1. **Figur-Rahmen** — `figure.v5-rc-fig` (Geometrie wie `.art-fig`/`.art-figw`:
+   Radius 18px, `--lblue`-Grund, weicher Navy-Schatten §1.5). Optional ein Label oben
+   links wie `.art-fig-tag` (Normalschrift, z. B. "Zinsentwicklung").
+2. **Inline-SVG** — `svg.v5-rc-svg` mit fester `viewBox` (Koordinatenraum, nicht Pixel),
+   `preserveAspectRatio="xMidYMid meet"`, `role="img"` + `<title>`/`<desc>` fuer A11y.
+   Ratio 16/9 bis 2/1 (responsiv ueber `width:100%;height:auto`).
+3. **Eine Datenreihe** — genau **eine** `polyline`/`path`-Linie in `--teal` (Stroke) ueber
+   einer `--lblue`-Flaeche (`path` mit `fill`, zur Achse geschlossen, leicht transparent
+   oder `--lblue` voll). KEINE zweite Serie im selben Chart.
+4. **Dezente Achsen** — X/Y-Grundlinie und wenige Hilfslinien in `--line`; Achsen-Ticks
+   und Wertlabels als kleine `text`-Elemente (`--faint`, Schriftgroesse ~10-12px im
+   SVG-Raum). Jahre auf der X-Achse, Zins-% auf der Y-Achse.
+5. **Datenpunkt-Marker (optional, dezent)** — kleine Kreise (`r` ~3-4) in `--teal` an den
+   Stuetzpunkten; KEINE gefuellten "Bubble"-Flaechen.
+6. **Bildunterschrift** — `figcaption` exakt wie `.art-fig figcaption` (links `--teal`-
+   Strich, `--faint`, .82rem) **mit Quellenangabe** (z. B. "Quelle: SNB / SARON, Stand …").
+
+### 7.3 Reuse vor Neubau
+- Wiederverwendet: `.art-fig`-Rahmenlogik (Radius, `--lblue`, Schatten), `.art-fig-tag`
+  fuer das optionale Label, `.art-fig figcaption` 1:1 fuer die Quellen-Caption; alle Farben
+  aus den Tokens (`--teal` Linie, `--lblue` Flaeche, `--line` Achsen, `--faint`/`--navy`
+  Labels). Keine neue Farbe, keine zweite Schrift, keine Chart-Lib.
+- Neue Klassen, nur die Huelle (mit Begruendung — eine Vektor-Datenfigur existiert im
+  Bestand nicht): `v5-ratechart` (Section-Wrapper), `v5-rc-fig` (Figur), `v5-rc-svg`
+  (SVG), `v5-rc-line`, `v5-rc-area`, `v5-rc-axis`, `v5-rc-tick`, `v5-rc-dot`, `v5-rc-lbl`
+  (SVG-Teilklassen fuer Stil/Farbe). Geometrie/Skalierung/`viewBox` sind in
+  COMPONENT_LIBRARY mit Beispiel hinterlegt.
+
+### 7.4 Regeln fuer den Zins-Chart
+- **Genau eine Datenreihe** — keine Multi-Serien-Ueberlagerung, keine Legende mit mehreren
+  Farben. Sollen Radar (Finanzierung) und Outlook (Markt) je eine eigene Reihe zeigen,
+  sind das **zwei getrennte Figuren**, nicht ein Multi-Linien-Chart.
+- **Statisch, kein JS, keine externe Lib** — reines Inline-SVG; keine Interaktivitaet,
+  keine Tooltips, keine Animation ausser dezentem CSS (optional `stroke-dasharray`-Aufbau,
+  kein Muss).
+- **Kein generischer/3D-/Torten-/Balken-/Funnel-Chart** (§5.3 bleibt voll gueltig).
+- **Achsen dezent**, nie dominanter als die Datenlinie; Gitter nur so viel wie noetig.
+- **Quellenangabe Pflicht** in der `figcaption`.
+- **Datenpunkte liefert die Redaktion (WP2/editorial).** Dieses Dokument und die
+  COMPONENT_LIBRARY definieren **nur** Huelle, Skalierung, Achsen und ein
+  Demonstrations-`viewBox` — **keine erfundenen Werte** in der finalen Figur. Bis reale
+  Daten vorliegen, bleibt die Figur ein deklarierter Platzhalter.
+- Label-Texte (Jahre, %-Werte) folgen der Label-Regel: keine Versalien.
+
+Vollstaendige Markup-/CSS-Spezifikation inkl. Beispiel-`viewBox`/Skalierung: siehe
+`COMPONENT_LIBRARY.html`, Abschnitt "Zins-Verlaufs-Chart".
+
+---
+
+## 8. Flagship-Landingpages — Download-/Archiv-Bausteine und LP-Gesamtlayout
+
+> Bezug: PAGE_SCHEMA §6 (Radar-LP) und §7 (Outlook-LP). Die LP ist **keine** neue
+> Seitenarchitektur, sondern eine **V5-Seite im Bestandsraster** (Hero `.v5-phead`,
+> Body `.v5-sec`/`.v5-wrap`, Schluss-CTA `.art-cta`, Back-Link). Nur die zwei
+> LP-spezifischen Bausteine (Download, Archiv) werden hier ergaenzt.
+
+### 8.1 LP-Gesamtlayout (Reuse, kein Neubau)
+- **Hero:** `.v5-phead`/`.v5-phead-in` mit `.v5-eyebrow` (Format + Cadence, Normalschrift),
+  H1 (Format-Name), Lead und **genau einem** Beratungs-CTA `.v5-phead-cta` (Pille).
+- **Erklaerteil "Was diese Publikation leistet":** reiner Text in `.v5-sec` (`.v5-lead`/
+  Absaetze), kein CTA.
+- **Download-Block:** `.v5-sec` mit `.v5-dl` (§8.2).
+- **Archiv-Block:** `.v5-sec` mit `.v5-arch` (§8.3).
+- **Schluss-CTA:** `.art-cta` (genau ein Primaer-Button `art-cta-btn1`), Richtung
+  Finanzierung (Radar) bzw. Eigenheimstrategie (Outlook).
+- **Back-Link:** `.v5-back`/`.v5-backsec` wie im `category_inner`.
+- Keine neuen Layout-/Sektionsklassen fuer die LP ausser `.v5-dl*` und `.v5-arch*`.
+
+### 8.2 Download-Block der neuesten Ausgabe (`.v5-dl`)
+- **Datenquelle:** `series_items(key)[0]` (neuestes Datum). PDF aus Feld `pdfs`,
+  **bevorzugt die Datei mit `_DE_`-Marker** (PAGE_SCHEMA §2.1).
+- **Aufbau:** Karte `.v5-dl` (weisser Card-Stil, `--line`, Radius 14-16px, Schatten §1.5)
+  mit: Datums-/Cadence-Label `.v5-dl-meta` (`--faint`, Label-Regel), Titel `.v5-dl-t`
+  (navy, weight 700/800), kurzer Beschreibung `.v5-dl-p` (`--muted`), und der Aktion.
+- **Download-Button** `.v5-dl-btn` — **wiederverwendet die Pillen-Geometrie von
+  `.v5-fa-cta`/`.art-cta-btn`** (`border-radius:999px`, navy-Flaeche, weisser Text,
+  `gap:.55em`, Hover `translateY(-2px)`, Pfeil `.ar` `translateX(4px)`). Label z. B.
+  "Aktuelle Ausgabe herunterladen (PDF)". Der Pfeil ist der einzige zulaessige Glyph
+  (Download-Pfeil als `↓` zulaessig, sonst `→`; **kein** Icon-Set).
+- **Fallback (kein PDF):** hat die neueste Ausgabe **kein** `pdfs`-File →
+  **KEIN** Download-Button. Stattdessen nur der **Artikel-Lese-Link** `.v5-dl-read`
+  ("Ausgabe lesen" → `cur['path']`), Textlink in `--teal`. Es wird **nie** ein
+  Download-Button gerendert, der auf eine nicht existierende PDF zeigt.
+- Genau **eine** Aktion je Download-Block: entweder Download-Pille **oder** (Fallback)
+  Lese-Link. Kein zusaetzlicher Beratungs-CTA in diesem Block (Wertabgabe, PAGE_SCHEMA §6.6/§7.6).
+
+### 8.3 Archiv-Liste (`.v5-arch`)
+- **Aufbau:** Liste der Ausgaben (`series_items(key)` absteigend) als **Karten im
+  Bestandsstil** — wahlweise `.v5-sl`-Listenzeilen (kompakt: Titel + Datum `.v5-sl-m`)
+  oder `.v5-rs`-Cover-Karten (mit Ausgaben-Cover). Beide existieren bereits; **keine neue
+  Kartenklasse**. Empfehlung: `.v5-sl`-Liste fuer die letzten N Ausgaben.
+- **Datum** je Ausgabe als `--faint`-Meta (`.v5-sl-m`/`.v5-rs-cad`), deutsches
+  Format/Quartal (§4).
+- **"Alle Ausgaben"-Verweis** auf die **Serien-Seite** (`smzhub-serie-*`) als sekundaerer
+  Textlink (`.v5-more` oder `.v5-back`-Stil, `--teal`). Das ist der einzige Pflicht-
+  Verweis; reine Lese-Links sonst, **kein** Beratungs-CTA im Archiv.
+- Reuse-only: `.v5-sl`/`.v5-sl-list`/`.v5-rs`/`.v5-rs-row`/`.v5-more`. `.v5-arch` ist nur
+  ein duenner Wrapper/Section-Marker, kein neues Kartendesign.
+
+### 8.4 Regeln fuer die LP-Bausteine
+- **Kein Download-Button ohne real existierende PDF** — Fallback ist Pflicht (§8.2).
+- **Aktuelle Ausgabe vor Archiv** (Reihenfolge normativ, PAGE_SCHEMA §6.4/§7.4).
+- **Ein Beratungs-CTA im Hero, einer im Schluss-CTA** — **keiner** im Download- oder
+  Archiv-Block (PAGE_SCHEMA §6.6/§7.6). Download = Wertabgabe, Archiv = Lese-Pfad.
+- Download-/Archiv-Labels folgen der Label-Regel (keine Versalien).
+- Keine neue Seitenarchitektur, kein neues Kartendesign — Bestandsraster + Bestandskarten.
+
+Vollstaendige Markup-/CSS-Spezifikation: siehe `COMPONENT_LIBRARY.html`, Abschnitte
+"LP — Download-Block" und "LP — Archiv-Liste".
+
+---
+
+## 9. Neue No-Gos (aus den Komponenten §6-§8)
+
+Ergaenzen die No-Go-Liste §5; gleicher Verbindlichkeitsgrad (werden abgelehnt):
+
+1. **Flagship als 2er-Karten-Paar.** Das fruehere `.v5-fa-grid` (`1fr 1fr`) als
+   gleichwertiges Flagship-Paar ist **abgeloest** und wird nicht mehr als Flagship-Muster
+   gebaut. Flagships sind **vollbreite Segmente mit rechtem Rail** (§6).
+2. **Zweiter Conversion-CTA im Flagship-Segment, Download- oder Archiv-Block.** Pro
+   Flagship-Segment **genau ein** Segment-CTA (→ LP); im Download/Archiv **kein**
+   Beratungs-CTA. Rail-Links und Ausgaben-Titel sind reine Lese-Links.
+3. **Outlook-Hervorhebung ueber neue Tokens.** Die High-End-Anmutung des Outlook-Segments
+   entsteht **nur** ueber Bestands-Tokens (Navy-Flaeche `.v5-fa--feature` + Luft +
+   Reihenfolge). **Kein** Goldton, keine zweite Akzentfarbe, kein Sonder-Radius/-Schatten,
+   keine Sonderschrift.
+4. **Zins-Chart als Multi-Serien-Spaghetti.** Genau **eine** Datenreihe je Figur. Keine
+   ueberlagerten Mehrfach-Linien, keine Mehrfarben-Legende; mehrere Reihen ⇒ mehrere
+   getrennte Figuren.
+5. **Generischer/3D-/Torten-/Balken-Chart oder Chart-JS-Lib.** Der Zins-Chart ist eine
+   statische, reduzierte Inline-SVG-Datenfigur; §5.3 bleibt fuer alle anderen Diagrammtypen
+   voll gueltig. Keine Chart-Bibliothek, kein Tooltip-/3D-/Tortendiagramm.
+6. **Erfundene Daten im Zins-Chart.** Keine ausgedachten Zinswerte in der finalen Figur —
+   Datenpunkte kommen vom editorial; bis dahin deklarierter Platzhalter.
+7. **Download-Button ohne reale PDF.** Nie eine Download-Pille rendern, wenn die neueste
+   Ausgabe kein `pdfs`-File hat — dann nur Artikel-Lese-Link (§8.2-Fallback).
+8. **Neue Seitenarchitektur / neues Kartendesign fuer die LP.** Die LP ist eine V5-Seite
+   im Bestandsraster (`.v5-phead`/`.v5-sec`/`.art-cta`); Archiv nutzt Bestandskarten
+   (`.v5-sl`/`.v5-rs`). Keine LP-eigene Sektions-/Kartenfamilie ausser `.v5-dl*`/`.v5-arch*`.
+9. **Diagramm im Flagship-Cover.** Das Cover ist ein Ausgaben-Bild (oder `--lblue`-Fallback),
+   nie ein eingebettetes Chart.
