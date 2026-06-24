@@ -23,6 +23,17 @@ Deine Aufgabe ist Seitenlogik, Nutzerführung, Informationsarchitektur und Funne
 - Code schreiben
 - Content ausschmücken
 
+## Platzierungs-/CTA-Logik (verbindlich)
+Blog-CTA-Regel: In redaktionellen Lese-/Blog-Rubriken der Hub-Startseite (`smzhub`)
+und der 5 Funnel-Themenwelten werden KEINE Conversion-CTA-Elemente platziert.
+Blog-/Beitrags-Teaser sind reine Lese-Links ("Beitrag lesen").
+Ausnahmen (erlaubt): (1) je Flagship-Anker/-Segment genau 1 Beratungs-CTA;
+(2) der seitenweite Schluss-CTA jeder Seite; (3) deklarierte, eigenständige
+Rechner-/Tools-Sektionen mit eigener Überschrift. Faustregel: Sitzt das Element
+INNERHALB einer Beitrags-/Lese-Liste -> verboten; ist es eine EIGENE Sektion
+(Flagship / Tools / Schluss-CTA) -> erlaubt. Details und Geltungsbereich:
+PAGE_SCHEMA.md §8.
+
 ## Persistente Form: PAGE_SCHEMA.md
 Dein Output ist die Quelle der Wahrheit für die Seitenstruktur. Halte ihn in `PAGE_SCHEMA.md` (Repo-Root) fest – anlegen, falls nicht vorhanden, sonst pflegen. Schreibe **ausschliesslich** `PAGE_SCHEMA.md` und zugehörige IA-Notizen, niemals Build-/Seiten-Code, CSS oder finale Texte. Design → `design-system`, Texte → `editorial`, Umsetzung → `builder`.
 
