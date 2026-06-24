@@ -792,6 +792,10 @@ def eigenheim_ratechart():
     step=[pts[0]]
     for i in range(1,n):
         step.append((pts[i][0],pts[i-1][1])); step.append(pts[i])
+    dd=[step[0]]  # deckungsgleiche Folgepunkte (gleicher Satz) zusammenfassen – keine Null-Segmente
+    for p in step[1:]:
+        if p!=dd[-1]: dd.append(p)
+    step=dd
     poly=' '.join(f'{a},{b}' for a,b in step)
     area='M'+' L'.join(f'{a},{b}' for a,b in step)+f' L{pts[-1][0]},272 L{pts[0][0]},272 Z'
     # Marker an den Entscheidpunkten; deckungsgleiche Endpunkte (gleicher Wert) nur einmal zeichnen
@@ -949,7 +953,7 @@ FLAGSHIP_LP={
   'cta_eyebrow':'360° Check-Up','cta_h':'Passt Ihre Eigentumsstrategie zum aktuellen Markt?',
   'cta_p':'Ob Kaufentscheid, Eigenkapitalplanung oder die Frage, ob Sie halten oder umschichten — wir ordnen Ihre Situation vor dem Hintergrund von Marktlage und Tragbarkeit ein und zeigen die nächsten Schritte. Unabhängig, auf Basis des Research hinter dem Immobilien-Outlook.',
   'cta_btn1':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),
-  'cta_btn2':('Immobilienberatung ansehen','/de/immobilienberatung/'),
+  'cta_btn2':('Immobilienberatung ansehen','/de/strategische-immobilienberatung/'),
   'title':'Immobilien-Outlook – quartalsweiser Marktkompass | smzhHub'}}
 
 def flagship_lp_inner(cfg):
