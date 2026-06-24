@@ -223,9 +223,21 @@ def funnels():
             f'<div class="v5-fn-body"><div class="v5-fn-in"><div class="v5-fgrid">{cards}</div></div></div>'
             '</section>')
 
+# Home-Schluss-CTA (PAGE_SCHEMA §8.3-Ausnahme: genau 1 seitenweiter Schluss-CTA am Seitenende,
+# auf der .art-cta-Navy-Flaeche). Hub-weit, ein Primaer-Button Richtung 360-Check-up; sonst keine CTAs.
+def home_cta():
+    return ('<div class="art-cta"><p class="art-cta-eyebrow">360° Check-Up</p>'
+            '<h3>Bereit für Ihre nächste Finanzentscheidung?</h3>'
+            '<p>Im 360°-Finanzcheck ordnen wir Vorsorge, Eigenheim, Steuern und Anlagen für Ihre '
+            'Situation ein – und zeigen Ihnen die nächsten Schritte. Unverbindlich und auf Sie zugeschnitten.</p>'
+            '<div class="art-cta-row">'
+            f'<a class="art-cta-btn art-cta-btn1" href="{link("/de/terminvereinbaren/")}">360°-Finanzcheck vereinbaren<span class="ar">→</span></a></div>'
+            '<div class="art-cta-trust"><span>Unverbindlich</span><span>Persönlich beraten</span><span>Auf Ihre Situation</span></div>'
+            '</div>')
+
 def home_inner():
     return ('<div class="v5">'+hero()+funnels()+'<div class="v5-wrap">'
-            +decisions()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+'</div></div>')
+            +decisions()+''.join(rubric(r,i) for i,r in enumerate(RUBRICS))+home_cta()+'</div></div>')
 
 FONTS=('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
  '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">')
