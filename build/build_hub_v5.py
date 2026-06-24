@@ -41,6 +41,13 @@ def img_of(p,w):
     r=item(p); return opt_img(r.get('image'),w) if r else None
 def imgt(src): return f'<img loading="lazy" src="{src}" alt="">' if src else ''
 def series_items(k): return sorted([r for r in rows if r.get('series')==k],key=lambda r:r.get('date') or '',reverse=True)
+def upload(f): return P_+'../cms.smzh.ch/uploads/'+f  # build-konsistenter PDF-Pfad (-> ../../../cms.smzh.ch/uploads/<file>)
+def pdf_of(r):
+    """Bevorzugt PDF mit _DE_-Marker, sonst erste; nur wenn die Datei real unter site/cms.smzh.ch/uploads/ liegt. Sonst None (Fallback Lese-Link)."""
+    pdfs=r.get('pdfs') or []
+    cand=next((f for f in pdfs if '_DE_' in f), pdfs[0] if pdfs else None)
+    if cand and os.path.exists(os.path.join(SMZH,'..','cms.smzh.ch','uploads',cand)): return cand
+    return None
 def meta_of(p):
     r=item(p)
     if not r: return ''
@@ -128,13 +135,16 @@ def decisions():
             f'<div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
 
 def season():
-    t,teaser,cl,cp=SEASON_HERO
+    # Blog-CTA-Regel (PAGE_SCHEMA §8.2): Saison-Block als reiner Lese-Block fuehren – der werbliche
+    # Conversion-CTA (cl) wird nicht ausgegeben; Hero und Sub-Links bleiben reine Lese-Links ("Beitrag lesen").
+    # (Wird in home_inner derzeit nicht eingebunden; bei kuenftiger Nutzung §8-konform.)
+    t,teaser,_cl,cp=SEASON_HERO
     subs=''
     for st,sp in SEASON_SUBS:
         subs+=f'<a class="v5-se-sub" href="{link(sp)}"><span class="v5-se-sub-t">{esc(st)}</span><span class="v5-se-sub-go">→</span></a>'
     hero=(f'<a class="v5-se-hero" href="{link(cp)}"><span class="v5-se-tag">Aktuell relevant</span>'
           f'<span class="v5-se-h">{esc(t)}</span><span class="v5-se-p">{esc(teaser)}</span>'
-          f'<span class="v5-se-cta">{esc(cl)} →</span></a>')
+          f'<span class="v5-se-cta">Beitrag lesen →</span></a>')
     return f'<section class="v5-sec"><div class="v5-season">{hero}<div class="v5-se-subs">{subs}</div></div></section>'
 
 def flag_card(key,path):
@@ -153,7 +163,7 @@ FLAGCAD={'hypothekenradar':'monatlich','investment-guide':'monatlich','immobilie
 FLAGNM={'hypothekenradar':'Hypotheken-Radar','investment-guide':'Investment Guide','immobilien-outlook':'Immobilien-Outlook','dossier':'Pensionierung planen'}
 def rubric(rb, idx):
     arts=[p for p in rb['arts'] if item(p)]
-    leadp=arts[0]; subs=arts[1:4]
+    leadp=arts[0]
     lead=item(leadp); im=img_of(leadp,1080)
     rm=rmin(leadp); goline=(rm+' · ' if rm else '')+'Beitrag lesen'
     hero=(f'<a class="v5-rub-hero" href="{link(leadp)}"><span class="v5-rh-img">{imgt(im)}</span>'
@@ -161,15 +171,13 @@ def rubric(rb, idx):
           f'<span class="v5-rh-t">{esc(lead["title"])}</span>'
           f'<span class="v5-rh-p">{esc(teaser(leadp,170))}</span>'
           f'<span class="v5-rh-go">{esc(goline)}</span></span></a>')
+    # Blog-CTA-Regel (PAGE_SCHEMA §8.2/§8.4): der Conversion-Tool-Slot (v5-mid mit Aktions-Label)
+    # sass INNERHALB der redaktionellen Lese-Rubrik und wird hier entfernt. Das Rail traegt nur noch
+    # reine Lese-Links; der vierte Beitrag (arts[4]) ersetzt den Tool-Slot als zusaetzlicher Lese-Teaser.
+    leadsubs=arts[1:5]
     sub_html=''.join(f'<a class="v5-sl" href="{link(p)}"><span class="v5-sl-t">{esc(item(p)["title"])}</span>'
-                     +(f'<span class="v5-sl-m">{esc(rmin(p))}</span>' if rmin(p) else '')+'</a>' for p in subs)
-    # Mid-Hero / subtiler CTA: highlighted Tool/Check/Analyse mit Bild (Platzhalter-Slot)
-    t=rb['tool']; tim=img_of(t['imgfrom'],640)
-    mid=(f'<a class="v5-mid" href="{link(t["href"])}"><span class="v5-mid-img">{imgt(tim)}'
-         f'<span class="v5-mid-tag">{esc(t["tag"])}</span></span>'
-         f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(t["t"])}</span>'
-         f'<span class="v5-mid-go">{esc(t["go"])}</span></span></a>')
-    side=f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div>{mid}</div>'
+                     +(f'<span class="v5-sl-m">{esc(rmin(p))}</span>' if rmin(p) else '')+'</a>' for p in leadsubs)
+    side=f'<div class="v5-rub-side"><div class="v5-sl-list">{sub_html}</div></div>'
     rev = idx%2==1
     cols = '1fr 1.45fr' if rev else '1.45fr 1fr'
     cls = 'v5-rub-grid rev' if rev else 'v5-rub-grid'
@@ -461,6 +469,47 @@ CSS='''<style id="smzh-v5-css">
 .v5-fa-cta:hover .ar{transform:translateX(4px)}
 .v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
 .v5-fa-archive:hover{color:#fff}
+/* High-End-Variante Outlook-Segment (Contract §6.3) – nur Bestands-Tokens: Navy-Flaeche + Hellwerte exakt wie .v5-phead */
+.v5-fa--feature{background:var(--navy);border-color:transparent}
+.v5-fa--feature .v5-fa-title{color:#fff}
+.v5-fa--feature .v5-fa-sub{color:#bcd3e2}
+.v5-fa--feature .v5-fa-latest{border-top-color:rgba(255,255,255,.16)}
+.v5-fa--feature .v5-fa-date{color:#9ec3d5}
+.v5-fa--feature .v5-fa-latest-t{color:#fff}
+.v5-fa--feature .v5-fa-latest-t:hover{color:#9fd0ee}
+.v5-fa--feature .v5-fa-foot{background:transparent;padding-top:.2rem}
+/* Zins-Verlaufs-Chart (Contract §7) – statisches Inline-SVG, EINE Datenreihe, keine JS-Lib */
+.v5-ratechart{margin:5rem 0}
+.v5-rc-fig{margin:1.6rem 0 0;position:relative;border-radius:18px;overflow:hidden;background:var(--lblue);box-shadow:0 26px 54px -30px rgba(3,49,75,.6)}
+.v5-rc-svg{display:block;width:100%;height:auto;background:#fff}
+.v5-rc-area{fill:var(--lblue);stroke:none}
+.v5-rc-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.v5-rc-axis{stroke:var(--line);stroke-width:1}
+.v5-rc-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.v5-rc-dot{fill:var(--teal)}
+.v5-rc-lbl{fill:var(--faint);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600}
+.v5-rc-lbl.v5-rc-lbl-y{text-anchor:end}
+.v5-rc-lbl.v5-rc-lbl-x{text-anchor:middle}
+.v5-rc-fig figcaption{font-size:.82rem;color:var(--faint);margin:0;padding:.7rem .9rem .9rem;border-left:2px solid var(--teal);line-height:1.45;background:#fff}
+/* LP: Download-Block der neuesten Ausgabe (Contract §8.2) */
+.v5-dl{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);max-width:680px}
+.v5-dl-meta{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-dl-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.25}
+.v5-dl-p{font-size:.95rem;color:var(--muted);line-height:1.55;margin:0}
+.v5-dl-act{margin-top:.7rem}
+.v5-dl-btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:#fff;background:var(--navy);padding:.85rem 1.4rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-dl-btn .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-dl-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(3,49,75,.6)}
+.v5-dl-btn:hover .ar{transform:translateY(2px)}
+.v5-dl-read{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.95rem;color:var(--teal)}
+.v5-dl-read .ar{transition:transform .22s}
+.v5-dl-read:hover .ar{transform:translateX(4px)}
+/* LP: Archiv-Liste (Contract §8.3) – nutzt Bestandskarten .v5-sl/.v5-rs */
+.v5-arch{max-width:760px}
+.v5-arch .v5-sl-list{margin-top:.4rem}
+.v5-arch-all{display:inline-flex;align-items:center;gap:.4em;margin-top:1.1rem;font-weight:700;font-size:.9rem;color:var(--teal)}
+.v5-arch-all .ar{transition:transform .22s}
+.v5-arch-all:hover .ar{transform:translateX(4px)}
 /* Spezifitäts-Overrides gegen Chrome-Link-Styles */
 #ed-root .v5-cta,#ed-root .v5-cta:hover{color:#fff!important}
 #ed-root .v5-se-cta,#ed-root .v5-se-tag,#ed-root .v5-se-h,#ed-root .v5-se-p{color:#fff!important}
@@ -477,6 +526,9 @@ CSS='''<style id="smzh-v5-css">
 #ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}#ed-root .v5-phead-cta{color:#03314B!important}
 #ed-root .v5-dec-fresh{color:#8b9aa8!important}
 #ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}#ed-root .v5-fa-sub{color:#5b6b7a!important}#ed-root .v5-fa-date{color:#8b9aa8!important}#ed-root .v5-fa-cta{color:#03314B!important}#ed-root .v5-fa-archive{color:#9fd0ee!important}#ed-root .v5-fa-badge{color:#fff!important}
+#ed-root .v5-fa--feature .v5-fa-title,#ed-root .v5-fa--feature .v5-fa-latest-t{color:#fff!important}#ed-root .v5-fa--feature .v5-fa-sub{color:#bcd3e2!important}#ed-root .v5-fa--feature .v5-fa-date{color:#9ec3d5!important}
+#ed-root .v5-dl-t{color:#03314B!important}#ed-root .v5-dl-p{color:#5b6b7a!important}#ed-root .v5-dl-meta{color:#8b9aa8!important}#ed-root .v5-dl-btn{color:#fff!important}#ed-root .v5-dl-read{color:#185E7F!important}
+#ed-root .v5-arch-all{color:#185E7F!important}
 #ed-root .art-body a,#ed-root .art-bc a,#ed-root .art-related a{color:#185E7F!important}
 #ed-root .art-body p,#ed-root .art-body li,#ed-root .art-faq-a{color:#1c2b36!important}
 #ed-root .art-body h2,#ed-root .art-body h3,#ed-root .art-lead,#ed-root .art-faq-q,#ed-root .art-related a,#ed-root .art-related h2{color:#03314B!important}
@@ -629,17 +681,26 @@ def horizon_inner():
     return category_inner('smzhHub · Themenwelt','smzh horizon',
         'Perspektiven, Trends und Ausblick von smzh.',body)
 
-# ===================== Themenwelt: Eigenheim & Hypothek (V5 + Flagship-Anker) =====================
-# Flagship-Anker (PAGE_SCHEMA §1.4 Block 2+3, §3): zwei gleichwertige Research-Reihen.
-# Aktuellste Ausgabe wird build-dynamisch aus series_items(key)[0] gezogen (neuestes Datum),
-# Datenbasis ist dasselbe smzhhub-content.json wie in der Editorial-Linie (kein Import nötig).
+# ===================== Themenwelt: Eigenheim & Hypothek (V5 + Flagship-Segmente) =====================
+# Flagship-Segmente (PAGE_SCHEMA §1.4 Block 2+3, §3, Contract §6): zwei vollbreite Segmente
+# (je Reihe ein .v5-rub-grid mit linker .v5-fa-Hauptspalte + rechtem .v5-rub-side-Rail).
+# Aktuellste Ausgabe build-dynamisch aus series_items(key)[0]; Segment-CTA routet NEU auf die LP
+# (PAGE_SCHEMA §2.1/§1.6); Archiv-Link zeigt im Eigenheim-Muster auf die LP (sie traegt den Archiv-Block, §3.2).
 EIGENHEIM_FLAGSHIP=[
- {'key':'hypothekenradar','badge':'Research-Reihe · monatlich','title':'Hypotheken-Radar',
+ {'key':'hypothekenradar','badge':'Research-Reihe · monatlich','title':'Hypotheken-Radar','feature':False,
   'sub':'Der monatliche Taktgeber zu Zinsen, SARON und Festhypothek – als Entscheidungshilfe, wenn Sie abschliessen, verlängern oder umschulden.',
-  'cta':('Hypothek prüfen','/de/terminvereinbaren/'),'archive':'/de/smzhub-serie-hypotheken-radar/'},
- {'key':'immobilien-outlook','badge':'Research-Reihe · quartalsweise','title':'Immobilien-Outlook',
+  'cta':('Zum Hypotheken-Radar','/de/smzhub-hypotheken-radar/'),'lp':'/de/smzhub-hypotheken-radar/',
+  'rail':[('SARON oder Festhypothek?','/de/ratgeber-saron-oder-festhypothek/'),
+          ('Reicht mein Einkommen für die Bank?','/de/ratgeber-tragbarkeit-hypothek/'),
+          ('Amortisieren oder investieren?','/de/ratgeber-amortisieren-oder-investieren/')],
+  'tool':{'tag':'Rechner','t':'Tragbarkeit und Immobilienwert prüfen','go':'Zum Immobilienrechner','href':'/de/immobilienbewertung-rechner/','imgfrom':'/de/artikel/snb-zinsentscheid-juni/'}},
+ {'key':'immobilien-outlook','badge':'Research-Reihe · quartalsweise','title':'Immobilien-Outlook','feature':True,
   'sub':'Der quartalsweise Marktkompass zu Preisen, Tragbarkeit und Regionen – Orientierung für grössere Kauf- und Eigentumsentscheidungen.',
-  'cta':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),'archive':'/de/smzhub-serie-immobilien-outlook/'}]
+  'cta':('Zum Immobilien-Outlook','/de/smzhub-immobilien-outlook/'),'lp':'/de/smzhub-immobilien-outlook/',
+  'rail':[('Kaufen oder warten?','/de/ratgeber-eigenheim-kaufen-oder-warten/'),
+          ('Wie viel Eigenkapital brauche ich wirklich?','/de/ratgeber-eigenkapital-eigenheim/'),
+          ('Wie kaufe ich eine Immobilie?','/de/wie-kaufe-ich-eine-immobilie/')],
+  'tool':{'tag':'Rechner','t':'Immobilienwert einschätzen','go':'Zum Bewertungsrechner','href':'/de/immobilienbewertung-rechner/','imgfrom':'/de/artikel/zuercher-wohnungsinitiativen/'}}]
 # Decision-Cards (PAGE_SCHEMA §1.6/§2.2): nur Rubrik Eigenheim/Hypothek, auf reale Ratgeber geroutet.
 EIGENHEIM_DECISIONS=[
  ('Hypothek','SARON oder Festhypothek?','Welche Strategie 2026 trägt, wenn die SNB-Zinsen tief sind, aber Planungssicherheit zählt.','/de/ratgeber-saron-oder-festhypothek/'),
@@ -656,9 +717,31 @@ EIGENHEIM_EVERGREEN=[('Tragbarkeit optimieren','/de/optimierung-der-tragbarkeit/
  ('Wie kaufe ich eine Immobilie?','/de/wie-kaufe-ich-eine-immobilie/'),
  ('Wohneigentumsförderung','/de/wohneigentumsfoerderung/')]
 EIGENHEIM_DOSSIER=('/de/smzhub-dossier-eigenheim/','Eigenheim finanzieren')
+# Ratgeber-Sektion (PAGE_SCHEMA §1.4 Block 6, §2.2): reale ratgeber-* als Lese-Einstiege (reine Lese-Links).
+# Titel = reale Seiten-Titel der gerenderten ratgeber-*; Kategorie aus dem Themen-Cluster. Kein Conversion-CTA.
+EIGENHEIM_RATGEBER=[
+ ('Hypothek','SARON oder Festhypothek 2026: Was lohnt sich?','/de/ratgeber-saron-oder-festhypothek/'),
+ ('Tragbarkeit','Tragbarkeit Hypothek 2026: Reicht mein Einkommen?','/de/ratgeber-tragbarkeit-hypothek/'),
+ ('Eigenheim','Eigenkapital fürs Eigenheim 2026: Wie viel wirklich?','/de/ratgeber-eigenkapital-eigenheim/'),
+ ('Markt','Eigenheim kaufen oder warten? Ratgeber 2026','/de/ratgeber-eigenheim-kaufen-oder-warten/'),
+ ('Vermögen','Hypothek amortisieren oder investieren? 2026','/de/ratgeber-amortisieren-oder-investieren/')]
+# Stories (PAGE_SCHEMA §1.4 Block 7, §2.5; Texte build-spec Abschnitt 3): anonymisierte Ausgangslagen,
+# KEINE erfundenen Personen. Je Story ein reiner Lese-Link in den passenden Ratgeber.
+EIGENHEIM_STORIES=[
+ ('Erstkauf mit knappem Eigenkapital',
+  'Das Wunschobjekt ist gefunden, doch die 20 Prozent Eigenkapital sind erst zur Hälfte beisammen – und ein Teil steckt in der Pensionskasse. Die Frage: Reicht es bereits, und welche Mittel darf die Bank überhaupt anrechnen?',
+  '/de/ratgeber-eigenkapital-eigenheim/'),
+ ('Festhypothek läuft aus – verlängern oder wechseln?',
+  'In wenigen Monaten endet die Festhypothek. Verlängern, in eine SARON-Lösung wechseln oder auf mehrere Laufzeiten verteilen? Entscheidend ist weniger die Zinsprognose als die Frage, wie viel Schwankung das Budget verträgt.',
+  '/de/ratgeber-saron-oder-festhypothek/'),
+ ('Freies Kapital: amortisieren oder anlegen?',
+  'Nach einigen Jahren ist Kapital frei geworden. Soll es in die Hypothek fliessen und die Schuld senken – oder breit angelegt werden? Die Antwort hängt von Zins, erwarteter Rendite und der eigenen Steuersituation ab.',
+  '/de/ratgeber-amortisieren-oder-investieren/')]
 
 def eigenheim_flagship():
-    cards=''
+    # Pro Reihe EIN vollbreites .v5-rub-grid: links .v5-fa (Outlook zusaetzlich .v5-fa--feature),
+    # rechts .v5-rub-side (reine Lese-Links + ein Rechner-.v5-mid). Reihenfolge: Radar, dann Outlook.
+    segs=''
     for fa in EIGENHEIM_FLAGSHIP:
         its=series_items(fa['key']); cur=its[0] if its else None
         im=opt_img(cur['image'],640) if cur else None
@@ -671,14 +754,73 @@ def eigenheim_flagship():
                     f'<a class="v5-fa-latest-t" href="{link(cur["path"])}">{esc(cur["title"])}</a></span>')
         cl,cp=fa['cta']
         foot=(f'<div class="v5-fa-foot"><a class="v5-fa-cta" href="{link(cp)}">{esc(cl)} <span class="ar">→</span></a>'
-              f'<a class="v5-fa-archive" href="{link(fa["archive"])}">Alle Ausgaben →</a></div>')
-        cards+=(f'<article class="v5-fa">{cov}<div class="v5-fa-body">'
-                f'<h3 class="v5-fa-title">{esc(fa["title"])}</h3>'
-                f'<p class="v5-fa-sub">{esc(fa["sub"])}</p>{latest}</div>{foot}</article>')
+              f'<a class="v5-fa-archive" href="{link(fa["lp"])}">Alle Ausgaben →</a></div>')
+        facls='v5-fa v5-fa--feature' if fa.get('feature') else 'v5-fa'
+        main=(f'<article class="{facls}">{cov}<div class="v5-fa-body">'
+              f'<h3 class="v5-fa-title">{esc(fa["title"])}</h3>'
+              f'<p class="v5-fa-sub">{esc(fa["sub"])}</p>{latest}</div>{foot}</article>')
+        # Rechtes Kontext-Rail: reine Lese-Links (Meta = Min falls bekannt, sonst Pfeil) + ein Rechner-.v5-mid
+        sl_html=''.join(f'<a class="v5-sl" href="{link(h)}"><span class="v5-sl-t">{esc(t)}</span>'
+                        f'<span class="v5-sl-m">{esc(rmin(h)) if rmin(h) else "→"}</span></a>' for t,h in fa['rail'])
+        tl=fa['tool']; tim=img_of(tl['imgfrom'],640)
+        mid=(f'<a class="v5-mid" href="{link(tl["href"])}"><span class="v5-mid-img">{imgt(tim)}'
+             f'<span class="v5-mid-tag">{esc(tl["tag"])}</span></span>'
+             f'<span class="v5-mid-b"><span class="v5-mid-t">{esc(tl["t"])}</span>'
+             f'<span class="v5-mid-go">{esc(tl["go"])}</span></span></a>')
+        side=f'<div class="v5-rub-side"><div class="v5-sl-list">{sl_html}</div>{mid}</div>'
+        segs+=f'<div class="v5-rub-grid" style="--cols:3fr 2fr;margin-bottom:2.8rem">{main}{side}</div>'
     head=('<div class="v5-head"><div><h2>Unsere Research-Reihen zu Eigenheim und Hypothek</h2>'
           '<p class="v5-sub">Zwei feste Formate, die wir regelmässig fortschreiben – kein loser '
           'Beitragsstrom, sondern eine verlässliche Grundlage für Finanzierungs- und Kaufentscheidungen.</p></div></div>')
-    return f'<section class="v5-flagship">{head}<div class="v5-fa-grid">{cards}</div></section>'
+    return f'<section class="v5-flagship">{head}{segs}</section>'
+
+# Zins-Chart (PAGE_SCHEMA §1.4 Block 4, §2.6, Contract §7): EINE Datenreihe, statisches Inline-SVG.
+# VERIFIZIERTE SNB-Leitzins-Reihe (build-spec Abschnitt 4) – resultierender Satz nach jeder Lagebeurteilung.
+# Step-/Treppenbewegung: Wert gilt ab Entscheiddatum bis zum naechsten. KEINE erfundenen/interpolierten Werte.
+SNB_SERIES=[  # (Perioden-Label, Jahr-fuer-X-Achse, Satz %)
+ ('bis Jun 2022',2022,-0.75),('16.06.2022',2022,-0.25),('22.09.2022',2022,0.50),('15.12.2022',2022,1.00),
+ ('23.03.2023',2023,1.50),('22.06.2023',2023,1.75),('21.03.2024',2024,1.50),('20.06.2024',2024,1.25),
+ ('26.09.2024',2024,1.00),('12.12.2024',2024,0.50),('20.03.2025',2025,0.25),('19.06.2025',2025,0.00),
+ ('Jun 2026',2026,0.00)]
+def eigenheim_ratechart():
+    n=len(SNB_SERIES)
+    # Plot-Flaeche x 56..680 (Breite 624), y 28..272 (Hoehe 244). Y-Skala -0.75..+1.75 (Bereich 2.5).
+    ppp=244/2.5
+    X=lambda i:round(56+i*(624/(n-1)),1)
+    Y=lambda v:round(272-(v-(-0.75))*ppp,1)
+    pts=[(X(i),Y(v)) for i,(_,_,v) in enumerate(SNB_SERIES)]
+    step=[pts[0]]
+    for i in range(1,n):
+        step.append((pts[i][0],pts[i-1][1])); step.append(pts[i])
+    poly=' '.join(f'{a},{b}' for a,b in step)
+    area='M'+' L'.join(f'{a},{b}' for a,b in step)+f' L{pts[-1][0]},272 L{pts[0][0]},272 Z'
+    # Marker an den Entscheidpunkten; deckungsgleiche Endpunkte (gleicher Wert) nur einmal zeichnen
+    seen=set(); dots=''
+    for a,b in pts:
+        if (a,b) in seen: continue
+        seen.add((a,b)); dots+=f'<circle class="v5-rc-dot" cx="{a}" cy="{b}" r="3.5"></circle>'
+    # horizontale Gitterlinien + Y-Labels (dezent): 1.75 / 1.0 / 0.0 / -0.75
+    yticks=''.join(f'<line class="v5-rc-grid" x1="56" y1="{Y(t)}" x2="680" y2="{Y(t)}"></line>'
+                   f'<text class="v5-rc-lbl v5-rc-lbl-y" x="46" y="{round(Y(t)+4,1)}">{lbl}</text>'
+                   for t,lbl in [(1.75,'1,75 %'),(1.0,'1,0 %'),(0.0,'0,0 %'),(-0.75,'−0,75 %')])
+    # X-Labels: erster Entscheid je Jahr (zeitlich korrekt verortet)
+    xseen=set(); xlbl=''
+    for i,(_,yr,_) in enumerate(SNB_SERIES):
+        if yr in xseen: continue
+        xseen.add(yr); xlbl+=f'<text class="v5-rc-lbl v5-rc-lbl-x" x="{X(i)}" y="292">{yr}</text>'
+    svg=(f'<svg class="v5-rc-svg" viewBox="0 0 720 320" preserveAspectRatio="xMidYMid meet" role="img" '
+         f'aria-labelledby="rc-t rc-d" style="aspect-ratio:720/320">'
+         f'<title id="rc-t">SNB-Leitzins seit 2022</title>'
+         f'<desc id="rc-d">Resultierender SNB-Leitzins nach jeder Lagebeurteilung, von −0,75 Prozent bis 1,75 Prozent und zurück auf 0,0 Prozent.</desc>'
+         f'{yticks}<path class="v5-rc-area" d="{area}"></path>'
+         f'<polyline class="v5-rc-line" points="{poly}"></polyline>{dots}'
+         f'<line class="v5-rc-axis" x1="56" y1="272" x2="680" y2="272"></line>{xlbl}</svg>')
+    cap='SNB-Leitzins in Prozent. Quelle: Schweizerische Nationalbank (data.snb.ch). Stand: Juni 2026.'
+    head=('<div class="v5-head"><div><h2>Wie haben sich die Zinsen entwickelt?</h2>'
+          '<p class="v5-sub">Der SNB-Leitzins ist die gemeinsame Achse hinter Hypotheken-Radar und Immobilien-Outlook: '
+          'Er prägt die Konditionen für Festhypotheken ebenso wie die Bewegung am Immobilienmarkt.</p></div></div>')
+    return (f'<section class="v5-sec v5-ratechart">{head}'
+            f'<figure class="v5-rc-fig" style="max-width:760px">{svg}<figcaption>{esc(cap)}</figcaption></figure></section>')
 
 def eigenheim_decisions():
     cards=''
@@ -693,6 +835,24 @@ def eigenheim_decisions():
     return (f'<section class="v5-sec v5-dec-sec"><div class="v5-head"><div><h2>Ihre Entscheidung</h2>'
             f'<p class="v5-sub">Konkrete Fragen rund um Eigenheim und Hypothek – mit dem passenden Einstieg in den Ratgeber.</p></div>'
             f'{nav}</div><div class="v5-dec-vp"><div class="v5-dec-track">{cards}</div></div></section>')
+
+def eigenheim_ratgeber():
+    # Ratgeber-Sektion (Block 6): reine Lese-Links in reale ratgeber-* (kein Conversion-CTA, §8).
+    cards=''.join(f'<a class="art-rel-card" href="{link(h)}"><span class="art-rel-k">Ratgeber · {esc(cat)}</span>'
+                  f'<span class="art-rel-t">{esc(t)}</span>'
+                  f'<span class="art-rel-go">Beitrag lesen <span class="ar">→</span></span></a>' for cat,t,h in EIGENHEIM_RATGEBER)
+    return (f'<section class="v5-sec"><div class="v5-head"><div><h2>Ratgeber zu Eigenheim und Hypothek</h2>'
+            f'<p class="v5-sub">Die wichtigsten Einstiege zum Nachlesen – fundierte Grundlagen statt loser Beitragsstrom.</p></div></div>'
+            f'<div class="art-rel-grid">{cards}</div></section>')
+
+def eigenheim_stories():
+    # Stories (Block 7): anonymisierte Ausgangslagen, reine Lese-Links (build-spec Abschnitt 3).
+    cards=''.join(f'<a class="art-rel-card" href="{link(h)}"><span class="art-rel-t">{esc(t)}</span>'
+                  f'<span class="v5-rh-p" style="font-size:.92rem;line-height:1.5">{esc(teas)}</span>'
+                  f'<span class="art-rel-go">Beitrag lesen <span class="ar">→</span></span></a>' for t,teas,h in EIGENHEIM_STORIES)
+    return (f'<section class="v5-sec"><div class="v5-head"><div><h2>Typische Ausgangslagen</h2>'
+            f'<p class="v5-sub">Drei Situationen, die in der Eigenheimberatung immer wiederkehren – anonymisiert dargestellt.</p></div></div>'
+            f'<div class="art-rel-grid">{cards}</div></section>')
 
 def eigenheim_tools():
     t=EIGENHEIM_TOOL; tim=img_of('/de/artikel/zuercher-wohnungsinitiativen/',640)
@@ -739,10 +899,112 @@ def eigenheim_inner():
           'Wir verbinden laufendes Research zu Zinsen, Hypotheken und Immobilienmarkt mit konkreten Schritten für Ihre Situation.</p>'
           f'<p style="margin-top:1.4rem"><a class="v5-phead-cta" href="{link("/de/terminvereinbaren/")}">Finanzierung besprechen <span class="ar">→</span></a></p>'
           '</div></section>')
-    body=(eigenheim_flagship()+eigenheim_decisions()+eigenheim_tools()+eigenheim_depth()
+    # Block-Reihenfolge VERBINDLICH nach PAGE_SCHEMA §1.4:
+    # Hero → Flagship-Segmente (Radar+Outlook) → Zins-Chart → Entscheidungspfade → Ratgeber → Stories
+    # → Rechner/Tools → Vertiefung (Grundlagen+Dossier) → Schluss-CTA → Back-Link.
+    body=(eigenheim_flagship()+eigenheim_ratechart()+eigenheim_decisions()
+          +eigenheim_ratgeber()+eigenheim_stories()+eigenheim_tools()+eigenheim_depth()
           +eigenheim_cta()
           +f'<section class="v5-sec v5-backsec"><a class="v5-back" href="{link("/de/smzhub/")}">← Zurück zum smzhHub</a></section>')
     return f'<div class="v5">{hero}<div class="v5-wrap">{body}</div></div>'
+
+# ===================== Flagship-Landingpages (PAGE_SCHEMA §6/§7, Contract §8, build-spec 1/2) =====================
+# Zwei LPs im V5-Bestandsraster: Hero (.v5-phead, 1 CTA) → Erklaerteil → Download (aktuell)
+# → Archiv → Schluss-CTA (.art-cta) → Back-Link. Aktuelle Ausgabe build-dynamisch series_items(key)[0];
+# PDF via pdf_of() (bevorzugt _DE_, Existenzpruefung) -> Download-Pille, sonst Fallback Lese-Link.
+def _exists_slug(p): return os.path.isdir(os.path.join(SMZH,*[s for s in p.strip('/').split('/') if s]))
+
+FLAGSHIP_LP={
+ 'hypothekenradar':{
+  'slug':'smzhub-hypotheken-radar','key':'hypothekenradar','datefn':fdate,
+  'eyebrow':'smzhHub · Research · monatlich','h1':'Hypotheken-Radar',
+  'dek':'Unsere monatliche Einordnung zu Zinsen, SARON und Festhypotheken in der Schweiz. Der Hypotheken-Radar zeigt, wo die Hypothekarzinsen stehen, was die nächste SNB-Lagebeurteilung bedeutet und worauf es bei Abschluss, Verlängerung und Umschuldung ankommt.',
+  'hero_cta':('Finanzierung besprechen','/de/terminvereinbaren/'),
+  'about_h':'Was der Hypotheken-Radar leistet',
+  'about_p':'Der Hypotheken-Radar erscheint monatlich und ordnet das Zinsumfeld für private Hypothekarnehmer ein — verständlich und ohne Verkaufslogik. Jede Ausgabe verfolgt die Erwartung an die nächste SNB-Lagebeurteilung, das Niveau der Festhypothekarsätze und die Frage, wann sich SARON oder eine feste Laufzeit aufdrängt. Die Reihe richtet sich an alle, die vor einem Abschluss, einer Verlängerung oder einer Umschuldung stehen und eine fundierte Grundlage suchen, statt Schlagzeilen. Wer wiederkehrend mitliest, erkennt Zinsbewegungen früh — und entscheidet auf Basis von Einordnung, nicht von Bauchgefühl.',
+  'dl_h':'Neueste Ausgabe',
+  'dl_p':'Die aktuelle Ausgabe als PDF — mit der Zinslage des Monats und unserer Einordnung für die kommenden Wochen.',
+  'dl_btn':'Neueste Ausgabe lesen (PDF)','dl_read':'Zum aktuellen Beitrag','dl_secondary':'Zum Beitrag',
+  'arch_h':'Frühere Ausgaben',
+  'arch_p':'Jede Ausgabe hält die Zinslage ihres Monats fest. Im Verlauf wird sichtbar, wie sich das Umfeld für Hypotheken bewegt hat.',
+  'arch_series':'/de/smzhub-serie-hypotheken-radar/',
+  'cta_eyebrow':'360° Check-Up','cta_h':'Wie sicher steht Ihre Finanzierung im aktuellen Zinsumfeld?',
+  'cta_p':'Ob Erstabschluss, auslaufende Festhypothek oder Umschuldung — wir ordnen Ihre Tragbarkeit, Zinsstrategie und Laufzeiten für Ihre Situation ein und zeigen die nächsten Schritte. Unabhängig, auf Basis des laufenden Research hinter dem Hypotheken-Radar.',
+  'cta_btn1':('Finanzierung besprechen','/de/terminvereinbaren/'),
+  'cta_btn2':('Finanzierungsberatung ansehen','/de/finanzierungsberatung/'),
+  'title':'Hypotheken-Radar – monatliches Zins-Research | smzhHub'},
+ 'immobilien-outlook':{
+  'slug':'smzhub-immobilien-outlook','key':'immobilien-outlook','datefn':fquarter,'feature':True,
+  'eyebrow':'smzhHub · Research · quartalsweise','h1':'Immobilien-Outlook',
+  'dek':'Unser quartalsweiser Marktkompass für den Schweizer Immobilienmarkt. Der Immobilien-Outlook bündelt Preisentwicklung, Tragbarkeit, regionale Unterschiede und die Faktoren hinter der Nachfrage — als Grundlage für grössere Eigentumsentscheidungen.',
+  'hero_cta':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),
+  'about_h':'Was der Immobilien-Outlook leistet',
+  'about_p':'Der Immobilien-Outlook erscheint quartalsweise und ordnet den Schweizer Immobilienmarkt für Eigentümer und Kaufinteressierte ein. Jede Ausgabe verbindet Preisentwicklung und Tragbarkeit mit regionalen Unterschieden, demografischen Treibern und dem regulatorischen Umfeld — und übersetzt sie in eine Einschätzung des Marktausblicks. Die Reihe richtet sich an alle, die vor einem Kauf, einer Strategiefrage oder der Planung des Eigenkapitals stehen und mehr wollen als Schlagzeilen zur Preisentwicklung. Quartal für Quartal entsteht so ein belastbares Bild des Marktes statt einer Momentaufnahme.',
+  'dl_h':'Aktuelle Ausgabe',
+  'dl_p':'Der vollständige Marktausblick des Quartals als PDF — mit Datenlage, regionalen Einschätzungen und unserer Markteinordnung.',
+  'dl_btn':'Aktuelle Ausgabe lesen (PDF)','dl_read':'Zum aktuellen Beitrag','dl_secondary':'Zum Beitrag',
+  'arch_h':'Frühere Ausgaben',
+  'arch_p':'Jedes Quartal hält den Stand des Marktes fest. In der Folge der Ausgaben wird die Entwicklung von Preisen, Nachfrage und Rahmenbedingungen nachvollziehbar.',
+  'arch_series':'/de/smzhub-serie-immobilien-outlook/',
+  'cta_eyebrow':'360° Check-Up','cta_h':'Passt Ihre Eigentumsstrategie zum aktuellen Markt?',
+  'cta_p':'Ob Kaufentscheid, Eigenkapitalplanung oder die Frage, ob Sie halten oder umschichten — wir ordnen Ihre Situation vor dem Hintergrund von Marktlage und Tragbarkeit ein und zeigen die nächsten Schritte. Unabhängig, auf Basis des Research hinter dem Immobilien-Outlook.',
+  'cta_btn1':('Eigenheimstrategie besprechen','/de/terminvereinbaren/'),
+  'cta_btn2':('Immobilienberatung ansehen','/de/immobilienberatung/'),
+  'title':'Immobilien-Outlook – quartalsweiser Marktkompass | smzhHub'}}
+
+def flagship_lp_inner(cfg):
+    its=series_items(cfg['key']); cur=its[0] if its else None
+    df=cfg['datefn']
+    # Hero (Block a): genau 1 Beratungs-CTA
+    hl,hp=cfg['hero_cta']
+    hero=('<section class="v5-phead"><div class="v5-phead-in">'
+          f'<p class="v5-eyebrow">{esc(cfg["eyebrow"])}</p><h1>{esc(cfg["h1"])}</h1><p>{esc(cfg["dek"])}</p>'
+          f'<p style="margin-top:1.4rem"><a class="v5-phead-cta" href="{link(hp)}">{esc(hl)} <span class="ar">→</span></a></p>'
+          '</div></section>')
+    # Erklaerteil (Block b): reiner Text, kein CTA
+    about=(f'<section class="v5-sec"><div class="v5-head"><div><h2>{esc(cfg["about_h"])}</h2></div></div>'
+           f'<p class="v5-lead">{esc(cfg["about_p"])}</p></section>')
+    # Download (Block c): aktuelle Ausgabe; PDF -> Pille, Fallback -> Lese-Link
+    if cur:
+        date=df(cur.get('date')); meta='Aktuelle Ausgabe'+(f' · {date}' if date else '')
+        pdf=pdf_of(cur)
+        if pdf:
+            act=f'<div class="v5-dl-act"><a class="v5-dl-btn" href="{upload(pdf)}" download>{esc(cfg["dl_btn"])} <span class="ar">↓</span></a></div>'
+            read=f'<div class="v5-dl-act" style="margin-top:.4rem"><a class="v5-dl-read" href="{link(cur["path"])}">{esc(cfg["dl_secondary"])} <span class="ar">→</span></a></div>'
+            act=act+read
+        else:
+            act=f'<div class="v5-dl-act"><a class="v5-dl-read" href="{link(cur["path"])}">{esc(cfg["dl_read"])} <span class="ar">→</span></a></div>'
+        dl_card=(f'<div class="v5-dl"><span class="v5-dl-meta">{esc(meta)}</span>'
+                 f'<span class="v5-dl-t">{esc(cur["title"])}</span>'
+                 f'<p class="v5-dl-p">{esc(cfg["dl_p"])}</p>{act}</div>')
+    else:
+        dl_card='<div class="v5-dl"><p class="v5-dl-p">Derzeit ist keine aktuelle Ausgabe verfügbar.</p></div>'
+    download=(f'<section class="v5-sec"><div class="v5-head"><div><h2>{esc(cfg["dl_h"])}</h2></div></div>{dl_card}</section>')
+    # Archiv (Block d): Lese-Links + Verweis auf Serien-Seite
+    rows_html=''.join(f'<a class="v5-sl" href="{link(r["path"])}"><span class="v5-sl-t">{esc(r["title"])}</span>'
+                      f'<span class="v5-sl-m">{esc(df(r.get("date")))}</span></a>' for r in its)
+    archive=(f'<section class="v5-sec v5-arch"><div class="v5-head"><div><h2>{esc(cfg["arch_h"])}</h2>'
+             f'<p class="v5-sub">{esc(cfg["arch_p"])}</p></div></div>'
+             f'<div class="v5-sl-list">{rows_html}</div>'
+             f'<a class="v5-arch-all" href="{link(cfg["arch_series"])}">Alle Ausgaben ansehen <span class="ar">→</span></a></section>')
+    # Schluss-CTA (Block e): .art-cta, 1 Primaer-Button; Sekundaer mit Existenz-Fallback
+    b1l,b1p=cfg['cta_btn1']; b2l,b2p=cfg['cta_btn2']
+    if not _exists_slug(b2p): b2p='/de/terminvereinbaren/'
+    cta=('<div class="art-cta">'
+         f'<p class="art-cta-eyebrow">{esc(cfg["cta_eyebrow"])}</p>'
+         f'<h3>{esc(cfg["cta_h"])}</h3><p>{esc(cfg["cta_p"])}</p>'
+         '<div class="art-cta-row">'
+         f'<a class="art-cta-btn art-cta-btn1" href="{link(b1p)}">{esc(b1l)}<span class="ar">→</span></a>'
+         f'<a class="art-cta-btn art-cta-btn2" href="{link(b2p)}">{esc(b2l)}<span class="ar">→</span></a></div>'
+         '<div class="art-cta-trust"><span>Unverbindlich</span><span>Persönlich beraten</span><span>Auf Ihre Situation</span></div>'
+         '</div>')
+    back=f'<section class="v5-sec v5-backsec"><a class="v5-back" href="{link("/de/smzhub-eigenheim/")}">← Zurück zu Eigenheim & Hypothek</a></section>'
+    return f'<div class="v5">{hero}<div class="v5-wrap">{about+download+archive+cta+back}</div></div>'
+
+def flagship_lp_meta(cfg):
+    return {'desc':cfg['dek'],
+        'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':cfg['h1'],
+                   'isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]}
 
 ORG={'@type':'Organization','name':'smzh','url':'https://smzh.ch','logo':'https://smzh.ch/favicon.ico'}
 
@@ -753,13 +1015,17 @@ def main():
     build_page(('de','smzhub-eigenheim'),eigenheim_inner(),'Eigenheim & Hypothek einordnen | smzhHub',
         {'desc':'Eigenheim & Hypothek sachlich eingeordnet: Hypotheken-Radar und Immobilien-Outlook, Entscheidungspfade zu SARON, Tragbarkeit und Eigenkapital sowie der Weg zur Finanzierungsberatung.',
          'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'Eigenheim & Hypothek','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
+    # Flagship-LPs (PAGE_SCHEMA §6/§7) – build-dynamische Download-/Archiv-Bloecke aus series_items.
+    for k in ('hypothekenradar','immobilien-outlook'):
+        cfg=FLAGSHIP_LP[k]
+        build_page(('de',cfg['slug']),flagship_lp_inner(cfg),cfg['title'],flagship_lp_meta(cfg))
     build_page(('de','smzhub-immobilienanlagen'),immobilienanlagen_inner(),'Immobilienanlagen einordnen | smzhHub',
         {'desc':'Renditeobjekte und indirekte Immobilienanlagen verständlich eingeordnet: Rendite, Risiken, Regulierung und Finanzierung für Ihre Anlageentscheidung.',
          'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'Immobilienanlagen','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
     build_page(('de','smzhub-horizon'),horizon_inner(),'smzh horizon – Trends & Ausblick | smzhHub',
         {'desc':'smzh horizon bündelt den längeren Blick: makroökonomische Trends, strukturelle Entwicklungen und Ausblicke, die die Themenwelten des smzhHub verbinden.',
          'jsonld':[{'@context':'https://schema.org','@type':'CollectionPage','name':'smzh horizon','isPartOf':{'@type':'WebSite','name':'smzhHub','url':BASE+'/de/smzhub/'},'publisher':ORG}]})
-    print('OK V5: Landing Page + Themenwelten-Seiten (Eigenheim & Hypothek, Immobilienanlagen, smzh horizon) geschrieben.')
+    print('OK V5: Landing Page + Themenwelten (Eigenheim & Hypothek, Immobilienanlagen, smzh horizon) + Flagship-LPs (Hypotheken-Radar, Immobilien-Outlook) geschrieben.')
 
 if __name__=='__main__':
     main()

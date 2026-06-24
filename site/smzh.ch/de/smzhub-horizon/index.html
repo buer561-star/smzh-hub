@@ -288,6 +288,47 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 .v5-fa-cta:hover .ar{transform:translateX(4px)}
 .v5-fa-archive{font-size:.86rem;font-weight:700;color:#9fd0ee;display:inline-flex;align-items:center;gap:.35em}
 .v5-fa-archive:hover{color:#fff}
+/* High-End-Variante Outlook-Segment (Contract §6.3) – nur Bestands-Tokens: Navy-Flaeche + Hellwerte exakt wie .v5-phead */
+.v5-fa--feature{background:var(--navy);border-color:transparent}
+.v5-fa--feature .v5-fa-title{color:#fff}
+.v5-fa--feature .v5-fa-sub{color:#bcd3e2}
+.v5-fa--feature .v5-fa-latest{border-top-color:rgba(255,255,255,.16)}
+.v5-fa--feature .v5-fa-date{color:#9ec3d5}
+.v5-fa--feature .v5-fa-latest-t{color:#fff}
+.v5-fa--feature .v5-fa-latest-t:hover{color:#9fd0ee}
+.v5-fa--feature .v5-fa-foot{background:transparent;padding-top:.2rem}
+/* Zins-Verlaufs-Chart (Contract §7) – statisches Inline-SVG, EINE Datenreihe, keine JS-Lib */
+.v5-ratechart{margin:5rem 0}
+.v5-rc-fig{margin:1.6rem 0 0;position:relative;border-radius:18px;overflow:hidden;background:var(--lblue);box-shadow:0 26px 54px -30px rgba(3,49,75,.6)}
+.v5-rc-svg{display:block;width:100%;height:auto;background:#fff}
+.v5-rc-area{fill:var(--lblue);stroke:none}
+.v5-rc-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.v5-rc-axis{stroke:var(--line);stroke-width:1}
+.v5-rc-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.v5-rc-dot{fill:var(--teal)}
+.v5-rc-lbl{fill:var(--faint);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600}
+.v5-rc-lbl.v5-rc-lbl-y{text-anchor:end}
+.v5-rc-lbl.v5-rc-lbl-x{text-anchor:middle}
+.v5-rc-fig figcaption{font-size:.82rem;color:var(--faint);margin:0;padding:.7rem .9rem .9rem;border-left:2px solid var(--teal);line-height:1.45;background:#fff}
+/* LP: Download-Block der neuesten Ausgabe (Contract §8.2) */
+.v5-dl{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem 1.6rem;box-shadow:0 8px 22px -18px rgba(3,49,75,.5);max-width:680px}
+.v5-dl-meta{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--faint)}
+.v5-dl-t{font-size:1.22rem;font-weight:800;color:var(--navy);line-height:1.25}
+.v5-dl-p{font-size:.95rem;color:var(--muted);line-height:1.55;margin:0}
+.v5-dl-act{margin-top:.7rem}
+.v5-dl-btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;line-height:1;color:#fff;background:var(--navy);padding:.85rem 1.4rem;border-radius:999px;transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.v5-dl-btn .ar{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.v5-dl-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(3,49,75,.6)}
+.v5-dl-btn:hover .ar{transform:translateY(2px)}
+.v5-dl-read{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.95rem;color:var(--teal)}
+.v5-dl-read .ar{transition:transform .22s}
+.v5-dl-read:hover .ar{transform:translateX(4px)}
+/* LP: Archiv-Liste (Contract §8.3) – nutzt Bestandskarten .v5-sl/.v5-rs */
+.v5-arch{max-width:760px}
+.v5-arch .v5-sl-list{margin-top:.4rem}
+.v5-arch-all{display:inline-flex;align-items:center;gap:.4em;margin-top:1.1rem;font-weight:700;font-size:.9rem;color:var(--teal)}
+.v5-arch-all .ar{transition:transform .22s}
+.v5-arch-all:hover .ar{transform:translateX(4px)}
 /* Spezifitäts-Overrides gegen Chrome-Link-Styles */
 #ed-root .v5-cta,#ed-root .v5-cta:hover{color:#fff!important}
 #ed-root .v5-se-cta,#ed-root .v5-se-tag,#ed-root .v5-se-h,#ed-root .v5-se-p{color:#fff!important}
@@ -304,6 +345,9 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 #ed-root .v5-phead h1{color:#fff!important}#ed-root .v5-phead p{color:#bcd3e2!important}#ed-root .v5-eyebrow{color:#7fb3cc!important}#ed-root .v5-back{color:#185E7F!important}#ed-root .v5-lead{color:#1c2b36!important}#ed-root .v5-phead-cta{color:#03314B!important}
 #ed-root .v5-dec-fresh{color:#8b9aa8!important}
 #ed-root .v5-fa-title,#ed-root .v5-fa-latest-t{color:#03314B!important}#ed-root .v5-fa-sub{color:#5b6b7a!important}#ed-root .v5-fa-date{color:#8b9aa8!important}#ed-root .v5-fa-cta{color:#03314B!important}#ed-root .v5-fa-archive{color:#9fd0ee!important}#ed-root .v5-fa-badge{color:#fff!important}
+#ed-root .v5-fa--feature .v5-fa-title,#ed-root .v5-fa--feature .v5-fa-latest-t{color:#fff!important}#ed-root .v5-fa--feature .v5-fa-sub{color:#bcd3e2!important}#ed-root .v5-fa--feature .v5-fa-date{color:#9ec3d5!important}
+#ed-root .v5-dl-t{color:#03314B!important}#ed-root .v5-dl-p{color:#5b6b7a!important}#ed-root .v5-dl-meta{color:#8b9aa8!important}#ed-root .v5-dl-btn{color:#fff!important}#ed-root .v5-dl-read{color:#185E7F!important}
+#ed-root .v5-arch-all{color:#185E7F!important}
 #ed-root .art-body a,#ed-root .art-bc a,#ed-root .art-related a{color:#185E7F!important}
 #ed-root .art-body p,#ed-root .art-body li,#ed-root .art-faq-a{color:#1c2b36!important}
 #ed-root .art-body h2,#ed-root .art-body h3,#ed-root .art-lead,#ed-root .art-faq-q,#ed-root .art-related a,#ed-root .art-related h2{color:#03314B!important}
