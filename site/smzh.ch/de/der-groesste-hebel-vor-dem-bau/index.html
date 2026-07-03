@@ -120,82 +120,10 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
     <p class="frame__lead reveal-el">Der grösste Hebel liegt vor dem Bau – zwischen Standortanalyse und Baubewilligung. Genau dort entscheidet sich, wie viel Wert ein Vorhaben später trägt.</p>
     <p class="frame__lead reveal-el">smzh identifiziert die Frühphasen-Entscheidungen mit dem grössten Einfluss auf Ihr Vorhaben – bevor sie sich schliessen. Drei kurze Fragen zeigen, wo Ihr längster Hebel liegt.</p>
     <div class="frame__strip reveal-el">Grundstück · Machbarkeit · Bewilligung · Produkt · Kapital · Umsetzung · Vermietung · Exit</div>
-    <button class="frame__btn reveal-el" id="flowStart" type="button">Projekt einordnen lassen <span aria-hidden="true">&rarr;</span></button>
+    <a class="frame__btn reveal-el" href="../projekt-einordnen/index.html" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px">Projekt einordnen lassen <span aria-hidden="true">&rarr;</span></a>
     <p class="frame__sub reveal-el" id="flowSub">Drei kurze Fragen, dann Ihr Kontakt. Für Eigentümer, Entwickler, Unternehmerfamilien und Investoren mit komplexen Immobilienfragen.</p>
 
-    <div class="flow" id="flow" hidden>
-
-      <!-- Frage 1 -->
-      <div class="flow__panel" data-step="1">
-        <div class="flow__meta"><div class="flow__step">Frage 1 von 3</div><div class="flow__dots"><span class="on"></span><span></span><span></span><span></span></div></div>
-        <h3 class="flow__q">Was beschreibt Ihre Ausgangslage am besten?</h3>
-        <div class="flow__opts" data-q="lage">
-          <button type="button" class="flow__opt" data-v="Grundstück oder Parzelle"><span class="tick"></span><span><b>Grundstück oder Parzelle</b><small>Sie besitzen Land und wollen wissen, welcher Wert wirklich darin steckt.</small></span></button>
-          <button type="button" class="flow__opt" data-v="Projekt in Planung oder Bau"><span class="tick"></span><span><b>Projekt in Planung oder Bau</b><small>Ihr Vorhaben läuft, aber Struktur, Kapital oder Zielbild sind noch offen.</small></span></button>
-          <button type="button" class="flow__opt" data-v="Bestandsliegenschaft oder Portfolio"><span class="tick"></span><span><b>Bestandsliegenschaft oder Portfolio</b><small>Sie halten Immobilien und prüfen Entwicklung, Repositionierung oder Verdichtung.</small></span></button>
-          <button type="button" class="flow__opt" data-v="Verkauf oder Exit geplant"><span class="tick"></span><span><b>Verkauf oder Exit geplant</b><small>Sie wollen wissen, ob Ihr Objekt institutionell verkäuflich ist und was noch fehlt.</small></span></button>
-        </div>
-      </div>
-
-      <!-- Frage 2 -->
-      <div class="flow__panel" data-step="2">
-        <div class="flow__meta"><div class="flow__step">Frage 2 von 3</div><div class="flow__dots"><span class="on"></span><span class="on"></span><span></span><span></span></div></div>
-        <h3 class="flow__q">Was ist aktuell die wichtigste offene Frage?</h3>
-        <div class="flow__opts" data-q="hebel">
-          <button type="button" class="flow__opt" data-v="Nutzung &amp; Potenzial"><span class="tick"></span><span><b>Nutzung &amp; Potenzial</b><small>Was ist baulich, rechtlich und wirtschaftlich tragfähig?</small></span></button>
-          <button type="button" class="flow__opt" data-v="Struktur &amp; Kapital"><span class="tick"></span><span><b>Struktur &amp; Kapital</b><small>Welche Struktur macht das Vorhaben bankfähig und entscheidbar?</small></span></button>
-          <button type="button" class="flow__opt" data-v="Produkt &amp; Umsetzung"><span class="tick"></span><span><b>Produkt &amp; Umsetzung</b><small>Wird daraus Wohnraum, den der Markt wirklich trägt?</small></span></button>
-          <button type="button" class="flow__opt" data-v="Vermietung &amp; Exit"><span class="tick"></span><span><b>Vermietung &amp; Exit</b><small>Stimmen Cashflow, Zahlen und Käuferlogik für einen Verkauf?</small></span></button>
-          <button type="button" class="flow__opt" data-v="Noch unklar"><span class="tick"></span><span><b>Noch unklar</b><small>Genau das soll die Einordnung klären.</small></span></button>
-        </div>
-        <button type="button" class="flow__back" data-back>&larr; Zurück</button>
-      </div>
-
-      <!-- Frage 3 -->
-      <div class="flow__panel" data-step="3">
-        <div class="flow__meta"><div class="flow__step">Frage 3 von 3</div><div class="flow__dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div></div>
-        <h3 class="flow__q">Wie dringend ist die Einordnung?</h3>
-        <div class="flow__opts" data-q="horizont">
-          <button type="button" class="flow__opt" data-v="Entscheid in den nächsten 3 Monaten"><span class="tick"></span><span><b>In den nächsten 3 Monaten steht ein Entscheid an</b></span></button>
-          <button type="button" class="flow__opt" data-v="6 bis 12 Monate"><span class="tick"></span><span><b>In 6 bis 12 Monaten</b></span></button>
-          <button type="button" class="flow__opt" data-v="Über 12 Monate, strategisch"><span class="tick"></span><span><b>Über 12 Monate, strategische Planung</b></span></button>
-          <button type="button" class="flow__opt" data-v="Zweitmeinung zu laufendem Vorhaben"><span class="tick"></span><span><b>Zweitmeinung zu einem laufenden Vorhaben</b></span></button>
-        </div>
-        <button type="button" class="flow__back" data-back>&larr; Zurück</button>
-      </div>
-
-      <!-- Kontakt -->
-      <div class="flow__panel" data-step="4">
-        <div class="flow__meta"><div class="flow__step">Ihr Kontakt</div><div class="flow__dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div></div>
-        <div class="flow__sum"><div class="t">Ihre Einordnung</div><div class="l" id="flowSum"></div></div>
-        <h3 class="flow__q">Wohin dürfen wir uns melden?</h3>
-        <div class="flow__fields">
-          <div class="flow__row">
-            <div><label for="fName">Name</label><input id="fName" type="text" autocomplete="name" placeholder="Vor- und Nachname"></div>
-            <div><label for="fFirma">Firma <i>(optional)</i></label><input id="fFirma" type="text" autocomplete="organization" placeholder="Firma / Familie / Stiftung"></div>
-          </div>
-          <div class="flow__row">
-            <div><label for="fMail">E-Mail</label><input id="fMail" type="email" autocomplete="email" placeholder="name@firma.ch"></div>
-            <div><label for="fTel">Telefon <i>(optional)</i></label><input id="fTel" type="tel" autocomplete="tel" placeholder="+41 79 000 00 00"></div>
-          </div>
-        </div>
-        <input id="fWeb" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-        <button type="button" class="flow__submit" id="flowSubmit">Einordnung anfragen <span aria-hidden="true">&rarr;</span></button>
-        <p class="flow__privacy">Erstgespräch 30 Minuten, unverbindlich. Ihre Angaben werden ausschliesslich für die Kontaktaufnahme verwendet. <a href="https://smzh.ch/de/datenschutz/" target="_blank" rel="noopener" style="color:inherit">Datenschutz</a></p>
-        <button type="button" class="flow__back" data-back>&larr; Zurück</button>
-      </div>
-
-      <!-- Bestätigung -->
-      <div class="flow__panel" data-step="5">
-        <div class="flow__done">
-          <div class="ic" aria-hidden="true"></div>
-          <h3>Anfrage unterwegs.</h3>
-          <p id="flowDoneTxt">Wir melden uns innert eines Arbeitstages und ordnen Ihr Vorhaben entlang der Wertachse ein: Potenzial, Struktur, Bewilligung, Kapital, Produkt, Vermietung, Exit.</p>
-          <p class="flow__hint" id="flowMailHint" hidden>Falls sich Ihr E-Mail-Programm nicht geöffnet hat: Sie erreichen uns jederzeit über <b>smzh.ch/de/kontakt</b>.</p>
-        </div>
-      </div>
-
-    </div>
+    
   </div>
 </section><script id="smzh-cta-js">
 (function(){
