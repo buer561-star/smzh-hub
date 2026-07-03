@@ -171,9 +171,6 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .rmore{text-align:center;margin-top:26px}
 .rmore button{all:unset;cursor:pointer;font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--line);border-radius:9px;padding:13px 24px;background:#fff;transition:border-color .2s}
 .rmore button:hover{border-color:var(--navy)}
-.rc[hidden]{display:none}
-.rc--reveal{animation:rcReveal .45s ease both}
-@keyframes rcReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 /* ── Modul D: Transparenz ── */
 
 .tbox{background:linear-gradient(180deg,#0A4A6E,#03314B);border-radius:16px;color:#fff;padding:40px 44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
@@ -357,9 +354,9 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
         </div>
       </article>
     
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true"><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true"><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true"><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
     </div>
     <div class="rmore"><button type="button" id="rmoreBtn">Weitere Projekte anzeigen</button></div>
   </div>
@@ -475,19 +472,19 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
     show(pins[0].dataset.id);
   })();
 
-  /* — Weitere Projekte: verborgene Platzhalter-Zeile(n) je Klick einblenden; Button verschwindet, sobald nichts mehr verborgen ist — */
+  /* — Weitere Projekte: pro Klick eine Zeile (3 Platzhalter) anhängen; Button bleibt — */
   (function(){
     var btn=document.getElementById('rmoreBtn'), grid=document.getElementById('rgrid');
     if(!btn||!grid) return;
-    var more=btn.closest('.rmore'), STEP=3;
-    function sync(){ if(!grid.querySelector('.rc--ph[hidden]')){ (more||btn).hidden=true; } }
     btn.addEventListener('click',function(){
-      [].slice.call(grid.querySelectorAll('.rc--ph[hidden]')).slice(0,STEP).forEach(function(c){
-        c.hidden=false; c.classList.add('rc--reveal');
-      });
-      sync();
+      for(var i=0;i<3;i++){
+        var a=document.createElement('article');
+        a.className='rc rc--ph';
+        a.setAttribute('aria-hidden','true');
+        a.innerHTML='<div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div>';
+        grid.appendChild(a);
+      }
     });
-    sync();
   })();
 
   /* — Wertpipeline — */
