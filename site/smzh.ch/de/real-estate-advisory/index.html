@@ -168,6 +168,9 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .rc__go{margin-top:16px;font-size:13px;font-weight:800;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .rc__go span{transition:transform .2s}
 .rc__go:hover span{transform:translateX(3px)}
+.rmore{text-align:center;margin-top:26px}
+.rmore button{all:unset;cursor:pointer;font-size:14px;font-weight:700;color:var(--navy);border:1.5px solid var(--line);border-radius:9px;padding:13px 24px;background:#fff;transition:border-color .2s}
+.rmore button:hover{border-color:var(--navy)}
 /* ── Modul D: Transparenz ── */
 
 .tbox{background:linear-gradient(180deg,#0A4A6E,#03314B);border-radius:16px;color:#fff;padding:40px 44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
@@ -355,6 +358,7 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
       <article class="rc rc--ph" aria-hidden="true"><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
       <article class="rc rc--ph" aria-hidden="true"><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
     </div>
+    <div class="rmore"><button type="button" id="rmoreBtn">Weitere Projekte anzeigen</button></div>
   </div>
 </section>
 
@@ -466,6 +470,21 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
       p.addEventListener('mouseleave',function(){p.classList.remove('hov');});
     });
     show(pins[0].dataset.id);
+  })();
+
+  /* — Weitere Projekte: pro Klick eine Zeile (3 Platzhalter) anhängen; Button bleibt — */
+  (function(){
+    var btn=document.getElementById('rmoreBtn'), grid=document.getElementById('rgrid');
+    if(!btn||!grid) return;
+    btn.addEventListener('click',function(){
+      for(var i=0;i<3;i++){
+        var a=document.createElement('article');
+        a.className='rc rc--ph';
+        a.setAttribute('aria-hidden','true');
+        a.innerHTML='<div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div>';
+        grid.appendChild(a);
+      }
+    });
   })();
 
   /* — Wertpipeline — */
