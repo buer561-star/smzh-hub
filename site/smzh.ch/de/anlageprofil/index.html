@@ -67,6 +67,9 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 .ap-selbox__clear{margin-left:auto;border:0;background:transparent;color:var(--blue);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;text-decoration:underline}
 .ap-sellist{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:260px;overflow:auto}
 .ap-sellist li{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13.5px}
+.ap-sellevel{color:var(--muted);font-weight:600;font-size:11px;font-style:normal;margin-left:4px}
+.ap-selbox__all{border:1px solid var(--line);background:#fff;color:var(--navy);font:inherit;font-size:12px;font-weight:700;cursor:pointer;border-radius:7px;padding:4px 9px}
+.ap-selbox__all:hover{border-color:var(--navy)}
 .ap-sellist li button{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:15px;line-height:1}
 .ap-selbox__empty{color:var(--muted);font-size:13px;margin:12px 0 0}
 .ap-datanote{margin-top:14px;font-size:13px;color:var(--muted);background:#FFF7E8;border:1px solid #F3E1B6;border-radius:10px;padding:11px 14px}
@@ -246,7 +249,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
           <div class="ap-map__tip" id="apMapTip" hidden></div>
         </div>
         <aside class="ap-selbox"><input type="search" class="ap-selsearch" id="apSelSearch" placeholder="Region suchen …" autocomplete="off"><div class="ap-selresults" id="apSelResults" hidden></div>
-          <div class="ap-selbox__head"><span id="apSelCount">0</span> Regionen gewählt <button type="button" id="apSelClear" class="ap-selbox__clear">Zurücksetzen</button></div>
+          <div class="ap-selbox__head"><span id="apSelCount">0</span> Regionen gewählt <button type="button" id="apSelAll" class="ap-selbox__all">Ganze Schweiz</button><button type="button" id="apSelClear" class="ap-selbox__clear">Zurücksetzen</button></div>
           <ul class="ap-sellist" id="apSelList"></ul>
           <p class="ap-selbox__empty" id="apSelEmpty">Noch keine Region gewählt. Alternativ ganze Schweiz belassen.</p>
         </aside>
@@ -375,6 +378,17 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
       tip=document.getElementById('apMapTip'), note=document.getElementById('apDataNote');
   var mode='amr';
   var LABELS={kanton:'Kanton',amr:'Arbeitsmarktregion',gemeinde:'Gemeinde'};
+  var LABELS_PL={kanton:'Kantone',amr:'Arbeitsmarktregionen',gemeinde:'Gemeinden'};
+  var MODES=['kanton','amr','gemeinde'];
+  function regionenText(){
+    var reg=state.regionen; if(!reg||!reg.count) return '';
+    var parts=[];
+    MODES.forEach(function(m){
+      var l=reg.levels[m]; if(!l||!l.length) return;
+      parts.push(reg.complete[m]?(LABELS[m]+': ganze Schweiz'):(LABELS[m]+': '+l.join(', ')));
+    });
+    return parts.join(' \u00b7 ');
+  }
   function renderMap(){
     var g=GEO[mode];
     // Modus-Buttons
@@ -405,26 +419,39 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
     });
     updateSel();
   }
+  function levelComplete(m){ var g=GEO[m]; return !!(g&&g.regions&&g.regions.length&&Object.keys(regionsSel[m]).length===g.regions.length); }
   function updateSel(){
-    var sel=regionsSel[mode];
-    var codes=Object.keys(sel);
-    document.getElementById('apSelCount').textContent=codes.length;
     var list=document.getElementById('apSelList'); list.innerHTML='';
-    document.getElementById('apSelEmpty').style.display=codes.length?'none':'block';
-    codes.sort(function(a,b){return sel[a].localeCompare(sel[b]);}).forEach(function(c){
-      var li=document.createElement('li');
-      li.innerHTML='<span>'+sel[c]+'</span>';
-      var x=document.createElement('button'); x.type='button'; x.textContent='×';
-      x.onclick=function(){ delete sel[c]; var pp=svg.querySelector('path[data-code="'+c+'"]'); if(pp)pp.classList.remove('is-sel'); updateSel(); };
-      li.appendChild(x); list.appendChild(li);
+    var total=0;
+    MODES.forEach(function(m){
+      var sel=regionsSel[m]; var codes=Object.keys(sel); if(!codes.length) return;
+      total+=codes.length;
+      if(levelComplete(m)){
+        var li=document.createElement('li');
+        li.innerHTML='<span>Ganze Schweiz <em class="ap-sellevel">alle '+LABELS_PL[m]+'</em></span>';
+        var x=document.createElement('button'); x.type='button'; x.textContent='×';
+        x.onclick=function(){ regionsSel[m]={}; if(m===mode){ renderMap(); } else { updateSel(); } };
+        li.appendChild(x); list.appendChild(li); return;
+      }
+      codes.sort(function(a,b){return sel[a].localeCompare(sel[b]);}).forEach(function(c){
+        var li=document.createElement('li');
+        li.innerHTML='<span>'+sel[c]+' <em class="ap-sellevel">'+LABELS[m]+'</em></span>';
+        var x=document.createElement('button'); x.type='button'; x.textContent='×';
+        x.onclick=function(){ delete regionsSel[m][c]; if(m===mode){ var pp=svg.querySelector('path[data-code="'+c+'"]'); if(pp)pp.classList.remove('is-sel'); } updateSel(); };
+        li.appendChild(x); list.appendChild(li);
+      });
     });
-    state.regionen={mode:LABELS[mode], list:codes.map(function(c){return sel[c];})};
+    document.getElementById('apSelCount').textContent=total;
+    document.getElementById('apSelEmpty').style.display=total?'none':'block';
+    state.regionen={levels:{kanton:Object.keys(regionsSel.kanton).map(function(c){return regionsSel.kanton[c];}),amr:Object.keys(regionsSel.amr).map(function(c){return regionsSel.amr[c];}),gemeinde:Object.keys(regionsSel.gemeinde).map(function(c){return regionsSel.gemeinde[c];})},complete:{kanton:levelComplete('kanton'),amr:levelComplete('amr'),gemeinde:levelComplete('gemeinde')},count:total};
     dossier();
   }
   document.querySelectorAll('.ap-mapmode__btn').forEach(function(b){
     b.addEventListener('click',function(){ if(b.disabled)return; mode=b.getAttribute('data-mode'); renderMap(); });
   });
-  document.getElementById('apSelClear').addEventListener('click',function(){ regionsSel[mode]={}; renderMap(); });
+  document.getElementById('apSelClear').addEventListener('click',function(){ MODES.forEach(function(m){regionsSel[m]={};}); renderMap(); });
+  var apSelAll=document.getElementById('apSelAll');
+  if(apSelAll){ apSelAll.addEventListener('click',function(){ var g=GEO[mode]; if(!g||!g.regions) return; g.regions.forEach(function(r){ regionsSel[mode][r.code]=r.name; }); renderMap(); }); }
   // Regionen-Suche (alle Ebenen, v.a. Gemeinden)
   var search=document.getElementById('apSelSearch'), results=document.getElementById('apSelResults');
   if(search){
@@ -454,7 +481,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
   function dsect(t,r){ return r?('<h4>'+t+'</h4><dl>'+r+'</dl>'):''; }
   function dossier(){
     var b=document.getElementById('apDossierBody'); if(!b) return;
-    var reg=state.regionen; var regTxt=(reg&&reg.list&&reg.list.length)?(reg.mode+': '+reg.list.join(', ')):'';
+    var regTxt=regionenText();
     var html='';
     html+=dsect('Investor', drow('Typ',state.investortyp)+drow('Volumen',state.volumen));
     html+=dsect('Strategie', drow('Profil',state.strategie)+drow('Zielrendite',state.rendite)+drow('Haltedauer',state.haltedauer)+drow('Form',state.form));
@@ -467,7 +494,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
   // ---- Zusammenfassung ----
   function val(f){ var v=state[f]; if(!v)return '—'; return Array.isArray(v)?(v.length?v.join(', '):'—'):v; }
   function buildSummary(){
-    var reg=state.regionen; var regTxt = (reg&&reg.list&&reg.list.length)? (reg.mode+': '+reg.list.join(', ')) : 'Ganze Schweiz';
+    var regTxt = regionenText() || 'Ganze Schweiz';
     var rows=[['Investortyp',val('investortyp')],['Volumen',val('volumen')],['Strategie',val('strategie')],
       ['Zielrendite',val('rendite')],['Haltedauer',val('haltedauer')],['Investitionsform',val('form')],
       ['Nutzungsarten',val('nutzung')],['Objektzustand',val('zustand')],['Ticket-Grösse',val('ticket')],
@@ -479,7 +506,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
   }
   function payloadText(){
     buildSummary();
-    var reg=state.regionen; var regTxt=(reg&&reg.list&&reg.list.length)?(reg.mode+': '+reg.list.join(', ')):'Ganze Schweiz';
+    var regTxt=regionenText() || 'Ganze Schweiz';
     var L=['ANLAGEPROFIL – Real Estate Advisory','',
       'Investortyp: '+val('investortyp'),'Volumen: '+val('volumen'),'Strategie: '+val('strategie'),
       'Zielrendite: '+val('rendite'),'Haltedauer: '+val('haltedauer'),'Investitionsform: '+val('form'),
