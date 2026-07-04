@@ -5,7 +5,7 @@ nav.smzh-navbar .group:hover>.dropdown-navigation-wrapper,
 nav.smzh-navbar .group:focus-within>.dropdown-navigation-wrapper{display:flex !important}
 .dropdown-navigation-wrapper{width:760px !important;max-width:94vw !important;left:0 !important}
 .dropdown-navigation-wrapper>div{width:100% !important}
-.rc__state{font-size:14px;font-weight:400;color:var(--ink-soft);line-height:1.55;margin:10px 0 0}.rc--ph{box-shadow:none;border-style:dashed;border-color:#dbe4ec;background:#FBFDFF}.rc__ph-img{height:150px;background:linear-gradient(150deg,#EAF2F9,#F4F9FD)}.rc__ph-line{display:block;height:13px;border-radius:7px;background:var(--line);opacity:.7;margin:6px 0;width:55%}.rc__ph-line--s{width:38%;opacity:.5}</style><style id="smzh-static-fix">.rrc-container{display:none !important}div.fixed.bottom-0.left-0.z-50:has(.rrc-container){display:none !important}</style><style id="smzh-inactive-css">.smzh-inactive{opacity:.55 !important;cursor:not-allowed !important}.smzh-inactive:hover{opacity:.55 !important}</style><style id="smzh-mm-css">
+.rc__state{font-size:14px;font-weight:400;color:var(--ink-soft);line-height:1.55;margin:10px 0 0}.rc--ph{box-shadow:none;border-style:dashed;border-color:#dbe4ec;background:#FBFDFF}.rc__ph-img{aspect-ratio:16/10;background:linear-gradient(150deg,#EAF2F9,#F4F9FD)}.rc__ph-line--t{width:50%;height:15px;margin:2px 0 12px}.rc__ph-line--d{width:100%;opacity:.5}.rc__ph-line--go{width:32%;margin-top:auto;margin-bottom:0;opacity:.6}.rc__ph-line{display:block;height:13px;border-radius:7px;background:var(--line);opacity:.7;margin:6px 0;width:55%}.rc__ph-line--s{width:38%;opacity:.5}</style><style id="smzh-static-fix">.rrc-container{display:none !important}div.fixed.bottom-0.left-0.z-50:has(.rrc-container){display:none !important}</style><style id="smzh-inactive-css">.smzh-inactive{opacity:.55 !important;cursor:not-allowed !important}.smzh-inactive:hover{opacity:.55 !important}</style><style id="smzh-mm-css">
 #smzh-mobile-menu{position:fixed;inset:0;z-index:9999;background:#fff;display:none;flex-direction:column}
 html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidden}
 #smzh-mobile-menu .smzh-mm-bar{display:flex;align-items:center;gap:.5rem;padding:1rem 1.1rem;border-bottom:1px solid #eef1f4}
@@ -126,7 +126,7 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .refs{padding:78px 0 30px}
 .refmap{margin:38px 0 0;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}
 .refsel{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 46px -28px rgba(3,49,75,.22)}
-.refsel__img{height:170px;background:linear-gradient(150deg,var(--navy),var(--navy-2));background-size:cover;background-position:center;position:relative}
+.refsel__img{aspect-ratio:16/10;background:linear-gradient(150deg,var(--navy),var(--navy-2));background-size:cover;background-position:center;position:relative}
 .refsel__status{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;background:rgba(255,255,255,.94);color:var(--navy);border-radius:99px;padding:5px 11px}
 .refsel__body{padding:18px 22px 20px;display:flex;flex-direction:column;flex:1}
 .refsel__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
@@ -175,8 +175,8 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .rc--reveal{animation:rcReveal .45s ease both}
 @keyframes rcReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .qe{width:100%;margin:10px auto 0;background:#fff;overflow:hidden}
-.qe__frame{width:100%;height:460px;border:0;display:block;background:#fff}
-@media(min-width:900px){.qe{height:506px}.qe__frame{width:86.96%;height:440px;margin:0 auto;transform:scale(1.15);transform-origin:top center}}
+.qe__frame{width:100%;height:420px;border:0;display:block;background:#fff}
+@media(min-width:900px){.qe{height:449px}.qe__frame{width:86.96%;height:390px;margin:0 auto;transform:scale(1.15);transform-origin:top center}}
 /* ── Modul D: Transparenz ── */
 
 .tbox{background:linear-gradient(180deg,#0A4A6E,#03314B);border-radius:16px;color:#fff;padding:40px 44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
@@ -190,7 +190,7 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .tbox .tpl .r b{color:#fff;font-weight:700}
 
 /* ── Modul E: CTA ── */
-.cta{padding:36px 0 96px}
+.cta{padding:36px 0 132px}
 .cta__in{text-align:center;max-width:720px;margin:0 auto}
 .cta h2{margin-top:0}
 .cta .lead{margin-left:auto;margin-right:auto}
@@ -360,12 +360,12 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
         </div>
       </article>
     
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
-      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line"></span><span class="rc__ph-line rc__ph-line--s"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
+      <article class="rc rc--ph" aria-hidden="true" hidden><div class="rc__ph-img"></div><div class="rc__body"><span class="rc__ph-line rc__ph-line--t"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--d"></span><span class="rc__ph-line rc__ph-line--s"></span><span class="rc__ph-line rc__ph-line--go"></span></div></article>
     </div>
     <div class="rmore"><button type="button" id="rmoreBtn">Weitere Projekte anzeigen</button></div>
   </div>
