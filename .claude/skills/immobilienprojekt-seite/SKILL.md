@@ -173,17 +173,31 @@ Aus `/home/user/smzh-hub` laufen lassen (Slug einsetzen):
 ```bash
 P=site/smzh.ch/de/<slug>/index.html
 # 1) verbotene Tonalität im Eigencontent (Treffer im Mega-Menü/Footer ignorieren)
-for t in Familienvermögen Familienbesitz Unternehmerfamilien Nachfolge \
-         Vermögensstruktur ganzheitlich "in wenigen Minuten" Schnellbewertung; do
-  echo "$t = $(grep -o "$t" "$P" | wc -l)"; done
-# 2) kein „ß“
+for t in Familienvermögen Familienbesitz Unternehmerfamilie Nachfolge \
+         Vermögensstruktur Eigentümerfamilie Familienprojekt Werthebel \
+         ganzheitlich "in wenigen Minuten" Schnellbewertung; do
+  echo "$t = $(grep -o "$t" "$P" | wc -l)"; done   # alle 0 im Eigencontent
+# 2) SICHTBARE REDAKTIONS-PLATZHALTER — muss 0 sein (sonst BLOCKER, wird ausgeliefert!)
+for t in "Inhalt fehlt" "Name offen" "Rolle offen" "Slot bewusst leer" "TODO" "Platzhalter"; do
+  echo "PH $t = $(grep -o "$t" "$P" | wc -l)"; done
+# 3) kein „ß“
 grep -o 'ß' "$P" | wc -l          # muss 0 sein
-# 3) kein „Case“ als Label (nur „Investment Case“ im Fliesstext erlaubt)
+# 4) kein „Case“ als Label (nur „Investment Case“ im Fliesstext erlaubt)
 grep -o '· Case \|>Case ·\|Case ansehen\|Case Study\|(Case ' "$P"
-# 4) genau ein h1
+# 5) genau ein h1
 grep -oc '<h1' "$P"
-# 5) interne Links auflösen (Python-Check aus §Audit nutzen)
+# 6) interne Links auflösen (Python-Check aus §Audit nutzen)
 ```
+
+> **Kritisch (aus Audit gelernt):** Bremgarten und Küsnacht wurden mit sichtbaren
+> `.miss`-Badges („Inhalt fehlt") und leeren `.nm`/`.ro`-Team-Karten
+> („Name offen / Rolle offen") deployt — diese Klassen sind **nicht** versteckt,
+> sondern gestylt sichtbar. Ein leerer Slot wird **weggelassen**, nie als Platzhalter
+> gerendert. Check 2 ist ein harter Gate vor jedem Commit.
+>
+> **`Werthebel`** ist als Feld-Label im Wertstufen-Detailtemplate (`.rk--hebel`) ein
+> verbotener generischer Begriff — durch neutraleres Label ersetzen
+> (z. B. „Entscheidender Hebel" / „smzh-Beitrag"), wirkt auf alle Projektseiten.
 
 **Rendern/Screenshot** mit dem vorinstallierten Chromium (Playwright):
 
@@ -224,8 +238,12 @@ Nach grünem Lauf den Nutzer hart neu laden lassen (Cmd/Ctrl+Shift+R).
 ## 9. Definition of Done
 
 - [ ] Seite als Klon der Vorlage, volles Sektions-Skelett (§2), genau **1 h1**.
-- [ ] Investoren-Tonalität (§1); Tonalitäts-Grep **sauber** (auch in Meta-Tags).
-- [ ] Kein „ß"; kein „Case"-Label (nur „Investment Case" im Fliesstext).
+- [ ] Investoren-Tonalität (§1); Tonalitäts-Grep **sauber** (auch in Meta-Tags:
+      `<title>`, og/twitter-Description, JSON-LD — nicht nur sichtbarer Text).
+- [ ] **Keine sichtbaren Platzhalter** (`Inhalt fehlt`, `Name offen`, `Rolle offen`,
+      leere `?`-Team-Karten) — harter Gate.
+- [ ] Kein „ß"; kein „Case"-Label (nur „Investment Case" im Fliesstext); kein „Werthebel".
+- [ ] Ein Begriff site-weit: **Anlageprofil** vs. Anlegerprofil, **ein** Titel-Trennzeichen.
 - [ ] Geteilter 3-CTA-Block (gleich breit), korrekte Ziele (§4).
 - [ ] `wref` verweist auf andere Projekte; bestehende Projekte gegenseitig ergänzt.
 - [ ] Auf der REA-Hauptseite als gleich grosse Referenzkarte „Projekt ansehen"
