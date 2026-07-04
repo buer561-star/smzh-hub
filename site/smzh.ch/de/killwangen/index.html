@@ -321,7 +321,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 .frame__lead{font-size:16px;color:var(--ink-soft);line-height:1.65;margin-top:18px;max-width:70ch;margin-left:auto;margin-right:auto}
 .frame__strip{margin:30px auto 4px;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--blue);background:var(--edit-bg);border:1px solid var(--line);border-radius:999px;padding:12px 22px;display:inline-block}
 .frame__btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 32px;border-radius:9px;margin-top:24px;transition:background .2s,transform .2s}
-.frame__btn:hover{background:var(--blue);transform:translateY(-1px)}
+.frame__btn:hover{background:var(--blue);transform:translateY(-1px)}.frame__ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}.frame__ctas .frame__btn{margin-top:0;flex:1 1 0;max-width:260px;justify-content:center;text-align:center;box-sizing:border-box;white-space:nowrap;padding:15px 18px;font-size:15px}
 .frame__sub{font-size:14.5px;color:var(--muted);line-height:1.6;margin-top:22px;max-width:62ch;margin-left:auto;margin-right:auto}
 
 /* ── CTA-Flow: Projekt einordnen lassen ───────────────────────── */
@@ -882,8 +882,8 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
     <p class="frame__lead reveal-el">Viele Projekte verlieren Wert, bevor die erste Finanzierung steht: durch falsche Nutzung, unklare Struktur, fehlende Käuferlogik oder ein Produkt, das später nicht institutionell anschlussfähig ist.</p>
     <p class="frame__lead reveal-el">smzh ordnet Ihr Grundstück, Projekt oder Portfolio entlang derselben Wertachse ein: Wo entsteht Wert? Wo liegt Risiko? Und welche Entscheidung hat den grössten Hebel?</p>
     <div class="frame__strip reveal-el">Grundstück · Machbarkeit · Bewilligung · Produkt · Kapital · Umsetzung · Vermietung · Exit</div>
-    <button class="frame__btn reveal-el" id="flowStart" type="button">Projekt einordnen lassen <span aria-hidden="true">&rarr;</span></button>
-    <p class="frame__sub reveal-el" id="flowSub">Drei kurze Fragen, dann Ihr Kontakt. Für Eigentümer, Entwickler, Unternehmerfamilien und Investoren mit komplexen Immobilienfragen.</p>
+    <div class="frame__ctas reveal-el"><a class="frame__btn" href="../projekt-einordnen/index.html">Projekt einordnen</a><a class="frame__btn" href="../anlageprofil/index.html">Anlegerprofil erstellen</a><a class="frame__btn" href="../liegenschaft-verkaufen/index.html">Verkauf prüfen</a></div>
+    <p class="frame__sub reveal-el" id="flowSub">Für institutionelle Investoren, semiprofessionelle private Investoren, Entwickler und Eigentümer grösserer Immobilienpositionen.</p>
 
     <div class="flow" id="flow" hidden>
 
