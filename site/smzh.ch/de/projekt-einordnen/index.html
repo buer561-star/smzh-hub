@@ -185,7 +185,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
     if(ENDPOINT){
       fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
     }else{
-      var body='Anfrage Projekt-Einordnung (Case Killwangen)%0D%0A%0D%0A'
+      var body='Anfrage Projekt-Einordnung (Killwangen)%0D%0A%0D%0A'
         +'Ausgangslage: '+encodeURIComponent(payload.lage)+'%0D%0A'
         +'Wichtigste Frage: '+encodeURIComponent(payload.hebel)+'%0D%0A'
         +'Zeithorizont: '+encodeURIComponent(payload.horizont)+'%0D%0A%0D%0A'
