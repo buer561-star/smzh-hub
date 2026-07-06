@@ -249,10 +249,10 @@ Der frühere dunkle `frame`-Block ist **abgelöst** (nicht mehr verwenden).
 | Verkauf prüfen | `../liegenschaft-verkaufen/index.html` |
 
 Fixe Inhalte des Blocks (identisch überall):
-- H2: „Welche Entscheidung steht bei Ihren Immobilienprojekten an?"
+- H2: „Welche Entscheidung steht bei Ihrem Immobilienprojekt an?"
 - Lead: „Ob Bestand, Entwicklung, Finanzierung, Vermietung oder Verkauf: Wir ordnen
   Ihre Ausgangslage ein und zeigen, welche nächsten Schritte für Struktur, Kapital,
-  Umsetzung oder Exit relevant sind."
+  Umsetzung oder Exit zählen."
 - (Keine Fussnote/Zielgruppen-Zeile mehr unter den CTAs.)
 
 > **Stehende Regel (verbindlich):** Der CTA-Text ist **überall identisch** — Startseite
