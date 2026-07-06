@@ -21,6 +21,63 @@ und `PAGE_SCHEMA.md` im Repo-Root gelten für die `smzhub-*`-Seiten (Plus Jakart
 
 ---
 
+## 0. Intake — Fragenkatalog & benötigte Files (VOR dem Bau, immer zuerst)
+
+> **Ziel:** einmal alles einsammeln, dann die Seite in **einem Rutsch** befüllen.
+> Startet ein neues Projekt (oder soll ein Platzhalter-Projekt wie Sonne/Küsnacht
+> gefüllt werden), stelle dem Nutzer **diesen Katalog kompakt in EINER Nachricht**,
+> nummeriert. Erst bauen, wenn A, B und F beantwortet sind (C/D/E/G darf ich aus A/B
+> ausformulieren). **Fehlt eine Antwort → betroffene Sektion weglassen, nie als
+> Platzhalter rendern** (harter Gate, §7). Offene Punkte kurz zurückmelden.
+>
+> **Ich kann keine lokalen Pfade / OneDrive öffnen** — Bilder **im Chat anhängen**
+> oder ins Repo unter `site/cms.smzh.ch/uploads/` legen. Nie einen `C:\…`-Pfad annehmen.
+
+**A. Stammdaten** → `facts`, Hero-Meta
+1. Projektname (öffentlich, z. B. „Bremgarten, Drei Könige") + gewünschter Slug.
+2. Adresse: Strasse Nr., PLZ, Ort, Kanton.
+3. Ausgangslage in 1 Zeile (z. B. „denkmalgeschützte Altstadtliegenschaft").
+4. Nutzung (Wohnen / Gewerbe / Gastronomie / Mischnutzung).
+5. Einheiten konkret (z. B. „5 Mietwohnungen", „1 Restaurant inkl. Take-Away").
+6. Eingriff (Neubau / Umbau / Kernsanierung / Totalsanierung; denkmalgerecht?).
+7. Besonderheiten Ausbau (Bodenheizung, Lift, zusätzliche UG, Minergie …).
+8. Status (in Projektierung / bewilligt / in Ausführung / realisiert).
+9. Fertigstellung (Jahr). 10. Flächen (m², Grundstück/Entwicklung) — falls relevant.
+
+**B. Investment-Story** → Hero-Claim, Wertschöpfungskette (`archsec`), `proof`
+11. Ausgangslage/Problem: Was war unter Potenzial? (leerstehend, schwache Qualität, Nutzungsmix …)
+12. Opportunität: Was hat smzh erkannt? 13. Wertstrategie: Was wurde konkret gemacht?
+14. Ergebnis/Zielbild: Was entsteht?
+15. Zwei Kennzahlen für die Wertachse: **Ausgangswert → Ergebnis**
+    (z. B. „10 Bestandseinheiten → 58 Wohneinheiten" oder „1 denkmalgeschützte Liegenschaft → 5 Wohnungen + 1 Restaurant").
+
+**C. Die 9 Wertstufen** → `phase`-Blöcke + Spine (§3b) — je Stufe stichwortartig genügt
+Für **Objektzugang, Machbarkeit, Nutzungskonzept, Struktur, Bewilligung, Kapital,
+Umsetzung, Vermietung, Exit** je: 16. Ausgangslage · 17. smzh-Entscheid (der Hebel) ·
+18. Resultat (falls offen: „offen bis Fertigstellung"). Welche Stufen sind **Wertsprünge**?
+> Stichworte reichen — den Fliesstext (Ausgangslage/smzh-Entscheid/Entscheidender Hebel/Resultat)
+> formuliere ich aus. Unbekannte Stufen bekommen einen knappen, kanonischen Standardsatz.
+
+**D. Das 4-Kreis-Wertsystem** → `comp` (§3c) — je Bereich 1 Satz + 1–2 Bullets
+19. Strategische Immobilienberatung · 20. Projektentwicklung & Bauherrenvertretung ·
+21. Finanzierungsberatung · 22. Transaktionsmanagement. **Auf den Punkt, was smzh tat.**
+
+**E. Verlinkung & Karte** → `wref`, REA-Hauptseite
+23. Welche **3** anderen Projekte in „Weitere Projekte" zeigen (max. 3)?
+24. Neuer Standort? Pin-Koordinaten auf der Schweizer Karte (SVG viewBox `0 0 1000 643.7`)
+    oder Ort nennen, den ich verorte.
+
+**F. Bilder / Files** → verlangen (für die REA-Karte **nicht** optional)
+25. **1× starkes Präsentationsbild** (Fassade/Lage/Innenausbau, fertiger Zustand) — für
+    REA-Referenzkarte, Auswahl-Panel **und** Projekt-Hero. **KEIN Baustellenbild** (§6).
+26. Optional: 2–4 **Galerie-/Karussell-Bilder** (Innenausbau/Prozess — Baustellenbilder hier ok).
+27. Optional: Grundriss/Schema. Format: JPG/PNG, quer, ~1600 px+.
+
+**G. Meta/SEO** → `<title>`, og/twitter, JSON-LD
+28. SEO-Titel + 1-Satz-Description — oder ich generiere aus A/B (Tonalität §1).
+
+---
+
 ## 1. Zielgruppe & Tonalität (verbindlich)
 
 **Zielgruppe:** institutionelle und semiprofessionelle Investoren, Entwickler,
@@ -59,22 +116,29 @@ class="…">` mit innen `<div class="wrap …">`.
 
 | # | Sektion (`class`) | Funktion | Heading |
 |---|---|---|---|
-| 1 | `archsec` | Hero: Projektname + Leit-Claim „Vom Grundstück zur Kapitalanlage" | **h1** (genau 1 pro Seite) |
-| 2 | `facts` | Eckdaten-Band (Lage, Nutzung, Fläche, Status …) — **Stil V5, siehe §3a** | – |
-| 3 | `proofband` | schmales Beleg-/Kontext-Band | – |
-| 4 | `thesis` | Kernthese: „Wert entsteht vor dem Verkauf. Und oft lange davor." | h2 |
-| 5 | `cmap` | Kontext/Ausgangslage der Lage | h2 |
-| 6 | `phase` ×N | Wertachse als Phasen; `phase--lever` markiert die Hebel-Phasen | – |
-| 7 | `proof` | Beleg, dass Wert nicht linear entsteht | h2 |
-| 8 | `orch` | „Eine Stelle, die den roten Faden hält" (Orchestrierung) | h2 |
-| 9 | `team` | „Das Team hinter <Projekt>" (Bauherrenvertretung/Projektleitung) | h2 |
-| 10 | `comp` | „Nicht vier Dienstleistungen. Ein durchgängiges Wertsystem." | h2 |
-| 11 | `frame` (`id="kontakt"`) | **CTA-Block** (projektspezifisches Heading + 3 CTAs) | h2 |
-| 12 | `wref` | „Weitere Projekte" – Referenzkarten (`rc`) auf andere Projekte | h3 |
+| 1 | `archsec` | Hero (Projektname + Claim) **+ Wertschöpfungskette**: Ausgangslage→Zielbild links, Spine der **kanonischen 9 Wertstufen** rechts (§3b) | **h1** (genau 1 pro Seite) |
+| 2 | `facts` | Eckdaten-Band (Lage, Nutzung, Einheiten, Status …) — **Stil V5, §3a** | – |
+| 3 | `proofband` | schmales Beleg-/Kontext-Band (Claim; optional grosses Bild-Karussell) | – |
+| 4 | `cmap` | Kontext/Ausgangslage der Lage | h2 |
+| 5 | `phase` ×**9** | die **9 kanonischen Wertstufen** (§3b); `phase--lever` = Wertsprung, letzte = `--ziel` | – |
+| 6 | `proof` | „Was &lt;Projekt&gt; zeigt" (3 `pcard`) | h2 |
+| 7 | `orch` | „Die Rolle von smzh" (Orchestrierung) | h2 |
+| 8 | `comp` | **4-Kreis-Wertsystem** (§3c), projektspezifisch, **transparent (ohne Hintergrund)** | h2 |
+| 9 | `rea-cta` (`id="kontakt"`) | heller **Entscheidungs-CTA** (§4), **VOR** „Weitere Projekte" | h2 |
+| 10 | `wref` | „Weitere Projekte" — **genau 3** Referenzkarten (`rc`), **3-spaltig** | h3 |
 | — | smzh-Footer | geklonte Chrome, unverändert | – |
 
 Vor `archsec` und nach `wref` steht die geklonte Chrome (`firstRow`/`secondRow`
 Header, Mega-Menü, Footer). **Nie** ein zweites `h1` einbauen.
+
+**Entfernt (früher vorhanden, heute NICHT mehr aufnehmen):**
+- `thesis` (dunkles Textband unter dem Bild-Karussell) — **weg**.
+- `team` („Das Team hinter …") — **weg**; das Team wird zentral auf der REA-Hauptseite
+  vorgestellt, nicht je Projektseite.
+- `frame` (dunkler navy CTA-Block) — **ersetzt** durch den hellen `rea-cta` (§4).
+- **Eyebrow-Kicker** vor Titeln (Hero-Breadcrumb „Projekt · …" **und** Sektions-Labels
+  wie „Die Ausgangslage" / „Was … zeigt" / „Die Rolle von smzh") — **alle weg**,
+  konsistent mit der Startseite.
 
 ---
 
@@ -97,6 +161,49 @@ Verbindliche CSS-Regeln:
 ```
 Mobil (bestehender `@media`-Block): `.facts__grid{grid-template-columns:repeat(2,1fr)}`,
 `.fact .v{font-size:16px}`. Labels **nicht** in Versalien setzen (Text wie „Standort").
+
+---
+
+## 3b. Die kanonischen 9 Wertstufen (verbindlich, site-weit identisch)
+
+Die Wertachse ist **überall dieselbe 9er-Reihenfolge** – auf der REA-Startseite
+(`.wsys`-Timeline) **und** auf jeder Projektseite (`.wsa__steps`-Spine + `phase`-Blöcke):
+
+```
+01 Objektzugang · 02 Machbarkeit · 03 Nutzungskonzept · 04 Struktur ·
+05 Bewilligung · 06 Kapital · 07 Umsetzung · 08 Vermietung · 09 Exit
+```
+
+- **Keine** projektspezifischen Labels mehr (früher: Grundstück/Produkt/Substanz/
+  Nutzungsmix/Potenzial/Entscheid/Ertrag). Immer diese 9 Begriffe, in dieser Folge.
+- Jeder `phase`-Block: `data-phase="NN" data-label="<kanonisch>"`, `phase__num`,
+  `phase__cat`, `phase__q` (Frage), `phase__aha`, dann `raster` mit **vier** Zeilen:
+  `Ausgangslage` · `smzh-Entscheid` · `Entscheidender Hebel` (Label **nie** „Werthebel")
+  · `Resultat`. Wertsprung-Stufen: `phase phase--lever` + `<div class="wertspr">Wertsprung</div>`;
+  die Zielstufe (Exit/Ertrag): `wertspr wertspr--ziel">Zielstufe`.
+- `data-phase`/`phase__num`/`wsa__nr` **fortlaufend 01–09** und mit der DOM-Reihenfolge
+  konsistent (die Spine-/Scroll-JS liest `data-phase`).
+- Die `comp`-Chips referenzieren Stufen als `<span>NN Label</span>` – bei Umbau
+  mit-nummerieren.
+
+---
+
+## 3c. Das 4-Kreis-Wertsystem (`comp`, projektspezifisch)
+
+Die `comp`-Sektion zeigt **nicht** mehr 4 statische Karten, sondern die **interaktive
+4-Kreis-Grafik der Startseite** (`.wm`-Komponente, „Vier Leistungsbereiche"):
+
+- Markup: `wmx__grid` = SVG links (`.wm-svg`, **verbatim** von der REA-Startseite
+  kopieren, 4 `.wm-seg` mit `data-key` a/b/c/d) + `wmx__box` rechts (`#wmBox`, füllt
+  `#wmK/#wmT/#wmD/#wmList` per JS). Klick auf einen Kreis rendert den Bereich.
+- Die **4 Bereiche sind fix** (an die SVG-Icons gebunden), Reihenfolge/Farben:
+  `a` Strategische Immobilienberatung `#07314C` · `b` Transaktionsmanagement `#6AA9D2` ·
+  `c` Projektentwicklung & Bauherrenvertretung `#115A8A` · `d` Finanzierungsberatung `#3681B2`.
+- **Inhalt pro Bereich ist projektspezifisch**: je `t` (kurzer Titel, was gemacht wurde),
+  `d` (1 knapper Satz), `b` (1–2 Bullets). **Weniger blabla, auf den Punkt.**
+- H2 kurz + **projektspezifischer Ein-Satz-Lead** (kein generisches „Drei/Vier
+  deklarierte Beiträge"). **Sektion transparent**: `.comp{background:transparent;padding:64px 0}`
+  (keine Hintergrundfarbe).
 
 ---
 
@@ -128,22 +235,31 @@ zweite Schriftfamilie, keine bunten Badges, keine dekorativen Icons (nur Pfeil `
 
 ---
 
-## 4. Der geteilte CTA-Block (`.frame`) – identisch auf allen Seiten
+## 4. Der geteilte Entscheidungs-CTA (`.rea-cta`) – identisch auf allen Seiten
 
-Alle Projektseiten **und** die REA-Hauptseite tragen dieselben **drei** CTAs
-(gleich breit). Nur das **Heading** ist auf den Projektseiten projektspezifisch;
-die Buttons sind überall gleich:
+Alle Projektseiten **und** die REA-Hauptseite tragen denselben **hellen** CTA-Block
+mit **drei gleich breiten** CTAs. Auf den Projektseiten steht er als
+`<section class="rea-cta" id="kontakt">` **direkt vor** `wref` („Weitere Projekte").
+Der frühere dunkle `frame`-Block ist **abgelöst** (nicht mehr verwenden).
 
-| Button-Text | Ziel |
+| Button-Text | Ziel (relativ, Projektseite) |
 |---|---|
 | Projekt einordnen | `../projekt-einordnen/index.html` |
 | Anlegerprofil erstellen | `../anlageprofil/index.html` |
 | Verkauf prüfen | `../liegenschaft-verkaufen/index.html` |
 
-Auf den Projektseiten liegt der Block als `<section class="frame" id="kontakt">` in
-navy; auf der REA-Hauptseite als `<section class="cta">` auf hellblauem Grund
-(`background:#EEF6FC`). **Nie** nur „Projekt einordnen lassen" allein – immer die
-drei gleichgewichteten CTAs.
+Fixe Inhalte des Blocks (identisch überall):
+- H2: „Welche Entscheidung steht bei Ihrer Immobilie an?"
+- Lead: „Ob Bestand, Entwicklung, Finanzierung, Vermietung oder Verkauf: Am Anfang
+  steht eine saubere Einordnung der Ausgangslage. …"
+- Fussnote: „Für institutionelle Investoren, semiprofessionelle private Investoren,
+  Entwickler und Eigentümer grösserer Immobilienpositionen."
+
+Der Block ist **selbsttragend gestylt** (eigener `<style>` mit fest verdrahteten
+REA-Farbwerten `#03314B`/`#185E7F`, Hintergrund `#EEF6FC`), damit er unabhängig von
+den Projekt-Tokens (`--navy #07314C`) **exakt** wie auf der Startseite rendert. Er
+trägt `id="kontakt"`, damit der Nav-Link „Projekt einordnen lassen" (`href="#kontakt"`)
+auflöst. **Nie** nur einen einzelnen CTA – immer die drei gleichgewichteten.
 
 ---
 
@@ -159,11 +275,12 @@ drei gleichgewichteten CTAs.
    das neue Projekt setzen – **und dabei ebenfalls die Tonalitäts-Regeln einhalten**
    (die verbotenen Begriffe stecken oft auch in den Meta-Descriptions, nicht nur im
    sichtbaren Text).
-4. **Eyebrow/Breadcrumb:** „Projekt · <Ort>" (nie „Case · …"). Nav-Trail
-   „Real Estate Advisory · Projekt <Ort>".
-5. **`wref`-Sektion:** Referenzkarten auf **andere** Projekte setzen (nicht auf sich
-   selbst). Auf den bestehenden Projektseiten die neue Seite in deren `wref`
-   gegenseitig ergänzen.
+4. **Keine Eyebrow-Kicker** vor Titeln (weder Hero-Breadcrumb noch Sektions-Labels) —
+   entfernt (§2). Der Nav-Trail (`nav__tag` „Real Estate Advisory · Projekt <Ort>")
+   in der Sticky-Nav bleibt; er ist kein Eyebrow.
+5. **`wref`-Sektion:** **genau 3** Referenzkarten auf **andere** Projekte (nicht auf
+   sich selbst), **3-spaltig** (`.wgrid{grid-template-columns:repeat(3,1fr)}`). Auf den
+   bestehenden Projektseiten die neue Seite in deren `wref` gegenseitig ergänzen.
 6. **E-Mail-CTAs:** mailto-Betreff „Projekt-Einordnung (<Ort>)" – ohne das Wort „Case".
 
 ---
@@ -270,16 +387,22 @@ Nach grünem Lauf den Nutzer hart neu laden lassen (Cmd/Ctrl+Shift+R).
 
 ## 9. Definition of Done
 
-- [ ] Seite als Klon der Vorlage, volles Sektions-Skelett (§2), genau **1 h1**.
+- [ ] Intake (§0) beantwortet; Präsentationsbild vorhanden (kein Baustellenbild).
+- [ ] Seite als Klon der Vorlage, Sektions-Skelett **nach §2** (kein `thesis`/`team`/
+      `frame`; `rea-cta` vor `wref`; `comp` = 4-Kreis, transparent), genau **1 h1**.
+- [ ] **Kanonische 9 Wertstufen** (§3b) in Reihenfolge Objektzugang→Exit — Spine,
+      `phase`-Blöcke und `comp`-Chips fortlaufend 01–09.
 - [ ] Investoren-Tonalität (§1); Tonalitäts-Grep **sauber** (auch in Meta-Tags:
       `<title>`, og/twitter-Description, JSON-LD — nicht nur sichtbarer Text).
-- [ ] **Keine sichtbaren Platzhalter** (`Inhalt fehlt`, `Name offen`, `Rolle offen`,
-      leere `?`-Team-Karten) — harter Gate.
-- [ ] Kein „ß"; kein „Case"-Label (nur „Investment Case" im Fliesstext); kein „Werthebel".
+- [ ] **Keine sichtbaren Platzhalter** (`Inhalt fehlt`, `Name offen`, `Rolle offen`) —
+      harter Gate; leere Slots weglassen.
+- [ ] Kein „ß"; kein „Case"-Label (nur „Investment Case" im Fliesstext); kein „Werthebel"
+      (Hebel-Label = „Entscheidender Hebel"); **keine Eyebrow-Kicker** vor Titeln.
 - [ ] Ein Begriff site-weit: **Anlageprofil** vs. Anlegerprofil, **ein** Titel-Trennzeichen.
-- [ ] Geteilter 3-CTA-Block (gleich breit), korrekte Ziele (§4).
-- [ ] `wref` verweist auf andere Projekte; bestehende Projekte gegenseitig ergänzt.
-- [ ] Auf der REA-Hauptseite als gleich grosse Referenzkarte „Projekt ansehen"
-      eingebunden.
-- [ ] Alle internen Links lösen auf; Screenshot geprüft.
-- [ ] Auf beide Branches gepusht, Deploy grün (nötigenfalls Rerun/Dispatch).
+- [ ] Heller `rea-cta` (§4, `id="kontakt"`) vor `wref`, drei gleich breite CTAs.
+- [ ] `wref` = **genau 3** andere Projekte, 3-spaltig; bestehende Projekte gegenseitig ergänzt.
+- [ ] 4-Kreis-`comp` (§3c) projektspezifisch + transparent; SVG rendert, 4 Kreise klickbar.
+- [ ] Auf der REA-Hauptseite als gleich grosse Referenzkarte „Projekt ansehen" **und**
+      als Pin auf der Karte eingebunden (richtiger `data-id`).
+- [ ] Alle internen Links lösen auf; Screenshot geprüft; 0 Page-Errors.
+- [ ] Auf beide Branches gepusht, Deploy grün (frischer `workflow_dispatch`, §8).
