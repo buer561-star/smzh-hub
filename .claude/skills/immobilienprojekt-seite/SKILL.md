@@ -253,8 +253,7 @@ Fixe Inhalte des Blocks (identisch überall):
 - Lead: „Ob Bestand, Entwicklung, Finanzierung, Vermietung oder Verkauf: Wir ordnen
   Ihre Ausgangslage ein und zeigen, welche nächsten Schritte für Struktur, Kapital,
   Umsetzung oder Exit relevant sind."
-- Fussnote: „Für institutionelle Investoren, semiprofessionelle private Investoren,
-  Entwickler und Eigentümer grösserer Immobilienpositionen."
+- (Keine Fussnote/Zielgruppen-Zeile mehr unter den CTAs.)
 
 > **Stehende Regel (verbindlich):** Der CTA-Text ist **überall identisch** — Startseite
 > (`.cta`) **und** alle Projektseiten (`.rea-cta`). Wird der CTA irgendwo geändert,
