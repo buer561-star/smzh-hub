@@ -136,9 +136,11 @@ Header, Mega-Menü, Footer). **Nie** ein zweites `h1` einbauen.
 - `team` („Das Team hinter …") — **weg**; das Team wird zentral auf der REA-Hauptseite
   vorgestellt, nicht je Projektseite.
 - `frame` (dunkler navy CTA-Block) — **ersetzt** durch den hellen `rea-cta` (§4).
-- **Eyebrow-Kicker** vor Titeln (Hero-Breadcrumb „Projekt · …" **und** Sektions-Labels
-  wie „Die Ausgangslage" / „Was … zeigt" / „Die Rolle von smzh") — **alle weg**,
-  konsistent mit der Startseite.
+- **Eyebrow-Kicker** vor Titeln (Hero-Breadcrumb „Projekt · …", Sektions-Labels
+  wie „Die Ausgangslage" / „Was … zeigt" / „Die Rolle von smzh" **und** der
+  Wertschöpfungsketten-Kicker `.wsa__head` „Die Wertschöpfungskette") — **alle weg**,
+  konsistent mit der Startseite. Generell: keine kleinen Kicker-Titel oben links über
+  Überschriften.
 
 ---
 
