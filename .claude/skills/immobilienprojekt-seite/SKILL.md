@@ -60,7 +60,7 @@ class="…">` mit innen `<div class="wrap …">`.
 | # | Sektion (`class`) | Funktion | Heading |
 |---|---|---|---|
 | 1 | `archsec` | Hero: Projektname + Leit-Claim „Vom Grundstück zur Kapitalanlage" | **h1** (genau 1 pro Seite) |
-| 2 | `facts` | Eckdaten-Band (Lage, Nutzung, Fläche, Status …) | – |
+| 2 | `facts` | Eckdaten-Band (Lage, Nutzung, Fläche, Status …) — **Stil V5, siehe §3a** | – |
 | 3 | `proofband` | schmales Beleg-/Kontext-Band | – |
 | 4 | `thesis` | Kernthese: „Wert entsteht vor dem Verkauf. Und oft lange davor." | h2 |
 | 5 | `cmap` | Kontext/Ausgangslage der Lage | h2 |
@@ -75,6 +75,28 @@ class="…">` mit innen `<div class="wrap …">`.
 
 Vor `archsec` und nach `wref` steht die geklonte Chrome (`firstRow`/`secondRow`
 Header, Mega-Menü, Footer). **Nie** ein zweites `h1` einbauen.
+
+---
+
+## 3a. Eckdaten-Band `facts` — Stil V5 (verbindlich, editorial)
+
+Das Eckdaten-Band ist **nicht** das alte dunkle Vollbreiten-Band (`--navy-ink`,
+full-bleed) — das wirkte zu ausreisserisch. Standard ist die **editoriale Variante V5**:
+weiss, im Content eingefasst, jede Kennzahl mit feiner Teal-Akzentlinie oben.
+
+Markup bleibt: `<section class="facts"><div class="facts__grid">` mit
+`<div class="fact"><div class="k">Label</div><div class="v">Wert</div></div>` je Kennzahl.
+
+Verbindliche CSS-Regeln:
+```
+.facts{background:#fff;color:var(--ink)}
+.facts__grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:44px auto;padding:0 28px;gap:26px 24px}
+.fact{padding:13px 0 0;border-top:2px solid var(--blue)}
+.fact .k{font-size:11px;font-weight:700;letter-spacing:.09em;color:var(--muted);margin-bottom:6px}
+.fact .v{font-size:17px;font-weight:700;line-height:1.25;overflow-wrap:break-word;hyphens:auto;color:var(--navy)}
+```
+Mobil (bestehender `@media`-Block): `.facts__grid{grid-template-columns:repeat(2,1fr)}`,
+`.fact .v{font-size:16px}`. Labels **nicht** in Versalien setzen (Text wie „Standort").
 
 ---
 
