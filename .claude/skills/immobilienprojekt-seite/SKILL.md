@@ -176,6 +176,13 @@ drei gleichgewichteten CTAs.
   Karten (grösseres Bild `.rc__img`, Titel, Beschreibungstext, Button
   „**Projekt ansehen** →" via `.rc__go` → `../<slug>/index.html`). Karten sind
   **gleich gross** (flex `calc()`), Buttons unten via `margin-top:auto` gepinnt.
+- **Bildwahl (verbindlich):** Das Bild der REA-Referenzkarte (`.rc__img`) **und**
+  das Bild im Auswahl-Panel (`refsel__img`) müssen das Projekt **repräsentativ und
+  attraktiv** zeigen (fertiger/hochwertiger Zustand, Fassade/Lage/Innenausbau) — das
+  Bild verkauft den Case. **Niemals ein Baustellen-/Rohbaubild** als Karten- oder
+  Panel-Bild verwenden. Baustellen-/Prozessbilder gehören höchstens in eine
+  Galerie/Phasen-Sektion der Projektseite, nie in die REA-Übersicht. Gilt sinngemäss
+  auch für das Hero-Bild (`archsec`) der Projektseite selbst.
 - **Karten-Auswahlbox neben der Karte (`refsel`)** und Platzhalter haben **dieselbe
   Struktur** wie die Referenzkarten.
 - Reihenfolge/Anzahl konsistent halten; „Weitere Projekte anzeigen" endet nach
@@ -250,9 +257,13 @@ git push origin claude/inspiring-dirac-2ioa4s
 
 **Bekannte Flakiness:** Der Pages-Deploy schlägt zeitweise mit
 `syncing_files` → „Deployment failed, try again later." fehl (GitHub-seitig, nicht
-inhaltlich). Fix: **`rerun_failed_jobs`** oder ein frischer **`workflow_dispatch`**-Lauf
-(`run_workflow` auf `deploy-pages.yml`, ref = Deploy-Branch). Nicht am Code suchen,
-wenn der Fehler im Step „Deploy to GitHub Pages" beim `syncing_files`-Polling auftritt.
+inhaltlich). Der Upload-Step gelingt dabei, nur der finale Step „Deploy to GitHub
+Pages" scheitert beim `syncing_files`-Polling. Nicht am Code suchen.
+**Fix: immer ein frischer `workflow_dispatch`-Lauf** (`run_workflow` auf
+`deploy-pages.yml`, ref = Deploy-Branch). **NICHT `rerun_failed_jobs`** benutzen —
+der wiederholt im selben Run den Upload-Step und erzeugt ein **zweites** Artefakt
+`github-pages`; der Deploy bricht dann mit „Multiple artifacts named 'github-pages'
+were unexpectedly found" ab. Ein frischer Dispatch hat einen sauberen Artefakt-Space.
 Nach grünem Lauf den Nutzer hart neu laden lassen (Cmd/Ctrl+Shift+R).
 
 ---
