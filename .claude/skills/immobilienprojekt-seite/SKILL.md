@@ -245,15 +245,22 @@ Der frühere dunkle `frame`-Block ist **abgelöst** (nicht mehr verwenden).
 | Button-Text | Ziel (relativ, Projektseite) |
 |---|---|
 | Projekt einordnen | `../projekt-einordnen/index.html` |
-| Anlegerprofil erstellen | `../anlageprofil/index.html` |
+| Anlageprofil prüfen | `../anlageprofil/index.html` |
 | Verkauf prüfen | `../liegenschaft-verkaufen/index.html` |
 
 Fixe Inhalte des Blocks (identisch überall):
-- H2: „Welche Entscheidung steht bei Ihrer Immobilie an?"
-- Lead: „Ob Bestand, Entwicklung, Finanzierung, Vermietung oder Verkauf: Am Anfang
-  steht eine saubere Einordnung der Ausgangslage. …"
+- H2: „Welche Entscheidung steht bei Ihren Immobilienprojekten an?"
+- Lead: „Ob Bestand, Entwicklung, Finanzierung, Vermietung oder Verkauf: Wir ordnen
+  Ihre Ausgangslage ein und zeigen, welche nächsten Schritte für Struktur, Kapital,
+  Umsetzung oder Exit relevant sind."
 - Fussnote: „Für institutionelle Investoren, semiprofessionelle private Investoren,
   Entwickler und Eigentümer grösserer Immobilienpositionen."
+
+> **Stehende Regel (verbindlich):** Der CTA-Text ist **überall identisch** — Startseite
+> (`.cta`) **und** alle Projektseiten (`.rea-cta`). Wird der CTA irgendwo geändert,
+> **immer synchron auf ALLE** CTAs übertragen, ausser der Nutzer sagt ausdrücklich etwas
+> anderes. Analog: „kein Flattern in der Mitte" — Lead-/Intro-Texte ohne enge `max-width`,
+> volle Breite nutzen.
 
 Der Block ist **selbsttragend gestylt** (eigener `<style>` mit fest verdrahteten
 REA-Farbwerten `#03314B`/`#185E7F`, Hintergrund `#EEF6FC`), damit er unabhängig von
