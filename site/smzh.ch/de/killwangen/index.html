@@ -90,8 +90,8 @@ h1,h2,h3{font-weight:900;letter-spacing:-.014em;line-height:1.05}
 .dot.value{fill:var(--powder)} .dot.risk{fill:var(--mauve)}
 
 /* FACTS */
-.facts{background:#fff;color:var(--ink)}
-.facts__grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:24px auto 44px;padding:0 28px;gap:26px 24px}
+.facts{background:#fff;color:var(--ink);padding:44px 0 8px}
+.facts__grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto 44px;padding:0 28px;gap:30px 24px}
 .fact{padding:13px 0 0;border-top:2px solid var(--blue)}
 .fact:nth-child(4n){border-right:0}
 .fact .k{font-size:11px;font-weight:700;letter-spacing:.09em;color:var(--muted);margin-bottom:6px}
@@ -167,16 +167,16 @@ h1,h2,h3{font-weight:900;letter-spacing:-.014em;line-height:1.05}
 .reveal-el.in{opacity:1;transform:none}
 
 /* SYNTHESIS */
-.proof{background:var(--navy);color:#fff;padding:92px 0}
+.proof{background:var(--paper);color:var(--ink);padding:92px 0 56px}
 .proof .eyebrow-d{color:var(--powder)}
 .proof h2{font-size:clamp(24px,3.4vw,38px);max-width:none;margin-bottom:42px}
-.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-navy)}
-.pcard{padding:30px 26px 30px 0;border-right:1px solid var(--line-navy)}
+.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.pcard{padding:30px 26px 30px 0;border-right:1px solid var(--line)}
 .pcard:last-child{border-right:0;padding-right:0}
 .pcard .n{font-size:13px;font-weight:900;color:var(--powder);letter-spacing:.04em;margin-bottom:14px}
-.pcard h3{font-size:19px;color:#fff;margin-bottom:11px;line-height:1.18}
-.pcard p{font-size:15px;color:var(--on-navy);line-height:1.55}
-@media(max-width:860px){.proof__grid{grid-template-columns:1fr}.pcard{border-right:0;border-bottom:1px solid var(--line-navy);padding:26px 0}}
+.pcard h3{font-size:19px;color:var(--navy);margin-bottom:11px;line-height:1.18}
+.pcard p{font-size:15px;color:var(--muted);line-height:1.55}
+@media(max-width:860px){.proof__grid{grid-template-columns:1fr}.pcard{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}}
 
 /* COMPETENCE */
 .comp{background:transparent;padding:64px 0}
@@ -310,7 +310,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 .step.primary .s{color:var(--navy);font-weight:800}
 @media(max-width:840px){.stage{grid-template-columns:1fr}.zone-start{border-right:none;border-bottom:1px solid var(--line)}.zone-result{border-top:1px solid var(--line)}.columns{grid-template-columns:repeat(2,1fr);gap:18px}.columns::before{display:none}.col{padding-top:0}.col .node{display:none}.steps{grid-template-columns:repeat(3,1fr);gap:18px 0}.steps::before{display:none}}
 
-.archsec{padding:84px 0 24px;background:var(--paper)}
+.archsec{padding:84px 0 40px;background:var(--paper)}
 .archsec__head{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--blue);margin-bottom:10px}
 .archsec__lead{font-size:clamp(20px,2.6vw,27px);font-weight:800;letter-spacing:-.01em;max-width:30ch;line-height:1.2;color:var(--navy);margin-bottom:8px}
 .archsec__note{margin-top:18px;font-size:12.5px;color:var(--muted);max-width:74ch}
@@ -431,11 +431,11 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
 /* "Was Killwangen zeigt": echte Karten statt Trennstriche */
 .proof__grid{grid-template-columns:repeat(3,1fr);gap:18px;border-top:0}
-.pcard,.proof__grid .pcard:last-child{border:1px solid var(--line-navy);border-radius:16px;padding:30px 26px;background:linear-gradient(180deg,rgba(143,196,235,.07),rgba(143,196,235,.012))}
+.pcard,.proof__grid .pcard:last-child{border:1px solid var(--line);border-radius:16px;padding:30px 26px;background:#fff}
 .pcard .n{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;margin-bottom:18px}
 .pcard .n svg{width:24px;height:24px;display:block}
 .pcard h3{font-size:19px}
-@media(max-width:860px){.proof__grid{grid-template-columns:1fr}.pcard,.proof__grid .pcard:last-child{border:1px solid var(--line-navy);padding:26px}}
+@media(max-width:860px){.proof__grid{grid-template-columns:1fr}.pcard,.proof__grid .pcard:last-child{border:1px solid var(--line);padding:26px}}
 
 /* Rolle von smzh: als orchestrierende Stelle ÜBER den Partnern */
 .orch__hub{margin-top:40px;display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -546,7 +546,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 .vbox--aus .vbox__tx{color:#8A5A80}
 .vbox--her .vbox__tx{color:#7A5A2A;margin-top:8px}
 .vbox--erg .vbox__tx{color:#D7E6F2}
-.vaxis{position:relative;display:grid;grid-template-columns:repeat(9,1fr);margin-top:42px}
+.vaxis{position:relative;display:grid;grid-template-columns:repeat(9,1fr);margin-top:0}
 .vaxis__line{position:absolute;top:7px;left:5.5%;right:5.5%;height:2px;background:var(--line)}
 .vnode{text-align:center;position:relative;padding:0 4px}
 .vnode__d{width:14px;height:14px;border-radius:50%;margin:0 auto 12px;border:2px solid #C2D2DE;background:#fff;position:relative;z-index:2}
@@ -555,6 +555,9 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 .vnode--ws .vnode__n{color:var(--blue)}
 .vnode__m{font-size:13px;font-weight:700;color:#8AA0B0;margin-top:3px;line-height:1.15}
 .vnode--ws .vnode__m{color:var(--navy);font-weight:800}
+.vaxis__t{font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.005em;margin:46px 0 20px}
+.facts__t{max-width:1180px;margin:0 auto 18px;padding:0 28px;font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.005em}
+.phases__t{margin:0 0 30px;font-size:clamp(20px,2.6vw,26px);font-weight:800;color:var(--navy);letter-spacing:-.015em;line-height:1.15}
 @media(max-width:820px){.vtrip{grid-template-columns:1fr}.vaxis{grid-template-columns:repeat(3,1fr);gap:22px 6px}.vaxis__line{display:none}}
 .wsa__foot{font-size:13px;color:var(--muted);margin-top:0;padding-top:22px;line-height:1.5;max-width:56ch}
 .wsa__foot b{color:var(--blue);font-weight:800}
@@ -598,6 +601,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
       <div class="vbox vbox--her"><div class="vbox__k">Herausforderung</div><p class="vbox__tx">Bahnlinie, Hauptstrasse, offener Bach, Hochwasserschutz und Gestaltungsplan: mehrere Auflagen, die das Projekt hätten stoppen können.</p></div>
       <div class="vbox vbox--erg"><div class="vbox__k">Ergebnis</div><div class="vbox__big">58</div><div class="vbox__u">neue Wohneinheiten</div><p class="vbox__tx">Institutionell investierbar: Minergie, schlüsselfertig, als Asset Deal an eine Schweizer Pensionskasse.</p></div>
     </div>
+    <div class="vaxis__t">Die grössten Werthebel bei Killwangen.</div>
     <div class="vaxis">
       <div class="vaxis__line"></div>
       <div class="vnode vnode--ws"><div class="vnode__d"></div><div class="vnode__n">01</div><div class="vnode__m">Objektzugang</div></div>
@@ -615,6 +619,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
 <!-- FACTS -->
 <section class="facts">
+  <div class="facts__t">Das Projekt in Zahlen.</div>
   <div class="facts__grid">
     <div class="fact"><div class="k">Standort</div><div class="v">Killwangen AG, beim Bahnhof</div></div>
     <div class="fact"><div class="k">Nutzung</div><div class="v">Wohnbauüberbauung</div></div>
@@ -663,9 +668,9 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
   <div class="wrap">
     <h2 class="reveal-el">Wert entsteht bei Immobilien selten linear. Und selten erst beim Verkauf.</h2>
     <div class="proof__grid">
-      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-7 6 6"/></svg></div><h3>Wert entsteht nicht linear</h3><p>Die grossen Sprünge liegen bei Sourcing, Bewilligung, Produkt, Kapital und Exit-Fähigkeit. Wer alle Stufen gleich behandelt, verliert an den entscheidenden Stellen Wert.</p></div>
-      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/></svg></div><h3>Ein Grundstück hat mehrere Werte</h3><p>Landwert, bewilligbarer Wert, finanzierbarer Wert, vermietbarer Wert, Exit-Wert. Entscheidend ist, diese Ebenen zusammen zu denken.</p></div>
-      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></svg></div><h3>Der Exit wird früh vorbereitet</h3><p>Institutionelle Käufer kaufen kein Narrativ, sondern ein sauberes Produkt. Wer den Exit erst am Verkaufstag vorbereitet, ist zu spät.</p></div>
+      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-7 6 6"/></svg></div><h3>Wert entsteht nicht linear</h3><p>Die grössten Sprünge entstehen bei Objektzugang, Bewilligung, Kapital und Exit – nicht gleichmässig über den ganzen Weg.</p></div>
+      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/></svg></div><h3>Ein Grundstück hat mehrere Werte</h3><p>Landwert, bewilligbarer Wert, finanzierbarer Wert, Exit-Wert: erst zusammen ergeben sie den Preis.</p></div>
+      <div class="pcard reveal-el"><div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></svg></div><h3>Der Exit wird früh vorbereitet</h3><p>Institutionelle Käufer wollen ein sauberes Produkt. Der Exit entscheidet sich Jahre vorher, nicht am Verkaufstag.</p></div>
     </div>
   </div>
 </section>
@@ -675,10 +680,11 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 <div class="tl-cursor" id="tlCursor"><i></i><span class="lab" id="tlLabel">01 · Grundstück</span></div>
 <main class="phases" id="phases">
  <div class="wrap">
+  <div class="phases__t">So haben wir den Wert aufgebaut.</div>
 
   <section class="phase phase--lever" data-node data-phase="01" data-label="Objektzugang">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">01</span><div><div class="phase__cat">Objektzugang</div><div class="phase__q">Welcher Wert steckt wirklich im Grundstück?</div><div class="wertspr">Wertsprung</div></div></div>
+    <div class="phase__top"><span class="phase__num">01</span><div><div class="phase__cat">Objektzugang</div><div class="phase__q">Wir sicherten den Zugang, bevor das Potenzial im Markt sichtbar war.</div><div class="wertspr">Wertsprung</div></div></div>
     <div class="phase__aha">Der Wert lag nicht im Landpreis, sondern im realisierbaren Nutzungskonzept.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Eine Parzelle direkt beim Bahnhof, zwischen Bahn und Hauptstrasse, mit offenem Bach und Hochwasserrisiko.</div>
@@ -691,7 +697,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase" data-node data-phase="02" data-label="Machbarkeit">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">02</span><div><div class="phase__cat">Machbarkeit</div><div class="phase__q">Was ist baulich, rechtlich und wirtschaftlich tragfähig?</div></div></div>
+    <div class="phase__top"><span class="phase__num">02</span><div><div class="phase__cat">Machbarkeit</div><div class="phase__q">Wir prüften Baurecht, Kosten, Finanzierung und Exit in einem Modell.</div></div></div>
     <div class="phase__aha">Potenzial allein reicht nicht. Wert entsteht erst, wenn Bewilligung, Finanzierung und Vermietung zusammenpassen.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Volumen, Kosten, Baurecht, Finanzierung und Exit waren noch offene Einzelfragen.</div>
@@ -704,7 +710,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase phase--lever" data-node data-phase="03" data-label="Nutzungskonzept">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">03</span><div><div class="phase__cat">Nutzungskonzept</div><div class="phase__q">Wird daraus Wohnraum, den der Markt wirklich trägt?</div><div class="wertspr">Wertsprung</div></div></div>
+    <div class="phase__top"><span class="phase__num">03</span><div><div class="phase__cat">Nutzungskonzept</div><div class="phase__q">Wir entwickelten den Wohnungsmix, den der Markt wirklich trägt.</div><div class="wertspr">Wertsprung</div></div></div>
     <div class="phase__aha">Die Vermietung wird im Grundriss entschieden.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Ein korrekt geplantes Gebäude ist noch kein gutes Produkt für Mieter und Investoren.</div>
@@ -742,7 +748,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase" data-node data-phase="04" data-label="Struktur">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">04</span><div><div class="phase__cat">Struktur</div><div class="phase__q">Welche Struktur macht das Projekt bankfähig und entscheidbar?</div></div></div>
+    <div class="phase__top"><span class="phase__num">04</span><div><div class="phase__cat">Struktur</div><div class="phase__q">Wir gaben dem Projekt die Struktur, die es bankfähig und entscheidbar macht.</div></div></div>
     <div class="phase__aha">Die frühe Struktur entscheidet die spätere Marge.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Eine einzelne Parzelle hätte Volumen, Wohnungsmix und Verkäuflichkeit limitiert.</div>
@@ -755,7 +761,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase phase--lever" data-node data-phase="05" data-label="Bewilligung">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">05</span><div><div class="phase__cat">Bewilligung</div><div class="phase__q">Wo wird Wert geschaffen, bevor gebaut wird?</div><div class="wertspr">Wertsprung</div></div></div>
+    <div class="phase__top"><span class="phase__num">05</span><div><div class="phase__cat">Bewilligung</div><div class="phase__q">Wir schufen den grössten Wert vor dem ersten Spatenstich.</div><div class="wertspr">Wertsprung</div></div></div>
     <div class="phase__aha">Der grösste Wertsprung entsteht oft vor dem ersten Spatenstich.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Gestaltungsplan, Bachumleitung, Hochwasserschutz sowie Bahn und Hauptstrasse: jede Auflage hätte das Projekt stoppen können.</div>
@@ -768,7 +774,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase phase--lever" data-node data-phase="06" data-label="Kapital">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">06</span><div><div class="phase__cat">Kapital</div><div class="phase__q">Womit überzeugt ein Projekt Kapitalgeber?</div><div class="wertspr">Wertsprung</div></div></div>
+    <div class="phase__top"><span class="phase__num">06</span><div><div class="phase__cat">Kapital</div><div class="phase__q">Wir bereiteten die Zahlen auf, die Kapitalgeber überzeugen.</div><div class="wertspr">Wertsprung</div></div></div>
     <div class="phase__aha">Kapital folgt Struktur, nicht Vision.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Die Bank finanziert nicht die Idee, sondern Risiko, Cashflow, Eigenkapital, Bewilligungsstand und Exit-Plausibilität.</div>
@@ -781,7 +787,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase" data-node data-phase="07" data-label="Umsetzung">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">07</span><div><div class="phase__cat">Umsetzung</div><div class="phase__q">Wie bleibt das Zielbild im Bau erhalten?</div></div></div>
+    <div class="phase__top"><span class="phase__num">07</span><div><div class="phase__cat">Umsetzung</div><div class="phase__q">Wir hielten das Zielbild über die gesamte Bauphase.</div></div></div>
     <div class="phase__aha">Bauherrenvertretung schützt Rendite, nicht nur Termine.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Qualität, Termine und Budget driften schnell auseinander, wenn niemand die Schnittstellen führt.</div>
@@ -795,7 +801,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase" data-node data-phase="08" data-label="Vermietung">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">08</span><div><div class="phase__cat">Vermietung</div><div class="phase__q">Wird aus Fläche Cashflow?</div></div></div>
+    <div class="phase__top"><span class="phase__num">08</span><div><div class="phase__cat">Vermietung</div><div class="phase__q">Wir machten aus Fläche belastbaren Cashflow.</div></div></div>
     <div class="phase__aha">Ein fertiges Gebäude ist noch kein Investment. Erst Cashflow macht es dazu.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Ohne Vermietung bleibt der Käuferkreis kleiner und der Wert weniger belastbar.</div>
@@ -809,7 +815,7 @@ a:focus-visible,.nav__cta:focus-visible,.cta__btn:focus-visible{outline:3px soli
 
   <section class="phase phase--lever" data-node data-phase="09" data-label="Exit">
    <div class="phase__col reveal-el">
-    <div class="phase__top"><span class="phase__num">09</span><div><div class="phase__cat">Exit</div><div class="phase__q">Der Exit begann nicht am Verkaufstag. Er wurde vier Jahre lang vorbereitet.</div><div class="wertspr">Wertsprung</div></div></div>
+    <div class="phase__top"><span class="phase__num">09</span><div><div class="phase__cat">Exit</div><div class="phase__q">Wir bereiteten den Exit über vier Jahre vor, nicht erst am Verkaufstag.</div><div class="wertspr">Wertsprung</div></div></div>
     <div class="phase__aha">Der Exit begann nicht am Verkaufstag. Er wurde vier Jahre lang vorbereitet.</div>
     <div class="raster">
       <div class="rk">Ausgangslage</div><div class="rv">Institutionelle Käufer kaufen ein sauberes Produkt: Bewilligung, Dokumentation, Mietlogik, Nachhaltigkeit und nachvollziehbare Zahlen.</div>
