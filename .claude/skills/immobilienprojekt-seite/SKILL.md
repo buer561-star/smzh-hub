@@ -51,13 +51,14 @@ und `PAGE_SCHEMA.md` im Repo-Root gelten für die `smzhub-*`-Seiten (Plus Jakart
 12. **Ergebnis:** Kennzahl + 1 Satz (z. B. «58 neue Wohneinheiten — institutionell investierbar …»).
     → Die Wertachse zeigt aus diesen beiden Kennzahlen den Sprung **Ausgangswert → Ergebnis**.
 
-**C · Die 9 Wertstufen (phases)** → §3b — je Stufe Stichworte genügen
-Für **Objektzugang · Machbarkeit · Nutzungskonzept · Struktur · Bewilligung · Kapital ·
-Umsetzung · Vermietung · Exit** je:
+**C · Die Wertstufen (phases)** → §3b/§1b — je Stufe Stichworte genügen; **Archetyp (§1b) zuerst
+bestimmen** (er legt Phasenzahl, Werthebel-Kandidaten und ob 09 Exit oder 08 Zielstufe fest).
+Grundfolge **Objektzugang · Machbarkeit · Nutzungskonzept · Struktur · Bewilligung · Kapital ·
+Umsetzung · Vermietung/Verkauf [· Exit]** je:
 13. Ausgangslage der Stufe · 14. **smzh-Entscheid** · 15. **Werthebel = die konkret
     ausgeführte Massnahme, die Wert/Finanzierbarkeit/Umsetzbarkeit/Ertrag/Verkaufbarkeit
     erhöht hat** (KEINE Admin-/Vorbereitungs-/Dokumentationstätigkeit!) · 16. Resultat.
-17. Welche Stufen sind **Wertsprünge**? (Killwangen: 01, 03, 05, 06, 09.)
+17. Welche Stufen sind **Wertsprünge**? (projektspezifisch, §1b — nur echte Hebel; Achse ↔ Phasen-Badges identisch).
 
 **D · Kontext der Lage (cmap)** → «Eine Lage, die viele als Problem gesehen hätten» o. ä.
 18. Standort-Story in 2–3 Sätzen: was macht die Lage schwierig **und** wertvoll?
@@ -66,13 +67,17 @@ Umsetzung · Vermietung · Exit** je:
 19. Welche **3** anderen Projekte in «Weitere Referenzobjekte» zeigen (genau 3)?
 20. Pin-Koordinaten / Ort für die Schweizer Karte auf der REA-Hauptseite.
 
-**F · Bilder / Files** → verlangen (für die REA-Karte **nicht** optional)
-21. **1× starkes Präsentationsbild** — **fertiger Zustand ODER Visualisierung/Rendering.
-    NIEMALS Baustelle/Rohbau** (§6). Für REA-Referenzkarte, Auswahl-Panel **und** Projekt-Hero.
-22. Optional: 2–4 Galerie-/Karussell-Bilder (Innenausbau/Prozess — Baustellenbilder hier ok).
+**F · Bilder / Files** → verlangen (für die REA-Karte **nicht** optional; bevorzugt **Google-Drive-
+Ordner**, §3f-Pipeline; Chat-Anhänge sind nicht als Datei lesbar)
+21. **1× starkes Hauptbild** — **fertiger Zustand / Rendering / Luftbild des Objekts, NIEMALS Innen/
+    Detail/Baustelle** (§6). Es ist **dasselbe** Bild für proofband-Slide-1, REA-Karte, `refsel__img`
+    **und** die `wref`-Karte (Bild-Identität §6).
+22. **Aussen- + Interieur-Renderings** fürs proofband-Karussell (Aussen→Interieur, §6-Reihenfolge).
+23. **Herausforderungs-Bilder fürs cmap** je Archetyp (§1b): Denkmal = geschützte Substanz; Neubau =
+    Baustelle (Aushub/Hangsicherung/Kran/Drohnenbild). Baustellenbilder gehören **nur** hierhin, nie als Hauptbild.
 
 **G · Meta/SEO** → `<title>`, og/twitter, JSON-LD
-23. SEO-Titel + 1-Satz-Description — oder ich generiere aus A/B (Tonalität §1).
+24. SEO-Titel + 1-Satz-Description — oder ich generiere aus A/B (Tonalität §1).
 
 ---
 
@@ -125,6 +130,47 @@ zeigt: konkrete **Ausgangslage** → geführte **Herausforderung** → entstehen
 5. **Standardblock Projektführung (`orch`)** → §3d (fixe Links-/Label-/Claim-Texte, projektspezifisch
    nur Schnittstellen-Punkte + Schlusssatz, beide untere Sätze identisch gestylt).
 6. **Textlänge:** Boxen **kurz** — **1–2 präzise Sätze**, nie ein Absatz. Lieber präzise als vollständig.
+7. **Nicht dramatisieren, nicht abstrahieren.** Kein «teuerste-Entscheidung»-Ton, keine allgemeinen
+   Immobilien-Weisheiten, **kein Preis-Prahlen**. Segment immer als **«gehobenes Wohnsegment»**, NIE
+   «oberes Preissegment». Luxus/Hochwertigkeit über **Substanz, Lage und Positionierung** ausdrücken,
+   nicht über den Preis (bei Villa/Einzelobjekt: «geschützte Substanz erhalten und neu positionieren»,
+   nicht «Luxusobjekt»). **Anglizismen im Fliesstext vermeiden** (Asset/Share Deal, Core, Value-Add,
+   Joint Venture nur, wo sie als Fachbegriff wirklich nötig sind — dann bewusst, nicht flächig).
+8. **Hero-Titel = Transformationssatz:** «Aus <Ausgangslage> wird <Resultat>» bzw. «Vom <X> zum <Y>»
+   — kurz, konkret, projektspezifisch (die Namenszeile §3 steht davor). Beispiele: «Vom Grundstück
+   zur Kapitalanlage.» · «Aus geschützter Substanz wird eine Villa mit Seeblick.»
+
+---
+
+## 1b. Projekttyp-Archetypen (Semantik · Werthebel · Bilder · orch — zusammenhängend)
+
+Der **Projekttyp** bestimmt **gemeinsam** Wortwahl, markierte Werthebel, orch-Punkte, cmap-Bilder und
+facts-Schwerpunkt. Wähle **einen** Archetyp und mische seine Bausteine nicht wahllos:
+
+**A · Entwicklung / Transaktion** — Grundstück → institutionelles Anlageobjekt (*Killwangen*)
+- Hero: «Vom Grundstück zur Kapitalanlage.» · **9 Phasen inkl. 09 Exit**.
+- Werthebel (Achse **=** Phasen-Badges): typ. 01 Objektzugang · 03 Nutzungskonzept · 05 Bewilligung · 06 Kapital · 09 Exit.
+- orch-Punkte: **Markt & Nutzung · Planung & Bewilligung · Kapital & Banken · Vermietung & Verkauf**.
+- cmap-Bilder: **Baustelle/Rohbau**. facts: Grundstück, Neubau, Einheiten, institutioneller Käufer.
+
+**B · Denkmal / Bestand** — geschützte Substanz → vermietbares/verkäufliches Ertragsobjekt (*Drei Könige, Sonne, MIRAGE*)
+- Hero: «Aus historischer/geschützter Substanz wird belastbarer Ertrag / eine Villa.» · **8 Phasen (kein 09), 08 = Zielstufe**.
+- Werthebel: typ. 01 Objektzugang · 02 Machbarkeit · 05 Bewilligung · 08 Vermietung/Verkauf.
+- orch-Punkte: **Machbarkeit · Planung & Bewilligung · Umsetzung · Vermietung/Verkauf**.
+- cmap-Bilder: **freigelegte Substanz, Bruchsteinmauerwerk, Gebälk, der geschützte Bestand im Umbau** (Handyfotos ok).
+- Sprache: «denkmalgerechte Grundsanierung», Substanz/Positionierung statt Preis. facts: denkmalgeschützt, Grundsanierung/Erweiterung, Nutzung, «In Ausführung».
+
+**C · Wohneigentum-Neubau** — Neubau → verkauftes Wohneigentum, **Verkauf = Endpunkt** (*HIDE*)
+- Hero: «Fünf Eigentumswohnungen mit Seeblick – entwickelt mit den Käufern.» · **8 Phasen (kein 09), 08 Verkauf = Zielstufe**.
+- Werthebel: typ. 01 Objektzugang · 03 Nutzungskonzept · 06 Kapital · 07 Umsetzung (+ 08 Zielstufe).
+- orch-Punkte: **Markt & Nutzung · Planung & Bewilligung · Kapital & Banken · Verkauf**.
+- cmap-Bilder: **Baustelle** (Aushub, Hangsicherung, Kran, **Drohnen-Luftbild der Baustelle**).
+- facts: Eigentumswohnungen, Neubau, Segment («gehobenes Wohnsegment»), Aussicht, «In Ausführung».
+
+> **Regel für alle:** Werthebel-Set **immer projektspezifisch** (nur echte Hebel markieren), **Achse ↔
+> Phasen-Badges 1:1 identisch** (§3b). **Kein institutioneller Exit ⇒ 8 Phasen + 08 Zielstufe** (Achse
+> & Phase synchron ohne 09). Die konkreten Nummern oben sind **Beispiele**, keine Pflicht — es zählt,
+> dass sie die realen Wertsprünge des Projekts abbilden.
 
 ---
 
@@ -137,10 +183,10 @@ Jede Sektion ist `<section class="…">` mit innen `<div class="wrap …">`.
 |---|---|---|---|---|
 | 1 | `archsec` | **hell** (`--paper`) | Hero-Titel **+ 3 Boxen** (Ausgangslage·Herausforderung·Ergebnis) **+ Wertachse** (§3) | **h1** (genau 1) |
 | 2 | `facts` | **weiss** | Eckdaten, mit Zwischentitel **«Das Projekt in Zahlen.»** (§3a) | – |
-| 3 | `proofband` | **navy** | Beleg-Band: grosser Claim + **grosses Bild-Karussell** (2× Aussen, dann Innenräume — §3f) | – |
-| 4 | `cmap` | **hell** (`--paper`) | Herausforderung der Lage: **Volltext (h2+p, volle Breite) + Karussell darunter** (§3f), **kein** rechtes Einzelbild | h2 |
-| 5 | `proof` | **hell** (`--paper`) | «Wert entsteht selten linear …» — 3 `pcard` (Intro zum Wertverlauf) | h2 |
-| 6 | `phases` (`main.phases`) ⊃ `phase` ×**9** | **hell** (`--paper`) | die **9 Wertstufen** (§3b), Titel **«So wurde aus Potenzial ein umsetzbares Projekt.»** | (Sub-Titel) |
+| 3 | `proofband` | **navy** | Beleg-Band: grosser Claim + **grosses Bild-Karussell** (Hauptbild→Aussen→Interieur — §3f/§6, Bild-Identität) | – |
+| 4 | `cmap` | **hell** (`--paper`) | Herausforderung: **Volltext (h2+p, volle Breite) + Herausforderungs-Karussell darunter** (§3f/§1b), **kein** rechtes Einzelbild | h2 |
+| 5 | `proof` | **hell** (`--paper`) | 3 `pcard` — **projektspezifische** Synthese-Claims (§3c/§1a Regel 4), nicht die fixe Killwangen-Trias | h2 |
+| 6 | `phases` (`main.phases`) ⊃ `phase` ×**8–9** | **hell** (`--paper`) | die Wertstufen **projektspezifisch** (§3b/§1b: 9 mit Exit *oder* 8 + Zielstufe), Sub-Titel projektadaptiert | (Sub-Titel) |
 | 7 | `orch` | **navy** | «Eine Stelle, die den roten Faden hält» — Rolle smzh, Karte mit **smzh-Logo** (§3d) | h2 |
 | 8 | `rea-cta` (`id="kontakt"`) | hellblau | Entscheidungs-CTA (§4), **VOR** «Weitere Projekte», **direkt an `orch` anschliessend** | h2 |
 | 9 | `wref` | hell | Titel **«Weitere Referenzobjekte»** (`wref__h`, site-weit identisch) — **genau 3** Referenzkarten, 3-spaltig | h3 |
@@ -242,12 +288,16 @@ Grundfolge (Entwicklungs-/Transaktionsprojekt, Killwangen), fortlaufend 01–09:
   · `Resultat`.
 - `data-phase`/`phase__num` konsistent mit DOM-Reihenfolge (Spine-/Scroll-JS liest `data-phase`).
 
-## 3c. `proof` — «Wert entsteht selten linear» (Intro zum Wertverlauf)
+## 3c. `proof` — Synthese direkt vor den Phasen (projektspezifisch)
 
 Steht **direkt vor `phases`**, **heller** Hintergrund (`--paper`, gleiche Farbe wie `phases`,
-damit beide als ein Block lesen). 3 `pcard` (weisse Karten, blaue Icon-Box, navy h3, muted
-Text): kurze, konkrete Sätze, **wenig AI-Sprache**. Killwangen-Karten: «Wert entsteht nicht
-linear» · «Ein Grundstück hat mehrere Werte» · «Der Exit wird früh vorbereitet».
+damit beide als ein Block lesen). h2 = **projektspezifischer Synthesesatz** (Ausgangslage→Resultat,
+z. B. «Aus geschützter Substanz wird eine marktfähige Villa.»). 3 `pcard` (weisse Karten, blaue
+Icon-Box, navy h3, muted Text): je **h3 (2–4 Wörter) + 1 konkreter Satz**, die die **drei tragenden
+Werthebel dieses Projekts** benennen — **nicht** die fixe Killwangen-Trias, sondern projektbezogen.
+Beispiele: MIRAGE «Potenzial im Bestand geklärt» · «Zur Villa weiterentwickelt» · «Käuferkreis gezielt
+geführt». Killwangen war «Wert entsteht nicht linear» · «Ein Grundstück hat mehrere Werte» · «Der Exit
+wird früh vorbereitet» — nur als **eine** mögliche Variante, nicht als Vorlage zum Kopieren.
 
 ## 3d. `orch` — Zentrale Projektführung (Statement, navy) — **standardisiert, auf allen Seiten identisch**
 
@@ -313,12 +363,14 @@ funktioniert automatisch). Aufbau:
   und Zähler auseinander. (Zum Prüfen die Track-Transform NICHT per `*{transform:none}` überschreiben
   — das zeigt sonst den Clone-Slide.)
 
-**Proofband-Karussell (gross, navy):** Reihenfolge fix (§6): 2× Aussen, dann Terrasse (falls),
-Küche, Wohnzimmer, Schlafzimmer, Bad. **Slide 1 = Hauptbild** (= Hero/REA-Karte/wref).
+**Proofband-Karussell (gross, navy):** Reihenfolge (§6): Hauptbild (Objekt/Luftbild) zuerst, dann
+weitere Aussen-Renderings, dann Interieur. **Slide 1 = Hauptbild** und **exakt dasselbe Bild wie
+REA-`rc__img`-Karte, `refsel__img` und `wref`-Karte** (Bild-Identität §6 — bei Änderung überall synchron).
 
 **cmap-Karussell (hell):** **kein** rechtes Einzelbild — der Text (h2 + p) läuft **volle Breite**,
-darunter ein **eigenes** Karussell mit den **Herausforderungs-/Denkmal-Bildern** (freigelegte
-Substanz, Bruchsteinmauerwerk, Gebälk, Treppen, Baustelle). Wrapper wie Killwangen:
+darunter ein **eigenes** Karussell mit den **Herausforderungs-Bildern** je Archetyp (§1b): Denkmal =
+freigelegte/geschützte Substanz (Bruchstein, Gebälk, Altbau im Umbau); Neubau = Baustelle (Aushub,
+Hangsicherung, Kran, Drohnen-Baustellenbild). **Nie fertige Renderings** hier. Wrapper wie Killwangen:
 `<div class="wrap" style="margin-top:36px"><figure class="carousel …">…</figure></div>`.
 
 **Fenstergrösse = wie Killwangen (verbindlich):** Das Karussell-«Fenster» ist **gleich gross
@@ -387,17 +439,23 @@ grosse Lücke). Selbsttragend gestylt (feste REA-Farben `#03314B`/`#185E7F`, BG 
 Karten-Pin (richtiger `data-id`).
 
 **Bildregeln (hart):**
-- **Hauptbild = immer eine Aussenaufnahme** (Fassade/Aussen). Gilt für das Projekt-Hero,
-  die REA-Referenzkarte (`.rc__img`) **und** das Auswahl-Panel (`refsel__img`). **Nie** ein
-  Innenraum- oder Baustellen-/Rohbaubild als Hauptbild; alternativ eine Aussen-Visualisierung/
-  Rendering. Gibt es keine Aussenaufnahme → beim Nutzer verlangen, nicht ersatzweise ein
-  Innenbild als Hauptbild nehmen.
-- **Grosses Karussell (proofband) — feste Reihenfolge:** 2× Aussen, dann Terrasse (falls
-  vorhanden), Küche, Wohnzimmer, Schlafzimmer, Bad. Mechanik/Ausschnitt → §3f.
-- **`cmap` = eigenes Karussell unter dem Volltext** (kein rechtes Einzelbild): die eher
-  **prozesshaften/Baustellen**-Fotos — bzw. bei denkmalgeschützten Objekten (z. B. Bremgarten)
-  die Bilder, die die **historische Substanz / freigelegte Holzelemente / Bruchsteinmauerwerk**
-  zeigen. Rahmen ans Foto-Format angleichen (§3f), damit nichts stark beschnitten wird.
+- **Hauptbild = immer das Objekt in Aussen-/Kontextansicht** (Fassade/Aussen-Rendering **oder ein
+  Luftbild/Drohnenbild des fertigen Objekts** — das Objekt + Umgebung zeigend). **Nie** ein Innenraum-,
+  Detail- oder Baustellen-/Rohbaubild als Hauptbild. Gibt es keine solche Aufnahme → beim Nutzer
+  verlangen, nicht ersatzweise ein Innenbild nehmen.
+- **Bild-Identität (verbindlich, überall dasselbe Hauptbild):** Das **proofband-Slide-1-Hauptbild**
+  ist **exakt dasselbe Bild** wie die **REA-`rc__img`-Referenzkarte**, das **Auswahl-Panel
+  (`refsel__img`)** und die **`wref`-Karte** dieses Projekts auf anderen Seiten. **Ändert sich das
+  Hauptbild, ziehe alle Vorkommen synchron nach** (proofband ↔ REA-Karte/Pin ↔ wref auf den anderen
+  Seiten). Ein Auseinanderlaufen (REA zeigt ein anderes Bild als das Projekt-Karussell) ist ein Fehler.
+- **Grosses Karussell (proofband) — Reihenfolge:** Hauptbild zuerst (Objekt/Luftbild), dann weitere
+  **Aussen-Renderings** (Terrasse/Pool/Strasse/Weg), dann **Interieur** (Wohnen/Essen/Küche, Schlaf, Bad).
+  Mechanik/Ausschnitt → §3f.
+- **`cmap` = eigenes Karussell unter dem Volltext** (kein rechtes Einzelbild) = die **Herausforderungs-
+  Bilder**, passend zum Archetyp (§1b): bei **Denkmal/Bestand** die geschützte/freigelegte Substanz
+  (Bruchsteinmauerwerk, Gebälk, der Altbau im Umbau); bei **Neubau/Entwicklung** die **Baustelle**
+  (Aushub, Hangsicherung, Kran, Drohnen-Baustellenbild). Immer die eher **prozesshaften/rohen** Fotos —
+  nie die fertigen Renderings (die gehören ins proofband). Rahmen ans Foto-Format angleichen (§3f).
 
 ---
 
@@ -452,7 +510,11 @@ nicht am Code suchen. Nach grünem Lauf hart neu laden lassen (Cmd/Ctrl+Shift+R)
       Zahlen in der Fakten-Tabelle als Ziffer, im Fliesstext ausgeschrieben.
 - [ ] `cmap` = Volltext (volle Breite) + **Karussell darunter** (kein rechtes Einzelbild).
 - [ ] Bild-Karussells (§3f): 4-Punkt-Sync (`data-caps` · `count /N` · Slide-Divs · `.carousel__cap`);
-      Slide 1 proofband = Hauptbild (Aussen); volle Breite, Hochformat/Quadrat via `object-position`/Canvas-Crop.
+      volle Breite, Hochformat/Quadrat via `object-position`/Canvas-Crop.
+- [ ] **Bild-Identität (§6):** proofband Slide 1 = REA-`rc__img` = `refsel__img` = `wref`-Karte (dasselbe
+      Bild); Hauptbild ist Aussen/Luftbild (nie Innen/Detail/Baustelle); cmap = Herausforderungsbilder je Archetyp.
+- [ ] **Archetyp konsistent (§1b):** Werthebel-Set, orch-Punkte, cmap-Bilder, facts-Schwerpunkt und
+      Sprache passen zum **einen** gewählten Typ (A/B/C); kein Bausteine-Mix.
 - [ ] Wertstufen aktiv («Wir …»); **jeder Werthebel = konkrete ausgeführte Massnahme** (§1).
       Werthebel projektspezifisch; **Achsen-`--ws` ↔ Phasen-`wertspr` identisch**; 09 Exit nur wo
       sinnvoll, sonst 8 Phasen + 08 Zielstufe (Achse & Phase synchron entfernt).
