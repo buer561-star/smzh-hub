@@ -98,6 +98,36 @@ sondern z. B. «Vermietung stabilisiert, Objektqualität belegt, Käuferlogik ge
 
 ---
 
+## 1a. Semantik-Regeln (verbindlich, projektspezifisch statt generisch)
+
+Texte müssen **projektspezifisch, knapp und immobilienwirtschaftlich sauber** sein — keine
+AI-Sprache, kein «Case», kein Eigenlob, **keine allgemeinen Immobilienweisheiten**. Jeder Text
+zeigt: konkrete **Ausgangslage** → geführte **Herausforderung** → entstehendes **Resultat**.
+
+1. **Die 3 Boxen strikt trennen:**
+   - **Ausgangslage** = nur die **neutrale Ausgangssituation + das Potenzial**. **Keine** Probleme,
+     Risiken oder Lösungen.
+   - **Herausforderung** = die **echten Engpässe**: Denkmalschutz, Bestand, Nutzungsmix, Bewilligung,
+     Kosten, Marktqualität, Vermietbarkeit.
+   - **Resultat** = **konkret**, was entsteht/entstanden ist: Anzahl Wohnungen, Gewerbefläche,
+     Sanierungsstandard, Vermietungsziel, Status. **Keine langen Prozesssätze.**
+2. **Begrifflichkeit:** narrativ **«Gewerbefläche»** (nicht «Gastro/Gewerbe», nicht «Gastro-/Gewerbe-
+   fläche»); im Faktenblock nur wenn konkret richtig «Restaurant inkl. Take-Away»; **«Gastronomie»**
+   nur wenn der **Betrieb als Nutzung** gemeint ist; **«Totalsanierung» vermeiden** — bei Bestand/
+   Denkmalschutz **«Grundsanierung»** bzw. **«denkmalgerechte Grundsanierung»**.
+3. **Werthebel (`vnode--ws`):** nicht alle 9 Stufen künstlich gleich wichtig machen — **nur echte
+   Hebel markieren**. Bei Denkmal-/Bestandsprojekten sind i. d. R. **Machbarkeit, Bewilligung,
+   Umsetzung, Vermietung** wichtiger als Nutzungskonzept oder Exit. Werthebel-Texte = **konkrete
+   Execution**, keine abstrakten Begriffe (§1 Werthebel-Prinzip).
+4. **Claims projektspezifisch** — kein «Wert entsteht nicht linear» o. ä. ohne Projektbezug.
+   Besser: «Denkmalschutz setzt Grenzen. Genau darin lag die Aufgabe.» / «Aus Bestand wird ein
+   bewilligtes und vermietbares Ertragsobjekt.»
+5. **Standardblock Projektführung (`orch`)** → §3d (fixe Links-/Label-/Claim-Texte, projektspezifisch
+   nur Schnittstellen-Punkte + Schlusssatz, beide untere Sätze identisch gestylt).
+6. **Textlänge:** Boxen **kurz** — **1–2 präzise Sätze**, nie ein Absatz. Lieber präzise als vollständig.
+
+---
+
 ## 2. Seitenstruktur (Killwangen-Standard, normativ)
 
 Alle Projektseiten teilen **dieses** Sektions-Skelett und **diesen Hintergrund-Rhythmus**.
