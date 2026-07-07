@@ -139,10 +139,10 @@ Titel **voll von links nach rechts**, nicht in der Mitte umbrechen (keine enge `
 
 Aufbau innerhalb `archsec > .wrap`:
 
-1. **archsec-Titel** `.wsa__lead`, volle Breite, kein Kicker — **Format «Projektname: <Titel>»**
-   (z. B. «Killwangen AG: vom Bestand zur institutionellen Kapitalanlage.», «Bremgarten, Drei
-   Könige: …»). Der separate **Hero-h1** im `<header class="hero">` bleibt davon unberührt
-   (nur der Projekt-Titel, **ohne** Namenspräfix).
+1. **Kein archsec-Titel** — die 3 Boxen beginnen **direkt** (kein `.wsa__lead`/`.wsa__intro`).
+   Der **Projektname steht im Hero-h1** (`<header class="hero">`) im **Format «Projektname: <Titel>»**
+   (z. B. «Killwangen AG: Vom Grundstück zur Kapitalanlage.», «Bremgarten, Drei Könige: Aus
+   historischer Substanz wird belastbarer Ertrag.»). Projektname = «Ort[, Teilprojekt]».
 2. **Triptychon `.vtrip`** — drei gleich hohe Boxen nebeneinander:
    - `.vbox.vbox--aus` (rosé `#FBF4F9`/`#EAD4E5`): Label «Ausgangslage» · grosse Kennzahl · Einheit · 1 Satz.
    - `.vbox.vbox--her` (amber `#FFF7EE`/`#F0DEC4`): Label «Herausforderung» · 1–2 Sätze (was hätte stoppen können).
@@ -254,10 +254,17 @@ grosse Lücke). Selbsttragend gestylt (feste REA-Farben `#03314B`/`#185E7F`, BG 
 (`.rc__img`, Titel, Text, «Projekt ansehen →» → `../<slug>/`), Karten gleich gross, plus
 Karten-Pin (richtiger `data-id`).
 
-**Bildregel (hart):** Das Bild der REA-Referenzkarte (`.rc__img`), des Auswahl-Panels
-(`refsel__img`) **und** das Projekt-Hero zeigen den Case **repräsentativ**: **fertiger
-Zustand ODER Visualisierung/Rendering — NIEMALS ein Baustellen-/Rohbaubild.** Baustellen-/
-Prozessbilder gehören höchstens in eine Galerie/Karussell der Projektseite.
+**Bildregeln (hart):**
+- **Hauptbild = immer eine Aussenaufnahme** (Fassade/Aussen). Gilt für das Projekt-Hero,
+  die REA-Referenzkarte (`.rc__img`) **und** das Auswahl-Panel (`refsel__img`). **Nie** ein
+  Innenraum- oder Baustellen-/Rohbaubild als Hauptbild; alternativ eine Aussen-Visualisierung/
+  Rendering. Gibt es keine Aussenaufnahme → beim Nutzer verlangen, nicht ersatzweise ein
+  Innenbild als Hauptbild nehmen.
+- **Grosses Karussell (proofband) — feste Reihenfolge:** 2× Aussen, dann Terrasse (falls
+  vorhanden), Küche, Wohnzimmer, Schlafzimmer, Bad.
+- **Herausforderungs-/Kontextbild (`cmap`):** die eher **prozesshaften/Baustellen**-Fotos —
+  bzw. bei denkmalgeschützten Objekten (z. B. Bremgarten) die Bilder, die die **historische
+  Substanz / freigelegte Holzelemente** zeigen.
 
 ---
 
