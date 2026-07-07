@@ -107,8 +107,8 @@ Jede Sektion ist `<section class="…">` mit innen `<div class="wrap …">`.
 |---|---|---|---|---|
 | 1 | `archsec` | **hell** (`--paper`) | Hero-Titel **+ 3 Boxen** (Ausgangslage·Herausforderung·Ergebnis) **+ Wertachse** (§3) | **h1** (genau 1) |
 | 2 | `facts` | **weiss** | Eckdaten, mit Zwischentitel **«Das Projekt in Zahlen.»** (§3a) | – |
-| 3 | `proofband` | **navy** | Beleg-Band: grosser Claim + optionales Bild-Karussell (Statement-Beat) | – |
-| 4 | `cmap` | **hell** (`--paper`) | Kontext/Herausforderung der Lage (+ Karte/Bild) | h2 |
+| 3 | `proofband` | **navy** | Beleg-Band: grosser Claim + **grosses Bild-Karussell** (2× Aussen, dann Innenräume — §3f) | – |
+| 4 | `cmap` | **hell** (`--paper`) | Herausforderung der Lage: **Volltext (h2+p, volle Breite) + Karussell darunter** (§3f), **kein** rechtes Einzelbild | h2 |
 | 5 | `proof` | **hell** (`--paper`) | «Wert entsteht selten linear …» — 3 `pcard` (Intro zum Wertverlauf) | h2 |
 | 6 | `phases` (`main.phases`) ⊃ `phase` ×**9** | **hell** (`--paper`) | die **9 Wertstufen** (§3b), Titel **«So wurde aus Potenzial ein umsetzbares Projekt.»** | (Sub-Titel) |
 | 7 | `orch` | **navy** | «Eine Stelle, die den roten Faden hält» — Rolle smzh, Karte mit **smzh-Logo** (§3d) | h2 |
@@ -143,6 +143,10 @@ Aufbau innerhalb `archsec > .wrap`:
    Der **Projektname steht im Hero-h1** (`<header class="hero">`) im **Format «Projektname: <Titel>»**
    (z. B. «Killwangen AG, 2 Mehrfamilienhäuser: Vom Grundstück zur Kapitalanlage.»,
    «Bremgarten AG, Drei Könige: Aus historischer Substanz wird belastbarer Ertrag.»).
+   **Umbruch:** Der Projektname steht auf einer **eigenen Zeile** über dem Titel — Markup
+   `<h1><span class="hero__name">Projektname:</span>Titel</h1>` mit `.hero__name{display:block}`.
+   Der Name hat **dieselbe Grösse/Farbe/Gewichtung wie der Titel** (KEIN kleiner Eyebrow/Kicker,
+   nicht powderfarben verkleinern) — nur der Zeilenumbruch nach dem Doppelpunkt trennt Name und Titel.
    **Projektname = «Gemeinde Kantonskürzel[, Objektname]»** — immer Gemeinde + Kantonskürzel
    (Killwangen AG, Bremgarten AG, Küsnacht ZH), und falls das Objekt einen Namen/eine Kurzbe-
    schreibung hat, danach mit Komma (…, Drei Könige / …, Sonne / …, Villa / …, 2 Mehrfamilienhäuser).
@@ -222,6 +226,44 @@ Farben, keine zweite Schriftfamilie, keine bunten Badges, nur Pfeil `→` als Ic
 
 ---
 
+## 3f. Bild-Karussells (proofband + cmap) — Komponente, Ausschnitt, Pipeline
+
+Beide Karussells nutzen **dieselbe `.carousel`-Komponente**; das JS initialisiert per
+`document.querySelectorAll('.carousel')` **alle** Karussells der Seite (ein zweites Karussell
+funktioniert automatisch). Aufbau:
+- `<figure class="carousel reveal-el" data-caps="Cap1||Cap2||…">` — **eine Caption je REALEM
+  Slide**, mit `||` getrennt.
+- `.carousel__count` = «1 / N», **N = Anzahl realer Slides** (NICHT die vom JS erzeugten Clone-Slides).
+- `.carousel__track` mit `.carousel__slide > img.carousel__img`, danach Prev/Next-Buttons,
+  `.carousel__dots`, `.carousel__cap` (Startwert = Cap1).
+- Das JS klont beim Init ersten/letzten Slide (Endlos-Loop) → im DOM erscheinen **N+2** Slides
+  und die Spur startet auf `translateX(-1 Slide)`. **Beim Hinzufügen/Entfernen von Slides IMMER
+  `data-caps`, `count /N` und `.carousel__cap` gemeinsam nachziehen**, sonst laufen Bild, Caption
+  und Zähler auseinander. (Zum Prüfen die Track-Transform NICHT per `*{transform:none}` überschreiben
+  — das zeigt sonst den Clone-Slide.)
+
+**Proofband-Karussell (gross, navy):** Reihenfolge fix (§6): 2× Aussen, dann Terrasse (falls),
+Küche, Wohnzimmer, Schlafzimmer, Bad. **Slide 1 = Hauptbild** (= Hero/REA-Karte/wref).
+
+**cmap-Karussell (hell):** **kein** rechtes Einzelbild — der Text (h2 + p) läuft **volle Breite**,
+darunter ein **eigenes** Karussell mit den **Herausforderungs-/Denkmal-Bildern** (freigelegte
+Substanz, Bruchsteinmauerwerk, Gebälk, Treppen, Baustelle). Wrapper wie Killwangen:
+`<div class="wrap" style="margin-top:36px"><figure class="carousel …">…</figure></div>`.
+
+**Ausschnitt/Seitenverhältnis (wichtig):** Die Fotos sind meist **~3:2**. Ist der Rahmen viel
+breiter als die Fotos, schneidet `object-fit:cover` oben/unten stark weg. Deshalb den **Rahmen
+ans Foto-Format angleichen statt die Höhe zu erhöhen**: das cmap-Karussell auf **`max-width:~660px`
+zentriert** (`.cmap .carousel{max-width:660px;margin-left:auto;margin-right:auto}`) → ~3:2,
+minimaler Beschnitt. **Hochformat-Bilder** mit `style="object-position:center <Y>%"` so ausrichten,
+dass das bildwichtige Motiv (z. B. das Bruchsteinmauerwerk) im Ausschnitt bleibt.
+
+**Bild-Pipeline (Google Drive):** Web-Grössen über den Thumbnail-Endpoint
+`https://drive.google.com/thumbnail?id=<ID>&sz=w<Breite>` ziehen — **Hero `w1800`**,
+**Karussell-Slides `w1200`**, **Karten (`rc__img`/`wref`) `w900`** — dann als Base64 einbetten.
+Bilder inhaltlich der Caption zuordnen (Kontaktabzug rendern, visuell matchen), nicht raten.
+
+---
+
 ## 4. Geteilter Entscheidungs-CTA (`.rea-cta`) — identisch überall
 
 Heller CTA-Block, **drei gleich breite** CTAs, `<section class="rea-cta" id="kontakt">`
@@ -266,10 +308,11 @@ Karten-Pin (richtiger `data-id`).
   Rendering. Gibt es keine Aussenaufnahme → beim Nutzer verlangen, nicht ersatzweise ein
   Innenbild als Hauptbild nehmen.
 - **Grosses Karussell (proofband) — feste Reihenfolge:** 2× Aussen, dann Terrasse (falls
-  vorhanden), Küche, Wohnzimmer, Schlafzimmer, Bad.
-- **Herausforderungs-/Kontextbild (`cmap`):** die eher **prozesshaften/Baustellen**-Fotos —
-  bzw. bei denkmalgeschützten Objekten (z. B. Bremgarten) die Bilder, die die **historische
-  Substanz / freigelegte Holzelemente** zeigen.
+  vorhanden), Küche, Wohnzimmer, Schlafzimmer, Bad. Mechanik/Ausschnitt → §3f.
+- **`cmap` = eigenes Karussell unter dem Volltext** (kein rechtes Einzelbild): die eher
+  **prozesshaften/Baustellen**-Fotos — bzw. bei denkmalgeschützten Objekten (z. B. Bremgarten)
+  die Bilder, die die **historische Substanz / freigelegte Holzelemente / Bruchsteinmauerwerk**
+  zeigen. Rahmen ans Foto-Format angleichen (§3f), damit nichts stark beschnitten wird.
 
 ---
 
@@ -318,7 +361,13 @@ nicht am Code suchen. Nach grünem Lauf hart neu laden lassen (Cmd/Ctrl+Shift+R)
       kein `comp`/`thesis`/`team`/`frame`; `rea-cta` direkt an `orch`), genau **1 h1**.
 - [ ] Hintergrund-Rhythmus §2 (heller Lauf archsec→phases; navy nur Hero/proofband/orch).
 - [ ] 3 Boxen (Ausgangslage·Herausforderung·Ergebnis) + Achsen-Titel «Die grössten Werthebel …».
-- [ ] `facts` mit Zwischentitel «Das Projekt in Zahlen.»; Labels normal (kein Uppercase).
+- [ ] Hero-h1: Projektname auf **eigener Zeile** (`.hero__name`, gleiche Grösse/Farbe wie Titel),
+      Name-Format «Gemeinde Kantonskürzel[, Objektname]» überall identisch (Hero/`<title>`/wref/rc/Pins).
+- [ ] `facts` mit Zwischentitel «Das Projekt in Zahlen.»; Labels normal (kein Uppercase);
+      Zahlen in der Fakten-Tabelle als Ziffer, im Fliesstext ausgeschrieben.
+- [ ] `cmap` = Volltext (volle Breite) + **Karussell darunter** (kein rechtes Einzelbild).
+- [ ] Bild-Karussells (§3f): `data-caps`, `count /N` und `.carousel__cap` konsistent; Slide 1 proofband
+      = Hauptbild; Rahmen ans Foto-Format angeglichen (kein starker Beschnitt), Hochformat via `object-position`.
 - [ ] 9 Wertstufen aktiv («Wir …»); **jeder Werthebel = konkrete ausgeführte Massnahme** (§1).
 - [ ] `orch`: **smzh-Logo** statt Text, Karte berührt den CTA nicht (keine Lücke, keine Kollision).
 - [ ] Tonalität §1; kein «ß»; kein «Case»; smzh klein; keine Kicker/Uppercase-Labels.
