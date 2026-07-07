@@ -194,9 +194,13 @@ Aufbau innerhalb `archsec > .wrap`:
    - `.vbox.vbox--erg` (navy): Label «Ergebnis» · grosse Kennzahl · Einheit · 1 Satz.
    - Box-Labels **normale Schreibweise** (kein Uppercase), `letter-spacing:.14em`.
 3. **Achsen-Titel** `.vaxis__t` = **«Die grössten Werthebel bei <Ort>.»**
-4. **Wertachse `.vaxis`** — horizontale Linie mit **9 Knoten** (`.vnode`), nur Nummer + Name;
-   die **Wertsprung-Stufen** (`.vnode--ws`, Killwangen 01/03/05/06/09) sind gefüllt/blau
-   hervorgehoben, die übrigen ruhig. **Kein Fliesstext/Punchline in der Achse, kein Kicker.**
+4. **Wertachse `.vaxis`** — horizontale Linie mit Knoten (`.vnode`), nur Nummer + Name;
+   die **Wertsprung-Stufen** (`.vnode--ws`) sind gefüllt/blau hervorgehoben, die übrigen ruhig.
+   **Kein Fliesstext/Punchline in der Achse, kein Kicker.** **Knotenzahl & Werthebel sind
+   projektspezifisch** (§3b): Reine Wohneigentums-/Bestandsprojekte ohne institutionellen Exit
+   führen **8 Knoten (01–08, kein 09 Exit)**; die `--ws`-Markierung nur auf die **realen**
+   Werthebel des Projekts setzen (z. B. HIDE 01/03/06/07/08; MIRAGE 01/02/05/08). Die Achse
+   muss **exakt** mit den Phasen-Badges (§3b) übereinstimmen.
 
 Danach folgt `facts` mit Zwischentitel **«Das Projekt in Zahlen.»** (`.facts__t`) und
 etwas Luft (nicht «zerquetscht»).
@@ -214,19 +218,28 @@ Zwischentitel** «Das Projekt in Zahlen.». Markup: `.facts__t` + `.facts__grid`
 
 ---
 
-## 3b. Die 9 Wertstufen `phases` (verbindlich, site-weit identisch)
+## 3b. Die Wertstufen `phases` (verbindlich)
 
-Immer diese 9er-Folge, fortlaufend 01–09:
+Grundfolge (Entwicklungs-/Transaktionsprojekt, Killwangen), fortlaufend 01–09:
 ```
 01 Objektzugang · 02 Machbarkeit · 03 Nutzungskonzept · 04 Struktur ·
-05 Bewilligung · 06 Kapital · 07 Umsetzung · 08 Vermietung · 09 Exit
+05 Bewilligung · 06 Kapital · 07 Umsetzung · 08 Vermietung/Verkauf · 09 Exit
 ```
-- Wrapper `main.phases > .wrap`, mit **Sub-Titel `.phases__t`** «So wurde aus Potenzial ein
-  umsetzbares Projekt.» (projektadaptierbar), darüber die Spine/Cursor-JS.
+- **09 Exit ist projektspezifisch, nicht Pflicht.** Bei Wohneigentums-/Bestandsprojekten, bei
+  denen der Verkauf selbst der Endpunkt ist (kein institutioneller Exit), **entfällt Stufe 09
+  komplett** — dann **8 Phasen (01–08)** und **08 = Zielstufe** (`<div class="wertspr wertspr--ziel">Zielstufe</div>`).
+  09 restlos entfernen: Phasen-Section **und** den Achsen-Knoten 09 (§3) **und** evtl. „Exit“-Reste
+  im Fliesstext (rea-cta ist geteilter Boilerplate → dort nur bei ausdrücklichem Wunsch anpassen).
+- **Werthebel sind projektspezifisch.** Nur die realen Werthebel bekommen `phase phase--lever`
+  **und** `<div class="wertspr">Wertsprung</div>`; die übrigen Phasen bleiben schmucklos. Diese
+  Menge muss **1:1** der `--ws`-Markierung der Wertachse (§3) entsprechen (Achse ↔ Badges konsistent).
+  Beispiele: HIDE 01/03/06/07 (+08 Zielstufe); MIRAGE 01/02/05 (+08 Zielstufe).
+- Wrapper `main.phases > .wrap`, mit **Sub-Titel `.phases__t`** (projektadaptierbar, Aktiv-/Ergebnissatz),
+  darüber die Spine/Cursor-JS (baut Timeline dynamisch aus `.phase[data-node]` — Phasenzahl egal).
 - Jeder `phase`-Block: `data-phase="NN" data-label="…"`, `phase__num`, `phase__cat`,
   `phase__q` (**Aktiv-Satz «Wir …»**, kein Frage/Passiv), `phase__aha`, dann `raster` mit
   **vier** Zeilen: `Ausgangslage` · `smzh-Entscheid` · **`Werthebel`** (konkrete Handlung, §1)
-  · `Resultat`. Wertsprung: `phase phase--lever` + `<div class="wertspr">Wertsprung</div>`.
+  · `Resultat`.
 - `data-phase`/`phase__num` konsistent mit DOM-Reihenfolge (Spine-/Scroll-JS liest `data-phase`).
 
 ## 3c. `proof` — «Wert entsteht selten linear» (Intro zum Wertverlauf)
@@ -315,10 +328,24 @@ zentrieren). Beschnitt der ~3:2-Fotos wird **ausschliesslich über `object-posit
 nicht über die Rahmengrösse: heikle/**Hochformat-Bilder** mit `style="object-position:center <Y>%"`
 so ausrichten, dass das bildwichtige Motiv (z. B. das Bruchsteinmauerwerk) im Ausschnitt bleibt.
 
-**Bild-Pipeline (Google Drive):** Web-Grössen über den Thumbnail-Endpoint
-`https://drive.google.com/thumbnail?id=<ID>&sz=w<Breite>` ziehen — **Hero `w1800`**,
-**Karussell-Slides `w1200`**, **Karten (`rc__img`/`wref`) `w900`** — dann als Base64 einbetten.
-Bilder inhaltlich der Caption zuordnen (Kontaktabzug rendern, visuell matchen), nicht raten.
+**Slides hinzufügen/entfernen (verbindlicher 4-Punkt-Sync):** Beim Ändern der Slide-Zahl **immer
+gemeinsam** nachziehen: (1) `data-caps` (`||`-Liste, genau eine Caption je realem Slide), (2)
+`.carousel__count` «/ N», (3) die `.carousel__slide`-Divs im `.carousel__track`, (4) `.carousel__cap`
+(= Caption Slide 1). Danach visuell prüfen (mind. Slide 1 + der neue Slide), sonst laufen Bild/Caption/Zähler auseinander.
+
+**Bild-Pipeline (Google Drive):**
+- **Chat-/PDF-Anhänge sind NICHT als Datei lesbar** (nicht im Container gespeichert). Einziger
+  verlässlicher Weg: **Google Drive** (oder bereits eingebettetes Base64 in früher hochgeladenen HTMLs).
+- **Ordner-Link → Datei-IDs:** die Ordner-HTML ziehen (`curl -sL "https://drive.google.com/drive/folders/<FID>"`)
+  und die 28–44-stelligen IDs regexen. Titel/Reihenfolge über `mcp__Google_Drive__get_file_metadata`
+  (`title`, `createdTime`). **Upload-Reihenfolge = `createdTime`** (der Nutzer meint mit „das erste
+  hochgeladene“ genau das). Dateinamen verraten Rolle: `…Aussen…/…Luft…` (Renderings, Hauptkarussell),
+  `…Innen…/…Bad/…Zimmer` (Interieur), kleine `Bild*.jpg`/Handyfotos (Baustelle/Bestand → **cmap**).
+- **Web-Grössen** über den Thumbnail-Endpoint `…/thumbnail?id=<ID>&sz=w<Breite>` — **Hero/Hauptkarussell
+  `w1600–1800`**, **Karten `w900`** — dann als Base64 einbetten.
+- **Quadratische Thumbnails** (Picasa liefert manche `NxN`): für Querformat-Rahmen per Chromium-Canvas
+  auf 3:2 mittig zuschneiden (`drawImage`), nicht verzerren. Kein PIL im Container → Canvas nutzen.
+- Bilder **inhaltlich der Caption zuordnen** (Kontaktabzug rendern, visuell matchen), nicht raten.
 
 ---
 
@@ -424,9 +451,11 @@ nicht am Code suchen. Nach grünem Lauf hart neu laden lassen (Cmd/Ctrl+Shift+R)
 - [ ] `facts` mit Zwischentitel «Das Projekt in Zahlen.»; Labels normal (kein Uppercase);
       Zahlen in der Fakten-Tabelle als Ziffer, im Fliesstext ausgeschrieben.
 - [ ] `cmap` = Volltext (volle Breite) + **Karussell darunter** (kein rechtes Einzelbild).
-- [ ] Bild-Karussells (§3f): `data-caps`, `count /N` und `.carousel__cap` konsistent; Slide 1 proofband
-      = Hauptbild; Rahmen ans Foto-Format angeglichen (kein starker Beschnitt), Hochformat via `object-position`.
-- [ ] 9 Wertstufen aktiv («Wir …»); **jeder Werthebel = konkrete ausgeführte Massnahme** (§1).
+- [ ] Bild-Karussells (§3f): 4-Punkt-Sync (`data-caps` · `count /N` · Slide-Divs · `.carousel__cap`);
+      Slide 1 proofband = Hauptbild (Aussen); volle Breite, Hochformat/Quadrat via `object-position`/Canvas-Crop.
+- [ ] Wertstufen aktiv («Wir …»); **jeder Werthebel = konkrete ausgeführte Massnahme** (§1).
+      Werthebel projektspezifisch; **Achsen-`--ws` ↔ Phasen-`wertspr` identisch**; 09 Exit nur wo
+      sinnvoll, sonst 8 Phasen + 08 Zielstufe (Achse & Phase synchron entfernt).
 - [ ] `orch` **standardisiert (§3d)**: fixer Links-Titel/-Text, Label «Zentrale Projektführung»,
       Standard-Claim unten; projektspezifisch nur `.role__step` + `.role__sub`; **beide unteren Sätze
       identisch gestylt**; **smzh-Logo** statt Text; Karte berührt den CTA nicht (keine Lücke/Kollision).
