@@ -12,3 +12,4 @@ build/sitemap-index.xml
 # Python bytecode cache
 __pycache__/
 *.pyc
+s_*.png
