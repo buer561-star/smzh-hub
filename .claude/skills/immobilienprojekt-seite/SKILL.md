@@ -131,7 +131,13 @@ Herausforderung (`cmap`) → Wertverlauf (`proof`+`phases`) → Rolle smzh (`orc
 
 **Titelgrössen (vereinheitlicht):** Sektions-H2/Hero-Titel `clamp(24px,3.4vw,38px)`;
 Phasen-Sub-Titel `clamp(20px,2.6vw,26px)`. Der geteilte `rea-cta` behält seine eigene Grösse.
-Titel **voll von links nach rechts**, nicht in der Mitte umbrechen (keine enge `max-width`).
+
+**TEXT IMMER VON LINKS NACH RECHTS — EGAL WO (hart, verbindlich):** Titel **UND** Fliesstext
+nutzen die **volle Container-Breite** und laufen von links nach rechts. **NIE eine enge
+`max-width` an Überschriften oder Absätzen** (kein `max-width:48ch`, kein `…ch`/schmales `px`),
+die Text in eine **schmale, links «abgehackte» Spalte** zwingt. In Volltext-Sektionen (z. B.
+`cmap`) hat `p` **keine** `max-width`. (Ausnahme nur echte Mehrspalten-Karten wie `pcard`, wo
+die Kartenbreite die Zeile bestimmt.) Beim Klonen/Anpassen solche `max-width` an Textknoten aktiv entfernen.
 
 ---
 
@@ -250,12 +256,12 @@ darunter ein **eigenes** Karussell mit den **Herausforderungs-/Denkmal-Bildern**
 Substanz, Bruchsteinmauerwerk, Gebälk, Treppen, Baustelle). Wrapper wie Killwangen:
 `<div class="wrap" style="margin-top:36px"><figure class="carousel …">…</figure></div>`.
 
-**Ausschnitt/Seitenverhältnis (wichtig):** Die Fotos sind meist **~3:2**. Ist der Rahmen viel
-breiter als die Fotos, schneidet `object-fit:cover` oben/unten stark weg. Deshalb den **Rahmen
-ans Foto-Format angleichen statt die Höhe zu erhöhen**: das cmap-Karussell auf **`max-width:~660px`
-zentriert** (`.cmap .carousel{max-width:660px;margin-left:auto;margin-right:auto}`) → ~3:2,
-minimaler Beschnitt. **Hochformat-Bilder** mit `style="object-position:center <Y>%"` so ausrichten,
-dass das bildwichtige Motiv (z. B. das Bruchsteinmauerwerk) im Ausschnitt bleibt.
+**Fenstergrösse = wie Killwangen (verbindlich):** Das Karussell-«Fenster» ist **gleich gross
+wie bei Killwangen** — **volle Container-Breite**, Basishöhe `.carousel__img{height:clamp(280px,40vw,440px)}`
+(proofband höher). **Das Karussell NICHT verschmälern** (kein `max-width` am `.carousel`, nicht
+zentrieren). Beschnitt der ~3:2-Fotos wird **ausschliesslich über `object-position`** gesteuert,
+nicht über die Rahmengrösse: heikle/**Hochformat-Bilder** mit `style="object-position:center <Y>%"`
+so ausrichten, dass das bildwichtige Motiv (z. B. das Bruchsteinmauerwerk) im Ausschnitt bleibt.
 
 **Bild-Pipeline (Google Drive):** Web-Grössen über den Thumbnail-Endpoint
 `https://drive.google.com/thumbnail?id=<ID>&sz=w<Breite>` ziehen — **Hero `w1800`**,
