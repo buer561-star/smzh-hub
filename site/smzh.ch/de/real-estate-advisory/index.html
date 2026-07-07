@@ -129,6 +129,7 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
 .refsel__img{aspect-ratio:16/10;background:linear-gradient(150deg,var(--navy),var(--navy-2));background-size:cover;background-position:center;position:relative}
 .refsel__status{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;background:rgba(255,255,255,.94);color:var(--navy);border-radius:99px;padding:5px 11px}
 .refsel__body{padding:18px 22px 20px;display:flex;flex-direction:column;flex:1}
+.refsel__empty{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 30px;color:var(--muted);font-size:14px;line-height:1.55}
 .refsel__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
 .refsel__top h3{font-size:19px;font-weight:800;letter-spacing:-.015em;color:var(--navy)}
 .refsel__kt{font-size:11px;font-weight:700;color:var(--blue);background:var(--edit);border-radius:99px;padding:3px 9px}
@@ -569,7 +570,15 @@ h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;color:
       p.addEventListener('mouseenter',function(){p.classList.add('hov');});
       p.addEventListener('mouseleave',function(){p.classList.remove('hov');});
     });
-    show(pins[0].dataset.id);
+    function showEmpty(){
+      pins.forEach(function(p){p.classList.remove('on');});
+      sel.innerHTML='<div class="refsel__empty">Wählen Sie links ein Objekt auf der Karte, um es hier anzuzeigen.</div>';
+    }
+    // Stabile Höhe: höchstes Objekt messen, dann leer starten (kein Springen beim Klick)
+    var _mh=0;
+    cards.forEach(function(c){ show(c.dataset.id); if(sel.offsetHeight>_mh)_mh=sel.offsetHeight; });
+    if(_mh) sel.style.minHeight=_mh+'px';
+    showEmpty();
   })();
 
   /* — Weitere Projekte: verborgene Platzhalter-Zeile(n) je Klick einblenden; Button verschwindet, sobald nichts mehr verborgen ist — */
