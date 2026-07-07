@@ -149,13 +149,42 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
 
     <!-- Schritt 2: Ziel & Strategie -->
     <section class="ap-step" data-step="2" hidden>
-      <div class="ap-step__head"><span class="ap-step__no">02</span><h2>Ziel &amp; Strategie</h2></div>
-      <p class="ap-q">Was steht für Sie im Vordergrund? <i>(Mehrfachauswahl möglich)</i></p>
-      <div class="ap-opts" data-field="strategie"><button type="button" class="ap-opt ap-opt--desc" data-v="Laufender Ertrag"><b>Laufender Ertrag</b><small>Stabile Objekte mit nachvollziehbarem Ertrag und begrenztem Handlungsbedarf.</small></button><button type="button" class="ap-opt ap-opt--desc" data-v="Ertrag mit Entwicklungsspielraum"><b>Ertrag mit Entwicklungsspielraum</b><small>Objekte mit stabilem Kern und zusätzlichem Potenzial durch Vermietung, Sanierung oder bessere Positionierung.</small></button><button type="button" class="ap-opt ap-opt--desc" data-v="Wertsteigerung"><b>Wertsteigerung</b><small>Aktive Wertsteigerung durch Sanierung, Umnutzung, Vermietung, Verdichtung oder bessere Strukturierung.</small></button><button type="button" class="ap-opt ap-opt--desc" data-v="Projekt / Opportunität"><b>Projekt / Opportunität</b><small>Grundstücke, Entwicklungen, komplexe Bestände oder besondere Situationen mit höherem Strukturierungsbedarf.</small></button></div>
-      <p class="ap-q">Erwartete Renditeorientierung</p>
-      <div class="ap-opts ap-opts--pill" data-field="rendite" data-single><button type="button" class="ap-opt" data-v="stabiler Ertrag">stabiler Ertrag</button><button type="button" class="ap-opt" data-v="Ertrag + Wertsteigerung">Ertrag + Wertsteigerung</button><button type="button" class="ap-opt" data-v="wertorientierte Entwicklung">wertorientierte Entwicklung</button><button type="button" class="ap-opt" data-v="offen / situationsabhängig">offen / situationsabhängig</button></div>
-      <p class="ap-q">Wie möchten Sie investieren oder einsteigen? <i>(Mehrfachauswahl)</i></p>
-      <div class="ap-opts ap-opts--grid" data-field="form"><button type="button" class="ap-opt" data-v="Direkterwerb Einzelobjekt">Direkterwerb Einzelobjekt</button><button type="button" class="ap-opt" data-v="Direkterwerb Portfolio">Direkterwerb Portfolio</button><button type="button" class="ap-opt" data-v="Beteiligung an Projekt">Beteiligung an Projekt</button><button type="button" class="ap-opt" data-v="Entwicklung mit Partner">Entwicklung mit Partner</button><button type="button" class="ap-opt" data-v="Kauf vor Fertigstellung">Kauf vor Fertigstellung</button><button type="button" class="ap-opt" data-v="Grundstück / Bauland sichern">Grundstück / Bauland sichern</button><button type="button" class="ap-opt" data-v="Bestand halten und entwickeln">Bestand halten und entwickeln</button><button type="button" class="ap-opt" data-v="Verkauf oder Teilverkauf prüfen">Verkauf oder Teilverkauf prüfen</button></div>
+      <div class="ap-step__head"><span class="ap-step__no">02</span><h2>Strategie &amp; Rendite</h2></div>
+      <p class="ap-q">Welches Risiko-/Rendite-Profil verfolgen Sie? <i>(Mehrfachauswahl möglich)</i></p>
+      <div class="ap-opts" data-field="strategie">
+        <button type="button" class="ap-opt ap-opt--desc" data-v="Core"><b>Core</b><small>Stabile, voll vermietete Objekte an Top-Lagen. Fokus Werterhalt und laufende Rendite.</small></button>
+        <button type="button" class="ap-opt ap-opt--desc" data-v="Core+"><b>Core+</b><small>Solide Objekte mit moderatem Wertsteigerungspotenzial (leichte Vermietungs-/Sanierungsarbeit).</small></button>
+        <button type="button" class="ap-opt ap-opt--desc" data-v="Value-Add"><b>Value-Add</b><small>Aktive Wertschöpfung durch Repositionierung, Sanierung, Verdichtung, Vermietung.</small></button>
+        <button type="button" class="ap-opt ap-opt--desc" data-v="Opportunistic"><b>Opportunistic</b><small>Entwicklung, Umnutzung, Spezialsituationen mit höherem Risiko und Renditeanspruch.</small></button>
+      </div>
+      <div class="ap-row2">
+        <div>
+          <p class="ap-q">Ziel-Ausschüttungsrendite (netto, p.a.) <i>(Mehrfachauswahl)</i></p>
+          <div class="ap-opts ap-opts--pill" data-field="rendite">
+            <button type="button" class="ap-opt" data-v="< 2.5%">&lt; 2.5%</button>
+            <button type="button" class="ap-opt" data-v="2.5–3.5%">2.5–3.5%</button>
+            <button type="button" class="ap-opt" data-v="3.5–5%">3.5–5%</button>
+            <button type="button" class="ap-opt" data-v="> 5%">&gt; 5%</button>
+          </div>
+        </div>
+        <div>
+          <p class="ap-q">Angestrebte Haltedauer <i>(Mehrfachauswahl)</i></p>
+          <div class="ap-opts ap-opts--pill" data-field="haltedauer">
+            <button type="button" class="ap-opt" data-v="< 5 Jahre">&lt; 5 Jahre</button>
+            <button type="button" class="ap-opt" data-v="5–10 Jahre">5–10 Jahre</button>
+            <button type="button" class="ap-opt" data-v="> 10 Jahre">&gt; 10 Jahre</button>
+          </div>
+        </div>
+      </div>
+      <p class="ap-q">Bevorzugte Investitionsform <i>(Mehrfachauswahl)</i></p>
+      <div class="ap-opts" data-field="form">
+        <button type="button" class="ap-opt" data-v="Direkt – Einzelobjekt">Direkt · Einzelobjekt</button>
+        <button type="button" class="ap-opt" data-v="Direkt – Portfolio">Direkt · Portfolio</button>
+        <button type="button" class="ap-opt" data-v="Indirekt – Fonds/Club Deal">Indirekt · Fonds / Club Deal</button>
+        <button type="button" class="ap-opt" data-v="Joint Venture">Joint Venture</button>
+        <button type="button" class="ap-opt" data-v="Projektentwicklung / Forward Deal">Projektentwicklung / Forward Deal</button>
+        <button type="button" class="ap-opt" data-v="Sale-and-lease-back">Sale-and-lease-back</button>
+      </div>
     </section>
 
     <!-- Schritt 3: Objekt & Nutzung -->
@@ -329,7 +358,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
       });
       p.addEventListener('mousemove',function(ev){
         var box=svg.getBoundingClientRect();
-        tip.hidden=false; tip.textContent=r.name+(r.ew?(' · '+r.ew.toLocaleString('de-CH')+' Ew.'):'');
+        tip.hidden=false; tip.textContent=r.name;
         tip.style.left=(ev.clientX-box.left)+'px'; tip.style.top=(ev.clientY-box.top)+'px';
       });
       p.addEventListener('mouseleave',function(){tip.hidden=true;});
@@ -402,7 +431,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
     var regTxt=regionenText();
     var html='';
     html+=dsect('Profil', drow('Rolle',state.investortyp));
-    html+=dsect('Ziel', drow('Strategie',state.strategie)+drow('Rendite',state.rendite)+drow('Einstieg',state.form));
+    html+=dsect('Strategie', drow('Profil',state.strategie)+drow('Zielrendite',state.rendite)+drow('Haltedauer',state.haltedauer)+drow('Form',state.form));
     html+=dsect('Objekt & Nutzung', drow('Nutzung',state.nutzung)+drow('Objektphase',state.zustand)+drow('Grösse',state.ticket));
     html+=dsect('Grössenordnung', drow('Volumen',state.volumen));
     html+=dsect('Regionen', drow('Auswahl',regTxt||((cur>=4)?'Ganze Schweiz':'')));
@@ -413,8 +442,8 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
   function val(f){ var v=state[f]; if(!v)return '—'; return Array.isArray(v)?(v.length?v.join(', '):'—'):v; }
   function buildSummary(){
     var regTxt = regionenText() || 'Ganze Schweiz';
-    var rows=[['Rolle',val('investortyp')],['Ziel & Strategie',val('strategie')],['Rendite',val('rendite')],
-      ['Einstieg',val('form')],['Nutzung',val('nutzung')],['Objektphase',val('zustand')],
+    var rows=[['Rolle',val('investortyp')],['Strategie',val('strategie')],['Zielrendite',val('rendite')],['Haltedauer',val('haltedauer')],
+      ['Investitionsform',val('form')],['Nutzung',val('nutzung')],['Objektphase',val('zustand')],
       ['Grösse pro Objekt',val('ticket')],['Grössenordnung',val('volumen')],
       ['Regionen',regTxt],['Hinweise',val('hinweise')]];
     var dl='<h3>Ihr Anlegerprofil im Überblick</h3><dl>';
@@ -427,7 +456,7 @@ html.smzh-mm-open #smzh-mobile-menu{display:flex}html.smzh-mm-open{overflow:hidd
     var regTxt=regionenText() || 'Ganze Schweiz';
     var L=['ANLEGERPROFIL – Real Estate Advisory','',
       'Rolle: '+val('investortyp'),'Grössenordnung: '+val('volumen'),'Strategie: '+val('strategie'),
-      'Renditeorientierung: '+val('rendite'),'Einstieg: '+val('form'),
+      'Zielrendite: '+val('rendite'),'Haltedauer: '+val('haltedauer'),'Investitionsform: '+val('form'),
       'Nutzung: '+val('nutzung'),'Objektphase: '+val('zustand'),'Grösse pro Objekt: '+val('ticket'),
       'Regionen: '+regTxt,'Hinweise: '+val('hinweise'),'',
       'Organisation: '+val('org'),'Ansprechpartner: '+val('name'),'Funktion: '+val('funktion'),
