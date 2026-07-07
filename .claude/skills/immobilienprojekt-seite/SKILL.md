@@ -206,11 +206,33 @@ damit beide als ein Block lesen). 3 `pcard` (weisse Karten, blaue Icon-Box, navy
 Text): kurze, konkrete Sätze, **wenig AI-Sprache**. Killwangen-Karten: «Wert entsteht nicht
 linear» · «Ein Grundstück hat mehrere Werte» · «Der Exit wird früh vorbereitet».
 
-## 3d. `orch` — Rolle smzh (Statement, navy)
+## 3d. `orch` — Zentrale Projektführung (Statement, navy) — **standardisiert, auf allen Seiten identisch**
 
-«Eine Stelle, die den roten Faden hält.» Links Aussage + Lead, rechts Karte `.role__card`
-mit den zentralen Schnittstellen (Markt & Produkt · Planung & Bewilligung · Kapital & Banken
-· Vermietung & Exit) + Claim «Nicht jede Aufgabe selbst. Aber jede Schnittstelle im Blick.».
+Der dunkle Projektführungs-Abschnitt ist **strukturell auf jeder Projektseite gleich**.
+**Projektspezifisch sind NUR** die Schnittstellen-Punkte rechts (`.role__step`) und der
+**letzte Satz unten** (`.role__sub`). Alles andere ist fixer Standardtext:
+
+- **Links Titel (`h2`), immer:** «Eine Stelle, die den roten Faden hält.»
+- **Links Fliesstext (`p`), immer:** «smzh war nicht einfach ein weiterer Spezialist im
+  Projekt. smzh führte die zentralen Schnittstellen.» (kein «: Produkt, Planung …»-Anhang).
+- **Rechts Kopf:** smzh-**Logo** (`.role__logo`, s. u.) + Label (`.role__label`), immer
+  «Zentrale Projektführung». **Nie** «Deklarierter Wertbeitrag» / «Wertbeitrag von smzh» /
+  «Wir zeigen offen …» als Titel.
+- **Rechts Punkte (`.role__step`, projektspezifisch, i. d. R. 4):**
+  - Entwicklungs-/Transaktionsprojekte (Killwangen-Typ): **Markt & Nutzung · Planung & Bewilligung
+    · Kapital & Banken · Vermietung & Verkauf**.
+  - Denkmal-/Bestandsprojekte (Bremgarten-Typ): **Machbarkeit · Planung & Bewilligung · Umsetzung
+    · Vermietung**.
+- **Unten erster Satz (`.role__claim`), immer:** «Nicht jede Aufgabe selbst. Aber jede
+  Schnittstelle im Blick.»
+- **Unten zweiter Satz (`.role__sub`, projektspezifisch):** konkret zur Wertschöpfung des Projekts
+  (z. B. Killwangen «So entstand der durchgängige Weg vom Grundstück bis zum institutionellen Käufer.»,
+  Bremgarten «So entsteht der durchgängige Weg vom denkmalgeschützten Bestand zum vermietbaren
+  Ertragsobjekt.»). **Keine generische Eigenlob-Sprache, kein «Case».**
+- **Beide unteren Sätze visuell GLEICH:** `.role__claim` und `.role__sub` haben **identische**
+  Schriftgrösse, Font-Weight, Farbe und Zeilenhöhe (`font-size:15px;font-weight:700;color:#fff;
+  line-height:1.45`; `.role__sub` nur zusätzlich `margin-top:9px`). **Kein Satz fett/grösser/heller
+  als der andere.**
 - **Wo «smzh» als Wortmarke steht, das echte Logo verwenden**, nicht Text: `.role__logo`
   = `brand__logo`-Data-URI (aus der geklonten Chrome) mit `filter:brightness(0) invert(1)`
   (weiss auf navy). Gilt sinngemäss überall, wo die Marke als Logo gemeint ist (nicht im Fliesstext).
@@ -375,7 +397,9 @@ nicht am Code suchen. Nach grünem Lauf hart neu laden lassen (Cmd/Ctrl+Shift+R)
 - [ ] Bild-Karussells (§3f): `data-caps`, `count /N` und `.carousel__cap` konsistent; Slide 1 proofband
       = Hauptbild; Rahmen ans Foto-Format angeglichen (kein starker Beschnitt), Hochformat via `object-position`.
 - [ ] 9 Wertstufen aktiv («Wir …»); **jeder Werthebel = konkrete ausgeführte Massnahme** (§1).
-- [ ] `orch`: **smzh-Logo** statt Text, Karte berührt den CTA nicht (keine Lücke, keine Kollision).
+- [ ] `orch` **standardisiert (§3d)**: fixer Links-Titel/-Text, Label «Zentrale Projektführung»,
+      Standard-Claim unten; projektspezifisch nur `.role__step` + `.role__sub`; **beide unteren Sätze
+      identisch gestylt**; **smzh-Logo** statt Text; Karte berührt den CTA nicht (keine Lücke/Kollision).
 - [ ] Tonalität §1; kein «ß»; kein «Case»; smzh klein; keine Kicker/Uppercase-Labels.
 - [ ] Titelgrössen vereinheitlicht (§2); Titel volle Breite.
 - [ ] Heller `rea-cta` (§4, `id="kontakt"`) vor `wref`; `wref` = genau 3 andere Projekte, 3-spaltig.
