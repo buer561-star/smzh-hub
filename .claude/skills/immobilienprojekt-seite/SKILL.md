@@ -63,7 +63,7 @@ Umsetzung · Vermietung · Exit** je:
 18. Standort-Story in 2–3 Sätzen: was macht die Lage schwierig **und** wertvoll?
 
 **E · Verlinkung & Karte** → `wref`, REA-Hauptseite
-19. Welche **3** anderen Projekte in «Weitere Projekte» zeigen (genau 3)?
+19. Welche **3** anderen Projekte in «Weitere Referenzobjekte» zeigen (genau 3)?
 20. Pin-Koordinaten / Ort für die Schweizer Karte auf der REA-Hauptseite.
 
 **F · Bilder / Files** → verlangen (für die REA-Karte **nicht** optional)
@@ -143,7 +143,7 @@ Jede Sektion ist `<section class="…">` mit innen `<div class="wrap …">`.
 | 6 | `phases` (`main.phases`) ⊃ `phase` ×**9** | **hell** (`--paper`) | die **9 Wertstufen** (§3b), Titel **«So wurde aus Potenzial ein umsetzbares Projekt.»** | (Sub-Titel) |
 | 7 | `orch` | **navy** | «Eine Stelle, die den roten Faden hält» — Rolle smzh, Karte mit **smzh-Logo** (§3d) | h2 |
 | 8 | `rea-cta` (`id="kontakt"`) | hellblau | Entscheidungs-CTA (§4), **VOR** «Weitere Projekte», **direkt an `orch` anschliessend** | h2 |
-| 9 | `wref` | hell | «Weitere Projekte» — **genau 3** Referenzkarten, 3-spaltig | h3 |
+| 9 | `wref` | hell | Titel **«Weitere Referenzobjekte»** (`wref__h`, site-weit identisch) — **genau 3** Referenzkarten, 3-spaltig | h3 |
 
 **Hintergrund-Rhythmus (verbindlich):** Dunkel = **Statement/emotionaler Beat**
 (Hero, `proofband`, `orch`); Hell = **detaillierter Inhalt** (`archsec`, `facts`, `cmap`,
