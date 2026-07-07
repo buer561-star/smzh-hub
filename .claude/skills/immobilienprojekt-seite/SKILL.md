@@ -139,7 +139,10 @@ Titel **voll von links nach rechts**, nicht in der Mitte umbrechen (keine enge `
 
 Aufbau innerhalb `archsec > .wrap`:
 
-1. **Hero-Titel** `.wsa__lead` (h1), volle Breite, kein Kicker.
+1. **archsec-Titel** `.wsa__lead`, volle Breite, kein Kicker — **Format «Projektname: <Titel>»**
+   (z. B. «Killwangen AG: vom Bestand zur institutionellen Kapitalanlage.», «Bremgarten, Drei
+   Könige: …»). Der separate **Hero-h1** im `<header class="hero">` bleibt davon unberührt
+   (nur der Projekt-Titel, **ohne** Namenspräfix).
 2. **Triptychon `.vtrip`** — drei gleich hohe Boxen nebeneinander:
    - `.vbox.vbox--aus` (rosé `#FBF4F9`/`#EAD4E5`): Label «Ausgangslage» · grosse Kennzahl · Einheit · 1 Satz.
    - `.vbox.vbox--her` (amber `#FFF7EE`/`#F0DEC4`): Label «Herausforderung» · 1–2 Sätze (was hätte stoppen können).
