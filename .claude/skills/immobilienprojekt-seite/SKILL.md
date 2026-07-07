@@ -141,8 +141,13 @@ Aufbau innerhalb `archsec > .wrap`:
 
 1. **Kein archsec-Titel** — die 3 Boxen beginnen **direkt** (kein `.wsa__lead`/`.wsa__intro`).
    Der **Projektname steht im Hero-h1** (`<header class="hero">`) im **Format «Projektname: <Titel>»**
-   (z. B. «Killwangen AG: Vom Grundstück zur Kapitalanlage.», «Bremgarten, Drei Könige: Aus
-   historischer Substanz wird belastbarer Ertrag.»). Projektname = «Ort[, Teilprojekt]».
+   (z. B. «Killwangen AG, 2 Mehrfamilienhäuser: Vom Grundstück zur Kapitalanlage.»,
+   «Bremgarten AG, Drei Könige: Aus historischer Substanz wird belastbarer Ertrag.»).
+   **Projektname = «Gemeinde Kantonskürzel[, Objektname]»** — immer Gemeinde + Kantonskürzel
+   (Killwangen AG, Bremgarten AG, Küsnacht ZH), und falls das Objekt einen Namen/eine Kurzbe-
+   schreibung hat, danach mit Komma (…, Drei Könige / …, Sonne / …, Villa / …, 2 Mehrfamilienhäuser).
+   Dieser **exakt gleiche Projektname** steht überall gleich: Hero-h1, `<title>`, die `wref`-Karten
+   auf den anderen Projektseiten, die `rc`-Referenzkarten und die Karten-Pins auf `real-estate-advisory`.
 2. **Triptychon `.vtrip`** — drei gleich hohe Boxen nebeneinander:
    - `.vbox.vbox--aus` (rosé `#FBF4F9`/`#EAD4E5`): Label «Ausgangslage» · grosse Kennzahl · Einheit · 1 Satz.
    - `.vbox.vbox--her` (amber `#FFF7EE`/`#F0DEC4`): Label «Herausforderung» · 1–2 Sätze (was hätte stoppen können).
